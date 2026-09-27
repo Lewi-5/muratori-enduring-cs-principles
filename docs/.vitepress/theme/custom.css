@@ -1,0 +1,10 @@
+:root { --vp-c-brand-1: #176e76; --vp-c-brand-2: #23858c; --vp-c-brand-3: #176e76; }
+.dark { --vp-c-brand-1: #65d2ca; --vp-c-brand-2: #80ded6; --vp-c-brand-3: #23858c; }
+.vp-doc p, .vp-doc li { line-height: 1.8; }
+.vp-doc h2 { margin-top: 3rem; }
+.vp-doc h3 { margin-top: 2rem; }
+.vp-doc .source-list { font-size: .9rem; }
+.vp-doc details { margin: 1rem 0; }
+.vp-doc table { font-size: .92rem; }
+.vp-doc pre { tab-size: 4; }
+.VPSidebarItem .text { line-height: 1.45; }

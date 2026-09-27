@@ -1,0 +1,89 @@
+Day 010: QueryPerformanceCounter and RDTSC
+Day 014: Platform-independent Game Memory
+Day 045: Geometric vs. Temporal Movement Search
+Day 047: Vector Lengths
+Day 048: Line Segment Intersection Collisions
+Day 055: Hash-based World Storage
+Day 057: Spatially Partitioning Entities
+Day 064: Mapping Entity Indexes to Pointers
+Day 079: Defining the Ground
+Day 090: Bases Part I
+Day 091: Bases Part II
+Day 112: A Mental Model of CPU Performance
+Day 113: Simple Performance Counters
+Day 115: SIMD Basics
+Day 116: Converting Math Operations to SIMD
+Day 119: Counting Intrinsics
+Day 122: Introduction to Multithreading
+Day 123: Interlocked Operations
+Day 124: Memory Barriers and Semaphores
+Day 125: Abstracting the Work Queue
+Day 126: Circular FIFO Work Queue
+Day 146: Accumulation vs. Explicit Calculation
+Day 157: Introduction to General Purpose Allocation
+Day 160: Basic General Purpose Allocation
+Day 161: Finishing the General Purpose Allocator
+Day 166: Adding Locks to the Asset Operations
+Day 177: Automatic Performance Counters
+Day 178: Thread-safe Performance Counters
+Day 216: On-demand Deallocation
+Day 218: Hashing Debug Elements
+Day 231: Order Notation
+Day 232: Examples of Sorting Algorithms
+Day 233: Can We Merge Sort In Place?
+Day 234: Implementing Radix Sort
+Day 286: Starting to Decouple Entity Behavior
+Day 298: Improving Sort Keys Part 1
+Day 299: Improving Sort Keys Part 2
+Day 302: Confirming No Total Ordering
+Day 303: Trying Separate Y and Z Sorts
+Day 304: Building and Traversing Graphs
+Day 305: Using Memory Arenas in the Platform Layer
+Day 306: Debugging Graph-based Sort
+Day 307: Visualizing Sort Groups
+Day 308: Debugging the Cycle Check
+Day 309: Grid Partitioning for Overlap Testing
+Day 310: Finishing Sort Acceleration via Gridding
+Day 311: Allowing Manual Sorting
+Day 315: Un-reversing Sort Key Order
+Day 325: Ticket Mutexes
+Day 342: Supporting Temporary Memory in Dynamic Arenas
+Day 343: Saving and Restoring Dynamically Allocated Memory Pages
+Day 344: Selective Memory Restoration
+Day 345: Protecting Memory Pages for Underflow Detection
+Day 346: Consolidating Memory Block Headers
+Day 350: Multithreaded World Simulation
+Day 351: Optimizing Multithreaded Simulation Regions
+Day 353: Simple RLE Compression
+Day 354: Simple LZ Compression
+Day 434: Replacing the Pseudo-random Number Generator
+Day 439: Testing Better Entropy
+Day 440: Introduction to Function Approximation with Andrew Bromage
+Day 449: Preventing Overlapping Rooms
+Day 454: Parsing ZLIB Headers
+Day 455: Decoding PNG Huffman Tables
+Day 474: Removing the Transient State Concept
+Day 489: Implementing Undo and Redo
+Day 510: Making a Parser for HHTs
+Day 521: Debugging Missing Parent Pointers
+Day 522: Solving for Sorting Displacement
+Day 539: Capturing Source Information for Memory Allocations
+Day 542: Drawing Memory Occupancy Accurately
+Day 575: Generalizing Code Reloading
+Day 595: Sketching Out A K-d Tree Loop
+Day 596: Fleshing Out Kd-Tree Traversal
+Day 597: Basic Kd-tree Construction
+Day 615: Optimized Grid Step Selection
+Day 633: Narrowing in on a Collision Scheme
+Day 663: Simplifying Entity Storage, Part I
+Day 666: Entity Packing and Unpacking
+Chat 011: Undefined Behavior
+Chat 013: Translation Units, Function Pointers, Compilation, Linking, and Execution
+Chat 017: Modern x64 Architectures and the Cache
+Chat 020: Assembly Analysis and Front-end Register Clears
+Day 1001: Multithreading
+Day 1002: Replacing rand() and Preparing for SIMD
+Day 1003: Optimizing with SSE2 and AVX2
+Day 1006: The Thirty-Million Line Problem
+Day 1007: Compression
+Day 1008: Compression Followup

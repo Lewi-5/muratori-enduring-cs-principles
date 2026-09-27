@@ -1,0 +1,13 @@
+# Query fixtures (exemplar for E03.C)
+
+Every fixture below is run by `make test` as `geolab query --input instructor/fixtures/FILE ARGUMENTS`. Its expected output in [expected](expected) was computed by the supplied oracle with `make PACKAGE=instructor expected`, never by `geolab`; the test also checks that each expected file still equals the oracle's output, so a hand-edited expectation fails. The comparison applies the tolerance rule in [tests/fixture_lib.py](../../tests/fixture_lib.py): identifiers and order are compared exactly only where the oracle's distances are further apart than the tolerance.
+
+| Fixture | Purpose | Arguments | Why it exists |
+| --- | --- | --- | --- |
+| `pole.csv` | pole | `--lat 89.5 --lon 0 --radius-km 100` | Three records sit at the North Pole with longitudes 0, 90 and −180: one place, three spellings. They must all be selected at about 55.6 km. Their order is decided by rounding (`cos` of the double nearest π/2 is about 6.1e−17, not 0), so the comparison treats them as tied. The point at (89.5, 180) is 1° away across the pole and is excluded. |
+| `antimeridian.csv` | antimeridian | `--lat 10 --lon 179.5 --radius-km 200` | (10, 180) and (10, −180) are the same place. Both must be selected at the same distance, although one longitude difference is 0.5 and the other −359.5. A point 1.5° east across the line is included; a point 20° south is excluded. |
+| `exact_tie.csv` | exact-tie | `--lat 0 --lon 0 --radius-km 500` | Identifiers 7, 3 and 5 share identical coordinates, so their distances are the same double. They must print in identifier order, 3, 5, 7, whatever the input order. |
+| `printed_tie.csv` | printed-tie | `--lat 0 --lon 0 --radius-km 112` | Identifier 1 at (0, 1) and identifier 2 at (0.600366, 0.79974) both print as `111.195080`, but identifier 2 is nearer by 3.8e−7 km. It must come first. Sorting by the printed text and then the identifier would put 1 first; the mutation record shows this fixture kills that mutant. |
+| `empty_result.csv` | empty | `--lat 0 --lon 0 --radius-km 10` | No point lies within 10 km: the output is the header line only, with exit 0. |
+| `malformed.csv` | malformed | `--lat 0 --lon 0 --radius-km 10` | Line 3 has `1.5` as its latitude (not six decimals). Expect exit 1, `geolab: PARSE_BAD_LAT at line 3` on standard error, and nothing on standard output. |
+| `radius_zero.csv` | boundary | `--lat 12.5 --lon -45.25 --radius-km 0` | A radius of zero selects exactly the point at the center, because the comparison is inclusive and the distance is exactly 0. The neighbors one microdegree away (about 0.1 m) are excluded. |

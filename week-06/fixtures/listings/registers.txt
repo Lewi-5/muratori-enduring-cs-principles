@@ -1,0 +1,19 @@
+bits 16
+mov cx, bx
+mov cx, bx
+mov ax, ax
+mov ax, ax
+mov bp, sp
+mov bp, sp
+mov di, si
+mov di, si
+mov al, ah
+mov al, ah
+mov ah, al
+mov ah, al
+mov bl, bh
+mov bl, bh
+mov ax, bx
+mov ax, bx
+mov ch, ch
+mov ch, ch

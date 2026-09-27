@@ -1,0 +1,409 @@
+{
+  "temporaryCopy": "/tmp/enduring-docs-zq3d1mvn",
+  "results": [
+    {
+      "week": "week-01",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=gcc",
+        "MODE=debug",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 10.87,
+      "tail": "mkdir -p \"build/instructor/gcc/debug\"\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex01.c -o build/instructor/gcc/debug/ex01\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex02.c -o build/instructor/gcc/debug/ex02\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex03.c -o build/instructor/gcc/debug/ex03\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex04.c -o build/instructor/gcc/debug/ex04\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex05.c -o build/instructor/gcc/debug/ex05\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex06.c -o build/instructor/gcc/debug/ex06\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex07.c -o build/instructor/gcc/debug/ex07\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex08.c -o build/instructor/gcc/debug/ex08\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex09.c -o build/instructor/gcc/debug/ex09\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex10.c -o build/instructor/gcc/debug/ex10\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex11.c -o build/instructor/gcc/debug/ex11\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex12.c -o build/instructor/gcc/debug/ex12\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex13.c -o build/instructor/gcc/debug/ex13\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex15.c -o build/instructor/gcc/debug/ex15\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c instructor/src/ex14_main.c -o build/instructor/gcc/debug/ex14_main.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c instructor/src/ex14_count.c -o build/instructor/gcc/debug/ex14_count.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  build/instructor/gcc/debug/ex14_main.o build/instructor/gcc/debug/ex14_count.o -o build/instructor/gcc/debug/ex14\npython3 tests/inventory.py\nPASS: 43 prompts, 43 written answers, 43 checklist entries; complete source inventories\npython3 tests/check.py --build build/instructor/gcc/debug --source instructor/src --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -O0 '\nPASS: 15 executable contracts; 9 C boundary suites; allocation/read/close faults; numeric errors; benchmark statistics; instructor extras where applicable\n",
+      "passed": true
+    },
+    {
+      "week": "week-01",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=clang",
+        "MODE=optimized",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 15.84,
+      "tail": "mkdir -p \"build/instructor/clang/optimized\"\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex01.c -o build/instructor/clang/optimized/ex01\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex02.c -o build/instructor/clang/optimized/ex02\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex03.c -o build/instructor/clang/optimized/ex03\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex04.c -o build/instructor/clang/optimized/ex04\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex05.c -o build/instructor/clang/optimized/ex05\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex06.c -o build/instructor/clang/optimized/ex06\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex07.c -o build/instructor/clang/optimized/ex07\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex08.c -o build/instructor/clang/optimized/ex08\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex09.c -o build/instructor/clang/optimized/ex09\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex10.c -o build/instructor/clang/optimized/ex10\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex11.c -o build/instructor/clang/optimized/ex11\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex12.c -o build/instructor/clang/optimized/ex12\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex13.c -o build/instructor/clang/optimized/ex13\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex15.c -o build/instructor/clang/optimized/ex15\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 -c instructor/src/ex14_main.c -o build/instructor/clang/optimized/ex14_main.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 -c instructor/src/ex14_count.c -o build/instructor/clang/optimized/ex14_count.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  build/instructor/clang/optimized/ex14_main.o build/instructor/clang/optimized/ex14_count.o -o build/instructor/clang/optimized/ex14\npython3 tests/inventory.py\nPASS: 43 prompts, 43 written answers, 43 checklist entries; complete source inventories\npython3 tests/check.py --build build/instructor/clang/optimized --source instructor/src --cc clang --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -O2 '\nPASS: 15 executable contracts; 9 C boundary suites; allocation/read/close faults; numeric errors; benchmark statistics; instructor extras where applicable\n",
+      "passed": true
+    },
+    {
+      "week": "week-01",
+      "command": [
+        "make",
+        "starters"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 16.81,
+      "tail": "make PACKAGE=learner CC=gcc MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-01'\nmkdir -p \"build/learner/gcc/debug\"\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex01.c -o build/learner/gcc/debug/ex01\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex02.c -o build/learner/gcc/debug/ex02\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex03.c -o build/learner/gcc/debug/ex03\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex04.c -o build/learner/gcc/debug/ex04\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex05.c -o build/learner/gcc/debug/ex05\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex06.c -o build/learner/gcc/debug/ex06\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex07.c -o build/learner/gcc/debug/ex07\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex08.c -o build/learner/gcc/debug/ex08\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex09.c -o build/learner/gcc/debug/ex09\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex10.c -o build/learner/gcc/debug/ex10\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex11.c -o build/learner/gcc/debug/ex11\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex12.c -o build/learner/gcc/debug/ex12\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex13.c -o build/learner/gcc/debug/ex13\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex15.c -o build/learner/gcc/debug/ex15\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c learner/src/ex14_main.c -o build/learner/gcc/debug/ex14_main.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c learner/src/ex14_count.c -o build/learner/gcc/debug/ex14_count.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  build/learner/gcc/debug/ex14_main.o build/learner/gcc/debug/ex14_count.o -o build/learner/gcc/debug/ex14\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-01'\nmake PACKAGE=learner CC=clang MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-01'\nmkdir -p \"build/learner/clang/debug\"\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex01.c -o build/learner/clang/debug/ex01\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex02.c -o build/learner/clang/debug/ex02\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex03.c -o build/learner/clang/debug/ex03\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex04.c -o build/learner/clang/debug/ex04\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex05.c -o build/learner/clang/debug/ex05\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex06.c -o build/learner/clang/debug/ex06\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex07.c -o build/learner/clang/debug/ex07\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex08.c -o build/learner/clang/debug/ex08\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex09.c -o build/learner/clang/debug/ex09\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex10.c -o build/learner/clang/debug/ex10\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex11.c -o build/learner/clang/debug/ex11\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex12.c -o build/learner/clang/debug/ex12\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex13.c -o build/learner/clang/debug/ex13\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex15.c -o build/learner/clang/debug/ex15\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c learner/src/ex14_main.c -o build/learner/clang/debug/ex14_main.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c learner/src/ex14_count.c -o build/learner/clang/debug/ex14_count.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  build/learner/clang/debug/ex14_main.o build/learner/clang/debug/ex14_count.o -o build/learner/clang/debug/ex14\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-01'\n",
+      "passed": true
+    },
+    {
+      "week": "week-01",
+      "command": [
+        "make",
+        "test"
+      ],
+      "exitCode": 2,
+      "expectedExit": 1,
+      "seconds": 0.17,
+      "tail": "python3 tests/inventory.py\nPASS: 43 prompts, 43 written answers, 43 checklist entries; complete source inventories\npython3 tests/check.py --build build/learner/gcc/debug --source learner/src --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -O0 '\nTraceback (most recent call last):\n  File \"/tmp/enduring-docs-zq3d1mvn/week-01/tests/check.py\", line 31, in <module>\n    assert ex(1).splitlines()[0] == 'signed=-7 unsigned=7 long=-42 ull=42'\n  File \"/tmp/enduring-docs-zq3d1mvn/week-01/tests/check.py\", line 26, in ex\n    return run([a.build / f'ex{number:02}', *args], success)\n  File \"/tmp/enduring-docs-zq3d1mvn/week-01/tests/check.py\", line 20, in run\n    assert (result.returncode == 0) == success, (command, result.returncode, result.stdout, result.stderr)\nAssertionError: ([PosixPath('build/learner/gcc/debug/ex01')], 1, '', 'TODO: exercise 01\\n')\nmake: *** [Makefile:36: test] Error 1\n",
+      "passed": true
+    },
+    {
+      "week": "week-01",
+      "command": [
+        "build/instructor/gcc/debug/ex06"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 0.0,
+      "tail": "index=16 pointer=16\n",
+      "passed": true
+    },
+    {
+      "week": "week-02",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=gcc",
+        "MODE=debug",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 12.26,
+      "tail": "mkdir -p \"build/instructor/gcc/debug\"\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex01.c -o build/instructor/gcc/debug/ex01\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex02.c -o build/instructor/gcc/debug/ex02\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex03.c -o build/instructor/gcc/debug/ex03\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex04.c -o build/instructor/gcc/debug/ex04\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex05.c -o build/instructor/gcc/debug/ex05\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex06.c -o build/instructor/gcc/debug/ex06\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex07.c -o build/instructor/gcc/debug/ex07\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex08.c -o build/instructor/gcc/debug/ex08\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport instructor/src/ex10.c -o build/instructor/gcc/debug/ex10\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c instructor/src/ex09_main.c -o build/instructor/gcc/debug/ex09_main.o\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c instructor/src/ex09_data.c -o build/instructor/gcc/debug/ex09_data.o\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  build/instructor/gcc/debug/ex09_main.o build/instructor/gcc/debug/ex09_data.o -o build/instructor/gcc/debug/ex09\npython3 tests/inventory.py\nPASS: 33 prompts, 33 written answers, 33 checklist entries; complete source inventories\npython3 tests/check.py --build build/instructor/gcc/debug --source instructor/src --cc gcc --flags '-fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 '\nPASS: 10 demos and C contract suites; CLI errors; allocation faults; ABI/skip paths; stretch permutation oracle\n",
+      "passed": true
+    },
+    {
+      "week": "week-02",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=clang",
+        "MODE=optimized",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 13.13,
+      "tail": "mkdir -p \"build/instructor/clang/optimized\"\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex01.c -o build/instructor/clang/optimized/ex01\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex02.c -o build/instructor/clang/optimized/ex02\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex03.c -o build/instructor/clang/optimized/ex03\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex04.c -o build/instructor/clang/optimized/ex04\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex05.c -o build/instructor/clang/optimized/ex05\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex06.c -o build/instructor/clang/optimized/ex06\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex07.c -o build/instructor/clang/optimized/ex07\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex08.c -o build/instructor/clang/optimized/ex08\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  -Isupport instructor/src/ex10.c -o build/instructor/clang/optimized/ex10\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 -c instructor/src/ex09_main.c -o build/instructor/clang/optimized/ex09_main.o\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 -c instructor/src/ex09_data.c -o build/instructor/clang/optimized/ex09_data.o\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2  build/instructor/clang/optimized/ex09_main.o build/instructor/clang/optimized/ex09_data.o -o build/instructor/clang/optimized/ex09\npython3 tests/inventory.py\nPASS: 33 prompts, 33 written answers, 33 checklist entries; complete source inventories\npython3 tests/check.py --build build/instructor/clang/optimized --source instructor/src --cc clang --flags '-fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 '\nPASS: 10 demos and C contract suites; CLI errors; allocation faults; ABI/skip paths; stretch permutation oracle\n",
+      "passed": true
+    },
+    {
+      "week": "week-02",
+      "command": [
+        "make",
+        "starters"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 10.42,
+      "tail": "make PACKAGE=learner CC=gcc MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-02'\nmkdir -p \"build/learner/gcc/debug\"\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex01.c -o build/learner/gcc/debug/ex01\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex02.c -o build/learner/gcc/debug/ex02\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex03.c -o build/learner/gcc/debug/ex03\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex04.c -o build/learner/gcc/debug/ex04\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex05.c -o build/learner/gcc/debug/ex05\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex06.c -o build/learner/gcc/debug/ex06\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex07.c -o build/learner/gcc/debug/ex07\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex08.c -o build/learner/gcc/debug/ex08\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex10.c -o build/learner/gcc/debug/ex10\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c learner/src/ex09_main.c -o build/learner/gcc/debug/ex09_main.o\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c learner/src/ex09_data.c -o build/learner/gcc/debug/ex09_data.o\ngcc -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  build/learner/gcc/debug/ex09_main.o build/learner/gcc/debug/ex09_data.o -o build/learner/gcc/debug/ex09\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-02'\nmake PACKAGE=learner CC=clang MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-02'\nmkdir -p \"build/learner/clang/debug\"\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex01.c -o build/learner/clang/debug/ex01\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex02.c -o build/learner/clang/debug/ex02\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex03.c -o build/learner/clang/debug/ex03\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex04.c -o build/learner/clang/debug/ex04\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex05.c -o build/learner/clang/debug/ex05\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex06.c -o build/learner/clang/debug/ex06\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex07.c -o build/learner/clang/debug/ex07\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex08.c -o build/learner/clang/debug/ex08\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex10.c -o build/learner/clang/debug/ex10\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c learner/src/ex09_main.c -o build/learner/clang/debug/ex09_main.o\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -c learner/src/ex09_data.c -o build/learner/clang/debug/ex09_data.o\nclang -fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  build/learner/clang/debug/ex09_main.o build/learner/clang/debug/ex09_data.o -o build/learner/clang/debug/ex09\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-02'\n",
+      "passed": true
+    },
+    {
+      "week": "week-02",
+      "command": [
+        "make",
+        "test"
+      ],
+      "exitCode": 2,
+      "expectedExit": 1,
+      "seconds": 0.11,
+      "tail": "python3 tests/inventory.py\nPASS: 33 prompts, 33 written answers, 33 checklist entries; complete source inventories\npython3 tests/check.py --build build/learner/gcc/debug --source learner/src --cc gcc --flags '-fno-common -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 '\nTraceback (most recent call last):\n  File \"/tmp/enduring-docs-zq3d1mvn/week-02/tests/check.py\", line 31, in <module>\n    lines = ex(1).splitlines()\n  File \"/tmp/enduring-docs-zq3d1mvn/week-02/tests/check.py\", line 26, in ex\n    return run([a.build / f'ex{n:02}', *args], success)\n  File \"/tmp/enduring-docs-zq3d1mvn/week-02/tests/check.py\", line 20, in run\n    assert (r.returncode == 0) == success, (command, r.returncode, r.stdout, r.stderr)\nAssertionError: ([PosixPath('build/learner/gcc/debug/ex01')], 1, '', '')\nmake: *** [Makefile:36: test] Error 1\n",
+      "passed": true
+    },
+    {
+      "week": "week-03",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=gcc",
+        "MODE=debug",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 6.79,
+      "tail": "python3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; complete source inventories; local links resolve\npython3 tests/check.py --build build/instructor/gcc/debug --source instructor/src --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0 '\nsymbol check (toolchain observation): 16 exported names, all declared in geomath.h\nmetric=deg_rad_roundtrip_rel max=2.207e-16 tolerance=1.0e-15 ratio=4.53\nmetric=sin_cos_deg_known_abs max=1.110e-16 tolerance=1.0e-15 ratio=9.01\nmetric=sin_cos_deg_lattice_abs max=1.476e-16 tolerance=1.0e-15 ratio=6.77\nmetric=normalize_length_error max=0.000e+00 tolerance=1.0e-15 ratio=inf\nmetric=roundtrip_lat_deg max=7.105e-15 tolerance=1.0e-12 ratio=141\nmetric=roundtrip_lon_deg max=2.842e-14 tolerance=1.0e-12 ratio=35.2\nmetric=symmetry_haversine_km max=0.000e+00 tolerance=1.0e-09 ratio=inf\nmetric=symmetry_vector_km max=0.000e+00 tolerance=1.0e-09 ratio=inf\nmetric=triangle_haversine_km max=1.455e-11 tolerance=1.0e-08 ratio=687\nmetric=triangle_vector_km max=4.320e-12 tolerance=1.0e-08 ratio=2.31e+03\nmetric=haversine_vs_vector_km max=1.091e-11 tolerance=1.0e-06 ratio=9.16e+04\nmetric=antimeridian_haversine_km max=5.457e-12 tolerance=1.0e-08 ratio=1.83e+03\nmetric=antimeridian_vector_km max=0.000e+00 tolerance=1.0e-08 ratio=inf\nmetric=segment_crossing_abs max=8.880e-17 tolerance=4.0e-16 ratio=4.5\nrecorded case=identical abs_err_km haversine=0.000e+00 vector=0.000e+00 cosines=9.494e-05 rel_err haversine=0.000e+00 vector=0.000e+00 cosines=9.494e-05\nrecorded case=one_metre_equator abs_err_km haversine=2.168e-19 vector=2.168e-19 cosines=7.601e-07 rel_err haversine=1.950e-16 vector=1.950e-16 cosines=6.836e-04\nrecorded case=one_km_meridian abs_err_km haversine=0.000e+00 vector=0.000e+00 cosines=1.024e-09 rel_err haversine=0.000e+00 vector=0.000e+00 cosines=1.024e-09\nrecorded case=quarter_meridian abs_err_km haversine=1.819e-12 vector=0.000e+00 cosines=0.000e+00 rel_err haversine=1.818e-16 vector=0.000e+00 cosines=0.000e+00\nrecorded case=half_circle abs_err_km haversine=0.000e+00 vector=0.000e+00 cosines=0.000e+00 rel_err haversine=0.000e+00 vector=0.000e+00 cosines=0.000e+00\nrecorded case=antimeridian_pair abs_err_km haversine=3.126e-13 vector=4.832e-13 cosines=1.110e-11 rel_err haversine=2.812e-15 vector=4.345e-15 cosines=9.981e-14\nmetric=e05_haversine_rel_or_abs max=2.812e-15 tolerance=1.0e-12 ratio=356\nmetric=e05_vector_rel_or_abs max=4.345e-15 tolerance=1.0e-12 ratio=230\nrecorded haversine_intermediate_above_one: latitudes_with_a_gt_1=3 of 89 first_L=8 a_minus_1=2.220e-16 nan_from_asin_sqrt=0 nan_from_atan2_form=3\nrecorded exact_antipodes: worst_haversine_abs_km=1.899e-04 at_L=3 relative=9.486e-09 worst_vector_abs_km=0.000e+00 at_L=0\nrecorded faulty_floor_wrap: lon=179.99999999999997 faulty=-180.00000000000003 correct=179.99999999999997 in_range=0\nrecorded faulty_floor_wrap_large: lon=1e22 faulty=0 correct=-80\nrecorded decimal_collinear_orientation: cross=-1.3877787807814457e-17 (zero in exact decimal arithmetic)\nPASS: demos, seven C contract suites, forced-skip gates, symbol subset check; measured tolerances, edge-case suite and antipodal sweep\n",
+      "passed": true,
+      "retryReason": "Initial isolated copy omitted a referenced root TOC file; copied it and reran affected checks."
+    },
+    {
+      "week": "week-03",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=clang",
+        "MODE=optimized",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 7.3,
+      "tail": "python3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; complete source inventories; local links resolve\npython3 tests/check.py --build build/instructor/clang/optimized --source instructor/src --cc clang --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O2 '\nsymbol check (toolchain observation): 16 exported names, all declared in geomath.h\nmetric=deg_rad_roundtrip_rel max=2.207e-16 tolerance=1.0e-15 ratio=4.53\nmetric=sin_cos_deg_known_abs max=1.110e-16 tolerance=1.0e-15 ratio=9.01\nmetric=sin_cos_deg_lattice_abs max=1.476e-16 tolerance=1.0e-15 ratio=6.77\nmetric=normalize_length_error max=0.000e+00 tolerance=1.0e-15 ratio=inf\nmetric=roundtrip_lat_deg max=7.105e-15 tolerance=1.0e-12 ratio=141\nmetric=roundtrip_lon_deg max=2.842e-14 tolerance=1.0e-12 ratio=35.2\nmetric=symmetry_haversine_km max=0.000e+00 tolerance=1.0e-09 ratio=inf\nmetric=symmetry_vector_km max=0.000e+00 tolerance=1.0e-09 ratio=inf\nmetric=triangle_haversine_km max=1.455e-11 tolerance=1.0e-08 ratio=687\nmetric=triangle_vector_km max=4.320e-12 tolerance=1.0e-08 ratio=2.31e+03\nmetric=haversine_vs_vector_km max=1.091e-11 tolerance=1.0e-06 ratio=9.16e+04\nmetric=antimeridian_haversine_km max=5.457e-12 tolerance=1.0e-08 ratio=1.83e+03\nmetric=antimeridian_vector_km max=0.000e+00 tolerance=1.0e-08 ratio=inf\nmetric=segment_crossing_abs max=8.880e-17 tolerance=4.0e-16 ratio=4.5\nrecorded case=identical abs_err_km haversine=0.000e+00 vector=0.000e+00 cosines=9.494e-05 rel_err haversine=0.000e+00 vector=0.000e+00 cosines=9.494e-05\nrecorded case=one_metre_equator abs_err_km haversine=2.168e-19 vector=2.168e-19 cosines=7.601e-07 rel_err haversine=1.950e-16 vector=1.950e-16 cosines=6.836e-04\nrecorded case=one_km_meridian abs_err_km haversine=0.000e+00 vector=0.000e+00 cosines=1.024e-09 rel_err haversine=0.000e+00 vector=0.000e+00 cosines=1.024e-09\nrecorded case=quarter_meridian abs_err_km haversine=1.819e-12 vector=0.000e+00 cosines=0.000e+00 rel_err haversine=1.818e-16 vector=0.000e+00 cosines=0.000e+00\nrecorded case=half_circle abs_err_km haversine=0.000e+00 vector=0.000e+00 cosines=0.000e+00 rel_err haversine=0.000e+00 vector=0.000e+00 cosines=0.000e+00\nrecorded case=antimeridian_pair abs_err_km haversine=3.126e-13 vector=4.832e-13 cosines=1.110e-11 rel_err haversine=2.812e-15 vector=4.345e-15 cosines=9.981e-14\nmetric=e05_haversine_rel_or_abs max=2.812e-15 tolerance=1.0e-12 ratio=356\nmetric=e05_vector_rel_or_abs max=4.345e-15 tolerance=1.0e-12 ratio=230\nrecorded haversine_intermediate_above_one: latitudes_with_a_gt_1=3 of 89 first_L=8 a_minus_1=2.220e-16 nan_from_asin_sqrt=0 nan_from_atan2_form=3\nrecorded exact_antipodes: worst_haversine_abs_km=1.899e-04 at_L=3 relative=9.486e-09 worst_vector_abs_km=0.000e+00 at_L=0\nrecorded faulty_floor_wrap: lon=179.99999999999997 faulty=-180.00000000000003 correct=179.99999999999997 in_range=0\nrecorded faulty_floor_wrap_large: lon=1e22 faulty=0 correct=-80\nrecorded decimal_collinear_orientation: cross=-1.3877787807814457e-17 (zero in exact decimal arithmetic)\nPASS: demos, seven C contract suites, forced-skip gates, symbol subset check; measured tolerances, edge-case suite and antipodal sweep\n",
+      "passed": true,
+      "retryReason": "Initial isolated copy omitted a referenced root TOC file; copied it and reran affected checks."
+    },
+    {
+      "week": "week-03",
+      "command": [
+        "make",
+        "starters"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 8.94,
+      "tail": "make PACKAGE=learner CC=gcc MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-03'\nmkdir -p \"build/learner/gcc/debug\"\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex01.c -o build/learner/gcc/debug/ex01 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex02.c -o build/learner/gcc/debug/ex02 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex03.c -o build/learner/gcc/debug/ex03 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex04.c -o build/learner/gcc/debug/ex04 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex05.c -o build/learner/gcc/debug/ex05 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex06.c -o build/learner/gcc/debug/ex06 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0 -Isupport -Ilearner/src -c learner/src/geomath_demo.c -o build/learner/gcc/debug/geomath_demo.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0 -Isupport -Ilearner/src -c learner/src/geomath.c -o build/learner/gcc/debug/geomath.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  build/learner/gcc/debug/geomath_demo.o build/learner/gcc/debug/geomath.o -o build/learner/gcc/debug/geomath_demo -lm\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-03'\nmake PACKAGE=learner CC=clang MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-03'\nmkdir -p \"build/learner/clang/debug\"\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex01.c -o build/learner/clang/debug/ex01 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex02.c -o build/learner/clang/debug/ex02 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex03.c -o build/learner/clang/debug/ex03 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex04.c -o build/learner/clang/debug/ex04 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex05.c -o build/learner/clang/debug/ex05 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex06.c -o build/learner/clang/debug/ex06 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0 -Isupport -Ilearner/src -c learner/src/geomath_demo.c -o build/learner/clang/debug/geomath_demo.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0 -Isupport -Ilearner/src -c learner/src/geomath.c -o build/learner/clang/debug/geomath.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  build/learner/clang/debug/geomath_demo.o build/learner/clang/debug/geomath.o -o build/learner/clang/debug/geomath_demo -lm\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-03'\n",
+      "passed": true
+    },
+    {
+      "week": "week-03",
+      "command": [
+        "make",
+        "test"
+      ],
+      "exitCode": 2,
+      "expectedExit": 1,
+      "seconds": 0.16,
+      "tail": "python3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; complete source inventories; local links resolve\npython3 tests/check.py --build build/learner/gcc/debug --source learner/src --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0 '\nTraceback (most recent call last):\n  File \"/tmp/enduring-docs-zq3d1mvn/week-03/tests/check.py\", line 40, in <module>\n    lines = ex(1).splitlines()\n  File \"/tmp/enduring-docs-zq3d1mvn/week-03/tests/check.py\", line 28, in ex\n    return run([a.build / f'ex{n:02}', *args])\n  File \"/tmp/enduring-docs-zq3d1mvn/week-03/tests/check.py\", line 24, in run\n    assert (r.returncode == 0) == success, (command, r.returncode, r.stdout, r.stderr)\nAssertionError: ([PosixPath('build/learner/gcc/debug/ex01')], 1, 'ieee754_binary64=checked\\n', '')\nmake: *** [Makefile:40: test] Error 1\n",
+      "passed": true,
+      "retryReason": "Initial isolated copy omitted a referenced root TOC file; copied it and reran affected checks."
+    },
+    {
+      "week": "week-04",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=gcc",
+        "MODE=debug",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 15.23,
+      "tail": "python3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; complete source inventories; local links resolve\npython3 tests/check.py --build build/instructor/gcc/debug --source instructor/src --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0 '\noracle cases: 8510 (valid 1248, strtod-equality checked 1248)\ngrid: explicit max relative error 1.480297e-16 (bound 1.665335e-16), accumulated 1.332883e-11\nsizeof(GeoPoint)=24 sizeof(ProcessResult)=40\nrejection bound=3000000000 seed=99 raw_draws=100000000 threshold=1294967296 rejected_fraction=0.301508 exact_fraction=0.301508 longest_run=16\nrejection bound=3000000000 seed=1 raw_draws=100000000 threshold=1294967296 rejected_fraction=0.301533 exact_fraction=0.301508 longest_run=16\nrejection bound=2147483649 seed=7 raw_draws=100000000 threshold=2147483647 rejected_fraction=0.500075 exact_fraction=0.500000 longest_run=23\nprocessor per_point_abs_km=3.325e-09 per_point_rel=1.091e-12 sum_rel=3.099e-15 min_rel=8.056e-13 max_rel=1.345e-14 sum_rel_over_(n-1)u=2.791e-03 smallest_reference_sum_km=9.9554e+07\ngrid vs_exact explicit_max_rel=1.480297e-16 (in units of u: 1.3333) accumulated_max_rel=1.332883e-11 (in units of u: 120055.3984) derived_bound_explicit_u=1.5\nbias bound=3e9 P(result < 1294967296): faulty r%bound measured=0.6029 exact=0.6030 ; rejection sampling measured=0.4315 exact=0.4317\nstrtod(\"nan\") = nan, consumed 3 of 3 characters\nstrtod(\"inf\") = inf, consumed 3 of 3 characters\nstrtod(\"0x1p3\") = 8, consumed 5 of 5 characters\nstrtod(\" 1.5\") = 1.5, consumed 4 of 4 characters\nstrtod(\"1e2\") = 100, consumed 3 of 3 characters\nstrtod(\"+1.5\") = 1.5, consumed 4 of 4 characters\nstrtod(\"1.5\") = 1.5, consumed 3 of 3 characters\nstrtod(\".5\") = 0.5, consumed 2 of 2 characters\nstrtod(\"5.\") = 5, consumed 2 of 2 characters\nstrtod(\"-0.000000\") = -0, consumed 9 of 9 characters\npolar_fraction |lat|>60deg: measured=0.3338 uniform_in_degrees=0.3333 uniform_on_sphere=0.1340 (1-sin 60)\nsoa_bitwise_equal=1 layout_identical=1 sum_km=100422843.45161569\nstorage_bytes_per_point aos=24 soa_lat_lon=16 soa_with_ids=24 (sizeof, this platform; gated observation)\nallocations aos=1 soa=2 (lat, lon) or 3 with an id array\nquery_reads fields=lat,lon (ids are needed only to name results)\nE07 error table (measured here; not asserted beyond the derived bounds):\n  cancel  exact=2 naive_ulps=2.25e+15 pairwise_ulps=2.25e+15 neumaier_ulps=0\n  tenths  exact=100000 naive_ulps=9.16e+04 pairwise_ulps=0 neumaier_ulps=0\n  ramp    exact=500000500000 naive_ulps=0 pairwise_ulps=0 neumaier_ulps=0\n  hashed  exact=71428826199.142853 naive_ulps=1 pairwise_ulps=1 neumaier_ulps=0\nPASS: demos, 10 C contract builds, oracle corpus (1248 valid lines), forced-skip gates; measured tolerances and stretch programs\n",
+      "passed": true,
+      "retryReason": "Initial isolated copy omitted a referenced root TOC file; copied it and reran affected checks."
+    },
+    {
+      "week": "week-04",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=clang",
+        "MODE=optimized",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 10.57,
+      "tail": "python3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; complete source inventories; local links resolve\npython3 tests/check.py --build build/instructor/clang/optimized --source instructor/src --cc clang --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O2 '\noracle cases: 8510 (valid 1248, strtod-equality checked 1248)\ngrid: explicit max relative error 1.480297e-16 (bound 1.665335e-16), accumulated 1.332883e-11\nsizeof(GeoPoint)=24 sizeof(ProcessResult)=40\nrejection bound=3000000000 seed=99 raw_draws=100000000 threshold=1294967296 rejected_fraction=0.301508 exact_fraction=0.301508 longest_run=16\nrejection bound=3000000000 seed=1 raw_draws=100000000 threshold=1294967296 rejected_fraction=0.301533 exact_fraction=0.301508 longest_run=16\nrejection bound=2147483649 seed=7 raw_draws=100000000 threshold=2147483647 rejected_fraction=0.500075 exact_fraction=0.500000 longest_run=23\nprocessor per_point_abs_km=3.325e-09 per_point_rel=1.091e-12 sum_rel=3.099e-15 min_rel=8.056e-13 max_rel=1.345e-14 sum_rel_over_(n-1)u=2.791e-03 smallest_reference_sum_km=9.9554e+07\ngrid vs_exact explicit_max_rel=1.480297e-16 (in units of u: 1.3333) accumulated_max_rel=1.332883e-11 (in units of u: 120055.3984) derived_bound_explicit_u=1.5\nbias bound=3e9 P(result < 1294967296): faulty r%bound measured=0.6029 exact=0.6030 ; rejection sampling measured=0.4315 exact=0.4317\nstrtod(\"nan\") = nan, consumed 3 of 3 characters\nstrtod(\"inf\") = inf, consumed 3 of 3 characters\nstrtod(\"0x1p3\") = 8, consumed 5 of 5 characters\nstrtod(\" 1.5\") = 1.5, consumed 4 of 4 characters\nstrtod(\"1e2\") = 100, consumed 3 of 3 characters\nstrtod(\"+1.5\") = 1.5, consumed 4 of 4 characters\nstrtod(\"1.5\") = 1.5, consumed 3 of 3 characters\nstrtod(\".5\") = 0.5, consumed 2 of 2 characters\nstrtod(\"5.\") = 5, consumed 2 of 2 characters\nstrtod(\"-0.000000\") = -0, consumed 9 of 9 characters\npolar_fraction |lat|>60deg: measured=0.3338 uniform_in_degrees=0.3333 uniform_on_sphere=0.1340 (1-sin 60)\nsoa_bitwise_equal=1 layout_identical=1 sum_km=100422843.45161569\nstorage_bytes_per_point aos=24 soa_lat_lon=16 soa_with_ids=24 (sizeof, this platform; gated observation)\nallocations aos=1 soa=2 (lat, lon) or 3 with an id array\nquery_reads fields=lat,lon (ids are needed only to name results)\nE07 error table (measured here; not asserted beyond the derived bounds):\n  cancel  exact=2 naive_ulps=2.25e+15 pairwise_ulps=2.25e+15 neumaier_ulps=0\n  tenths  exact=100000 naive_ulps=9.16e+04 pairwise_ulps=0 neumaier_ulps=0\n  ramp    exact=500000500000 naive_ulps=0 pairwise_ulps=0 neumaier_ulps=0\n  hashed  exact=71428826199.142853 naive_ulps=1 pairwise_ulps=1 neumaier_ulps=0\nPASS: demos, 10 C contract builds, oracle corpus (1248 valid lines), forced-skip gates; measured tolerances and stretch programs\n",
+      "passed": true,
+      "retryReason": "Initial isolated copy omitted a referenced root TOC file; copied it and reran affected checks."
+    },
+    {
+      "week": "week-04",
+      "command": [
+        "make",
+        "starters"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 15.14,
+      "tail": "make PACKAGE=learner CC=gcc MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-04'\nmkdir -p \"build/learner/gcc/debug\"\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex01.c -o build/learner/gcc/debug/ex01 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex02.c -o build/learner/gcc/debug/ex02 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex03.c -o build/learner/gcc/debug/ex03 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex04.c -o build/learner/gcc/debug/ex04 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex05.c -o build/learner/gcc/debug/ex05 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex06.c -o build/learner/gcc/debug/ex06 -lm\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex07.c -o build/learner/gcc/debug/ex07 -lm\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-04'\nmake PACKAGE=learner CC=clang MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-04'\nmkdir -p \"build/learner/clang/debug\"\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex01.c -o build/learner/clang/debug/ex01 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex02.c -o build/learner/clang/debug/ex02 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex03.c -o build/learner/clang/debug/ex03 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex04.c -o build/learner/clang/debug/ex04 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex05.c -o build/learner/clang/debug/ex05 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex06.c -o build/learner/clang/debug/ex06 -lm\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0  -Isupport learner/src/ex07.c -o build/learner/clang/debug/ex07 -lm\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-04'\npython3 tests/starters.py --cc gcc\nPASS: all seven learner scaffolds compile and fail their contract suites (as they must until implemented)\npython3 tests/starters.py --cc clang\nPASS: all seven learner scaffolds compile and fail their contract suites (as they must until implemented)\n",
+      "passed": true
+    },
+    {
+      "week": "week-04",
+      "command": [
+        "make",
+        "test"
+      ],
+      "exitCode": 2,
+      "expectedExit": 1,
+      "seconds": 0.44,
+      "tail": "python3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; complete source inventories; local links resolve\npython3 tests/check.py --build build/learner/gcc/debug --source learner/src --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -O0 '\nTraceback (most recent call last):\n  File \"/tmp/enduring-docs-zq3d1mvn/week-04/tests/check.py\", line 58, in <module>\n    lines = ex(1).splitlines()\n  File \"/tmp/enduring-docs-zq3d1mvn/week-04/tests/check.py\", line 46, in ex\n    return run([build / f'ex{n:02}', *args], success=success)\n  File \"/tmp/enduring-docs-zq3d1mvn/week-04/tests/check.py\", line 41, in run\n    assert (r.returncode == 0) == success, (command, r.returncode, r.stdout[-2000:], r.stderr[-2000:])\nAssertionError: ([PosixPath('/tmp/enduring-docs-zq3d1mvn/week-04/build/learner/gcc/debug/ex01')], 1, 'seed=0 first=00000000,00000000,00000000\\nbound7=', '')\nmake: *** [Makefile:35: test] Error 1\n",
+      "passed": true,
+      "retryReason": "Initial isolated copy omitted a referenced root TOC file; copied it and reran affected checks."
+    },
+    {
+      "week": "week-05",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "expected"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 0.04,
+      "tail": "python3 tools/expected.py --package instructor --write\nwrote instructor/fixtures/expected/pole.txt (pole)\nwrote instructor/fixtures/expected/antimeridian.txt (antimeridian)\nwrote instructor/fixtures/expected/exact_tie.txt (exact-tie)\nwrote instructor/fixtures/expected/printed_tie.txt (printed-tie)\nwrote instructor/fixtures/expected/empty_result.txt (empty)\nwrote instructor/fixtures/expected/malformed.txt (malformed)\nwrote instructor/fixtures/expected/radius_zero.txt (boundary)\n7 fixtures\n",
+      "passed": true
+    },
+    {
+      "week": "week-05",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=gcc",
+        "MODE=debug",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 6.4,
+      "tail": "mkdir -p \"build/instructor/gcc/debug/obj\"\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/gcc/debug -c instructor/geolab/src/csv.c -o build/instructor/gcc/debug/obj/csv.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/gcc/debug -c instructor/geolab/src/geo.c -o build/instructor/gcc/debug/obj/geo.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/gcc/debug -c instructor/geolab/src/query.c -o build/instructor/gcc/debug/obj/query.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/gcc/debug -c instructor/geolab/src/cli.c -o build/instructor/gcc/debug/obj/cli.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/gcc/debug -c instructor/geolab/src/bench.c -o build/instructor/gcc/debug/obj/bench.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/gcc/debug -c instructor/geolab/src/main.c -o build/instructor/gcc/debug/obj/main.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/gcc/debug -c support/envinfo.c -o build/instructor/gcc/debug/obj/envinfo.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0  build/instructor/gcc/debug/obj/csv.o build/instructor/gcc/debug/obj/geo.o build/instructor/gcc/debug/obj/query.o build/instructor/gcc/debug/obj/cli.o build/instructor/gcc/debug/obj/bench.o build/instructor/gcc/debug/obj/main.o build/instructor/gcc/debug/obj/envinfo.o -o build/instructor/gcc/debug/geolab -lm\npython3 tests/inventory.py\nPASS: 26 prompts, 26 written answers, 26 checklist entries; identical supplied headers; complete source inventories; local links resolve\npython3 tests/check.py --build build/instructor/gcc/debug --package instructor --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 ' --include instructor/geolab/include\ncli contract passed (8750 oracle cases)\nquery contract passed\nbench contract passed\nPASS: oracle self-test, 3 C contract suites + 2 forced-skip builds, generate/query/bench command contract, 8 oracle query comparisons, 7 fixtures, symbol subset\n",
+      "passed": true
+    },
+    {
+      "week": "week-05",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=clang",
+        "MODE=optimized",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 8.35,
+      "tail": "mkdir -p \"build/instructor/clang/optimized/obj\"\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/clang/optimized -c instructor/geolab/src/csv.c -o build/instructor/clang/optimized/obj/csv.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/clang/optimized -c instructor/geolab/src/geo.c -o build/instructor/clang/optimized/obj/geo.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/clang/optimized -c instructor/geolab/src/query.c -o build/instructor/clang/optimized/obj/query.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/clang/optimized -c instructor/geolab/src/cli.c -o build/instructor/clang/optimized/obj/cli.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/clang/optimized -c instructor/geolab/src/bench.c -o build/instructor/clang/optimized/obj/bench.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/clang/optimized -c instructor/geolab/src/main.c -o build/instructor/clang/optimized/obj/main.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 -Iinstructor/geolab/include -Isupport -Ibuild/instructor/clang/optimized -c support/envinfo.c -o build/instructor/clang/optimized/obj/envinfo.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2  build/instructor/clang/optimized/obj/csv.o build/instructor/clang/optimized/obj/geo.o build/instructor/clang/optimized/obj/query.o build/instructor/clang/optimized/obj/cli.o build/instructor/clang/optimized/obj/bench.o build/instructor/clang/optimized/obj/main.o build/instructor/clang/optimized/obj/envinfo.o -o build/instructor/clang/optimized/geolab -lm\npython3 tests/inventory.py\nPASS: 26 prompts, 26 written answers, 26 checklist entries; identical supplied headers; complete source inventories; local links resolve\npython3 tests/check.py --build build/instructor/clang/optimized --package instructor --cc clang --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 ' --include instructor/geolab/include\ncli contract passed (8750 oracle cases)\nquery contract passed\nbench contract passed\nPASS: oracle self-test, 3 C contract suites + 2 forced-skip builds, generate/query/bench command contract, 8 oracle query comparisons, 7 fixtures, symbol subset\n",
+      "passed": true
+    },
+    {
+      "week": "week-05",
+      "command": [
+        "make",
+        "starters"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 9.92,
+      "tail": "ld/learner/gcc/debug/obj\"\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/gcc/debug -c learner/geolab/src/csv.c -o build/learner/gcc/debug/obj/csv.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/gcc/debug -c learner/geolab/src/geo.c -o build/learner/gcc/debug/obj/geo.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/gcc/debug -c learner/geolab/src/query.c -o build/learner/gcc/debug/obj/query.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/gcc/debug -c learner/geolab/src/cli.c -o build/learner/gcc/debug/obj/cli.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/gcc/debug -c learner/geolab/src/bench.c -o build/learner/gcc/debug/obj/bench.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/gcc/debug -c learner/geolab/src/main.c -o build/learner/gcc/debug/obj/main.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/gcc/debug -c support/envinfo.c -o build/learner/gcc/debug/obj/envinfo.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0  build/learner/gcc/debug/obj/csv.o build/learner/gcc/debug/obj/geo.o build/learner/gcc/debug/obj/query.o build/learner/gcc/debug/obj/cli.o build/learner/gcc/debug/obj/bench.o build/learner/gcc/debug/obj/main.o build/learner/gcc/debug/obj/envinfo.o -o build/learner/gcc/debug/geolab -lm\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-05'\nmake PACKAGE=learner CC=clang MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-05'\nmkdir -p \"build/learner/clang/debug/obj\"\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/clang/debug -c learner/geolab/src/csv.c -o build/learner/clang/debug/obj/csv.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/clang/debug -c learner/geolab/src/geo.c -o build/learner/clang/debug/obj/geo.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/clang/debug -c learner/geolab/src/query.c -o build/learner/clang/debug/obj/query.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/clang/debug -c learner/geolab/src/cli.c -o build/learner/clang/debug/obj/cli.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/clang/debug -c learner/geolab/src/bench.c -o build/learner/clang/debug/obj/bench.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/clang/debug -c learner/geolab/src/main.c -o build/learner/clang/debug/obj/main.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0 -Ilearner/geolab/include -Isupport -Ibuild/learner/clang/debug -c support/envinfo.c -o build/learner/clang/debug/obj/envinfo.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O0  build/learner/clang/debug/obj/csv.o build/learner/clang/debug/obj/geo.o build/learner/clang/debug/obj/query.o build/learner/clang/debug/obj/cli.o build/learner/clang/debug/obj/bench.o build/learner/clang/debug/obj/main.o build/learner/clang/debug/obj/envinfo.o -o build/learner/clang/debug/geolab -lm\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-05'\npython3 tests/starters.py --cc gcc\nPASS: the gcc learner scaffold compiles and fails 65 behavioral checks (as it must until implemented)\npython3 tests/starters.py --cc clang\nPASS: the clang learner scaffold compiles and fails 65 behavioral checks (as it must until implemented)\n",
+      "passed": true
+    },
+    {
+      "week": "week-05",
+      "command": [
+        "make",
+        "test"
+      ],
+      "exitCode": 2,
+      "expectedExit": 1,
+      "seconds": 2.99,
+      "tail": "100k: 1 geolab: generate is not implemented yet\n\nFAIL: generate d100k bytes differ from the week-4 oracle\nFAIL: generate --count 0\nFAIL: generate ['--count', '5', '--seed', '1']: expected usage error 2, got 1\nFAIL: generate ['--count', '5', '--seed', '1', '--out', PosixPath('/tmp/enduring-docs-zq3d1mvn/week-05/build/learner/gcc/debug/tmp/never.csv'), '--out', PosixPath('/tmp/enduring-docs-zq3d1mvn/week-05/build/learner/gcc/debug/tmp/never.csv')]: expected usage error 2, got 1\nFAIL: generate ['--count', '1000001', '--seed', '1', '--out', PosixPath('/tmp/enduring-docs-zq3d1mvn/week-05/build/learner/gcc/debug/tmp/never.csv')]: expected usage error 2, got 1\nFAIL: generate ['--count', '-1', '--seed', '1', '--out', PosixPath('/tmp/enduring-docs-zq3d1mvn/week-05/build/learner/gcc/debug/tmp/never.csv')]: expected usage error 2, got 1\nFAIL: generate ['--count', '5', '--seed', '18446744073709551616', '--out', PosixPath('/tmp/enduring-docs-zq3d1mvn/week-05/build/learner/gcc/debug/tmp/never.csv')]: expected usage error 2, got 1\nFAIL: generate ['--count', '5', '--sead', '1', '--out', PosixPath('/tmp/enduring-docs-zq3d1mvn/week-05/build/learner/gcc/debug/tmp/never.csv')]: expected usage error 2, got 1\nFAIL: generate ['--count', '5', '--seed', '1', '--out', PosixPath('/tmp/enduring-docs-zq3d1mvn/week-05/build/learner/gcc/debug/tmp/never.csv'), 'extra']: expected usage error 2, got 1\nFAIL: generate ['--count', '5', '--seed', '1', '--out']: expected usage error 2, got 1\nFAIL: query d1k 0 0 2500: exit 1 geolab: query is not implemented yet\n\nFAIL: query d1k 90 0 3000: exit 1 geolab: query is not implemented yet\n\nFAIL: query d1k -90 0 20016: exit 1 geolab: query is not implemented yet\n\nFAIL: query d1k 10 179.5 5000: exit 1 geolab: query is not implemented yet\n\nFAIL: query d1k 0 -180 0: exit 1 geolab: query is not implemented yet\n\nFAIL: query d100k -33.8688 151.2093 800: exit 1 geolab: query is not implemented yet\n\nFAIL: query d100k 45 -122 250.5: exit 1 geolab: query is not implemented yet\n\nFAIL: query d100k 0 0 20016: exit 1 geolab: query is not implemented yet\n\nFAIL: query options in any order\nFAIL: the checkpoint-1 values of the future options are accepted\nFAIL: query ['--threads', '4']: expected 3, got 1\nFAIL: query ['--backend', 'simd']: expected 3, got 1\nFAIL: query ['--index', 'grid']: expected 3, got 1\nFAIL: query ['--index', 'kd']: expected 3, got 1\nFAIL: query ['--threads', '0']: expected 2, got 1\nFAIL: query ['--threads', 'x']: expected 2, got 1\nFAIL: query ['--backend', 'gpu']: expected 2, got 1\nFAIL: query ['--index', 'tree']: expected 2, got 1\nFAIL: query ['--lat', '1']: expected 2, got 1\nFAIL: query ['--color', 'red']: expected 2, got 1\nFAIL: query ['stray']: expected 2, got 1\nFAIL: query ['--lat', '90.5']: expected usage error 2, got 1\nFAIL: query ['--lat', '1e1']: expected usage error 2, got 1\nFAIL: query ['--lon', '180.0000001']: expected usage error 2, got 1\nFAIL: query ['--radius-km', '-1']: expected usage error 2, got 1\nFAIL: query ['--radius-km', '100000.000001']: expected usage error 2, got 1\nFAIL: query ['--lat', '+1']: expected usage error 2, got 1\nFAIL: query ['--lat', '']: expected usage error 2, got 1\nFAIL: query with -0.0 equals query with 0\nFAIL: query without --radius-km\nFAIL: query bad_lat.csv: 1 'geolab: query is not implemented yet\\n'\nFAIL: query empty.csv: 1 'geolab: query is not implemented yet\\n'\nFAIL: query nul_byte.csv: 1 'geolab: query is not implemented yet\\n'\nFAIL: query crlf.csv: 1 'geolab: query is not implemented yet\\n'\nFAIL: query of a missing file\nFAIL: query of a header-only file prints the header only\nFAIL: query to /dev/full: 1 'geolab: query is not implemented yet\\n'\nFAIL: bench parse: exit 1 geolab: invalid benchmark input\n\nFAIL: bench distance: exit 2 geolab: bad --lat\nusage: geolab bench --input FILE --variant parse|distance|query --repeat N [--warmup W] [--lat X --lon Y --radius-km R]\n\nFAIL: bench query: exit 2 geolab: bad --lat\nusage: geolab bench --input FILE --variant parse|distance|query --repeat N [--warmup W] [--lat X --lon Y --radius-km R]\n\nFAIL: bench header-only: 1 'geolab: PARSE_OK at line 0 in /tmp/enduring-docs-zq3d1mvn/week-05/build/learner/gcc/debug/oracle/header_only.csv\\n'\nFAIL: bench parse of a header-only file\nFAIL: bench parse of a malformed file\nFAIL: bench to /dev/full reports an output error\nFAIL: fixtures/README.md lacks purposes {'malformed', 'antimeridian', 'empty', 'pole', 'printed-tie', 'exact-tie'}\n65 check(s) failed\nmake: *** [Makefile:61: test] Error 1\n",
+      "passed": true
+    },
+    {
+      "week": "week-06",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=gcc",
+        "MODE=debug",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 6.13,
+      "tail": "mkdir -p \"build/instructor/gcc/debug\"\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0  -Isupport instructor/src/ex01.c -o build/instructor/gcc/debug/ex01\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0  -Isupport instructor/src/ex02.c -o build/instructor/gcc/debug/ex02\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0  -Isupport instructor/src/ex03.c -o build/instructor/gcc/debug/ex03\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0  -Isupport instructor/src/ex04.c -o build/instructor/gcc/debug/ex04\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0  -Isupport instructor/src/ex05.c -o build/instructor/gcc/debug/ex05\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0 -Isupport -c instructor/src/decode.c -o build/instructor/gcc/debug/decode.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0 -Isupport -c instructor/src/decode8086.c -o build/instructor/gcc/debug/decode8086.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0  build/instructor/gcc/debug/decode.o build/instructor/gcc/debug/decode8086.o -o build/instructor/gcc/debug/decode8086\npython3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; identical supplied header; complete source, case and listing inventories; local links resolve\npython3 tests/check.py --build build/instructor/gcc/debug --source instructor/src --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O0 '\nE01: contract passed\nE02: contract passed\nE03: contract passed\nE04: 224962 encodings and prefixes compared\nE05: 25264 texts compared\nE06: 10 listings\nobjdump cross-check: 28098 encodings agree after normalizing immediates (toolchain observation)\nS01: 5120 branches agree with the oracle and objdump; S02: table_decoder_agrees=1 compared=2502912\nE07 cases: 12 cases, 0 problem(s)\nPASS: oracle self-test, 5 demo drivers, 6 C contract suites (all encodings and every two-byte prefix), decode8086 command contract, objdump cross-check, E07 cases, symbols\n",
+      "passed": true
+    },
+    {
+      "week": "week-06",
+      "command": [
+        "make",
+        "PACKAGE=instructor",
+        "CC=clang",
+        "MODE=optimized",
+        "test"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 10.61,
+      "tail": "mkdir -p \"build/instructor/clang/optimized\"\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2  -Isupport instructor/src/ex01.c -o build/instructor/clang/optimized/ex01\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2  -Isupport instructor/src/ex02.c -o build/instructor/clang/optimized/ex02\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2  -Isupport instructor/src/ex03.c -o build/instructor/clang/optimized/ex03\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2  -Isupport instructor/src/ex04.c -o build/instructor/clang/optimized/ex04\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2  -Isupport instructor/src/ex05.c -o build/instructor/clang/optimized/ex05\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2 -Isupport -c instructor/src/decode.c -o build/instructor/clang/optimized/decode.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2 -Isupport -c instructor/src/decode8086.c -o build/instructor/clang/optimized/decode8086.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2  build/instructor/clang/optimized/decode.o build/instructor/clang/optimized/decode8086.o -o build/instructor/clang/optimized/decode8086\npython3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; identical supplied header; complete source, case and listing inventories; local links resolve\npython3 tests/check.py --build build/instructor/clang/optimized --source instructor/src --cc clang --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -O2 '\nE01: contract passed\nE02: contract passed\nE03: contract passed\nE04: 224962 encodings and prefixes compared\nE05: 25264 texts compared\nE06: 10 listings\nobjdump cross-check: 28098 encodings agree after normalizing immediates (toolchain observation)\nS01: 5120 branches agree with the oracle and objdump; S02: table_decoder_agrees=1 compared=2502912\nE07 cases: 12 cases, 0 problem(s)\nPASS: oracle self-test, 5 demo drivers, 6 C contract suites (all encodings and every two-byte prefix), decode8086 command contract, objdump cross-check, E07 cases, symbols\n",
+      "passed": true
+    },
+    {
+      "week": "week-06",
+      "command": [
+        "make",
+        "starters"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 23.61,
+      "tail": "make PACKAGE=learner CC=gcc MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-06'\nmkdir -p \"build/learner/gcc/debug\"\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex01.c -o build/learner/gcc/debug/ex01\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex02.c -o build/learner/gcc/debug/ex02\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex03.c -o build/learner/gcc/debug/ex03\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex04.c -o build/learner/gcc/debug/ex04\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex05.c -o build/learner/gcc/debug/ex05\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -Isupport -c learner/src/decode.c -o build/learner/gcc/debug/decode.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -Isupport -c learner/src/decode8086.c -o build/learner/gcc/debug/decode8086.o\ngcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  build/learner/gcc/debug/decode.o build/learner/gcc/debug/decode8086.o -o build/learner/gcc/debug/decode8086\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-06'\nmake PACKAGE=learner CC=clang MODE=debug all\nmake[1]: Entering directory '/tmp/enduring-docs-zq3d1mvn/week-06'\nmkdir -p \"build/learner/clang/debug\"\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex01.c -o build/learner/clang/debug/ex01\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex02.c -o build/learner/clang/debug/ex02\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex03.c -o build/learner/clang/debug/ex03\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex04.c -o build/learner/clang/debug/ex04\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  -Isupport learner/src/ex05.c -o build/learner/clang/debug/ex05\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -Isupport -c learner/src/decode.c -o build/learner/clang/debug/decode.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0 -Isupport -c learner/src/decode8086.c -o build/learner/clang/debug/decode8086.o\nclang -std=c11 -Wall -Wextra -Wpedantic -Werror -O0  build/learner/clang/debug/decode.o build/learner/clang/debug/decode8086.o -o build/learner/clang/debug/decode8086\nmake[1]: Leaving directory '/tmp/enduring-docs-zq3d1mvn/week-06'\npython3 tests/starters.py --cc gcc\nPASS: the gcc learner scaffold compiles and fails all six contract suites and 27 checks in total\npython3 tests/starters.py --cc clang\nPASS: the clang learner scaffold compiles and fails all six contract suites and 27 checks in total\n",
+      "passed": true
+    },
+    {
+      "week": "week-06",
+      "command": [
+        "make",
+        "test"
+      ],
+      "exitCode": 2,
+      "expectedExit": 1,
+      "seconds": 3.96,
+      "tail": "python3 tests/inventory.py\nPASS: 27 prompts, 27 written answers, 27 checklist entries; identical supplied header; complete source, case and listing inventories; local links resolve\npython3 tests/check.py --build build/learner/gcc/debug --source learner/src --cc gcc --flags '-std=c11 -Wall -Wextra -Wpedantic -Werror -O0 '\nFAIL: ex01 driver output\nFAIL: ex02 driver output\nFAIL: ex03 driver output\nFAIL: ex04 driver output agrees with the oracle\nFAIL: ex05 driver output\nFAIL: contract E01 failed:\ncontract01: tests/contracts.c:103: main: Assertion `m.mod == mod && m.reg == reg && m.rm == rm' failed.\n\nFAIL: contract E02 failed:\ncontract02: tests/contracts.c:115: main: Assertion `reg_name(w, r) != NULL && strcmp(reg_name(w, r), want[w][r]) == 0' failed.\n\nFAIL: contract E03 failed:\ncontract03: tests/contracts.c:120: main: Assertion `read_imm(s, 5, 0, 2, &v) == 1 && v == 0x1234' failed.\n\nFAIL: contract E04 failed:\nbytes 88c0: got DEC_INVALID_ARGUMENT, expected DEC_OK\n\nFAIL: contract E05 failed:\ncontract05: tests/contracts.c:195: main: Assertion `format_instruction(&ins, out, sizeof out) == 1' failed.\n\nFAIL: contract E06 failed:\ncontract06: tests/contracts.c:246: main: Assertion `read_input(path, data, DEC_MAX_INPUT, &n) == READ_OK' failed.\n\nFAIL: decode8086 registers: output differs\nFAIL: decode8086 immediates: output differs\nFAIL: decode8086 arithmetic: output differs\nFAIL: decode8086 program: output differs\nFAIL: decode8086 truncated_end: 1 'decode8086: input error\\n'\nFAIL: decode8086 unsupported_middle: 1 'decode8086: input error\\n'\nFAIL: decode8086 memory_mode: 1 'decode8086: input error\\n'\nFAIL: decode8086 group_or: 1 'decode8086: input error\\n'\nFAIL: decode8086 jump: 1 'decode8086: input error\\n'\nFAIL: decode8086 resync: output differs\nFAIL: decode8086 of an empty file prints bits 16 alone\nFAIL: decode8086 of exactly 65536 bytes\nFAIL: decode8086 of 65537 bytes\nFAIL: decode8086 to /dev/full reports an output error\nobjdump cross-check: 28098 encodings agree after normalizing immediates (toolchain observation)\nFAIL: E07 cases: FAIL: /tmp/enduring-docs-zq3d1mvn/week-06/learner/cases.txt: 0 cases; at least 8 are required\nE07 cases: 0 cases, 1 problem(s)\n\nE07 cases: 0 cases, 1 problem(s)\n26 check(s) failed\nmake: *** [Makefile:43: test] Error 1\n",
+      "passed": true
+    },
+    {
+      "week": "week-06",
+      "command": [
+        "python3",
+        "tools/hex2bin.py",
+        "t.bin",
+        "89",
+        "d9",
+        "83",
+        "c6",
+        "fe"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 0.02,
+      "tail": "wrote 5 bytes to t.bin\n",
+      "passed": true
+    },
+    {
+      "week": "week-06",
+      "command": [
+        "build/instructor/gcc/debug/decode8086",
+        "t.bin"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 0.0,
+      "tail": "bits 16\nmov cx, bx\nadd si, -2\n",
+      "passed": true
+    },
+    {
+      "week": "week-06",
+      "command": [
+        "objdump",
+        "-D",
+        "-b",
+        "binary",
+        "-m",
+        "i8086",
+        "-M",
+        "intel",
+        "t.bin"
+      ],
+      "exitCode": 0,
+      "expectedExit": 0,
+      "seconds": 0.0,
+      "tail": "\nt.bin:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\t89 d9                \tmov    cx,bx\n   2:\t83 c6 fe             \tadd    si,0xfffe\n",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}

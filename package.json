@@ -1,0 +1,14 @@
+{
+  "name": "enduring-cs-principles",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "docs:prepare": "node tools/docs/prepare.mjs",
+    "docs:dev": "npm run docs:prepare && vitepress dev docs --host localhost --port 5176 --strictPort",
+    "docs:build": "npm run docs:check && vitepress build docs && node tools/docs/check-built.mjs",
+    "docs:preview": "vitepress preview docs --host localhost --port 4176 --strictPort",
+    "docs:check": "node tools/docs/check.mjs"
+  },
+  "devDependencies": { "vitepress": "1.6.4" }
+}

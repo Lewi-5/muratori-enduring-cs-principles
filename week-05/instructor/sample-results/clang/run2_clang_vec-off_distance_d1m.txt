@@ -1,0 +1,7 @@
+env compiler="Ubuntu Clang 14.0.0" source=__VERSION__
+env build_variant=clang-bench-vec-off source=Makefile
+env flags="clang -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2 -fno-vectorize -fno-slp-vectorize " source=Makefile
+env uname="Linux 6.18.33.2-microsoft-standard-WSL2 x86_64" source=uname(2)
+env cpu="12th Gen Intel(R) Core(TM) i7-12650H" source=/proc/cpuinfo
+env clock=CLOCK_MONOTONIC resolution_ns=1 source=clock_getres
+bench variant=distance points=1000000 warmup=3 repeat=21 resolution_ns=1 min_ns=44865841 median_ns=46110714 max_ns=47877719 median_ns_per_point=46.111 short_samples=0 checksum=1000000:0x1.2a389017d8c49p+33

@@ -1,0 +1,709 @@
+{"Day 1: Intro to C on Windows - Day 1\n": 0.25, "lesson_title": "Day 1: Intro to C on Windows - Day 1\n", "probability": 25.0}
+{"Day 1qa: Intro to C on Windows - Day 1 Q&A\n": 0.3, "lesson_title": "Day 1qa: Intro to C on Windows - Day 1 Q&A\n", "probability": 30.0}
+{"Day 2: Intro to C on Windows - Day 2\n": 0.3, "lesson_title": "Day 2: Intro to C on Windows - Day 2\n", "probability": 30.0}
+{"Day 2qa: Intro to C on Windows - Day 2 Q&A\n": 0.34, "lesson_title": "Day 2qa: Intro to C on Windows - Day 2 Q&A\n", "probability": 34.0}
+{"Day 3: Intro to C on Windows - Day 3\n": 0.31, "lesson_title": "Day 3: Intro to C on Windows - Day 3\n", "probability": 31.0}
+{"Day 3qa: Intro to C on Windows - Day 3 Q&A\n": 0.32, "lesson_title": "Day 3qa: Intro to C on Windows - Day 3 Q&A\n", "probability": 32.0}
+{"Day 4: Intro to C on Windows - Day 4\n": 0.29, "lesson_title": "Day 4: Intro to C on Windows - Day 4\n", "probability": 28.999999999999996}
+{"Day 4qa: Intro to C on Windows - Day 4 Q&A\n": 0.32, "lesson_title": "Day 4qa: Intro to C on Windows - Day 4 Q&A\n", "probability": 32.0}
+{"Day 5: Intro to C on Windows - Day 5\n": 0.28, "lesson_title": "Day 5: Intro to C on Windows - Day 5\n", "probability": 28.000000000000004}
+{"Day 5qa: Intro to C on Windows - Day 5 Q&A\n": 0.33, "lesson_title": "Day 5qa: Intro to C on Windows - Day 5 Q&A\n", "probability": 33.0}
+{"Day 001: Setting Up the Windows Build\n": 0.07, "lesson_title": "Day 001: Setting Up the Windows Build\n", "probability": 7.000000000000001}
+{"Day 001qa: Setting Up the Windows Build - Q&A\n": 0.07, "lesson_title": "Day 001qa: Setting Up the Windows Build - Q&A\n", "probability": 7.000000000000001}
+{"Day 002: Opening a Win32 Window\n": 0.05, "lesson_title": "Day 002: Opening a Win32 Window\n", "probability": 5.0}
+{"Day 002qa: Opening a Win32 Window - Q&A\n": 0.06, "lesson_title": "Day 002qa: Opening a Win32 Window - Q&A\n", "probability": 6.0}
+{"Day 003: Allocating a Back Buffer\n": 0.16, "lesson_title": "Day 003: Allocating a Back Buffer\n", "probability": 16.0}
+{"Day 004: Animating the Back Buffer\n": 0.09, "lesson_title": "Day 004: Animating the Back Buffer\n", "probability": 9.0}
+{"Day 005: Windows Graphics Review\n": 0.06, "lesson_title": "Day 005: Windows Graphics Review\n", "probability": 6.0}
+{"Day 006: Gamepad and Keyboard Input\n": 0.08, "lesson_title": "Day 006: Gamepad and Keyboard Input\n", "probability": 8.0}
+{"Day 007: Initializing DirectSound\n": 0.07, "lesson_title": "Day 007: Initializing DirectSound\n", "probability": 7.000000000000001}
+{"Day 008: Writing a Square Wave to DirectSound\n": 0.09, "lesson_title": "Day 008: Writing a Square Wave to DirectSound\n", "probability": 9.0}
+{"Day 009: Variable-Pitch Sine Wave Output\n": 0.21, "lesson_title": "Day 009: Variable-Pitch Sine Wave Output\n", "probability": 21.0}
+{"Day 010: QueryPerformanceCounter and RDTSC\n": 0.56, "lesson_title": "Day 010: QueryPerformanceCounter and RDTSC\n", "probability": 56.00000000000001}
+{"Day 011: The Basics of Platform API Design\n": 0.26, "lesson_title": "Day 011: The Basics of Platform API Design\n", "probability": 26.0}
+{"Day 012: Platform-independent Sound Output\n": 0.24, "lesson_title": "Day 012: Platform-independent Sound Output\n", "probability": 24.0}
+{"Day 013: Platform-independent User Input\n": 0.3, "lesson_title": "Day 013: Platform-independent User Input\n", "probability": 30.0}
+{"Day 014: Platform-independent Game Memory\n": 0.65, "lesson_title": "Day 014: Platform-independent Game Memory\n", "probability": 65.0}
+{"Day 015: Platform-independent Debug File I/O\n": 0.41, "lesson_title": "Day 015: Platform-independent Debug File I/O\n", "probability": 41.0}
+{"Day 016: VisualStudio Compiler Switches\n": 0.08, "lesson_title": "Day 016: VisualStudio Compiler Switches\n", "probability": 8.0}
+{"Day 017: Unified Keyboard and Gamepad Input\n": 0.1, "lesson_title": "Day 017: Unified Keyboard and Gamepad Input\n", "probability": 10.0}
+{"Day 018: Enforcing a Video Frame Rate\n": 0.14, "lesson_title": "Day 018: Enforcing a Video Frame Rate\n", "probability": 14.000000000000002}
+{"Day 019: Improving Audio Synchronization\n": 0.18, "lesson_title": "Day 019: Improving Audio Synchronization\n", "probability": 18.0}
+{"Day 020: Debugging the Audio Sync\n": 0.22, "lesson_title": "Day 020: Debugging the Audio Sync\n", "probability": 22.0}
+{"Day 021: Loading Game Code Dynamically\n": 0.2, "lesson_title": "Day 021: Loading Game Code Dynamically\n", "probability": 20.0}
+{"Day 022: Instantaneous Live Code Editing\n": 0.17, "lesson_title": "Day 022: Instantaneous Live Code Editing\n", "probability": 17.0}
+{"Day 023: Looped Live Code Editing\n": 0.35, "lesson_title": "Day 023: Looped Live Code Editing\n", "probability": 35.0}
+{"Day 024: Win32 Platform Layer Cleanup\n": 0.11, "lesson_title": "Day 024: Win32 Platform Layer Cleanup\n", "probability": 11.0}
+{"Day 025: Finishing the Win32 Prototyping Layer\n": 0.1, "lesson_title": "Day 025: Finishing the Win32 Prototyping Layer\n", "probability": 10.0}
+{"Day 026: Introduction to Game Architecture\n": 0.31, "lesson_title": "Day 026: Introduction to Game Architecture\n", "probability": 31.0}
+{"Day 027: Exploration-based Architecture\n": 0.48, "lesson_title": "Day 027: Exploration-based Architecture\n", "probability": 48.0}
+{"Day 028: Drawing a Tile Map\n": 0.1, "lesson_title": "Day 028: Drawing a Tile Map\n", "probability": 10.0}
+{"Day 029: Basic Tile Map Collision Checking\n": 0.15, "lesson_title": "Day 029: Basic Tile Map Collision Checking\n", "probability": 15.0}
+{"Day 030: Moving Between Tile Maps\n": 0.16, "lesson_title": "Day 030: Moving Between Tile Maps\n", "probability": 16.0}
+{"Day 031: Tilemap Coordinate Systems\n": 0.1, "lesson_title": "Day 031: Tilemap Coordinate Systems\n", "probability": 10.0}
+{"Day 032: Unified Position Representation\n": 0.47, "lesson_title": "Day 032: Unified Position Representation\n", "probability": 47.0}
+{"Day 033: Virtualized Tile Maps\n": 0.16, "lesson_title": "Day 033: Virtualized Tile Maps\n", "probability": 16.0}
+{"Day 034: Tile Map Memory\n": 0.39, "lesson_title": "Day 034: Tile Map Memory\n", "probability": 39.0}
+{"Day 035: Basic Sparse Tilemap Storage\n": 0.35, "lesson_title": "Day 035: Basic Sparse Tilemap Storage\n", "probability": 35.0}
+{"Day 036: Loading BMPs\n": 0.14, "lesson_title": "Day 036: Loading BMPs\n", "probability": 14.000000000000002}
+{"Day 037: Basic Bitmap Rendering\n": 0.09, "lesson_title": "Day 037: Basic Bitmap Rendering\n", "probability": 9.0}
+{"Day 038: Basic Linear Bitmap Blending\n": 0.13, "lesson_title": "Day 038: Basic Linear Bitmap Blending\n", "probability": 13.0}
+{"Day 039: Basic Bitmap Rendering Cleanup\n": 0.11, "lesson_title": "Day 039: Basic Bitmap Rendering Cleanup\n", "probability": 11.0}
+{"Day 040: Cursor Hiding and Fullscreen Support\n": 0.07, "lesson_title": "Day 040: Cursor Hiding and Fullscreen Support\n", "probability": 7.000000000000001}
+{"Day 041: Overview of the Types of Math Used in Games\n": 0.17, "lesson_title": "Day 041: Overview of the Types of Math Used in Games\n", "probability": 17.0}
+{"Day 042: Basic 2D Vectors\n": 0.35, "lesson_title": "Day 042: Basic 2D Vectors\n", "probability": 35.0}
+{"Day 043: The Equations of Motion\n": 0.39, "lesson_title": "Day 043: The Equations of Motion\n", "probability": 39.0}
+{"Day 044: Reflecting Vectors\n": 0.25, "lesson_title": "Day 044: Reflecting Vectors\n", "probability": 25.0}
+{"Day 045: Geometric vs. Temporal Movement Search\n": 0.62, "lesson_title": "Day 045: Geometric vs. Temporal Movement Search\n", "probability": 62.0}
+{"Day 046: Basic Multiplayer Support\n": 0.27, "lesson_title": "Day 046: Basic Multiplayer Support\n", "probability": 27.0}
+{"Day 047: Vector Lengths\n": 0.65, "lesson_title": "Day 047: Vector Lengths\n", "probability": 65.0}
+{"Day 048: Line Segment Intersection Collisions\n": 0.52, "lesson_title": "Day 048: Line Segment Intersection Collisions\n", "probability": 52.0}
+{"Day 049: Debugging Canonical Coordinates\n": 0.43, "lesson_title": "Day 049: Debugging Canonical Coordinates\n", "probability": 43.0}
+{"Day 050: Basic Minkowski-based Collision Detection\n": 0.26, "lesson_title": "Day 050: Basic Minkowski-based Collision Detection\n", "probability": 26.0}
+{"Day 051: Separating Entities By Update Frequency\n": 0.42, "lesson_title": "Day 051: Separating Entities By Update Frequency\n", "probability": 42.0}
+{"Day 052: Entity Movement in Camera Space\n": 0.08, "lesson_title": "Day 052: Entity Movement in Camera Space\n", "probability": 8.0}
+{"Day 053: Environment Elements as Entities\n": 0.34, "lesson_title": "Day 053: Environment Elements as Entities\n", "probability": 34.0}
+{"Day 054: Removing the Dormant Entity Concept\n": 0.29, "lesson_title": "Day 054: Removing the Dormant Entity Concept\n", "probability": 28.999999999999996}
+{"Day 055: Hash-based World Storage\n": 0.51, "lesson_title": "Day 055: Hash-based World Storage\n", "probability": 51.0}
+{"Day 056: Switch from Tiles to Entities\n": 0.15, "lesson_title": "Day 056: Switch from Tiles to Entities\n", "probability": 15.0}
+{"Day 057: Spatially Partitioning Entities\n": 0.55, "lesson_title": "Day 057: Spatially Partitioning Entities\n", "probability": 55.00000000000001}
+{"Day 058: Using the Spatial Partition\n": 0.45, "lesson_title": "Day 058: Using the Spatial Partition\n", "probability": 45.0}
+{"Day 059: Adding a Basic Familiar Entity\n": 0.16, "lesson_title": "Day 059: Adding a Basic Familiar Entity\n", "probability": 16.0}
+{"Day 060: Adding Hitpoints\n": 0.1, "lesson_title": "Day 060: Adding Hitpoints\n", "probability": 10.0}
+{"Day 061: Adding a Simple Attack\n": 0.18, "lesson_title": "Day 061: Adding a Simple Attack\n", "probability": 18.0}
+{"Day 062: Basic Moving Projectiles\n": 0.15, "lesson_title": "Day 062: Basic Moving Projectiles\n", "probability": 15.0}
+{"Day 063: Simulation Regions\n": 0.32, "lesson_title": "Day 063: Simulation Regions\n", "probability": 32.0}
+{"Day 064: Mapping Entity Indexes to Pointers\n": 0.82, "lesson_title": "Day 064: Mapping Entity Indexes to Pointers\n", "probability": 82.0}
+{"Day 065: Finishing the Simulation Region Change\n": 0.18, "lesson_title": "Day 065: Finishing the Simulation Region Change\n", "probability": 18.0}
+{"Day 066: Adding Support for Non-spatial Entities\n": 0.17, "lesson_title": "Day 066: Adding Support for Non-spatial Entities\n", "probability": 17.0}
+{"Day 067: Making Updates Conditional\n": 0.3, "lesson_title": "Day 067: Making Updates Conditional\n", "probability": 30.0}
+{"Day 068: Exact Enforcement of Maximum Movement Distances\n": 0.25, "lesson_title": "Day 068: Exact Enforcement of Maximum Movement Distances\n", "probability": 25.0}
+{"Day 069: Pairwise Collision Rules\n": 0.39, "lesson_title": "Day 069: Pairwise Collision Rules\n", "probability": 39.0}
+{"Day 070: Exploration To-do List\n": 0.29, "lesson_title": "Day 070: Exploration To-do List\n", "probability": 28.999999999999996}
+{"Day 071: Converting to Full 3D Positioning\n": 0.13, "lesson_title": "Day 071: Converting to Full 3D Positioning\n", "probability": 13.0}
+{"Day 072: Proper 3D Inclusion Tests\n": 0.38, "lesson_title": "Day 072: Proper 3D Inclusion Tests\n", "probability": 38.0}
+{"Day 073: Temporarily Overlapping Entities\n": 0.39, "lesson_title": "Day 073: Temporarily Overlapping Entities\n", "probability": 39.0}
+{"Day 074: Moving Entities Up and Down Stairwells\n": 0.24, "lesson_title": "Day 074: Moving Entities Up and Down Stairwells\n", "probability": 24.0}
+{"Day 075: Conditional Movement Based on Step Heights\n": 0.33, "lesson_title": "Day 075: Conditional Movement Based on Step Heights\n", "probability": 33.0}
+{"Day 076: Entity Heights and Collision Detection\n": 0.15, "lesson_title": "Day 076: Entity Heights and Collision Detection\n", "probability": 15.0}
+{"Day 077: Entity Ground Points\n": 0.31, "lesson_title": "Day 077: Entity Ground Points\n", "probability": 31.0}
+{"Day 078: Multiple Collision Volumes Per Entity\n": 0.09, "lesson_title": "Day 078: Multiple Collision Volumes Per Entity\n", "probability": 9.0}
+{"Day 079: Defining the Ground\n": 0.55, "lesson_title": "Day 079: Defining the Ground\n", "probability": 55.00000000000001}
+{"Day 080: Handling Traversables in the Collision Loop\n": 0.19, "lesson_title": "Day 080: Handling Traversables in the Collision Loop\n", "probability": 19.0}
+{"Day 081: Creating Ground with Overlapping Bitmaps\n": 0.08, "lesson_title": "Day 081: Creating Ground with Overlapping Bitmaps\n", "probability": 8.0}
+{"Day 082: Caching Composited Bitmaps\n": 0.17, "lesson_title": "Day 082: Caching Composited Bitmaps\n", "probability": 17.0}
+{"Day 083: Premultiplied Alpha\n": 0.09, "lesson_title": "Day 083: Premultiplied Alpha\n", "probability": 9.0}
+{"Day 084: Scrolling Ground Buffer\n": 0.35, "lesson_title": "Day 084: Scrolling Ground Buffer\n", "probability": 35.0}
+{"Day 085: Transient Ground Buffers\n": 0.44, "lesson_title": "Day 085: Transient Ground Buffers\n", "probability": 44.0}
+{"Day 086: Aligning Ground Buffers to World Chunks\n": 0.15, "lesson_title": "Day 086: Aligning Ground Buffers to World Chunks\n", "probability": 15.0}
+{"Day 087: Seamless Ground Textures\n": 0.06, "lesson_title": "Day 087: Seamless Ground Textures\n", "probability": 6.0}
+{"Day 088: Push Buffer Rendering\n": 0.08, "lesson_title": "Day 088: Push Buffer Rendering\n", "probability": 8.0}
+{"Day 089: Renderer Push Buffer Entry Types\n": 0.07, "lesson_title": "Day 089: Renderer Push Buffer Entry Types\n", "probability": 7.000000000000001}
+{"Day 090: Bases Part I\n": 0.67, "lesson_title": "Day 090: Bases Part I\n", "probability": 67.0}
+{"Day 091: Bases Part II\n": 0.63, "lesson_title": "Day 091: Bases Part II\n", "probability": 63.0}
+{"Day 092: Filling Rotated and Scaled Rectangles\n": 0.12, "lesson_title": "Day 092: Filling Rotated and Scaled Rectangles\n", "probability": 12.0}
+{"Day 093: Textured Quadrilaterals\n": 0.11, "lesson_title": "Day 093: Textured Quadrilaterals\n", "probability": 11.0}
+{"Day 094: Converting sRGB to Light-linear Space\n": 0.07, "lesson_title": "Day 094: Converting sRGB to Light-linear Space\n", "probability": 7.000000000000001}
+{"Day 095: Gamma-correct Premultiplied Alpha\n": 0.07, "lesson_title": "Day 095: Gamma-correct Premultiplied Alpha\n", "probability": 7.000000000000001}
+{"Day 096: Introduction to Lighting\n": 0.06, "lesson_title": "Day 096: Introduction to Lighting\n", "probability": 6.0}
+{"Day 097: Adding Normal Maps to the Pipeline\n": 0.04, "lesson_title": "Day 097: Adding Normal Maps to the Pipeline\n", "probability": 4.0}
+{"Day 098: Normal Map Code Cleanup\n": 0.12, "lesson_title": "Day 098: Normal Map Code Cleanup\n", "probability": 12.0}
+{"Day 099: Test Enviroment Maps\n": 0.11, "lesson_title": "Day 099: Test Enviroment Maps\n", "probability": 11.0}
+{"Day 100: Reflection Vectors\n": 0.38, "lesson_title": "Day 100: Reflection Vectors\n", "probability": 38.0}
+{"Day 101: The Inverse and the Transpose\n": 0.49, "lesson_title": "Day 101: The Inverse and the Transpose\n", "probability": 49.0}
+{"Day 102: Transforming Normals Properly\n": 0.08, "lesson_title": "Day 102: Transforming Normals Properly\n", "probability": 8.0}
+{"Day 103: Card-like Normal Map Reflections\n": 0.05, "lesson_title": "Day 103: Card-like Normal Map Reflections\n", "probability": 5.0}
+{"Day 104: Switching to Y-is-up Render Targets\n": 0.05, "lesson_title": "Day 104: Switching to Y-is-up Render Targets\n", "probability": 5.0}
+{"Day 105: Cleaning Up the Renderer API\n": 0.09, "lesson_title": "Day 105: Cleaning Up the Renderer API\n", "probability": 9.0}
+{"Day 106: World Scaling\n": 0.5, "lesson_title": "Day 106: World Scaling\n", "probability": 50.0}
+{"Day 107: Fading Z Layers\n": 0.24, "lesson_title": "Day 107: Fading Z Layers\n", "probability": 24.0}
+{"Day 108: Perspective Projection\n": 0.08, "lesson_title": "Day 108: Perspective Projection\n", "probability": 8.0}
+{"Day 109: Resolution-Independent Rendering\n": 0.1, "lesson_title": "Day 109: Resolution-Independent Rendering\n", "probability": 10.0}
+{"Day 110: Unprojecting Screen Boundaries\n": 0.18, "lesson_title": "Day 110: Unprojecting Screen Boundaries\n", "probability": 18.0}
+{"Day 111: Resolution-Independent Ground Chunks\n": 0.16, "lesson_title": "Day 111: Resolution-Independent Ground Chunks\n", "probability": 16.0}
+{"Day 112: A Mental Model of CPU Performance\n": 0.93, "lesson_title": "Day 112: A Mental Model of CPU Performance\n", "probability": 93.0}
+{"Day 113: Simple Performance Counters\n": 0.62, "lesson_title": "Day 113: Simple Performance Counters\n", "probability": 62.0}
+{"Day 114: Preparing a Function for Optimization\n": 0.47, "lesson_title": "Day 114: Preparing a Function for Optimization\n", "probability": 47.0}
+{"Day 115: SIMD Basics\n": 0.84, "lesson_title": "Day 115: SIMD Basics\n", "probability": 84.0}
+{"Day 116: Converting Math Operations to SIMD\n": 0.66, "lesson_title": "Day 116: Converting Math Operations to SIMD\n", "probability": 66.0}
+{"Day 117: Packing Pixels for the Framebuffer\n": 0.16, "lesson_title": "Day 117: Packing Pixels for the Framebuffer\n", "probability": 16.0}
+{"Day 118: Wide Unpacking and Masking\n": 0.38, "lesson_title": "Day 118: Wide Unpacking and Masking\n", "probability": 38.0}
+{"Day 119: Counting Intrinsics\n": 0.55, "lesson_title": "Day 119: Counting Intrinsics\n", "probability": 55.00000000000001}
+{"Day 120: Measuring Port Usage with IACA\n": 0.24, "lesson_title": "Day 120: Measuring Port Usage with IACA\n", "probability": 24.0}
+{"Day 121: Rendering in Tiles (Marathon)\n": 0.11, "lesson_title": "Day 121: Rendering in Tiles (Marathon)\n", "probability": 11.0}
+{"Day 122: Introduction to Multithreading\n": 0.9, "lesson_title": "Day 122: Introduction to Multithreading\n", "probability": 90.0}
+{"Day 123: Interlocked Operations\n": 0.55, "lesson_title": "Day 123: Interlocked Operations\n", "probability": 55.00000000000001}
+{"Day 124: Memory Barriers and Semaphores\n": 0.91, "lesson_title": "Day 124: Memory Barriers and Semaphores\n", "probability": 91.0}
+{"Day 125: Abstracting the Work Queue\n": 0.55, "lesson_title": "Day 125: Abstracting the Work Queue\n", "probability": 55.00000000000001}
+{"Day 126: Circular FIFO Work Queue\n": 0.87, "lesson_title": "Day 126: Circular FIFO Work Queue\n", "probability": 87.0}
+{"Day 127: Aligning Rendering Memory\n": 0.2, "lesson_title": "Day 127: Aligning Rendering Memory\n", "probability": 20.0}
+{"Day 128: Push-time Transforms\n": 0.36, "lesson_title": "Day 128: Push-time Transforms\n", "probability": 36.0}
+{"Day 129: Adding Orthographic Projection\n": 0.07, "lesson_title": "Day 129: Adding Orthographic Projection\n", "probability": 7.000000000000001}
+{"Day 130: Seamless Bilinear Tiling\n": 0.13, "lesson_title": "Day 130: Seamless Bilinear Tiling\n", "probability": 13.0}
+{"Day 131: Asynchronous Ground Chunk Composition\n": 0.46, "lesson_title": "Day 131: Asynchronous Ground Chunk Composition\n", "probability": 46.0}
+{"Day 132: Asset Streaming\n": 0.16, "lesson_title": "Day 132: Asset Streaming\n", "probability": 16.0}
+{"Day 133: Preliminary Asset Structuring\n": 0.33, "lesson_title": "Day 133: Preliminary Asset Structuring\n", "probability": 33.0}
+{"Day 134: Mapping Assets to Bitmaps\n": 0.14, "lesson_title": "Day 134: Mapping Assets to Bitmaps\n", "probability": 14.000000000000002}
+{"Day 135: Typed Asset Arrays\n": 0.31, "lesson_title": "Day 135: Typed Asset Arrays\n", "probability": 31.0}
+{"Day 136: Tag-based Asset Retrieval\n": 0.22, "lesson_title": "Day 136: Tag-based Asset Retrieval\n", "probability": 22.0}
+{"Day 137: Matching Periodic Tags\n": 0.38, "lesson_title": "Day 137: Matching Periodic Tags\n", "probability": 38.0}
+{"Day 138: Loading WAV Files\n": 0.19, "lesson_title": "Day 138: Loading WAV Files\n", "probability": 19.0}
+{"Day 139: Introduction to Sound Mixing\n": 0.05, "lesson_title": "Day 139: Introduction to Sound Mixing\n", "probability": 5.0}
+{"Day 140: Implemented a Sound Mixer\n": 0.15, "lesson_title": "Day 140: Implemented a Sound Mixer\n", "probability": 15.0}
+{"Day 141: Streaming Large Audio in Chunks\n": 0.36, "lesson_title": "Day 141: Streaming Large Audio in Chunks\n", "probability": 36.0}
+{"Day 142: Per-sample Volume Interpolation\n": 0.13, "lesson_title": "Day 142: Per-sample Volume Interpolation\n", "probability": 13.0}
+{"Day 143: Pitch Shifting in the Mixer\n": 0.09, "lesson_title": "Day 143: Pitch Shifting in the Mixer\n", "probability": 9.0}
+{"Day 144: SSE Mixer Pre and Post Loops\n": 0.25, "lesson_title": "Day 144: SSE Mixer Pre and Post Loops\n", "probability": 25.0}
+{"Day 145: SSE Mixer Main Loop\n": 0.22, "lesson_title": "Day 145: SSE Mixer Main Loop\n", "probability": 22.0}
+{"Day 146: Accumulation vs. Explicit Calculation\n": 0.56, "lesson_title": "Day 146: Accumulation vs. Explicit Calculation\n", "probability": 56.00000000000001}
+{"Day 147: Defining the Asset File\n": 0.2, "lesson_title": "Day 147: Defining the Asset File\n", "probability": 20.0}
+{"Day 148: Writing the Asset File Header\n": 0.23, "lesson_title": "Day 148: Writing the Asset File Header\n", "probability": 23.0}
+{"Day 149: Writing Assets to the Asset File\n": 0.16, "lesson_title": "Day 149: Writing Assets to the Asset File\n", "probability": 16.0}
+{"Day 150: Loading Assets from the Asset File\n": 0.1, "lesson_title": "Day 150: Loading Assets from the Asset File\n", "probability": 10.0}
+{"Day 151: New Platform File API\n": 0.2, "lesson_title": "Day 151: New Platform File API\n", "probability": 20.0}
+{"Day 152: New Win32 File API Implementation\n": 0.07, "lesson_title": "Day 152: New Win32 File API Implementation\n", "probability": 7.000000000000001}
+{"Day 153: Merging Multiple Asset Files\n": 0.18, "lesson_title": "Day 153: Merging Multiple Asset Files\n", "probability": 18.0}
+{"Day 154: Finding Assets Files with Win32\n": 0.08, "lesson_title": "Day 154: Finding Assets Files with Win32\n", "probability": 8.0}
+{"Day 155: Introduction to Particle Systems\n": 0.12, "lesson_title": "Day 155: Introduction to Particle Systems\n", "probability": 12.0}
+{"Day 156: Lagrangian vs. Eulerian Simulation\n": 0.3, "lesson_title": "Day 156: Lagrangian vs. Eulerian Simulation\n", "probability": 30.0}
+{"Day 157: Introduction to General Purpose Allocation\n": 0.55, "lesson_title": "Day 157: Introduction to General Purpose Allocation\n", "probability": 55.00000000000001}
+{"Day 158: Tracking Asset Usage\n": 0.21, "lesson_title": "Day 158: Tracking Asset Usage\n", "probability": 21.0}
+{"Day 159: Cleaning Up the Loaded Asset Infrastructure\n": 0.19, "lesson_title": "Day 159: Cleaning Up the Loaded Asset Infrastructure\n", "probability": 19.0}
+{"Day 160: Basic General Purpose Allocation\n": 0.7, "lesson_title": "Day 160: Basic General Purpose Allocation\n", "probability": 70.0}
+{"Day 161: Finishing the General Purpose Allocator\n": 0.79, "lesson_title": "Day 161: Finishing the General Purpose Allocator\n", "probability": 79.0}
+{"Day 162: Introduction to Fonts\n": 0.06, "lesson_title": "Day 162: Introduction to Fonts\n", "probability": 6.0}
+{"Day 163: Asset Processing with STB TrueType\n": 0.11, "lesson_title": "Day 163: Asset Processing with STB TrueType\n", "probability": 11.0}
+{"Day 164: Asset Processing with Windows Fonts\n": 0.06, "lesson_title": "Day 164: Asset Processing with Windows Fonts\n", "probability": 6.0}
+{"Day 165: Fixing an Asset System Thread Bug\n": 0.42, "lesson_title": "Day 165: Fixing an Asset System Thread Bug\n", "probability": 42.0}
+{"Day 166: Adding Locks to the Asset Operations\n": 0.72, "lesson_title": "Day 166: Adding Locks to the Asset Operations\n", "probability": 72.0}
+{"Day 167: Finishing Win32 Font Glyph Extraction\n": 0.07, "lesson_title": "Day 167: Finishing Win32 Font Glyph Extraction\n", "probability": 7.000000000000001}
+{"Day 168: Rendering Lines of Text\n": 0.08, "lesson_title": "Day 168: Rendering Lines of Text\n", "probability": 8.0}
+{"Day 169: Aligning Text to a Baseline\n": 0.06, "lesson_title": "Day 169: Aligning Text to a Baseline\n", "probability": 6.0}
+{"Day 170: Defining Font Metadata\n": 0.1, "lesson_title": "Day 170: Defining Font Metadata\n", "probability": 10.0}
+{"Day 171: Adding Font Metadata to the Asset Builder\n": 0.07, "lesson_title": "Day 171: Adding Font Metadata to the Asset Builder\n", "probability": 7.000000000000001}
+{"Day 172: Extracting Kerning Tables from Windows\n": 0.07, "lesson_title": "Day 172: Extracting Kerning Tables from Windows\n", "probability": 7.000000000000001}
+{"Day 173: Precise Font Alignment\n": 0.07, "lesson_title": "Day 173: Precise Font Alignment\n", "probability": 7.000000000000001}
+{"Day 174: Adding Sparse Unicode Support\n": 0.45, "lesson_title": "Day 174: Adding Sparse Unicode Support\n", "probability": 45.0}
+{"Day 175: Finishing Sparse Unicode Support\n": 0.32, "lesson_title": "Day 175: Finishing Sparse Unicode Support\n", "probability": 32.0}
+{"Day 176: Introduction to Debug Infrastructure\n": 0.44, "lesson_title": "Day 176: Introduction to Debug Infrastructure\n", "probability": 44.0}
+{"Day 177: Automatic Performance Counters\n": 0.52, "lesson_title": "Day 177: Automatic Performance Counters\n", "probability": 52.0}
+{"Day 178: Thread-safe Performance Counters\n": 0.78, "lesson_title": "Day 178: Thread-safe Performance Counters\n", "probability": 78.0}
+{"Day 179: Tracking Debug Information Over Time\n": 0.35, "lesson_title": "Day 179: Tracking Debug Information Over Time\n", "probability": 35.0}
+{"Day 180: Adding Debug Graphs\n": 0.16, "lesson_title": "Day 180: Adding Debug Graphs\n", "probability": 16.0}
+{"Day 181: Log-based Performance Counters\n": 0.39, "lesson_title": "Day 181: Log-based Performance Counters\n", "probability": 39.0}
+{"Day 182: Fast Thread ID Retrieval\n": 0.36, "lesson_title": "Day 182: Fast Thread ID Retrieval\n", "probability": 36.0}
+{"Day 183: Platform Layer Debug Events\n": 0.23, "lesson_title": "Day 183: Platform Layer Debug Events\n", "probability": 23.0}
+{"Day 184: Collating Debug Events\n": 0.28, "lesson_title": "Day 184: Collating Debug Events\n", "probability": 28.000000000000004}
+{"Day 185: Finishing Basic Debug Collation\n": 0.43, "lesson_title": "Day 185: Finishing Basic Debug Collation\n", "probability": 43.0}
+{"Day 186: Starting to Debug Event Recording\n": 0.26, "lesson_title": "Day 186: Starting to Debug Event Recording\n", "probability": 26.0}
+{"Day 187: Fixing an Event Recording Bug\n": 0.19, "lesson_title": "Day 187: Fixing an Event Recording Bug\n", "probability": 19.0}
+{"Day 188: Adding Hover to the Debug Graphs\n": 0.05, "lesson_title": "Day 188: Adding Hover to the Debug Graphs\n", "probability": 5.0}
+{"Day 189: Incremental Debug Frame Processing\n": 0.25, "lesson_title": "Day 189: Incremental Debug Frame Processing\n", "probability": 25.0}
+{"Day 190: Cleaning Up Debug Globals\n": 0.23, "lesson_title": "Day 190: Cleaning Up Debug Globals\n", "probability": 23.0}
+{"Day 191: Implementing a Radial Menu\n": 0.06, "lesson_title": "Day 191: Implementing a Radial Menu\n", "probability": 6.0}
+{"Day 192: Implementing Self-Recompilation\n": 0.44, "lesson_title": "Day 192: Implementing Self-Recompilation\n", "probability": 44.0}
+{"Day 193: Run-time Setting of Compile-time Variables\n": 0.34, "lesson_title": "Day 193: Run-time Setting of Compile-time Variables\n", "probability": 34.0}
+{"Day 194: Organizing Debug Variables into a Hierarchy\n": 0.37, "lesson_title": "Day 194: Organizing Debug Variables into a Hierarchy\n", "probability": 37.0}
+{"Day 195: Implementing an Interactive Tree View\n": 0.2, "lesson_title": "Day 195: Implementing an Interactive Tree View\n", "probability": 20.0}
+{"Day 196: Introduction to UI Interactions\n": 0.05, "lesson_title": "Day 196: Introduction to UI Interactions\n", "probability": 5.0}
+{"Day 197: Integrating Multiple Debug Views\n": 0.2, "lesson_title": "Day 197: Integrating Multiple Debug Views\n", "probability": 20.0}
+{"Day 198: Run-time Editing of Debug Hierarchies\n": 0.29, "lesson_title": "Day 198: Run-time Editing of Debug Hierarchies\n", "probability": 28.999999999999996}
+{"Day 199: Reusing Debug Interactions\n": 0.32, "lesson_title": "Day 199: Reusing Debug Interactions\n", "probability": 32.0}
+{"Day 200: Debug Element Layout\n": 0.09, "lesson_title": "Day 200: Debug Element Layout\n", "probability": 9.0}
+{"Day 201: Isolating the Debug Code\n": 0.37, "lesson_title": "Day 201: Isolating the Debug Code\n", "probability": 37.0}
+{"Day 202: Multiply Appearing Debug Values\n": 0.34, "lesson_title": "Day 202: Multiply Appearing Debug Values\n", "probability": 34.0}
+{"Day 203: Debug UI State Caching\n": 0.08, "lesson_title": "Day 203: Debug UI State Caching\n", "probability": 8.0}
+{"Day 204: Unprojecting the Mouse Cursor\n": 0.12, "lesson_title": "Day 204: Unprojecting the Mouse Cursor\n", "probability": 12.0}
+{"Day 205: Picking Entities with the Mouse\n": 0.1, "lesson_title": "Day 205: Picking Entities with the Mouse\n", "probability": 10.0}
+{"Day 206: Implementing Introspection\n": 0.47, "lesson_title": "Day 206: Implementing Introspection\n", "probability": 47.0}
+{"Day 207: Using Introspection Data\n": 0.34, "lesson_title": "Day 207: Using Introspection Data\n", "probability": 34.0}
+{"Day 208: Adding Data Blocks to the Debug Log\n": 0.21, "lesson_title": "Day 208: Adding Data Blocks to the Debug Log\n", "probability": 21.0}
+{"Day 209: Displaying Buffered Debug Data\n": 0.3, "lesson_title": "Day 209: Displaying Buffered Debug Data\n", "probability": 30.0}
+{"Day 210: Consolidating Debug Data Storage\n": 0.33, "lesson_title": "Day 210: Consolidating Debug Data Storage\n", "probability": 33.0}
+{"Day 211: Removing Records and Translation Units from the Debug Code\n": 0.17, "lesson_title": "Day 211: Removing Records and Translation Units from the Debug Code\n", "probability": 17.0}
+{"Day 212: Integrating Debug UI into Game Code\n": 0.06, "lesson_title": "Day 212: Integrating Debug UI into Game Code\n", "probability": 6.0}
+{"Day 213: Turning Debug Switches into Events\n": 0.31, "lesson_title": "Day 213: Turning Debug Switches into Events\n", "probability": 31.0}
+{"Day 214: Collating Permanent Debug Values\n": 0.31, "lesson_title": "Day 214: Collating Permanent Debug Values\n", "probability": 31.0}
+{"Day 215: Cleaning Up Debug Event Collation\n": 0.24, "lesson_title": "Day 215: Cleaning Up Debug Event Collation\n", "probability": 24.0}
+{"Day 216: On-demand Deallocation\n": 0.78, "lesson_title": "Day 216: On-demand Deallocation\n", "probability": 78.0}
+{"Day 217: Per-element Debug Event Storage\n": 0.32, "lesson_title": "Day 217: Per-element Debug Event Storage\n", "probability": 32.0}
+{"Day 218: Hashing Debug Elements\n": 0.59, "lesson_title": "Day 218: Hashing Debug Elements\n", "probability": 59.0}
+{"Day 219: Automatically Constructed Debug Hierarchies\n": 0.43, "lesson_title": "Day 219: Automatically Constructed Debug Hierarchies\n", "probability": 43.0}
+{"Day 220: Displaying Data Blocks in the Hierarchy\n": 0.43, "lesson_title": "Day 220: Displaying Data Blocks in the Hierarchy\n", "probability": 43.0}
+{"Day 221: Implementing Multi-layer Cutscenes\n": 0.05, "lesson_title": "Day 221: Implementing Multi-layer Cutscenes\n", "probability": 5.0}
+{"Day 222: Laying Out Cutscenes\n": 0.07, "lesson_title": "Day 222: Laying Out Cutscenes\n", "probability": 7.000000000000001}
+{"Day 223: Playing Multiple Cutscenes\n": 0.07, "lesson_title": "Day 223: Playing Multiple Cutscenes\n", "probability": 7.000000000000001}
+{"Day 224: Prefetching Cutscene Layers\n": 0.13, "lesson_title": "Day 224: Prefetching Cutscene Layers\n", "probability": 13.0}
+{"Day 225: Fading In and Out from the Windows Desktop\n": 0.06, "lesson_title": "Day 225: Fading In and Out from the Windows Desktop\n", "probability": 6.0}
+{"Day 226: Handling Multiple Metagame Modes\n": 0.17, "lesson_title": "Day 226: Handling Multiple Metagame Modes\n", "probability": 17.0}
+{"Day 227: Switching Between Metagame Modes\n": 0.19, "lesson_title": "Day 227: Switching Between Metagame Modes\n", "probability": 19.0}
+{"Day 228: Waiting for Dependent Tasks on Metagame Mode Changes\n": 0.17, "lesson_title": "Day 228: Waiting for Dependent Tasks on Metagame Mode Changes\n", "probability": 17.0}
+{"Day 229: Sorting Render Elements\n": 0.3, "lesson_title": "Day 229: Sorting Render Elements\n", "probability": 30.0}
+{"Day 230: Refining Renderer Sort Keys\n": 0.11, "lesson_title": "Day 230: Refining Renderer Sort Keys\n", "probability": 11.0}
+{"Day 231: Order Notation\n": 0.9, "lesson_title": "Day 231: Order Notation\n", "probability": 90.0}
+{"Day 232: Examples of Sorting Algorithms\n": 0.93, "lesson_title": "Day 232: Examples of Sorting Algorithms\n", "probability": 93.0}
+{"Day 233: Can We Merge Sort In Place?\n": 0.93, "lesson_title": "Day 233: Can We Merge Sort In Place?\n", "probability": 93.0}
+{"Day 234: Implementing Radix Sort\n": 0.91, "lesson_title": "Day 234: Implementing Radix Sort\n", "probability": 91.0}
+{"Day 235: Initializing OpenGL on Windows\n": 0.05, "lesson_title": "Day 235: Initializing OpenGL on Windows\n", "probability": 5.0}
+{"Day 236: GPU Conceptual Overview\n": 0.31, "lesson_title": "Day 236: GPU Conceptual Overview\n", "probability": 31.0}
+{"Day 237: Displaying an Image with OpenGL\n": 0.05, "lesson_title": "Day 237: Displaying an Image with OpenGL\n", "probability": 5.0}
+{"Day 238: Making OpenGL Use Our Screen Coordinates\n": 0.05, "lesson_title": "Day 238: Making OpenGL Use Our Screen Coordinates\n", "probability": 5.0}
+{"Day 239: Rendering the Game Through OpenGL\n": 0.05, "lesson_title": "Day 239: Rendering the Game Through OpenGL\n", "probability": 5.0}
+{"Day 240: Moving the Renderer into a Third Tier\n": 0.1, "lesson_title": "Day 240: Moving the Renderer into a Third Tier\n", "probability": 10.0}
+{"Day 241: OpenGL VSync and sRGB Extensions\n": 0.04, "lesson_title": "Day 241: OpenGL VSync and sRGB Extensions\n", "probability": 4.0}
+{"Day 242: OpenGL Context Escalation\n": 0.08, "lesson_title": "Day 242: OpenGL Context Escalation\n", "probability": 8.0}
+{"Day 243: Asynchronous Texture Downloads\n": 0.19, "lesson_title": "Day 243: Asynchronous Texture Downloads\n", "probability": 19.0}
+{"Day 244: Finishing Asynchronous Texture Downloads\n": 0.2, "lesson_title": "Day 244: Finishing Asynchronous Texture Downloads\n", "probability": 20.0}
+{"Day 245: Using wglChoosePixelFormatARB\n": 0.05, "lesson_title": "Day 245: Using wglChoosePixelFormatARB\n", "probability": 5.0}
+{"Day 246: Moving Worker Context Creation to the Main Thread\n": 0.38, "lesson_title": "Day 246: Moving Worker Context Creation to the Main Thread\n", "probability": 38.0}
+{"Day 247: Simplifying Debug Values\n": 0.32, "lesson_title": "Day 247: Simplifying Debug Values\n", "probability": 32.0}
+{"Day 248: Cleaning Up Data Block Display\n": 0.28, "lesson_title": "Day 248: Cleaning Up Data Block Display\n", "probability": 28.000000000000004}
+{"Day 249: Cleaning Up Debug Macros\n": 0.21, "lesson_title": "Day 249: Cleaning Up Debug Macros\n", "probability": 21.0}
+{"Day 250: Cleaning Up Debug GUIDs\n": 0.14, "lesson_title": "Day 250: Cleaning Up Debug GUIDs\n", "probability": 14.000000000000002}
+{"Day 251: Finishing the Debug Hierarchy\n": 0.34, "lesson_title": "Day 251: Finishing the Debug Hierarchy\n", "probability": 34.0}
+{"Day 252: Allowing Debug Value Edits\n": 0.18, "lesson_title": "Day 252: Allowing Debug Value Edits\n", "probability": 18.0}
+{"Day 253: Reenabling More Debug UI\n": 0.07, "lesson_title": "Day 253: Reenabling More Debug UI\n", "probability": 7.000000000000001}
+{"Day 254: Reenabling Profiling\n": 0.44, "lesson_title": "Day 254: Reenabling Profiling\n", "probability": 44.0}
+{"Day 255: Building a Profile Tree\n": 0.45, "lesson_title": "Day 255: Building a Profile Tree\n", "probability": 45.0}
+{"Day 256: XBox Controller Stalls and Fixing GL Blit Gamma\n": 0.06, "lesson_title": "Day 256: XBox Controller Stalls and Fixing GL Blit Gamma\n", "probability": 6.0}
+{"Day 257: Cleaning Up Some Win32 Issues\n": 0.09, "lesson_title": "Day 257: Cleaning Up Some Win32 Issues\n", "probability": 9.0}
+{"Day 258: Fixing Profiling Across Code Reloads\n": 0.33, "lesson_title": "Day 258: Fixing Profiling Across Code Reloads\n", "probability": 33.0}
+{"Day 259: OpenGL and Software Renderer Cleanup\n": 0.07, "lesson_title": "Day 259: OpenGL and Software Renderer Cleanup\n", "probability": 7.000000000000001}
+{"Day 260: Implementing Drill-down in the Profiler\n": 0.19, "lesson_title": "Day 260: Implementing Drill-down in the Profiler\n", "probability": 19.0}
+{"Day 261: Changing to Static Frame Arrays\n": 0.34, "lesson_title": "Day 261: Changing to Static Frame Arrays\n", "probability": 34.0}
+{"Day 262: Drawing Multi-frame Profile Graphs\n": 0.18, "lesson_title": "Day 262: Drawing Multi-frame Profile Graphs\n", "probability": 18.0}
+{"Day 263: Adding a Debug Frame Slider\n": 0.08, "lesson_title": "Day 263: Adding a Debug Frame Slider\n", "probability": 8.0}
+{"Day 264: Adding Buttons to the Profiler\n": 0.07, "lesson_title": "Day 264: Adding Buttons to the Profiler\n", "probability": 7.000000000000001}
+{"Day 265: Cleaning Up the UI Layout Code\n": 0.04, "lesson_title": "Day 265: Cleaning Up the UI Layout Code\n", "probability": 4.0}
+{"Day 266: Adding a Top Clocks Profile View\n": 0.07, "lesson_title": "Day 266: Adding a Top Clocks Profile View\n", "probability": 7.000000000000001}
+{"Day 267: Adding Per-Element Clipping Rectangles\n": 0.07, "lesson_title": "Day 267: Adding Per-Element Clipping Rectangles\n", "probability": 7.000000000000001}
+{"Day 268: Consolidating Debug Links and Groups\n": 0.22, "lesson_title": "Day 268: Consolidating Debug Links and Groups\n", "probability": 22.0}
+{"Day 269: Cleaning Up Menu Drawing\n": 0.07, "lesson_title": "Day 269: Cleaning Up Menu Drawing\n", "probability": 7.000000000000001}
+{"Day 270: Making Traversable Points\n": 0.38, "lesson_title": "Day 270: Making Traversable Points\n", "probability": 38.0}
+{"Day 271: Hybrid Tile-based Movement\n": 0.15, "lesson_title": "Day 271: Hybrid Tile-based Movement\n", "probability": 15.0}
+{"Day 272: Explicit Movement Transitions\n": 0.25, "lesson_title": "Day 272: Explicit Movement Transitions\n", "probability": 25.0}
+{"Day 273: Animation Overview\n": 0.12, "lesson_title": "Day 273: Animation Overview\n", "probability": 12.0}
+{"Day 274: Dynamic Animation with Springs\n": 0.08, "lesson_title": "Day 274: Dynamic Animation with Springs\n", "probability": 8.0}
+{"Day 275: Passing Rotation and Shear to the Renderer\n": 0.07, "lesson_title": "Day 275: Passing Rotation and Shear to the Renderer\n", "probability": 7.000000000000001}
+{"Day 276: Tuning the Body Animation\n": 0.06, "lesson_title": "Day 276: Tuning the Body Animation\n", "probability": 6.0}
+{"Day 277: The Sparse Entity System\n": 0.34, "lesson_title": "Day 277: The Sparse Entity System\n", "probability": 34.0}
+{"Day 278: Moving Entity Storage into World Chunks\n": 0.2, "lesson_title": "Day 278: Moving Entity Storage into World Chunks\n", "probability": 20.0}
+{"Day 279: Finishing World Chunk Entity Storage\n": 0.18, "lesson_title": "Day 279: Finishing World Chunk Entity Storage\n", "probability": 18.0}
+{"Day 280: Cleaned Up Streaming Entity Simulation\n": 0.31, "lesson_title": "Day 280: Cleaned Up Streaming Entity Simulation\n", "probability": 31.0}
+{"Day 281: Animating the Camera Between Rooms\n": 0.05, "lesson_title": "Day 281: Animating the Camera Between Rooms\n", "probability": 5.0}
+{"Day 282: Z Movement and Camera Motion\n": 0.09, "lesson_title": "Day 282: Z Movement and Camera Motion\n", "probability": 9.0}
+{"Day 283: Making Standing-on a More Rigorous Concept\n": 0.44, "lesson_title": "Day 283: Making Standing-on a More Rigorous Concept\n", "probability": 44.0}
+{"Day 284: Reorganizing the Head and Body Code\n": 0.41, "lesson_title": "Day 284: Reorganizing the Head and Body Code\n", "probability": 41.0}
+{"Day 285: Transactional Occupation of Traversables\n": 0.4, "lesson_title": "Day 285: Transactional Occupation of Traversables\n", "probability": 40.0}
+{"Day 286: Starting to Decouple Entity Behavior\n": 0.61, "lesson_title": "Day 286: Starting to Decouple Entity Behavior\n", "probability": 61.0}
+{"Day 287: Adding Brains\n": 0.37, "lesson_title": "Day 287: Adding Brains\n", "probability": 37.0}
+{"Day 288: Finishing Brains\n": 0.41, "lesson_title": "Day 288: Finishing Brains\n", "probability": 41.0}
+{"Day 289: Decoupling Visuals from Entity Types\n": 0.3, "lesson_title": "Day 289: Decoupling Visuals from Entity Types\n", "probability": 30.0}
+{"Day 290: Finishing Separated Rendering\n": 0.08, "lesson_title": "Day 290: Finishing Separated Rendering\n", "probability": 8.0}
+{"Day 291: Hopping Monstar and Occupying Trees\n": 0.15, "lesson_title": "Day 291: Hopping Monstar and Occupying Trees\n", "probability": 15.0}
+{"Day 292: Implementing Snakes\n": 0.16, "lesson_title": "Day 292: Implementing Snakes\n", "probability": 16.0}
+{"Day 293: Moving Familiars\n": 0.2, "lesson_title": "Day 293: Moving Familiars\n", "probability": 20.0}
+{"Day 294: Adding the Glove\n": 0.18, "lesson_title": "Day 294: Adding the Glove\n", "probability": 18.0}
+{"Day 295: Stacking Rooms for Z Layer Debugging\n": 0.23, "lesson_title": "Day 295: Stacking Rooms for Z Layer Debugging\n", "probability": 23.0}
+{"Day 296: Fog and Alpha for Layers\n": 0.14, "lesson_title": "Day 296: Fog and Alpha for Layers\n", "probability": 14.000000000000002}
+{"Day 297: Separating Entities into Z Layers\n": 0.14, "lesson_title": "Day 297: Separating Entities into Z Layers\n", "probability": 14.000000000000002}
+{"Day 298: Improving Sort Keys Part 1\n": 0.78, "lesson_title": "Day 298: Improving Sort Keys Part 1\n", "probability": 78.0}
+{"Day 299: Improving Sort Keys Part 2\n": 0.77, "lesson_title": "Day 299: Improving Sort Keys Part 2\n", "probability": 77.0}
+{"Day 300: Changing from Sort Keys to Sort Rules\n": 0.41, "lesson_title": "Day 300: Changing from Sort Keys to Sort Rules\n", "probability": 41.0}
+{"Day 301: Sorting with Sprite Bounds\n": 0.25, "lesson_title": "Day 301: Sorting with Sprite Bounds\n", "probability": 25.0}
+{"Day 302: Confirming No Total Ordering\n": 0.66, "lesson_title": "Day 302: Confirming No Total Ordering\n", "probability": 66.0}
+{"Day 303: Trying Separate Y and Z Sorts\n": 0.61, "lesson_title": "Day 303: Trying Separate Y and Z Sorts\n", "probability": 61.0}
+{"Day 304: Building and Traversing Graphs\n": 0.9, "lesson_title": "Day 304: Building and Traversing Graphs\n", "probability": 90.0}
+{"Day 305: Using Memory Arenas in the Platform Layer\n": 0.58, "lesson_title": "Day 305: Using Memory Arenas in the Platform Layer\n", "probability": 57.99999999999999}
+{"Day 306: Debugging Graph-based Sort\n": 0.85, "lesson_title": "Day 306: Debugging Graph-based Sort\n", "probability": 85.0}
+{"Day 307: Visualizing Sort Groups\n": 0.73, "lesson_title": "Day 307: Visualizing Sort Groups\n", "probability": 73.0}
+{"Day 308: Debugging the Cycle Check\n": 0.74, "lesson_title": "Day 308: Debugging the Cycle Check\n", "probability": 74.0}
+{"Day 309: Grid Partitioning for Overlap Testing\n": 0.67, "lesson_title": "Day 309: Grid Partitioning for Overlap Testing\n", "probability": 67.0}
+{"Day 310: Finishing Sort Acceleration via Gridding\n": 0.74, "lesson_title": "Day 310: Finishing Sort Acceleration via Gridding\n", "probability": 74.0}
+{"Day 311: Allowing Manual Sorting\n": 0.53, "lesson_title": "Day 311: Allowing Manual Sorting\n", "probability": 53.0}
+{"Day 312: Cross-entity Manual Sorting\n": 0.32, "lesson_title": "Day 312: Cross-entity Manual Sorting\n", "probability": 32.0}
+{"Day 313: Returning to Work on Z Layers\n": 0.19, "lesson_title": "Day 313: Returning to Work on Z Layers\n", "probability": 19.0}
+{"Day 314: Breaking Sprites into Layers\n": 0.07, "lesson_title": "Day 314: Breaking Sprites into Layers\n", "probability": 7.000000000000001}
+{"Day 315: Un-reversing Sort Key Order\n": 0.66, "lesson_title": "Day 315: Un-reversing Sort Key Order\n", "probability": 66.0}
+{"Day 316: Multiple Software Render Targets\n": 0.05, "lesson_title": "Day 316: Multiple Software Render Targets\n", "probability": 5.0}
+{"Day 317: Alpha Blending Multiple Render Targets\n": 0.04, "lesson_title": "Day 317: Alpha Blending Multiple Render Targets\n", "probability": 4.0}
+{"Day 318: Optimizing Render Target Blends and Clears\n": 0.05, "lesson_title": "Day 318: Optimizing Render Target Blends and Clears\n", "probability": 5.0}
+{"Day 319: Inverse and Transpose Matrices\n": 0.39, "lesson_title": "Day 319: Inverse and Transpose Matrices\n", "probability": 39.0}
+{"Day 320: Inverting a 2x2 Matrix by Hand\n": 0.35, "lesson_title": "Day 320: Inverting a 2x2 Matrix by Hand\n", "probability": 35.0}
+{"Day 321: Multiple OpenGL Render Targets\n": 0.04, "lesson_title": "Day 321: Multiple OpenGL Render Targets\n", "probability": 4.0}
+{"Day 322: Handling Multiple Display Aspect Ratios\n": 0.07, "lesson_title": "Day 322: Handling Multiple Display Aspect Ratios\n", "probability": 7.000000000000001}
+{"Day 323: Fixing Miscellaneous Bugs\n": 0.12, "lesson_title": "Day 323: Fixing Miscellaneous Bugs\n", "probability": 12.0}
+{"Day 324: Moving Away from Multiple OpenGL Contexts\n": 0.07, "lesson_title": "Day 324: Moving Away from Multiple OpenGL Contexts\n", "probability": 7.000000000000001}
+{"Day 325: Ticket Mutexes\n": 0.83, "lesson_title": "Day 325: Ticket Mutexes\n", "probability": 83.0}
+{"Day 326: Vararg Functions\n": 0.35, "lesson_title": "Day 326: Vararg Functions\n", "probability": 35.0}
+{"Day 327: Parsing Printf Format Strings\n": 0.41, "lesson_title": "Day 327: Parsing Printf Format Strings\n", "probability": 41.0}
+{"Day 328: Integer and String Support in Printf\n": 0.2, "lesson_title": "Day 328: Integer and String Support in Printf\n", "probability": 20.0}
+{"Day 329: Printing Out Floats Poorly\n": 0.26, "lesson_title": "Day 329: Printing Out Floats Poorly\n", "probability": 26.0}
+{"Day 330: Fixings Bugs from the Issue List\n": 0.14, "lesson_title": "Day 330: Fixings Bugs from the Issue List\n", "probability": 14.000000000000002}
+{"Day 331: Activating Entities by Brain\n": 0.29, "lesson_title": "Day 331: Activating Entities by Brain\n", "probability": 28.999999999999996}
+{"Day 332: Disabling Sort for Debug Overlays\n": 0.11, "lesson_title": "Day 332: Disabling Sort for Debug Overlays\n", "probability": 11.0}
+{"Day 333: Floor-relative Perspective Transforms\n": 0.17, "lesson_title": "Day 333: Floor-relative Perspective Transforms\n", "probability": 17.0}
+{"Day 334: Adding Boost Pads\n": 0.13, "lesson_title": "Day 334: Adding Boost Pads\n", "probability": 13.0}
+{"Day 335: Moving Entities on Boost Squares\n": 0.24, "lesson_title": "Day 335: Moving Entities on Boost Squares\n", "probability": 24.0}
+{"Day 336: Adding a Particle System Cache\n": 0.1, "lesson_title": "Day 336: Adding a Particle System Cache\n", "probability": 10.0}
+{"Day 337: Convenient SIMD for Particles\n": 0.44, "lesson_title": "Day 337: Convenient SIMD for Particles\n", "probability": 44.0}
+{"Day 338: Simulation-space Particles\n": 0.33, "lesson_title": "Day 338: Simulation-space Particles\n", "probability": 33.0}
+{"Day 339: Debugging Particle Camera Offset Motion\n": 0.08, "lesson_title": "Day 339: Debugging Particle Camera Offset Motion\n", "probability": 8.0}
+{"Day 340: Cleaning Up World / Sim-Region Interactions\n": 0.23, "lesson_title": "Day 340: Cleaning Up World / Sim-Region Interactions\n", "probability": 23.0}
+{"Day 341: Dynamically Growing Arenas\n": 0.31, "lesson_title": "Day 341: Dynamically Growing Arenas\n", "probability": 31.0}
+{"Day 342: Supporting Temporary Memory in Dynamic Arenas\n": 0.7, "lesson_title": "Day 342: Supporting Temporary Memory in Dynamic Arenas\n", "probability": 70.0}
+{"Day 343: Saving and Restoring Dynamically Allocated Memory Pages\n": 0.76, "lesson_title": "Day 343: Saving and Restoring Dynamically Allocated Memory Pages\n", "probability": 76.0}
+{"Day 344: Selective Memory Restoration\n": 0.65, "lesson_title": "Day 344: Selective Memory Restoration\n", "probability": 65.0}
+{"Day 345: Protecting Memory Pages for Underflow Detection\n": 0.74, "lesson_title": "Day 345: Protecting Memory Pages for Underflow Detection\n", "probability": 74.0}
+{"Day 346: Consolidating Memory Block Headers\n": 0.83, "lesson_title": "Day 346: Consolidating Memory Block Headers\n", "probability": 83.0}
+{"Day 347: Debugging Win32 Memory List Corruption\n": 0.24, "lesson_title": "Day 347: Debugging Win32 Memory List Corruption\n", "probability": 24.0}
+{"Day 348: Debugging Cutscene Z and Traversable Creation\n": 0.11, "lesson_title": "Day 348: Debugging Cutscene Z and Traversable Creation\n", "probability": 11.0}
+{"Day 349: Running Multiple Sim Regions\n": 0.27, "lesson_title": "Day 349: Running Multiple Sim Regions\n", "probability": 27.0}
+{"Day 350: Multithreaded World Simulation\n": 0.66, "lesson_title": "Day 350: Multithreaded World Simulation\n", "probability": 66.0}
+{"Day 351: Optimizing Multithreaded Simulation Regions\n": 0.68, "lesson_title": "Day 351: Optimizing Multithreaded Simulation Regions\n", "probability": 68.0}
+{"Day 352: Isolating the Camera Update Code\n": 0.12, "lesson_title": "Day 352: Isolating the Camera Update Code\n", "probability": 12.0}
+{"Day 353: Simple RLE Compression\n": 0.82, "lesson_title": "Day 353: Simple RLE Compression\n", "probability": 82.0}
+{"Day 354: Simple LZ Compression\n": 0.87, "lesson_title": "Day 354: Simple LZ Compression\n", "probability": 87.0}
+{"Day 355: Clearing Out Pending GitHub Bugs\n": 0.1, "lesson_title": "Day 355: Clearing Out Pending GitHub Bugs\n", "probability": 10.0}
+{"Day 356: Making the Debug System CLANG Compatible\n": 0.16, "lesson_title": "Day 356: Making the Debug System CLANG Compatible\n", "probability": 16.0}
+{"Day 357: Room-based Camera Zoom\n": 0.09, "lesson_title": "Day 357: Room-based Camera Zoom\n", "probability": 9.0}
+{"Day 358: Introduction to Depth Buffers\n": 0.08, "lesson_title": "Day 358: Introduction to Depth Buffers\n", "probability": 8.0}
+{"Day 359: OpenGL Projection Matrices Revisited\n": 0.06, "lesson_title": "Day 359: OpenGL Projection Matrices Revisited\n", "probability": 6.0}
+{"Day 360: Moving the Perspective Divide to OpenGL\n": 0.07, "lesson_title": "Day 360: Moving the Perspective Divide to OpenGL\n", "probability": 7.000000000000001}
+{"Day 361: Introduction to 3D Rotation Matrices\n": 0.12, "lesson_title": "Day 361: Introduction to 3D Rotation Matrices\n", "probability": 12.0}
+{"Day 362: Matrix Multiplication and Transform Order\n": 0.28, "lesson_title": "Day 362: Matrix Multiplication and Transform Order\n", "probability": 28.000000000000004}
+{"Day 363: Making an Orbiting Debug Camera\n": 0.07, "lesson_title": "Day 363: Making an Orbiting Debug Camera\n", "probability": 7.000000000000001}
+{"Day 364: Enabling the OpenGL Depth Buffer\n": 0.04, "lesson_title": "Day 364: Enabling the OpenGL Depth Buffer\n", "probability": 4.0}
+{"Day 365: Adjusting Sprite Cards to Counter Projection\n": 0.1, "lesson_title": "Day 365: Adjusting Sprite Cards to Counter Projection\n", "probability": 10.0}
+{"Day 366: Adding Cubes to the Renderer\n": 0.06, "lesson_title": "Day 366: Adding Cubes to the Renderer\n", "probability": 6.0}
+{"Day 367: Enabling OpenGL Multisampling\n": 0.04, "lesson_title": "Day 367: Enabling OpenGL Multisampling\n", "probability": 4.0}
+{"Day 368: Compiling and Linking Shaders in OpenGL\n": 0.05, "lesson_title": "Day 368: Compiling and Linking Shaders in OpenGL\n", "probability": 5.0}
+{"Day 369: Introduction to Vertex and Fragment Shaders\n": 0.04, "lesson_title": "Day 369: Introduction to Vertex and Fragment Shaders\n", "probability": 4.0}
+{"Day 370: Shader Fallback sRGB\n": 0.05, "lesson_title": "Day 370: Shader Fallback sRGB\n", "probability": 5.0}
+{"Day 371: OpenGL Vertex Arrays\n": 0.05, "lesson_title": "Day 371: OpenGL Vertex Arrays\n", "probability": 5.0}
+{"Day 372: Using Strictly OpenGL Core Profile\n": 0.06, "lesson_title": "Day 372: Using Strictly OpenGL Core Profile\n", "probability": 6.0}
+{"Day 373: Inverting the Full 3D Transform\n": 0.17, "lesson_title": "Day 373: Inverting the Full 3D Transform\n", "probability": 17.0}
+{"Day 374: Debugging Z Transform and Bias\n": 0.43, "lesson_title": "Day 374: Debugging Z Transform and Bias\n", "probability": 43.0}
+{"Day 375: Adding Distance-based Fog\n": 0.06, "lesson_title": "Day 375: Adding Distance-based Fog\n", "probability": 6.0}
+{"Day 376: Drawing Debug Volumes\n": 0.1, "lesson_title": "Day 376: Drawing Debug Volumes\n", "probability": 10.0}
+{"Day 377: Improving Collision Volumes and the Camera\n": 0.06, "lesson_title": "Day 377: Improving Collision Volumes and the Camera\n", "probability": 6.0}
+{"Day 378: Adding More Camera Behaviors\n": 0.07, "lesson_title": "Day 378: Adding More Camera Behaviors\n", "probability": 7.000000000000001}
+{"Day 379: Debug Overlay Cleanup and Render Group Performance Investigation\n": 0.09, "lesson_title": "Day 379: Debug Overlay Cleanup and Render Group Performance Investigation\n", "probability": 9.0}
+{"Day 380: Attempting (and Failing) to Fix the Clock\n": 0.15, "lesson_title": "Day 380: Attempting (and Failing) to Fix the Clock\n", "probability": 15.0}
+{"Day 381: Two-pass Depth Peeling\n": 0.06, "lesson_title": "Day 381: Two-pass Depth Peeling\n", "probability": 6.0}
+{"Day 382: Depth Peel Compositing\n": 0.06, "lesson_title": "Day 382: Depth Peel Compositing\n", "probability": 6.0}
+{"Day 383: Fixing Depth Peel Artifacts\n": 0.05, "lesson_title": "Day 383: Fixing Depth Peel Artifacts\n", "probability": 5.0}
+{"Day 384: Dynamically Responding to Render Settings\n": 0.08, "lesson_title": "Day 384: Dynamically Responding to Render Settings\n", "probability": 8.0}
+{"Day 385: Trying Multisampled Depth Peels\n": 0.04, "lesson_title": "Day 385: Trying Multisampled Depth Peels\n", "probability": 4.0}
+{"Day 386: Implementing a Custom Multisample Resolve\n": 0.06, "lesson_title": "Day 386: Implementing a Custom Multisample Resolve\n", "probability": 6.0}
+{"Day 387: Further Attempts at Multisampled Depth Peeling\n": 0.05, "lesson_title": "Day 387: Further Attempts at Multisampled Depth Peeling\n", "probability": 5.0}
+{"Day 388: Successful Multisampled Depth-Peeling\n": 0.06, "lesson_title": "Day 388: Successful Multisampled Depth-Peeling\n", "probability": 6.0}
+{"Day 389: Adding Simple Lighting\n": 0.05, "lesson_title": "Day 389: Adding Simple Lighting\n", "probability": 5.0}
+{"Day 390: Adding Simple Phong Lighting\n": 0.04, "lesson_title": "Day 390: Adding Simple Phong Lighting\n", "probability": 4.0}
+{"Day 391: Planning Better Lighting\n": 0.08, "lesson_title": "Day 391: Planning Better Lighting\n", "probability": 8.0}
+{"Day 392: Creating Lighting Textures\n": 0.04, "lesson_title": "Day 392: Creating Lighting Textures\n", "probability": 4.0}
+{"Day 393: Planning Lighting from Depth Peels\n": 0.05, "lesson_title": "Day 393: Planning Lighting from Depth Peels\n", "probability": 5.0}
+{"Day 394: Basic Multigrid Lighting Upward Iteration\n": 0.15, "lesson_title": "Day 394: Basic Multigrid Lighting Upward Iteration\n", "probability": 15.0}
+{"Day 395: Basic Multigrid Lighting Down Iteration\n": 0.12, "lesson_title": "Day 395: Basic Multigrid Lighting Down Iteration\n", "probability": 12.0}
+{"Day 396: Rendering Lighting Information from the Game\n": 0.06, "lesson_title": "Day 396: Rendering Lighting Information from the Game\n", "probability": 6.0}
+{"Day 397: Converting Depth Peel Data to Lighting Data\n": 0.06, "lesson_title": "Day 397: Converting Depth Peel Data to Lighting Data\n", "probability": 6.0}
+{"Day 398: Applying Lighting Back to Depth Peels\n": 0.05, "lesson_title": "Day 398: Applying Lighting Back to Depth Peels\n", "probability": 5.0}
+{"Day 399: Creating a CPU-side Lighting Testbed\n": 0.12, "lesson_title": "Day 399: Creating a CPU-side Lighting Testbed\n", "probability": 12.0}
+{"Day 400: Adding an Ambient Occlusion Pass\n": 0.03, "lesson_title": "Day 400: Adding an Ambient Occlusion Pass\n", "probability": 3.0}
+{"Day 401: Debugging Lighting Transfer\n": 0.11, "lesson_title": "Day 401: Debugging Lighting Transfer\n", "probability": 11.0}
+{"Day 402: Adding Raycasting to the Lighting\n": 0.07, "lesson_title": "Day 402: Adding Raycasting to the Lighting\n", "probability": 7.000000000000001}
+{"Day 403: Off-line Lighting and Per-vertex Reflectors\n": 0.06, "lesson_title": "Day 403: Off-line Lighting and Per-vertex Reflectors\n", "probability": 6.0}
+{"Day 404: Voxel-Indexed Lighting Samples\n": 0.11, "lesson_title": "Day 404: Voxel-Indexed Lighting Samples\n", "probability": 11.0}
+{"Day 405: Crashing the Stream with a Fragment Shader\n": 0.05, "lesson_title": "Day 405: Crashing the Stream with a Fragment Shader\n", "probability": 5.0}
+{"Day 406: Getting a Graphics Debugger Working\n": 0.11, "lesson_title": "Day 406: Getting a Graphics Debugger Working\n", "probability": 11.0}
+{"Day 407: Starting to Debug Volume Textures\n": 0.08, "lesson_title": "Day 407: Starting to Debug Volume Textures\n", "probability": 8.0}
+{"Day 408: Finishing Debugging Volume Textures\n": 0.08, "lesson_title": "Day 408: Finishing Debugging Volume Textures\n", "probability": 8.0}
+{"Day 409: Smoother Blending of Lighting Samples\n": 0.08, "lesson_title": "Day 409: Smoother Blending of Lighting Samples\n", "probability": 8.0}
+{"Day 410: Tracking Incident Light\n": 0.16, "lesson_title": "Day 410: Tracking Incident Light\n", "probability": 16.0}
+{"Day 411: Switching to Rectangular Lighting Elements\n": 0.06, "lesson_title": "Day 411: Switching to Rectangular Lighting Elements\n", "probability": 6.0}
+{"Day 412: Debugging Voxel Interpolation\n": 0.14, "lesson_title": "Day 412: Debugging Voxel Interpolation\n", "probability": 14.000000000000002}
+{"Day 413: Encoding Light Values\n": 0.46, "lesson_title": "Day 413: Encoding Light Values\n", "probability": 46.0}
+{"Day 414: Improving Light Distribution\n": 0.12, "lesson_title": "Day 414: Improving Light Distribution\n", "probability": 12.0}
+{"Day 415: Per-primitive Lighting Samples\n": 0.07, "lesson_title": "Day 415: Per-primitive Lighting Samples\n", "probability": 7.000000000000001}
+{"Day 416: Separating Lighting and Geometry Submission\n": 0.07, "lesson_title": "Day 416: Separating Lighting and Geometry Submission\n", "probability": 7.000000000000001}
+{"Day 417: Adding a Debug View for Lighting Points\n": 0.06, "lesson_title": "Day 417: Adding a Debug View for Lighting Points\n", "probability": 6.0}
+{"Day 418: Smoothing Light Samples Over Time\n": 0.2, "lesson_title": "Day 418: Smoothing Light Samples Over Time\n", "probability": 20.0}
+{"Day 419: Debugging Missing Lighting\n": 0.09, "lesson_title": "Day 419: Debugging Missing Lighting\n", "probability": 9.0}
+{"Day 420: Pushing Lighting Information Directly\n": 0.09, "lesson_title": "Day 420: Pushing Lighting Information Directly\n", "probability": 9.0}
+{"Day 421: Passing Lighting as Boxes\n": 0.13, "lesson_title": "Day 421: Passing Lighting as Boxes\n", "probability": 13.0}
+{"Day 422: Raycasting AABBs Directly\n": 0.12, "lesson_title": "Day 422: Raycasting AABBs Directly\n", "probability": 12.0}
+{"Day 423: Modifying Lighting to Use a Spatial Hierarchy\n": 0.06, "lesson_title": "Day 423: Modifying Lighting to Use a Spatial Hierarchy\n", "probability": 6.0}
+{"Day 424: Modifying Lighting to Use a Spatial Hierarchy\n": 0.06, "lesson_title": "Day 424: Modifying Lighting to Use a Spatial Hierarchy\n", "probability": 6.0}
+{"Day 425: Entity-based Lighting Storage\n": 0.14, "lesson_title": "Day 425: Entity-based Lighting Storage\n", "probability": 14.000000000000002}
+{"Day 426: Debugging Lighting Persistence\n": 0.1, "lesson_title": "Day 426: Debugging Lighting Persistence\n", "probability": 10.0}
+{"Day 427: Debugging Lighting Flicker\n": 0.1, "lesson_title": "Day 427: Debugging Lighting Flicker\n", "probability": 10.0}
+{"Day 428: Tracking Light Proportional to Photons per Second\n": 0.2, "lesson_title": "Day 428: Tracking Light Proportional to Photons per Second\n", "probability": 20.0}
+{"Day 429: Multiresolution Light Sampling\n": 0.08, "lesson_title": "Day 429: Multiresolution Light Sampling\n", "probability": 8.0}
+{"Day 430: Stratifying and Multithreading the Lighting\n": 0.2, "lesson_title": "Day 430: Stratifying and Multithreading the Lighting\n", "probability": 20.0}
+{"Day 431: SIMD Raycasting\n": 0.17, "lesson_title": "Day 431: SIMD Raycasting\n", "probability": 17.0}
+{"Day 432: Finishing the Main SIMD Raycasting Loop\n": 0.13, "lesson_title": "Day 432: Finishing the Main SIMD Raycasting Loop\n", "probability": 13.0}
+{"Day 433: Optimizing Ray vs. AABB Intersections\n": 0.16, "lesson_title": "Day 433: Optimizing Ray vs. AABB Intersections\n", "probability": 16.0}
+{"Day 434: Replacing the Pseudo-random Number Generator\n": 0.62, "lesson_title": "Day 434: Replacing the Pseudo-random Number Generator\n", "probability": 62.0}
+{"Day 435: Removing the CRT from the Win32 Loader\n": 0.1, "lesson_title": "Day 435: Removing the CRT from the Win32 Loader\n", "probability": 10.0}
+{"Day 436: Spiral and Blue Noise Distributions on the Sphere\n": 0.18, "lesson_title": "Day 436: Spiral and Blue Noise Distributions on the Sphere\n", "probability": 18.0}
+{"Day 437: Switching to Precomputed Hemisphere Distributions\n": 0.1, "lesson_title": "Day 437: Switching to Precomputed Hemisphere Distributions\n", "probability": 10.0}
+{"Day 438: Switching to Cosine-weighted Poisson Sampling\n": 0.1, "lesson_title": "Day 438: Switching to Cosine-weighted Poisson Sampling\n", "probability": 10.0}
+{"Day 439: Testing Better Entropy\n": 0.6, "lesson_title": "Day 439: Testing Better Entropy\n", "probability": 60.0}
+{"Day 440: Introduction to Function Approximation with Andrew Bromage\n": 0.62, "lesson_title": "Day 440: Introduction to Function Approximation with Andrew Bromage\n", "probability": 62.0}
+{"Day 441: Never, Ever Update Your Development Tools. Ever.\n": 0.1, "lesson_title": "Day 441: Never, Ever Update Your Development Tools. Ever.\n", "probability": 10.0}
+{"Day 442: Getting NSight Working\n": 0.12, "lesson_title": "Day 442: Getting NSight Working\n", "probability": 12.0}
+{"Day 443: Updating the Player Movement Code\n": 0.12, "lesson_title": "Day 443: Updating the Player Movement Code\n", "probability": 12.0}
+{"Day 444: Stubbing Out the World Generator\n": 0.18, "lesson_title": "Day 444: Stubbing Out the World Generator\n", "probability": 18.0}
+{"Day 445: Cleaning Up Entity Creation\n": 0.25, "lesson_title": "Day 445: Cleaning Up Entity Creation\n", "probability": 25.0}
+{"Day 446: Generating Possible Room Volumes\n": 0.31, "lesson_title": "Day 446: Generating Possible Room Volumes\n", "probability": 31.0}
+{"Day 447: Placing Adjacent Rooms\n": 0.26, "lesson_title": "Day 447: Placing Adjacent Rooms\n", "probability": 26.0}
+{"Day 448: Explicitly Placed Room Connections\n": 0.26, "lesson_title": "Day 448: Explicitly Placed Room Connections\n", "probability": 26.0}
+{"Day 449: Preventing Overlapping Rooms\n": 0.51, "lesson_title": "Day 449: Preventing Overlapping Rooms\n", "probability": 51.0}
+{"Day 450: Supporting All Room Connection Directions\n": 0.32, "lesson_title": "Day 450: Supporting All Room Connection Directions\n", "probability": 32.0}
+{"Day 451: Updating Unproject\n": 0.13, "lesson_title": "Day 451: Updating Unproject\n", "probability": 13.0}
+{"Day 452: Improving Camera Placement and Room Alignment\n": 0.05, "lesson_title": "Day 452: Improving Camera Placement and Room Alignment\n", "probability": 5.0}
+{"Day 453: Parsing PNG Headers\n": 0.3, "lesson_title": "Day 453: Parsing PNG Headers\n", "probability": 30.0}
+{"Day 454: Parsing ZLIB Headers\n": 0.59, "lesson_title": "Day 454: Parsing ZLIB Headers\n", "probability": 59.0}
+{"Day 455: Decoding PNG Huffman Tables\n": 0.53, "lesson_title": "Day 455: Decoding PNG Huffman Tables\n", "probability": 53.0}
+{"Day 456: Decoding PNG Length and Distance Extra Bits\n": 0.4, "lesson_title": "Day 456: Decoding PNG Length and Distance Extra Bits\n", "probability": 40.0}
+{"Day 457: Implementing PNG Reconstruction Filters\n": 0.2, "lesson_title": "Day 457: Implementing PNG Reconstruction Filters\n", "probability": 20.0}
+{"Day 458: Debugging the PNG Reader\n": 0.22, "lesson_title": "Day 458: Debugging the PNG Reader\n", "probability": 22.0}
+{"Day 459: Partitioning the PNG Reader for Integration\n": 0.18, "lesson_title": "Day 459: Partitioning the PNG Reader for Integration\n", "probability": 18.0}
+{"Day 460: Providing Platform File Information to the Game\n": 0.12, "lesson_title": "Day 460: Providing Platform File Information to the Game\n", "probability": 12.0}
+{"Day 461: Checking for File Date Changes\n": 0.19, "lesson_title": "Day 461: Checking for File Date Changes\n", "probability": 19.0}
+{"Day 462: Extracting Asset Tiles from Gridded PNGs\n": 0.12, "lesson_title": "Day 462: Extracting Asset Tiles from Gridded PNGs\n", "probability": 12.0}
+{"Day 463: Preparing HHAs for Rewriting\n": 0.39, "lesson_title": "Day 463: Preparing HHAs for Rewriting\n", "probability": 39.0}
+{"Day 464: Applying Asset Types and Tags to Imported PNGs\n": 0.05, "lesson_title": "Day 464: Applying Asset Types and Tags to Imported PNGs\n", "probability": 5.0}
+{"Day 465: Updating HHAs from V0 to V1\n": 0.21, "lesson_title": "Day 465: Updating HHAs from V0 to V1\n", "probability": 21.0}
+{"Day 466: Loading and Displaying HHA Files as Text\n": 0.19, "lesson_title": "Day 466: Loading and Displaying HHA Files as Text\n", "probability": 19.0}
+{"Day 467: Updating the Game to HHA Version 1\n": 0.1, "lesson_title": "Day 467: Updating the Game to HHA Version 1\n", "probability": 10.0}
+{"Day 468: Handling Annotation Data During Import\n": 0.19, "lesson_title": "Day 468: Handling Annotation Data During Import\n", "probability": 19.0}
+{"Day 469: Downsampling Imported Assets\n": 0.13, "lesson_title": "Day 469: Downsampling Imported Assets\n", "probability": 13.0}
+{"Day 470: Separating the Renderer Completely (Part 1)\n": 0.1, "lesson_title": "Day 470: Separating the Renderer Completely (Part 1)\n", "probability": 10.0}
+{"Day 471: Separating the Renderer Completely (Part 2)\n": 0.1, "lesson_title": "Day 471: Separating the Renderer Completely (Part 2)\n", "probability": 10.0}
+{"Day 472: Making a Simple Scene with the Separated Renderer\n": 0.05, "lesson_title": "Day 472: Making a Simple Scene with the Separated Renderer\n", "probability": 5.0}
+{"Day 473: Removing Screen Coordinates from the Render Group\n": 0.08, "lesson_title": "Day 473: Removing Screen Coordinates from the Render Group\n", "probability": 8.0}
+{"Day 474: Removing the Transient State Concept\n": 0.53, "lesson_title": "Day 474: Removing the Transient State Concept\n", "probability": 53.0}
+{"Day 475: Abstracting the Renderer Interface\n": 0.23, "lesson_title": "Day 475: Abstracting the Renderer Interface\n", "probability": 23.0}
+{"Day 476: Providing Convenient Camera Controls\n": 0.07, "lesson_title": "Day 476: Providing Convenient Camera Controls\n", "probability": 7.000000000000001}
+{"Day 477: Changing to Single Dispatch Per Pass (Part 1)\n": 0.27, "lesson_title": "Day 477: Changing to Single Dispatch Per Pass (Part 1)\n", "probability": 27.0}
+{"Day 478: Changing to Single Dispatch Per Pass (Part 2)\n": 0.24, "lesson_title": "Day 478: Changing to Single Dispatch Per Pass (Part 2)\n", "probability": 24.0}
+{"Day 479: Large Texture Support\n": 0.12, "lesson_title": "Day 479: Large Texture Support\n", "probability": 12.0}
+{"Day 480: Debugging Large Texture Support\n": 0.13, "lesson_title": "Day 480: Debugging Large Texture Support\n", "probability": 13.0}
+{"Day 481: Encoding Cube UVs\n": 0.09, "lesson_title": "Day 481: Encoding Cube UVs\n", "probability": 9.0}
+{"Day 482: Associating Tags with PNGs\n": 0.1, "lesson_title": "Day 482: Associating Tags with PNGs\n", "probability": 10.0}
+{"Day 483: Debugging Tagged PNG Imports\n": 0.13, "lesson_title": "Day 483: Debugging Tagged PNG Imports\n", "probability": 13.0}
+{"Day 484: Debugging Multi-tile Import\n": 0.2, "lesson_title": "Day 484: Debugging Multi-tile Import\n", "probability": 20.0}
+{"Day 485: Adding Entity Placement to the World Generator\n": 0.09, "lesson_title": "Day 485: Adding Entity Placement to the World Generator\n", "probability": 9.0}
+{"Day 486: Adding Multiple Alignment Points\n": 0.24, "lesson_title": "Day 486: Adding Multiple Alignment Points\n", "probability": 24.0}
+{"Day 487: Hit-Testing Boxes in 3D\n": 0.12, "lesson_title": "Day 487: Hit-Testing Boxes in 3D\n", "probability": 12.0}
+{"Day 488: Adding an In-Game Editor\n": 0.09, "lesson_title": "Day 488: Adding an In-Game Editor\n", "probability": 9.0}
+{"Day 489: Implementing Undo and Redo\n": 0.54, "lesson_title": "Day 489: Implementing Undo and Redo\n", "probability": 54.0}
+{"Day 490: Merging Debug and Developer UI\n": 0.07, "lesson_title": "Day 490: Merging Debug and Developer UI\n", "probability": 7.000000000000001}
+{"Day 491: Debugging the Basic Editor UI\n": 0.06, "lesson_title": "Day 491: Debugging the Basic Editor UI\n", "probability": 6.0}
+{"Day 492: Adding More Editor Interactions\n": 0.1, "lesson_title": "Day 492: Adding More Editor Interactions\n", "probability": 10.0}
+{"Day 493: Cleaning Up the Editor UI Layout\n": 0.03, "lesson_title": "Day 493: Cleaning Up the Editor UI Layout\n", "probability": 3.0}
+{"Day 494: Preparing Entity Pieces for Alignment Points\n": 0.26, "lesson_title": "Day 494: Preparing Entity Pieces for Alignment Points\n", "probability": 26.0}
+{"Day 495: Improving the Alignment Editing UI\n": 0.05, "lesson_title": "Day 495: Improving the Alignment Editing UI\n", "probability": 5.0}
+{"Day 496: Debugging Attachment Point Transforms\n": 0.1, "lesson_title": "Day 496: Debugging Attachment Point Transforms\n", "probability": 10.0}
+{"Day 497: Starting on Asset System Cleanup\n": 0.22, "lesson_title": "Day 497: Starting on Asset System Cleanup\n", "probability": 22.0}
+{"Day 498: Finishing Asset System Cleanup\n": 0.18, "lesson_title": "Day 498: Finishing Asset System Cleanup\n", "probability": 18.0}
+{"Day 499: Unifying Debug and Editor Modes\n": 0.25, "lesson_title": "Day 499: Unifying Debug and Editor Modes\n", "probability": 25.0}
+{"Day 500: Saving HHAs Modified by the In-Game Editor\n": 0.16, "lesson_title": "Day 500: Saving HHAs Modified by the In-Game Editor\n", "probability": 16.0}
+{"Day 501: Importing Orphans\n": 0.23, "lesson_title": "Day 501: Importing Orphans\n", "probability": 23.0}
+{"Day 502: Adding Stairs to the Generator\n": 0.2, "lesson_title": "Day 502: Adding Stairs to the Generator\n", "probability": 20.0}
+{"Day 503: Constructing a Camera Easing Function\n": 0.12, "lesson_title": "Day 503: Constructing a Camera Easing Function\n", "probability": 12.0}
+{"Day 504: Exploring Camera Interpolation Alternatives\n": 0.09, "lesson_title": "Day 504: Exploring Camera Interpolation Alternatives\n", "probability": 9.0}
+{"Day 505: Placing Multiple Entities at a Time\n": 0.23, "lesson_title": "Day 505: Placing Multiple Entities at a Time\n", "probability": 23.0}
+{"Day 506: Improving Camera Motion\n": 0.07, "lesson_title": "Day 506: Improving Camera Motion\n", "probability": 7.000000000000001}
+{"Day 507: LRU Texture Handle Reuse\n": 0.19, "lesson_title": "Day 507: LRU Texture Handle Reuse\n", "probability": 19.0}
+{"Day 508: Fixing the Remaining GitHub Issues\n": 0.12, "lesson_title": "Day 508: Fixing the Remaining GitHub Issues\n", "probability": 12.0}
+{"Day 509: Creating Tags Files\n": 0.22, "lesson_title": "Day 509: Creating Tags Files\n", "probability": 22.0}
+{"Day 510: Making a Parser for HHTs\n": 0.62, "lesson_title": "Day 510: Making a Parser for HHTs\n", "probability": 62.0}
+{"Day 511: Merging HHT Parsing into the Asset System\n": 0.16, "lesson_title": "Day 511: Merging HHT Parsing into the Asset System\n", "probability": 16.0}
+{"Day 512: Updating Assets via HHT Files\n": 0.08, "lesson_title": "Day 512: Updating Assets via HHT Files\n", "probability": 8.0}
+{"Day 513: Adding Raw Tokens and Alignment Point Parsing\n": 0.29, "lesson_title": "Day 513: Adding Raw Tokens and Alignment Point Parsing\n", "probability": 28.999999999999996}
+{"Day 514: Separating Image and Metadata Imports\n": 0.14, "lesson_title": "Day 514: Separating Image and Metadata Imports\n", "probability": 14.000000000000002}
+{"Day 515: Debugging HHT to HHA Packing\n": 0.3, "lesson_title": "Day 515: Debugging HHT to HHA Packing\n", "probability": 30.0}
+{"Day 516: Rewriting HHTs\n": 0.33, "lesson_title": "Day 516: Rewriting HHTs\n", "probability": 33.0}
+{"Day 517: Inserting and Rewriting HHT Alignment Points\n": 0.43, "lesson_title": "Day 517: Inserting and Rewriting HHT Alignment Points\n", "probability": 43.0}
+{"Day 518: Displaying Import Errors\n": 0.15, "lesson_title": "Day 518: Displaying Import Errors\n", "probability": 15.0}
+{"Day 519: Brainstorming about Z Bias\n": 0.17, "lesson_title": "Day 519: Brainstorming about Z Bias\n", "probability": 17.0}
+{"Day 520: Solving for Debug Camera Parameters\n": 0.11, "lesson_title": "Day 520: Solving for Debug Camera Parameters\n", "probability": 11.0}
+{"Day 521: Debugging Missing Parent Pointers\n": 0.77, "lesson_title": "Day 521: Debugging Missing Parent Pointers\n", "probability": 77.0}
+{"Day 522: Solving for Sorting Displacement\n": 0.84, "lesson_title": "Day 522: Solving for Sorting Displacement\n", "probability": 84.0}
+{"Day 523: Introduction to Git\n": 0.33, "lesson_title": "Day 523: Introduction to Git\n", "probability": 33.0}
+{"Day 524: Integrating WAV Importing\n": 0.13, "lesson_title": "Day 524: Integrating WAV Importing\n", "probability": 13.0}
+{"Day 525: Cleaning Up Import Tag Grids\n": 0.15, "lesson_title": "Day 525: Cleaning Up Import Tag Grids\n", "probability": 15.0}
+{"Day 526: Single-Buffer Sound Streaming\n": 0.48, "lesson_title": "Day 526: Single-Buffer Sound Streaming\n", "probability": 48.0}
+{"Day 527: Making a Stand-Alone Font Extractor\n": 0.2, "lesson_title": "Day 527: Making a Stand-Alone Font Extractor\n", "probability": 20.0}
+{"Day 528: Writing HHTs from HHFont\n": 0.21, "lesson_title": "Day 528: Writing HHTs from HHFont\n", "probability": 21.0}
+{"Day 529: Debugging the PNG Writer\n": 0.18, "lesson_title": "Day 529: Debugging the PNG Writer\n", "probability": 18.0}
+{"Day 530: Writing Large PNGs and Supersampling Fonts\n": 0.08, "lesson_title": "Day 530: Writing Large PNGs and Supersampling Fonts\n", "probability": 8.0}
+{"Day 531: Parsing and Updating Font Metadata\n": 0.17, "lesson_title": "Day 531: Parsing and Updating Font Metadata\n", "probability": 17.0}
+{"Day 532: Finishing HHT-Based Font Importing\n": 0.13, "lesson_title": "Day 532: Finishing HHT-Based Font Importing\n", "probability": 13.0}
+{"Day 533: Importing Particles, Scenery, and Items\n": 0.08, "lesson_title": "Day 533: Importing Particles, Scenery, and Items\n", "probability": 8.0}
+{"Day 534: Heuristic Alpha Testing for Multi-Tile Import\n": 0.23, "lesson_title": "Day 534: Heuristic Alpha Testing for Multi-Tile Import\n", "probability": 23.0}
+{"Day 535: Minor Art Update, Reenabling Particles, Glove Fixes\n": 0.06, "lesson_title": "Day 535: Minor Art Update, Reenabling Particles, Glove Fixes\n", "probability": 6.0}
+{"Day 536: Proper Variant Distributions and Issue Cleanup\n": 0.36, "lesson_title": "Day 536: Proper Variant Distributions and Issue Cleanup\n", "probability": 36.0}
+{"Day 537: Filling Areas Around Rooms\n": 0.42, "lesson_title": "Day 537: Filling Areas Around Rooms\n", "probability": 42.0}
+{"Day 538: Making a Grid-based Layout Helper\n": 0.1, "lesson_title": "Day 538: Making a Grid-based Layout Helper\n", "probability": 10.0}
+{"Day 539: Capturing Source Information for Memory Allocations\n": 0.58, "lesson_title": "Day 539: Capturing Source Information for Memory Allocations\n", "probability": 57.99999999999999}
+{"Day 540: Adding Memory Usage Visualization\n": 0.47, "lesson_title": "Day 540: Adding Memory Usage Visualization\n", "probability": 47.0}
+{"Day 541: Adding Call Sites to the Arena Display\n": 0.11, "lesson_title": "Day 541: Adding Call Sites to the Arena Display\n", "probability": 11.0}
+{"Day 542: Drawing Memory Occupancy Accurately\n": 0.74, "lesson_title": "Day 542: Drawing Memory Occupancy Accurately\n", "probability": 74.0}
+{"Day 543: Moving Unpacked Entities from the Sim Region to World\n": 0.13, "lesson_title": "Day 543: Moving Unpacked Entities from the Sim Region to World\n", "probability": 13.0}
+{"Day 544: Caching Unpacked Entities Across Frames\n": 0.28, "lesson_title": "Day 544: Caching Unpacked Entities Across Frames\n", "probability": 28.000000000000004}
+{"Day 545: Adding Ground Cover\n": 0.15, "lesson_title": "Day 545: Adding Ground Cover\n", "probability": 15.0}
+{"Day 546: GPU MIP Mapping\n": 0.07, "lesson_title": "Day 546: GPU MIP Mapping\n", "probability": 7.000000000000001}
+{"Day 547: Starting the Move to Light Probes\n": 0.09, "lesson_title": "Day 547: Starting the Move to Light Probes\n", "probability": 9.0}
+{"Day 548: Voxelizing Light Probes\n": 0.08, "lesson_title": "Day 548: Voxelizing Light Probes\n", "probability": 8.0}
+{"Day 549: Removing Old Lighting Lookups\n": 0.08, "lesson_title": "Day 549: Removing Old Lighting Lookups\n", "probability": 8.0}
+{"Day 550: SIMD Raycast Point and Normal Computations\n": 0.18, "lesson_title": "Day 550: SIMD Raycast Point and Normal Computations\n", "probability": 18.0}
+{"Day 551: Computing Probe to Probe Transmission\n": 0.42, "lesson_title": "Day 551: Computing Probe to Probe Transmission\n", "probability": 42.0}
+{"Day 552: Generating Sampling Spheres into an INL\n": 0.18, "lesson_title": "Day 552: Generating Sampling Spheres into an INL\n", "probability": 18.0}
+{"Day 553: Improved Sphere Distributions\n": 0.39, "lesson_title": "Day 553: Improved Sphere Distributions\n", "probability": 39.0}
+{"Day 554: Reducing GPU Memory Footprint\n": 0.36, "lesson_title": "Day 554: Reducing GPU Memory Footprint\n", "probability": 36.0}
+{"Day 555: Looking for GPU Performance Issues\n": 0.19, "lesson_title": "Day 555: Looking for GPU Performance Issues\n", "probability": 19.0}
+{"Day 556: Optimizing Depth Peeling and Multisample Resolves\n": 0.05, "lesson_title": "Day 556: Optimizing Depth Peeling and Multisample Resolves\n", "probability": 5.0}
+{"Day 557: Basic Dynamic Quad Output Optimizations\n": 0.24, "lesson_title": "Day 557: Basic Dynamic Quad Output Optimizations\n", "probability": 24.0}
+{"Day 558: Assigning Lighting Probe Slots\n": 0.06, "lesson_title": "Day 558: Assigning Lighting Probe Slots\n", "probability": 6.0}
+{"Day 559: Experimenting with Fragment Light Sampling\n": 0.05, "lesson_title": "Day 559: Experimenting with Fragment Light Sampling\n", "probability": 5.0}
+{"Day 560: Querying Irradiance Directly from Voxels\n": 0.09, "lesson_title": "Day 560: Querying Irradiance Directly from Voxels\n", "probability": 9.0}
+{"Day 561: Sampling Light Voxels with a Reflection Vector\n": 0.06, "lesson_title": "Day 561: Sampling Light Voxels with a Reflection Vector\n", "probability": 6.0}
+{"Day 562: Testing Voxel Light Sampling\n": 0.08, "lesson_title": "Day 562: Testing Voxel Light Sampling\n", "probability": 8.0}
+{"Day 563: Using the Light Probe Spatial Index\n": 0.13, "lesson_title": "Day 563: Using the Light Probe Spatial Index\n", "probability": 13.0}
+{"Day 564: Improving Trilinear Sampling Results\n": 0.1, "lesson_title": "Day 564: Improving Trilinear Sampling Results\n", "probability": 10.0}
+{"Day 565: Reconstructing Multiple Lights\n": 0.14, "lesson_title": "Day 565: Reconstructing Multiple Lights\n", "probability": 14.000000000000002}
+{"Day 566: Moving to a Voxels-only Lighting Approach\n": 0.06, "lesson_title": "Day 566: Moving to a Voxels-only Lighting Approach\n", "probability": 6.0}
+{"Day 567: Large to Small Voxel Transfer\n": 0.21, "lesson_title": "Day 567: Large to Small Voxel Transfer\n", "probability": 21.0}
+{"Day 568: Debugging the Raycaster\n": 0.1, "lesson_title": "Day 568: Debugging the Raycaster\n", "probability": 10.0}
+{"Day 569: Raycasting from Light Probe Locations\n": 0.07, "lesson_title": "Day 569: Raycasting from Light Probe Locations\n", "probability": 7.000000000000001}
+{"Day 570: Distinguishing Between Lights and Occluders\n": 0.08, "lesson_title": "Day 570: Distinguishing Between Lights and Occluders\n", "probability": 8.0}
+{"Day 571: Adding a Light Hierarchy\n": 0.1, "lesson_title": "Day 571: Adding a Light Hierarchy\n", "probability": 10.0}
+{"Day 572: Scrolling the Lighting Voxel\n": 0.1, "lesson_title": "Day 572: Scrolling the Lighting Voxel\n", "probability": 10.0}
+{"Day 573: Wiring Up Light Transport\n": 0.13, "lesson_title": "Day 573: Wiring Up Light Transport\n", "probability": 13.0}
+{"Day 574: Experimenting with Voxel Filters\n": 0.13, "lesson_title": "Day 574: Experimenting with Voxel Filters\n", "probability": 13.0}
+{"Day 575: Generalizing Code Reloading\n": 0.53, "lesson_title": "Day 575: Generalizing Code Reloading\n", "probability": 53.0}
+{"Day 576: Octahedral Encoding\n": 0.45, "lesson_title": "Day 576: Octahedral Encoding\n", "probability": 45.0}
+{"Day 577: Adding Octahedral Light Atlases\n": 0.07, "lesson_title": "Day 577: Adding Octahedral Light Atlases\n", "probability": 7.000000000000001}
+{"Day 578: Sampling Octahedral Atlases\n": 0.19, "lesson_title": "Day 578: Sampling Octahedral Atlases\n", "probability": 19.0}
+{"Day 579: Debugging Octahedral Shading\n": 0.06, "lesson_title": "Day 579: Debugging Octahedral Shading\n", "probability": 6.0}
+{"Day 580: Investigating Octahedral Interpolation\n": 0.19, "lesson_title": "Day 580: Investigating Octahedral Interpolation\n", "probability": 19.0}
+{"Day 581: Preparing for Octahedral Indirect Lighting\n": 0.06, "lesson_title": "Day 581: Preparing for Octahedral Indirect Lighting\n", "probability": 6.0}
+{"Day 582: Converting Specular Maps to Diffuse\n": 0.04, "lesson_title": "Day 582: Converting Specular Maps to Diffuse\n", "probability": 4.0}
+{"Day 583: Streamlining the New Lighting Pipeline\n": 0.09, "lesson_title": "Day 583: Streamlining the New Lighting Pipeline\n", "probability": 9.0}
+{"Day 584: Enabling Infinite-Bounce Lighting\n": 0.06, "lesson_title": "Day 584: Enabling Infinite-Bounce Lighting\n", "probability": 6.0}
+{"Day 585: Centralized Light Atlas Handling\n": 0.2, "lesson_title": "Day 585: Centralized Light Atlas Handling\n", "probability": 20.0}
+{"Day 586: Finishing Indirect Diffuse Sampling\n": 0.1, "lesson_title": "Day 586: Finishing Indirect Diffuse Sampling\n", "probability": 10.0}
+{"Day 587: Optimizing the Specular to Diffuse Transform\n": 0.07, "lesson_title": "Day 587: Optimizing the Specular to Diffuse Transform\n", "probability": 7.000000000000001}
+{"Day 588: Aligning Light Voxels with the Camera\n": 0.08, "lesson_title": "Day 588: Aligning Light Voxels with the Camera\n", "probability": 8.0}
+{"Day 589: Aligning Sampling Spheres with the Octahedral Map\n": 0.15, "lesson_title": "Day 589: Aligning Sampling Spheres with the Octahedral Map\n", "probability": 15.0}
+{"Day 590: Starting Raycast Optimizations\n": 0.17, "lesson_title": "Day 590: Starting Raycast Optimizations\n", "probability": 17.0}
+{"Day 591: Making a Stand-alone Lighting Performance Test\n": 0.13, "lesson_title": "Day 591: Making a Stand-alone Lighting Performance Test\n", "probability": 13.0}
+{"Day 592: Capturing the Entire Lighting Data\n": 0.11, "lesson_title": "Day 592: Capturing the Entire Lighting Data\n", "probability": 11.0}
+{"Day 593: Debugging Lighting Validation\n": 0.09, "lesson_title": "Day 593: Debugging Lighting Validation\n", "probability": 9.0}
+{"Day 594: Switching from Center-Radius to Min-Max\n": 0.21, "lesson_title": "Day 594: Switching from Center-Radius to Min-Max\n", "probability": 21.0}
+{"Day 595: Sketching Out A K-d Tree Loop\n": 0.81, "lesson_title": "Day 595: Sketching Out A K-d Tree Loop\n", "probability": 81.0}
+{"Day 596: Fleshing Out Kd-Tree Traversal\n": 0.79, "lesson_title": "Day 596: Fleshing Out Kd-Tree Traversal\n", "probability": 79.0}
+{"Day 597: Basic Kd-tree Construction\n": 0.89, "lesson_title": "Day 597: Basic Kd-tree Construction\n", "probability": 89.0}
+{"Day 598: Exploring Voxel Partitions for Raycasting\n": 0.17, "lesson_title": "Day 598: Exploring Voxel Partitions for Raycasting\n", "probability": 17.0}
+{"Day 599: Implementing the Grid Raycast Postamble\n": 0.13, "lesson_title": "Day 599: Implementing the Grid Raycast Postamble\n", "probability": 13.0}
+{"Day 600: Better AABB Normal Derivation\n": 0.15, "lesson_title": "Day 600: Better AABB Normal Derivation\n", "probability": 15.0}
+{"Day 601: Sketching Out the Walk Table Generator\n": 0.22, "lesson_title": "Day 601: Sketching Out the Walk Table Generator\n", "probability": 22.0}
+{"Day 602: Early Termination for the Grid Raytracer\n": 0.12, "lesson_title": "Day 602: Early Termination for the Grid Raytracer\n", "probability": 12.0}
+{"Day 603: Grid Raycaster Table Generation\n": 0.15, "lesson_title": "Day 603: Grid Raycaster Table Generation\n", "probability": 15.0}
+{"Day 604: Adding a Voxel Utility Struct\n": 0.21, "lesson_title": "Day 604: Adding a Voxel Utility Struct\n", "probability": 21.0}
+{"Day 605: Cleaning Up the Lighting Code\n": 0.13, "lesson_title": "Day 605: Cleaning Up the Lighting Code\n", "probability": 13.0}
+{"Day 606: Debugging Grid Raycasting with Visualizations\n": 0.13, "lesson_title": "Day 606: Debugging Grid Raycasting with Visualizations\n", "probability": 13.0}
+{"Day 607: Finishing Debugging the Grid Raycaster\n": 0.13, "lesson_title": "Day 607: Finishing Debugging the Grid Raycaster\n", "probability": 13.0}
+{"Day 608: Visualizing Lighting Values\n": 0.07, "lesson_title": "Day 608: Visualizing Lighting Values\n", "probability": 7.000000000000001}
+{"Day 609: Reducing Light Contributions from Inaccessible Voxels\n": 0.12, "lesson_title": "Day 609: Reducing Light Contributions from Inaccessible Voxels\n", "probability": 12.0}
+{"Day 610: Removing Incorrect Voxel-Voxel Reflections\n": 0.1, "lesson_title": "Day 610: Removing Incorrect Voxel-Voxel Reflections\n", "probability": 10.0}
+{"Day 611: Examining the CPU Voxel Sampling\n": 0.31, "lesson_title": "Day 611: Examining the CPU Voxel Sampling\n", "probability": 31.0}
+{"Day 612: First Pass Optimization of Voxel Sampling\n": 0.21, "lesson_title": "Day 612: First Pass Optimization of Voxel Sampling\n", "probability": 21.0}
+{"Day 613: Merging the Raycaster with the Sampler\n": 0.11, "lesson_title": "Day 613: Merging the Raycaster with the Sampler\n", "probability": 11.0}
+{"Day 614: Continuing Streamlining the Raycaster\n": 0.11, "lesson_title": "Day 614: Continuing Streamlining the Raycaster\n", "probability": 11.0}
+{"Day 615: Optimized Grid Step Selection\n": 0.54, "lesson_title": "Day 615: Optimized Grid Step Selection\n", "probability": 54.0}
+{"Day 616: Tableless Grid Walk\n": 0.48, "lesson_title": "Day 616: Tableless Grid Walk\n", "probability": 48.0}
+{"Day 617: Half-resolution Spatial Grid\n": 0.25, "lesson_title": "Day 617: Half-resolution Spatial Grid\n", "probability": 25.0}
+{"Day 618: Analyzing the Diffuse Blur\n": 0.24, "lesson_title": "Day 618: Analyzing the Diffuse Blur\n", "probability": 24.0}
+{"Day 619: Adding Asset Tag Hashes\n": 0.17, "lesson_title": "Day 619: Adding Asset Tag Hashes\n", "probability": 17.0}
+{"Day 620: Asset Tag Usage Code\n": 0.14, "lesson_title": "Day 620: Asset Tag Usage Code\n", "probability": 14.000000000000002}
+{"Day 621: Asset Tags in the World Generator\n": 0.12, "lesson_title": "Day 621: Asset Tags in the World Generator\n", "probability": 12.0}
+{"Day 622: Debugging Asset Tag Hashes\n": 0.28, "lesson_title": "Day 622: Debugging Asset Tag Hashes\n", "probability": 28.000000000000004}
+{"Day 623: Investigating a Lighting Bug\n": 0.11, "lesson_title": "Day 623: Investigating a Lighting Bug\n", "probability": 11.0}
+{"Day 624: Turns Out It Really WAS a Feature\n": 0.29, "lesson_title": "Day 624: Turns Out It Really WAS a Feature\n", "probability": 28.999999999999996}
+{"Day 625: Fixing the \"Lighting\" Bug\n": 0.1, "lesson_title": "Day 625: Fixing the \"Lighting\" Bug\n", "probability": 10.0}
+{"Day 626: Cleaning Up Traversables\n": 0.28, "lesson_title": "Day 626: Cleaning Up Traversables\n", "probability": 28.000000000000004}
+{"Day 627: Opening Doors with Tiles\n": 0.31, "lesson_title": "Day 627: Opening Doors with Tiles\n", "probability": 31.0}
+{"Day 628: Brains and Aprons\n": 0.39, "lesson_title": "Day 628: Brains and Aprons\n", "probability": 39.0}
+{"Day 629: Removing Entity Generators\n": 0.16, "lesson_title": "Day 629: Removing Entity Generators\n", "probability": 16.0}
+{"Day 630: Adding Interesting Tile Patterns\n": 0.07, "lesson_title": "Day 630: Adding Interesting Tile Patterns\n", "probability": 7.000000000000001}
+{"Day 631: Revisiting Collision\n": 0.41, "lesson_title": "Day 631: Revisiting Collision\n", "probability": 41.0}
+{"Day 632: Experimenting with Voxelized Collision\n": 0.12, "lesson_title": "Day 632: Experimenting with Voxelized Collision\n", "probability": 12.0}
+{"Day 633: Narrowing in on a Collision Scheme\n": 0.53, "lesson_title": "Day 633: Narrowing in on a Collision Scheme\n", "probability": 53.0}
+{"Day 634: Final Collision Resolution Design\n": 0.45, "lesson_title": "Day 634: Final Collision Resolution Design\n", "probability": 45.0}
+{"Day 635: Debugging Voxel Motion Stepping\n": 0.13, "lesson_title": "Day 635: Debugging Voxel Motion Stepping\n", "probability": 13.0}
+{"Day 636: Unembedding Colliding Objects\n": 0.26, "lesson_title": "Day 636: Unembedding Colliding Objects\n", "probability": 26.0}
+{"Day 637: Adding Collision Spheres\n": 0.12, "lesson_title": "Day 637: Adding Collision Spheres\n", "probability": 12.0}
+{"Day 638: Recording Diagram Commands\n": 0.24, "lesson_title": "Day 638: Recording Diagram Commands\n", "probability": 24.0}
+{"Day 639: Drawing Debug Diagrams\n": 0.39, "lesson_title": "Day 639: Drawing Debug Diagrams\n", "probability": 39.0}
+{"Day 640: Investigating Corner Collisions\n": 0.19, "lesson_title": "Day 640: Investigating Corner Collisions\n", "probability": 19.0}
+{"Day 641: Voxel Flood Fill for Collision Search\n": 0.43, "lesson_title": "Day 641: Voxel Flood Fill for Collision Search\n", "probability": 43.0}
+{"Day 642: Debugging Voxel Collision Bounds\n": 0.13, "lesson_title": "Day 642: Debugging Voxel Collision Bounds\n", "probability": 13.0}
+{"Day 643: Hunting for Collision Bugs\n": 0.43, "lesson_title": "Day 643: Hunting for Collision Bugs\n", "probability": 43.0}
+{"Day 644: Stepping Through Diagrams\n": 0.48, "lesson_title": "Day 644: Stepping Through Diagrams\n", "probability": 48.0}
+{"Day 645: Switching to Voxel Centers for Collision\n": 0.11, "lesson_title": "Day 645: Switching to Voxel Centers for Collision\n", "probability": 11.0}
+{"Day 646: Removing Z from Lighting\n": 0.12, "lesson_title": "Day 646: Removing Z from Lighting\n", "probability": 12.0}
+{"Day 647: Debugging Simplified Lighting\n": 0.11, "lesson_title": "Day 647: Debugging Simplified Lighting\n", "probability": 11.0}
+{"Day 648: Rebuilding Light Tables\n": 0.17, "lesson_title": "Day 648: Rebuilding Light Tables\n", "probability": 17.0}
+{"Day 649: Removing Lighting Walk Tables\n": 0.05, "lesson_title": "Day 649: Removing Lighting Walk Tables\n", "probability": 5.0}
+{"Day 650: Debugging Light Sampling Locations\n": 0.08, "lesson_title": "Day 650: Debugging Light Sampling Locations\n", "probability": 8.0}
+{"Day 651: Fixing Light Feedback\n": 0.15, "lesson_title": "Day 651: Fixing Light Feedback\n", "probability": 15.0}
+{"Day 652: Stochastic Ray Origins\n": 0.17, "lesson_title": "Day 652: Stochastic Ray Origins\n", "probability": 17.0}
+{"Day 653: Adding a Filmic Response Curve\n": 0.06, "lesson_title": "Day 653: Adding a Filmic Response Curve\n", "probability": 6.0}
+{"Day 654: Self-illuminating Floor Tiles\n": 0.14, "lesson_title": "Day 654: Self-illuminating Floor Tiles\n", "probability": 14.000000000000002}
+{"Day 655: Revisiting Entity Movement\n": 0.34, "lesson_title": "Day 655: Revisiting Entity Movement\n", "probability": 34.0}
+{"Day 656: Sketching Out Move Queues\n": 0.36, "lesson_title": "Day 656: Sketching Out Move Queues\n", "probability": 36.0}
+{"Day 657: Implementing Move Queues\n": 0.46, "lesson_title": "Day 657: Implementing Move Queues\n", "probability": 46.0}
+{"Day 658: Handling Glove Collisions\n": 0.18, "lesson_title": "Day 658: Handling Glove Collisions\n", "probability": 18.0}
+{"Day 659: Immediate-mode Level Generation\n": 0.16, "lesson_title": "Day 659: Immediate-mode Level Generation\n", "probability": 16.0}
+{"Day 660: Randomized Overworld Layout\n": 0.22, "lesson_title": "Day 660: Randomized Overworld Layout\n", "probability": 22.0}
+{"Day 661: Connecting the Overworld Map\n": 0.19, "lesson_title": "Day 661: Connecting the Overworld Map\n", "probability": 19.0}
+{"Day 662: Generating Entities from Layouts\n": 0.17, "lesson_title": "Day 662: Generating Entities from Layouts\n", "probability": 17.0}
+{"Day 663: Simplifying Entity Storage, Part I\n": 0.52, "lesson_title": "Day 663: Simplifying Entity Storage, Part I\n", "probability": 52.0}
+{"Day 664: Simplifying Entity Storage Part II\n": 0.49, "lesson_title": "Day 664: Simplifying Entity Storage Part II\n", "probability": 49.0}
+{"Day 665: Changing How Entities are Packed and Unpacked\n": 0.48, "lesson_title": "Day 665: Changing How Entities are Packed and Unpacked\n", "probability": 48.0}
+{"Day 666: Entity Packing and Unpacking\n": 0.58, "lesson_title": "Day 666: Entity Packing and Unpacking\n", "probability": 57.99999999999999}
+{"Day 667: Simplified Tile Occupancy Checking\n": 0.24, "lesson_title": "Day 667: Simplified Tile Occupancy Checking\n", "probability": 24.0}
+{"Chat 001: Health and Emulation\n": 0.27, "lesson_title": "Chat 001: Health and Emulation\n", "probability": 27.0}
+{"Chat 002: Asset Files and Installers\n": 0.09, "lesson_title": "Chat 002: Asset Files and Installers\n", "probability": 9.0}
+{"Chat 003: Resources, Files and DRM\n": 0.11, "lesson_title": "Chat 003: Resources, Files and DRM\n", "probability": 11.0}
+{"Chat 004: Cross-compiling\n": 0.25, "lesson_title": "Chat 004: Cross-compiling\n", "probability": 25.0}
+{"Chat 005: SGX and Unbreakable DRM\n": 0.2, "lesson_title": "Chat 005: SGX and Unbreakable DRM\n", "probability": 20.0}
+{"Chat 006: Error-based Drawing Algorithms\n": 0.27, "lesson_title": "Chat 006: Error-based Drawing Algorithms\n", "probability": 27.0}
+{"Chat 007: Inverse Kinematics\n": 0.12, "lesson_title": "Chat 007: Inverse Kinematics\n", "probability": 12.0}
+{"Chat 010: Partial Specialization\n": 0.39, "lesson_title": "Chat 010: Partial Specialization\n", "probability": 39.0}
+{"Chat 011: Undefined Behavior\n": 0.63, "lesson_title": "Chat 011: Undefined Behavior\n", "probability": 63.0}
+{"Chat 012: Imposter Syndrome\n": 0.04, "lesson_title": "Chat 012: Imposter Syndrome\n", "probability": 4.0}
+{"Chat 013: Translation Units, Function Pointers, Compilation, Linking, and Execution\n": 0.81, "lesson_title": "Chat 013: Translation Units, Function Pointers, Compilation, Linking, and Execution\n", "probability": 81.0}
+{"Chat 014: CRTP and Library Design\n": 0.34, "lesson_title": "Chat 014: CRTP and Library Design\n", "probability": 34.0}
+{"Chat 016: Drawing a Circle on a 286\n": 0.24, "lesson_title": "Chat 016: Drawing a Circle on a 286\n", "probability": 24.0}
+{"Chat 017: Modern x64 Architectures and the Cache\n": 0.88, "lesson_title": "Chat 017: Modern x64 Architectures and the Cache\n", "probability": 88.0}
+{"Chat 018: Pixel Art Games and nSight Shader Analysis\n": 0.08, "lesson_title": "Chat 018: Pixel Art Games and nSight Shader Analysis\n", "probability": 8.0}
+{"Chat 019: Introduction to Mesh Skinning\n": 0.07, "lesson_title": "Chat 019: Introduction to Mesh Skinning\n", "probability": 7.000000000000001}
+{"Chat 020: Assembly Analysis and Front-end Register Clears\n": 0.63, "lesson_title": "Chat 020: Assembly Analysis and Front-end Register Clears\n", "probability": 63.0}
+{"Day 1000: Making a Simple Raycaster\n": 0.1, "lesson_title": "Day 1000: Making a Simple Raycaster\n", "probability": 10.0}
+{"Day 1001: Multithreading\n": 0.9, "lesson_title": "Day 1001: Multithreading\n", "probability": 90.0}
+{"Day 1002: Replacing rand() and Preparing for SIMD\n": 0.52, "lesson_title": "Day 1002: Replacing rand() and Preparing for SIMD\n", "probability": 52.0}
+{"Day 1003: Optimizing with SSE2 and AVX2\n": 0.66, "lesson_title": "Day 1003: Optimizing with SSE2 and AVX2\n", "probability": 66.0}
+{"Day 1004: Loading sampled BRDF data\n": 0.08, "lesson_title": "Day 1004: Loading sampled BRDF data\n", "probability": 8.0}
+{"Day 1006: The Thirty-Million Line Problem\n": 0.52, "lesson_title": "Day 1006: The Thirty-Million Line Problem\n", "probability": 52.0}
+{"Day 1007: Compression\n": 0.82, "lesson_title": "Day 1007: Compression\n", "probability": 82.0}
+{"Day 1008: Compression Followup\n": 0.67, "lesson_title": "Day 1008: Compression Followup\n", "probability": 67.0}
+{"Day 1009: Asset Systems and Scalability\n": 0.38, "lesson_title": "Day 1009: Asset Systems and Scalability\n", "probability": 38.0}
+{"Day 1010: Technical Direction at Blizzard\n": 0.21, "lesson_title": "Day 1010: Technical Direction at Blizzard\n", "probability": 21.0}
+{"Day 1011: Large-scale Systems Architecture\n": 0.44, "lesson_title": "Day 1011: Large-scale Systems Architecture\n", "probability": 44.0}
+{"Day 1012: Anatomy and Health for Programmers\n": 0.07, "lesson_title": "Day 1012: Anatomy and Health for Programmers\n", "probability": 7.000000000000001}
+{"Day 1013: History of Software Texture Mapping in Games\n": 0.06, "lesson_title": "Day 1013: History of Software Texture Mapping in Games\n", "probability": 6.0}

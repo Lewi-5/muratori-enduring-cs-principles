@@ -1,0 +1,7 @@
+env compiler="11.4.0" source=__VERSION__
+env build_variant=gcc-bench-vec-default source=Makefile
+env flags="gcc -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -D_POSIX_C_SOURCE=200809L -O2  " source=Makefile
+env uname="Linux 6.18.33.2-microsoft-standard-WSL2 x86_64" source=uname(2)
+env cpu="12th Gen Intel(R) Core(TM) i7-12650H" source=/proc/cpuinfo
+env clock=CLOCK_MONOTONIC resolution_ns=1 source=clock_getres
+bench variant=distance points=1000000 warmup=3 repeat=21 resolution_ns=1 min_ns=44120455 median_ns=44656628 max_ns=46691141 median_ns_per_point=44.657 short_samples=0 checksum=1000000:0x1.2a389017d8c49p+33

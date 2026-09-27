@@ -1,0 +1,1 @@
+error DEC_UNSUPPORTED_MODE at offset 2

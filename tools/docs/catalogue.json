@@ -1,0 +1,1124 @@
+[
+  {
+    "n": 1,
+    "title": "C as an inspectable starting point",
+    "slug": "week-01",
+    "promptFiles": [
+      "week-01/learner/exercises.md",
+      "week-01/learner/practice.md",
+      "week-01/learner/observations.md"
+    ],
+    "answerFiles": [
+      "week-01/instructor/answers.md",
+      "week-01/instructor/observations.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Welcome](https://www.computerenhance.com/p/welcome-to-the-performance-aware)",
+        "portion": "Full, plan budget 22:05",
+        "purpose": "Performance-awareness motivation"
+      },
+      {
+        "resource": "[CE: Waste](https://www.computerenhance.com/p/waste)",
+        "portion": "Full, plan budget 32:56",
+        "purpose": "Notice work before trying to improve it"
+      },
+      {
+        "resource": "[Handmade Chat 011: Undefined Behavior](https://guide.handmadehero.org/chat/chat011/)",
+        "portion": "4:18–22:16",
+        "purpose": "Separate intuitive machine stories from C rules"
+      },
+      {
+        "resource": "[Handmade Chat 013: Translation Units, Function Pointers, Compilation, Linking, and Execution](https://guide.handmadehero.org/chat/chat013/)",
+        "portion": "15:39–32:42; optional 38:58–48:55",
+        "purpose": "Compilation and linking; adapt Windows/C++ discussion to C11/Linux"
+      },
+      {
+        "resource": "[C11 public draft N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "Consult §§6.2.6, 6.5, 6.5.3.4, 6.7.6.3, 6.9, 7.21, 7.22 as needed",
+        "purpose": "Primary authority for language/library claims"
+      },
+      {
+        "resource": "[Linux clock_gettime manual](https://man7.org/linux/man-pages/man3/clock_gettime.3.html)",
+        "portion": "Clock and return-value sections",
+        "purpose": "POSIX timer contract, outside ISO C"
+      }
+    ],
+    "companion": [
+      {
+        "title": "Chapter 5: Pointers",
+        "url": "https://beej.us/guide/bgc/html/split/pointers.html"
+      },
+      {
+        "title": "Chapter 6: Arrays",
+        "url": "https://beej.us/guide/bgc/html/split/arrays.html"
+      },
+      {
+        "title": "Chapter 9: File Input/Output",
+        "url": "https://beej.us/guide/bgc/html/split/file-inputoutput.html"
+      },
+      {
+        "title": "Chapter 12: Manual Memory Allocation",
+        "url": "https://beej.us/guide/bgc/html/split/manual-memory-allocation.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Values and their ranges",
+        "why": "Your program can print a plausible number even when the format string describes the wrong type. This exercise connects a C value to the interface used to display it.",
+        "predict": "Which printed limits can you predict from C alone, and which require this implementation?",
+        "steps": "Match each argument to its format before writing the call. Read the limits from the header; test endpoints without stepping beyond them.",
+        "hint": "A format string is part of the function call's contract, not decoration.",
+        "evidence": "A successful print establishes that case. An observed wrap of a signed value would not establish a language rule.",
+        "sources": [
+          "week-01/learner/src/ex01.c"
+        ],
+        "prerequisites": "types, signed versus unsigned ranges, and matching a printf format to its argument"
+      },
+      "E02": {
+        "title": "Size and array extent",
+        "why": "You need a reliable way to count elements before traversing them. An array object remembers its extent in its type; a pointer parameter does not.",
+        "predict": "Change five elements to three on paper. Which sizes should change and which should stay fixed?",
+        "steps": "Write the array measurement in the scope where the complete array type is visible. Trace what is actually passed to the helper. Restore the required fixture after experimenting.",
+        "hint": "Keep units visible: bytes divided by bytes per element gives elements.",
+        "evidence": "Explain why the quotient works here before treating it as an array-length idiom everywhere.",
+        "sources": [
+          "week-01/learner/src/ex02.c"
+        ],
+        "prerequisites": "objects, arrays, sizeof, and the distinction between a pointer and its target"
+      },
+      "E03": {
+        "title": "A bounded loop",
+        "why": "A loop is easier to trust when you can state what its partial result means. The bound also lets you justify the arithmetic type before running it.",
+        "predict": "For N=3, write the running sum at each iteration; for N=0, predict how many additions occur.",
+        "steps": "Validate the input first. Choose an invariant about the already-processed prefix, then test entry, progress, and exit separately.",
+        "hint": "The empty prefix has a useful sum even though no loop body executes.",
+        "evidence": "Passing four examples is evidence; the invariant and range bound explain the whole permitted domain.",
+        "sources": [
+          "week-01/learner/src/ex03.c"
+        ],
+        "prerequisites": "loop invariants, output pointers, and a bounded integer range"
+      },
+      "E04": {
+        "title": "Status and output",
+        "why": "A failed clamp needs to report failure without inventing a number that could also be a valid answer. This introduces a status return alongside an output object.",
+        "predict": "Put a sentinel in the output and predict its value after reversed endpoints.",
+        "steps": "Separate validation from the three valid regions. Test equality at both boundaries and a one-point interval.",
+        "hint": "Check the interval before deciding where the value lies.",
+        "evidence": "An unchanged output on failure is observable API behavior, just as much as the successful clamp.",
+        "sources": [
+          "week-01/learner/src/ex04.c"
+        ],
+        "prerequisites": "inclusive intervals and a status separate from the returned value"
+      },
+      "E05": {
+        "title": "An aggregate result",
+        "why": "An array summary contains several facts that belong together. A struct groups those facts, while a status distinguishes an empty input from a meaningful minimum.",
+        "predict": "Try an all-positive array and an all-negative array with an initial minimum of zero.",
+        "steps": "Establish the empty policy first. For nonempty input, initialize from a real element and trace how each later element updates the extrema.",
+        "hint": "An arbitrary initial zero is not a member of every dataset.",
+        "evidence": "Use the status to interpret the fields. The zero fields of an empty result do not claim that its minimum is zero.",
+        "sources": [
+          "week-01/learner/src/ex05.c"
+        ],
+        "prerequisites": "arrays, structs, and the special meaning of an empty input"
+      },
+      "E06": {
+        "title": "Two ways through one array",
+        "why": "Indexing and pointer traversal are two ways to name elements. Relating them makes pointer arithmetic less mysterious without claiming a particular machine implementation.",
+        "predict": "Predict the sum after changing the first element from 4 to 5. Draw the final legal one-past position.",
+        "steps": "Track which element each expression names and establish the sum bound. Handle the empty NULL case before doing pointer arithmetic.",
+        "hint": "Advancing an int pointer moves by one int, not one byte.",
+        "evidence": "Equal sums show semantic agreement on the inputs. They do not prove equal generated instructions or equal execution time.",
+        "sources": [
+          "week-01/learner/src/ex06.c"
+        ],
+        "prerequisites": "array bounds, pointer arithmetic, and a running sum"
+      },
+      "E07": {
+        "title": "Coordinates as a contract",
+        "why": "A pair of floating-point numbers is not automatically a usable location. Units, finiteness, and geographic bounds give the fields meaning.",
+        "predict": "What does a rejection test using only less-than and greater-than do with NaN?",
+        "steps": "State units beside each field. Check finiteness before reasoning about interval membership. Test poles, longitude endpoints, and invalid values separately.",
+        "hint": "NaN does not behave like an ordinary number outside an interval.",
+        "evidence": "A valid coordinate is an accepted representation under this API; it does not prove that the location was measured accurately.",
+        "sources": [
+          "week-01/learner/src/ex07.c"
+        ],
+        "prerequisites": "struct members, units, and passing a value to a function"
+      },
+      "E08": {
+        "title": "Struct layout",
+        "why": "A char, a double, and an int need not fit into the sum of their individual sizes. The compiler must also place objects at suitable boundaries.",
+        "predict": "Draw both field orders, including the last element of a two-element array of each struct.",
+        "steps": "Use offsets and member sizes to mark occupied spans. Attribute the remaining positions to padding rather than reading arbitrary bytes for a pattern.",
+        "hint": "Tail padding helps the next array element meet its alignment.",
+        "evidence": "Your diagram describes the observed layout. A different compiler target may choose another valid layout, and smaller size alone says nothing about speed.",
+        "sources": [
+          "week-01/learner/src/ex08.c"
+        ],
+        "prerequisites": "member offsets, padding, and unsigned-byte inspection"
+      },
+      "E09": {
+        "title": "Seeing representation",
+        "why": "A number's printed hexadecimal value and its stored byte order are different views. Character access lets you inspect the latter without pretending it has another object type.",
+        "predict": "Write the two familiar byte orders for the specified value before printing either.",
+        "steps": "Read through unsigned characters, retain CHAR_BIT and sizeof in the report, then compare only arrangements supported by those observations.",
+        "hint": "The first byte in memory need not contain the most significant digits you wrote in source.",
+        "evidence": "Report the bytes and the classification separately. This is an implementation observation, not a promise that every C machine has four 8-bit bytes here.",
+        "sources": [
+          "week-01/learner/src/ex09.c"
+        ],
+        "prerequisites": "a value versus its object representation, unsigned-byte access, and byte order"
+      },
+      "E10": {
+        "title": "Bit flags",
+        "why": "One unsigned value can carry several yes/no properties. The difficulty is changing one property without destroying its neighbors.",
+        "predict": "Predict the effect of setting twice and toggling twice, using a four-bit drawing.",
+        "steps": "Trace every operation against its mask. Test a combined mask so that all-bits semantics cannot accidentally become any-bit semantics.",
+        "hint": "Clearing requires preserving bits outside the mask.",
+        "evidence": "The valid shift domain is part of the reasoning. Do not execute an invalid shift to discover what the language means.",
+        "sources": [
+          "week-01/learner/src/ex10.c"
+        ],
+        "prerequisites": "unsigned masks, shifts, and the width of the promoted operand"
+      },
+      "E11": {
+        "title": "Allocation and ownership",
+        "why": "A requested element count must become a safe byte count before memory is requested. The returned pointer also creates a cleanup obligation.",
+        "predict": "For N=5, list the initialized values and total; for zero, predict whether allocation is needed.",
+        "steps": "Validate multiplication and the cap, allocate, check, initialize, use, then free. Follow the failure path with the same care as success.",
+        "hint": "An allocation is storage, not initialized values.",
+        "evidence": "A correct result includes cleanup and failure behavior. One successful allocation does not demonstrate that failure is impossible.",
+        "sources": [
+          "week-01/learner/src/ex11.c"
+        ],
+        "prerequisites": "allocated storage, ownership, and checked size multiplication"
+      },
+      "E12": {
+        "title": "Reading a file reliably",
+        "why": "The last read can mean normal completion or an error. A count is credible only if the whole input was read and the stream was closed successfully.",
+        "predict": "Compare an empty file, a missing file, and a file whose final byte is not a newline.",
+        "steps": "Keep fgetc's result in int. Count only after distinguishing EOF, check ferror, and close every successfully opened stream.",
+        "hint": "Do not narrow the read result before deciding whether it is EOF.",
+        "evidence": "Bytes and newlines answer different questions. A successful prefix count cannot be returned as a successful whole-file count after an error.",
+        "sources": [
+          "week-01/learner/src/ex12.c"
+        ],
+        "prerequisites": "file streams, byte counts, and distinguishing an error from end-of-file"
+      },
+      "E13": {
+        "title": "Parsing is more than conversion",
+        "why": "A conversion function understands a language of its own. Your API accepts a narrower grammar, so a returned number is not enough.",
+        "predict": "List strings that strtoull accepts but this exercise must reject.",
+        "steps": "Validate the digit-only grammar, reset and inspect errno for the conversion, inspect the end pointer, then apply the application limit.",
+        "hint": "Separate malformed text from a well-formed number that is too large.",
+        "evidence": "Acceptance means the complete string met the declared contract, not that a numeric prefix was found.",
+        "sources": [
+          "week-01/learner/src/ex13.c"
+        ],
+        "prerequisites": "decimal digits, accumulation, and checking before multiplication"
+      },
+      "E14": {
+        "title": "Separate compilation",
+        "why": "A caller can know a function's interface before the linker finds its implementation. This explains why a program can compile and still fail to link.",
+        "predict": "Draw the two object files and mark which defines count_equal and which refers to it.",
+        "steps": "Read the header, implement the definition in its own source, compile separately, and compare object symbols with executable symbols.",
+        "hint": "An include guard prevents repeated inclusion in one translation unit, not definitions in several object files.",
+        "evidence": "The symbol listing is tool evidence. Connect each entry to the C declaration or definition that caused it.",
+        "sources": [
+          "week-01/learner/src/ex14_main.c",
+          "week-01/learner/src/ex14_count.c",
+          "week-01/learner/src/ex14_count.h"
+        ],
+        "prerequisites": "declarations, definitions, translation units, and linkage"
+      },
+      "E15": {
+        "title": "Timing as an experiment",
+        "why": "One duration is a measurement, not a property of the source. Correctness and an explicit timed region make a small benchmark interpretable.",
+        "predict": "State whether you expect the optimized build to be faster and why the expectation might fail.",
+        "steps": "Initialize and warm up outside timing. Verify checksums, record five trials, sort copies for statistics, and preserve raw results.",
+        "hint": "The volatile reads make this particular experiment observable but also constrain what it models.",
+        "evidence": "Discuss overhead and variation before comparing builds. The tests deliberately do not require a speedup.",
+        "sources": [
+          "week-01/learner/src/ex15.c"
+        ],
+        "prerequisites": "elapsed time, repeated observations, and the difference between equivalent results and equivalent work"
+      }
+    },
+    "guidance": {
+      "P01": "This classification exercise separates rules from tempting machine stories. For each claim, identify the operation and its type before deciding which authority could justify it.",
+      "P02": "Use units to make the array/pointer distinction visible. Predict both measurements first; the pointer spelling avoids a warning without changing what the parameter means.",
+      "P03": "Trace the loop on paper, including its final iteration. The purpose is to detect the invalid access from the bound, not to hope a crash will reveal it.",
+      "P04": "Use the layout process from E08. Keep your target-specific prediction separate from the relationships a portable test may require.",
+      "P05": "Draw artifacts rather than a single box called compiler. Follow the function name through each stage to locate the missing-definition error.",
+      "P06": "Ask what work is inside the clock readings and what result remains observable. Each defective benchmark changes the question being measured.",
+      "S01": "Stretch: choose a short loop and annotate operands before instruction names. Compare two actual listings from your toolchain, then state what timing information is still absent.",
+      "S02": "Stretch: first decide what a logical line means. Use the final unterminated line to show why newline count alone is insufficient.",
+      "R01": "A reader needs your build context to interpret sizes and timings. Record commands as run, not the flags you intended to use.",
+      "R02": "Keep your original predictions visible. A failed prediction followed by a careful explanation is more informative than a rewritten correct guess.",
+      "R03": "Choose observations with a useful contrast: a measured byte count versus a guaranteed relationship, for example. Use the standard terminology precisely.",
+      "R04": "Preserve the raw trials so another reader can reproduce your statistics. Explain the timed region before interpreting the comparison.",
+      "R05": "Make the handoff sufficient to repeat the work. Choose a mechanism that would still matter when expressed through a different language."
+    }
+  },
+  {
+    "n": 2,
+    "title": "Objects, bytes, and storage",
+    "slug": "week-02",
+    "promptFiles": [
+      "week-02/learner/exercises.md",
+      "week-02/learner/practice.md",
+      "week-02/learner/observations.md"
+    ],
+    "answerFiles": [
+      "week-02/instructor/answers.md",
+      "week-02/instructor/observations.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Instructions Per Clock](https://www.computerenhance.com/p/instructions-per-clock)",
+        "portion": "Full, 25:05, duration verified in the [official TOC](https://www.computerenhance.com/p/table-of-contents)",
+        "purpose": "Motivation: layout facts alone do not determine execution speed"
+      },
+      {
+        "resource": "[HH014: Platform-independent Game Memory](https://guide.handmadehero.org/code/day014/)",
+        "portion": "15:03–37:27; optional 0:58–15:03",
+        "purpose": "A platform-supplied block partitioned into state; adapt Windows/C++ examples to C11 allocation rules"
+      },
+      {
+        "resource": "[HH064: Mapping Entity Indexes to Pointers](https://guide.handmadehero.org/code/day064/)",
+        "portion": "11:31–17:52 and 28:27–39:24; optional 22:00–28:27",
+        "purpose": "References stored as indices and resolved when used"
+      },
+      {
+        "resource": "[C11 draft N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§§6.2.2, 6.2.4, 6.2.6.1, 6.2.8, 6.3.2.3, 6.5¶6–7, 6.5.6, 6.5.9, 6.7.2.1, 6.7.5, 6.7.9; library headers §§7.15, 7.19, 7.20.1.1, 7.22.3",
+        "purpose": "Language authority: consult the relevant section per exercise"
+      },
+      {
+        "resource": "[System V x86-64 ABI](https://refspecs.linuxbase.org/elf/x86_64-SysV-psABI.pdf)",
+        "portion": "§3.1.2, including aggregates",
+        "purpose": "Reference layout model; ABI rather than C guarantee"
+      },
+      {
+        "resource": "[malloc](https://man7.org/linux/man-pages/man3/malloc.3.html), [nm](https://sourceware.org/binutils/docs/binutils/nm.html), [readelf](https://sourceware.org/binutils/docs/binutils/readelf.html)",
+        "portion": "Allocation contracts and symbol/section/relocation options",
+        "purpose": "Linux/toolchain context for E07/E09/S02"
+      }
+    ],
+    "companion": [
+      {
+        "title": "Chapter 11: Pointers II: Arithmetic",
+        "url": "https://beej.us/guide/bgc/html/split/pointers2.html"
+      },
+      {
+        "title": "Chapter 12: Manual Memory Allocation",
+        "url": "https://beej.us/guide/bgc/html/split/manual-memory-allocation.html"
+      },
+      {
+        "title": "Chapter 14: Types II: Way More Types",
+        "url": "https://beej.us/guide/bgc/html/split/types-ii-way-more-types.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Bytes without losing the value",
+        "why": "To inspect an object's storage, you need a byte view that does not invent a different object type. Formatting adds its own capacity contract.",
+        "predict": "Count the characters needed for four hex bytes, including spaces and the final terminator.",
+        "steps": "Validate sizes before multiplication or reads, inspect with unsigned characters, and commit only after the destination can hold everything.",
+        "hint": "The last byte needs a terminator where an earlier byte needs a separator.",
+        "evidence": "A representation dump is evidence about bytes. Equal field values need not imply equal padding bytes.",
+        "sources": [
+          "week-02/learner/src/ex01.c"
+        ],
+        "prerequisites": "unsigned bytes, object extents, and bounded output"
+      },
+      "E02": {
+        "title": "Alignment as a numeric boundary",
+        "why": "Rounding a size up is useful when the next object must begin at a particular boundary. At the integer limit, the rounding operation itself can fail.",
+        "predict": "For alignment eight, predict the rounded positions of 0, 1, 8, and 9.",
+        "steps": "First validate the alignment, then reason about the extra distance to the boundary. Test the largest valid result and the next request.",
+        "hint": "Make the overflow check precede the addition that would overflow.",
+        "evidence": "The arithmetic can be portable even when the table of actual type alignments is platform-specific.",
+        "sources": [
+          "week-02/learner/src/ex02.c"
+        ],
+        "prerequisites": "alignment, remainder, and arithmetic overflow"
+      },
+      "E03": {
+        "title": "Predicting a layout",
+        "why": "A model is useful because you can compare its prediction with a compiler's layout. It needs an explicit rule, not a memorized offset.",
+        "predict": "Draw the synthetic three-field layout and a reordered A before calling the inspector.",
+        "steps": "Advance a running end through aligned member positions, then round the final size. Validate the full request before writing offsets.",
+        "hint": "A late invalid member must not leave earlier offsets changed.",
+        "evidence": "Agreement supports this layout model on the target. It does not make the model a universal C struct-layout algorithm.",
+        "sources": [
+          "week-02/learner/src/ex03.c"
+        ],
+        "prerequisites": "aligned offsets, member spans, and the final array stride"
+      },
+      "E04": {
+        "title": "Drawing occupied spans",
+        "why": "A printed byte value cannot tell you whether its location belongs to a member or padding. Offsets and extents can.",
+        "predict": "Predict how adding a char after the int changes A's map and whether its total size grows.",
+        "steps": "Validate each extent and every overlap before filling the map. Try an unsorted span list to separate labels from positions.",
+        "hint": "An Inner member occupies a top-level span that may itself contain internal padding.",
+        "evidence": "Explain both levels of layout. Dots identify unused top-level spans, not a particular stored byte value.",
+        "sources": [
+          "week-02/learner/src/ex04.c"
+        ],
+        "prerequisites": "the layout model from E03 and capacity checks before writing"
+      },
+      "E05": {
+        "title": "Offsets need units",
+        "why": "The third record's field is found using an element stride and a within-element offset. Mixing those units produces plausible but wrong addresses.",
+        "predict": "Compute the requested last record member and grid cell symbolically before substituting observed sizes.",
+        "steps": "Check total extent as well as the selected offset. Trace row-major indexing as rows passed, then columns passed.",
+        "hint": "A pointer step already includes the size of its pointed-to type.",
+        "evidence": "A legal one-past pointer is a boundary marker, not another object to access.",
+        "sources": [
+          "week-02/learner/src/ex05.c"
+        ],
+        "prerequisites": "array index, element stride, and member offset as different quantities"
+      },
+      "E06": {
+        "title": "Identity over time",
+        "why": "Two calls may reuse an address after an object dies. Two simultaneously live objects need distinguishable identities. Those are different claims.",
+        "predict": "Predict the static counter, automatic counter, and two independently allocated counters across repeated calls.",
+        "steps": "Draw lifetime intervals. Sequence stateful calls in separate statements and examine snapshots captured while objects are alive.",
+        "hint": "The local pointer variable and the allocation it points to have different lifetimes.",
+        "evidence": "Addresses do not prove that every local has a stack slot. Report reuse as an observation, not a language guarantee.",
+        "sources": [
+          "week-02/learner/src/ex06.c"
+        ],
+        "prerequisites": "automatic storage duration, lifetime, and reuse of an address"
+      },
+      "E07": {
+        "title": "Carving a storage block",
+        "why": "Enough bytes are not enough: each typed object also needs valid alignment, extent, and a legal storage basis.",
+        "predict": "Sketch the header, alignment gap, and first two records before any casts.",
+        "steps": "Compute all required extents with checked arithmetic, validate the block, then initialize objects and publish outputs.",
+        "hint": "A declared character array does not become arbitrary struct storage merely because its address is aligned.",
+        "evidence": "Distinguish allocation ownership from carving. Only the owner releases the original block.",
+        "sources": [
+          "week-02/learner/src/ex07.c"
+        ],
+        "prerequisites": "aligned numeric offsets, checked bounds, and the lifetime of an allocated storage block"
+      },
+      "E08": {
+        "title": "References that survive copying",
+        "why": "Copy a pointer-linked structure and its pointer values still name the old targets. Indices can instead resolve relative to the chosen table.",
+        "predict": "Draw the copied 1→3→2 chain twice, once with indices and once with pointers.",
+        "steps": "Reserve zero, validate every reference, and bound traversal by the number of usable slots. Keep originals alive during comparisons.",
+        "hint": "If another nonzero step follows the usable-slot bound, some slot must repeat.",
+        "evidence": "Relocatability depends on preserved slot identity. Indices alone do not define a portable file format or survive arbitrary reordering.",
+        "sources": [
+          "week-02/learner/src/ex08.c"
+        ],
+        "prerequisites": "pointer values, copied objects, and resolving an index against a selected table"
+      },
+      "E09": {
+        "title": "Names across source files",
+        "why": "The word static has related but distinct effects at file and block scope. A symbol table helps separate visibility from persistence.",
+        "predict": "Classify each object's duration and linkage before looking at nm.",
+        "steps": "Follow declarations into definitions, compile both objects, then compare their symbols and relocations with the linked result.",
+        "hint": "File-scope const in C does not automatically make a name private.",
+        "evidence": "Section names and symbol letters are toolchain evidence; duration and linkage are language concepts.",
+        "sources": [
+          "week-02/learner/src/ex09_main.c",
+          "week-02/learner/src/ex09_data.c",
+          "week-02/learner/src/ex09_data.h"
+        ],
+        "prerequisites": "scope, linkage, declarations, and definitions from Week 1 E14"
+      },
+      "E10": {
+        "title": "Composing the inspector",
+        "why": "A useful command is a sequence of contracts: parse a request, predict layout, allocate output, and render it. Failures must compose too.",
+        "predict": "Draw both requested field orders and predict their sizes before running the command.",
+        "steps": "Retain the supplied parser, copy the checked helpers, and follow ownership through every later error path.",
+        "hint": "A trusted helper does not remove the caller's duty to satisfy its preconditions.",
+        "evidence": "The explanation of a prediction mismatch is the learning outcome. Merely reporting the tool's result does not show how the layout arose.",
+        "sources": [
+          "week-02/learner/src/ex10.c"
+        ],
+        "prerequisites": "the checked layout and rendering helpers from E01–E05"
+      }
+    },
+    "guidance": {
+      "P01": "For each claim, name the object, storage, or pointer involved. Some statements confuse an observed layout with a guarantee; others make an invalid inference from byte contents.",
+      "P02": "Draw a timeline for each object. Fill the linkage column independently: a name being visible across files and an object remaining alive are different properties.",
+      "P03": "Treat the supplied size/alignment pairs as the model input. Compute on paper before asking your machine; a different actual ABI does not invalidate a correct synthetic calculation.",
+      "P04": "Write the pointer types beside the expressions. Element differences and byte distances have different units, and legal formation is not the same as legal dereference.",
+      "P05": "Compare declared type with allocated storage before considering alignment. Repair the invalid approach by choosing a real object or copying a valid representation, not by adding a cast.",
+      "P06": "Trace which table a reference resolves against after each operation. An index survives relocation only while its slot continues to represent the intended object.",
+      "S01": "Stretch: distinguish field identities even when two fields have the same type. An exhaustive result for five fields and a proof for all model inputs are different deliverables.",
+      "S02": "Stretch: follow one symbol from declaration to object section and relocation. Record tool versions so changed names or offsets are not mistaken for errors.",
+      "R01": "Tool versions matter when you interpret symbol tables. Record the source of each environment fact rather than inferring it from a familiar-looking output.",
+      "R02": "Draw first, then compare. Keep nested padding separate from the padding around the nested member, and retain every failed prediction.",
+      "R03": "The ledger is an exercise in choosing the right authority. A compiler observation cannot establish a portable C requirement.",
+      "R04": "Connect the videos to the concrete block and reference experiments you performed. State the legality conditions before transferring a design from C++ to C.",
+      "R05": "Record the time you actually needed. The course estimate is a planning hypothesis, and the next question should follow from an unresolved observation."
+    }
+  },
+  {
+    "n": 3,
+    "title": "Numbers in a box",
+    "slug": "week-03",
+    "promptFiles": [
+      "week-03/learner/exercises.md",
+      "week-03/learner/practice.md",
+      "week-03/learner/observations.md"
+    ],
+    "answerFiles": [
+      "week-03/instructor/answers.md",
+      "week-03/instructor/observations.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: The Haversine Distance Problem](https://www.computerenhance.com/p/the-haversine-distance-problem)",
+        "portion": "Full, 30:28, duration from the [official TOC](https://www.computerenhance.com/p/table-of-contents)",
+        "purpose": "The problem the whole year returns to: what is computed, over what inputs, with which formula. The paid episode has its own constants and data; this week uses its own."
+      },
+      {
+        "resource": "[HH047: Vector Lengths](https://guide.handmadehero.org/code/day047/)",
+        "portion": "10:33–20:10 and 1:10:42–1:12:54",
+        "purpose": "Length, normalization and the zero-length case; direction versus magnitude."
+      },
+      {
+        "resource": "[HH048: Line Segment Intersection Collisions](https://guide.handmadehero.org/code/day048/)",
+        "portion": "6:56–14:20 and 23:08–29:15",
+        "purpose": "Parametric intersection, the divide-by-zero (parallel) case, and a floating-point failure in geometry code."
+      },
+      {
+        "resource": "[HH090: Bases Part I](https://guide.handmadehero.org/code/day090/)",
+        "portion": "31:05–39:12 and 47:14–57:29; optional 39:12–47:14",
+        "purpose": "Coordinate bases and the dot product as measurement."
+      },
+      {
+        "resource": "[HH091: Bases Part II](https://guide.handmadehero.org/code/day091/)",
+        "portion": "6:16–16:03; optional 0:54–6:16 and 20:20–31:09",
+        "purpose": "Origins and basis vectors described in terms of others."
+      },
+      {
+        "resource": "[C11 draft N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§5.2.4.2.2, 6.3.1.4–6.3.1.5, 7.12 (`fmod`, `hypot`, `atan2`, `asin`), Annex F (**§F.10.7.1 for `fmod` exactness**)",
+        "purpose": "Language authority, distinct from what IEC 60559 hardware and glibc do."
+      },
+      {
+        "resource": "[Goldberg, What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)",
+        "portion": "Rounding error, relative error versus ulps, guard digits",
+        "purpose": "Vocabulary for error measurement; read for method, not theorems."
+      },
+      {
+        "resource": "[fmod(3)](https://man7.org/linux/man-pages/man3/fmod.3.html), [math_error(7)](https://man7.org/linux/man-pages/man7/math_error.7.html)",
+        "portion": "The definition of the result; how math functions report errors",
+        "purpose": "Linux facts outside ISO C. **`fmod(3)` does not state that the result is exact**; that guarantee is in C11 Annex F. This course checks arguments itself and never relies on `errno`."
+      }
+    ],
+    "companion": [
+      {
+        "title": "§14.4 More Float: double and long double",
+        "url": "https://beej.us/guide/bgc/html/split/types-ii-way-more-types.html#more-float-double-and-long-double"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Inside a floating-point value",
+        "why": "A decimal display hides the finite representation that arithmetic actually uses. The fields explain both useful precision and exceptional values.",
+        "predict": "Predict the exponent fields of the four named numbers before inspecting them.",
+        "steps": "Use the platform gate, copy bytes legally, extract fields, then compose and compare the representation. Keep field-range rejection separate from value classification.",
+        "hint": "A normal value has an implicit leading one; a subnormal does not.",
+        "evidence": "The gate limits the representation claim. A NaN payload from this run is not a portable expected value.",
+        "sources": [
+          "week-03/learner/src/ex01.c"
+        ],
+        "prerequisites": "legal byte copying, binary64 fields, and the platform gate"
+      },
+      "E02": {
+        "title": "What counts as close",
+        "why": "One absolute tolerance cannot sensibly compare both tiny and enormous values. A useful comparison must say what error scale matters.",
+        "predict": "Predict the ulp gaps before running the supplied association examples.",
+        "steps": "Distinguish invalid tolerances from unequal values. Work through finite values, zeros, infinities, and NaNs before implementing the ordered key.",
+        "hint": "An ulp counts representable steps near a value, not a fixed decimal distance everywhere.",
+        "evidence": "A tolerance is part of the question you ask, not permission to ignore any mismatch.",
+        "sources": [
+          "week-03/learner/src/ex02.c"
+        ],
+        "prerequisites": "absolute error, relative error, representable steps, and exceptional values"
+      },
+      "E03": {
+        "title": "Angles with a declared policy",
+        "why": "Longitude has several equivalent descriptions, but a program benefits from one canonical interval. Conversion to radians introduces a separate approximation.",
+        "predict": "Sketch 179° to −179° on a circle, and predict the sign of sin(GEO_PI).",
+        "steps": "Separate validation, wrapping, exact quadrants, and general trigonometry. Label degrees and radians in every intermediate expression.",
+        "hint": "The half-open interval avoids two names for the same boundary; it is a design choice.",
+        "evidence": "Exact quadrant behavior follows this API's explicit branches. It is not evidence that ordinary sin of an approximate pi returns exact zero.",
+        "sources": [
+          "week-03/learner/src/ex03.c"
+        ],
+        "prerequisites": "degrees, radians, wrapping, and canonical boundary values"
+      },
+      "E04": {
+        "title": "Vectors without spurious overflow",
+        "why": "A finite vector can have a length too large to represent, even though its direction is perfectly usable. Length and normalization therefore need distinct contracts.",
+        "predict": "Compare squaring 1e200 with first dividing its components by their largest magnitude.",
+        "steps": "Start with the zero case, scale nonzero components, and reason separately about returning a magnitude and returning a direction. Preserve original horizontal components for longitude.",
+        "hint": "You need not reconstruct the enormous original length to compute a unit direction.",
+        "evidence": "A successful unit-vector result does not imply that the original length fits in double.",
+        "sources": [
+          "week-03/learner/src/ex04.c"
+        ],
+        "prerequisites": "vector components, a basis, scaling, and a zero-length vector"
+      },
+      "E05": {
+        "title": "Equivalent formulas, different errors",
+        "why": "Three mathematically equivalent distance formulas can react differently to rounding. Nearby points make the distinction visible.",
+        "predict": "State which formula you expect to lose information near zero distance, and by roughly how much.",
+        "steps": "Derive analytic expectations for simple arcs, validate coordinates, and track each formula's inverse-function input. Compare absolute error rather than matching printed digits alone.",
+        "hint": "Subtracting or inverting values very close to an endpoint can magnify a small input error.",
+        "evidence": "The sphere is already a model of Earth. Separate modeling error from input quantization and floating-point computation error.",
+        "sources": [
+          "week-03/learner/src/ex05.c"
+        ],
+        "prerequisites": "spherical coordinates, analytic reference cases, and cancellation"
+      },
+      "E06": {
+        "title": "Geometry at the boundaries",
+        "why": "A crossing formula with a denominator is not a complete segment-intersection algorithm. Parallel, overlapping, and zero-length segments ask different questions.",
+        "predict": "Draw one example of each result kind before choosing numerical coordinates.",
+        "steps": "Classify the geometry before dividing. Reuse an actual endpoint when required, then compare against the independent lattice oracle.",
+        "hint": "The bounded integer-input exactness argument does not automatically cover arbitrary noninteger coordinates.",
+        "evidence": "A lattice test is strong evidence for those cases; state the domain of the proof rather than generalizing from the picture.",
+        "sources": [
+          "week-03/learner/src/ex06.c"
+        ],
+        "prerequisites": "orientation, collinearity, endpoint inclusion, and the declared tolerance"
+      },
+      "E07": {
+        "title": "A library others can depend on",
+        "why": "The earlier files are experiments. This step gives their useful mechanisms one public interface that later weeks can call without depending on demo printing.",
+        "predict": "Predict which symbols belong in geomath.o's public symbol list.",
+        "steps": "Move declarations into the header, keep implementation helpers private, and compile the demo separately. Preserve status and output contracts across the boundary.",
+        "hint": "The library reports facts; the caller decides how to display them.",
+        "evidence": "A clean symbol boundary shows interface discipline, not proof that the math is correct. Retain the numerical tests too.",
+        "sources": [
+          "week-03/learner/src/geomath.h",
+          "week-03/learner/src/geomath.c",
+          "week-03/learner/src/geomath_demo.c"
+        ],
+        "prerequisites": "the numerical contracts from E01–E06 and separate compilation"
+      }
+    },
+    "guidance": {
+      "P01": "Choose the authority before judging the equation. For a false general claim, one verified counterexample is enough; a true-looking example cannot prove a universal identity.",
+      "P02": "Work in powers of two first, then translate the exponent into its stored biased form. Compare the hand result with the representation inspector only afterwards.",
+      "P03": "Separate mathematical pi from GEO_PI. A local approximation near pi predicts both the sign and scale of the residual; record the prediction before libm supplies digits.",
+      "P04": "Start with the geometric meaning of a dot product of unit vectors. Show each algebraic step, then mark where finite arithmetic can cross the exact interval boundary.",
+      "P05": "Draw the six geometries before calculating. The pictures should force distinct branches, including cases where the generic division formula is inapplicable.",
+      "P06": "Compare input resolution and arithmetic resolution in the same units. Distinguish the rounding of one coordinate from the combined error of a distance between two points.",
+      "S01": "Stretch: write the intended defect next to each property. A property test is more informative when you can deliberately introduce a fault that it detects.",
+      "S02": "Stretch: preserve the actual stored longitude as the reference input. Otherwise input rounding can be misreported as a distance-formula error.",
+      "R01": "The floating-point flags are part of the experiment. A changed reassociation policy can change the behavior you intended to study.",
+      "R02": "Numerical predictions should expose a model, not merely say close. Record a sign, a scale, or a count of representable steps before seeing the output.",
+      "R03": "Distinguish the representation contract from the library implementation and its observed final digits. Name the authority for every ledger entry.",
+      "R04": "Show the reference, measured result, error, and tolerance together. Explain why the tolerance is defensible for that case rather than chosen after failure.",
+      "R05": "The next week introduces file quantization and many-term sums. Use your current error analysis to identify what those additions might change."
+    }
+  },
+  {
+    "n": 4,
+    "title": "Deterministic data and a reference processor",
+    "slug": "week-04",
+    "promptFiles": [
+      "week-04/learner/exercises.md",
+      "week-04/learner/practice.md",
+      "week-04/learner/observations.md"
+    ],
+    "answerFiles": [
+      "week-04/instructor/answers.md",
+      "week-04/instructor/observations.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: “Clean” Code, Horrible Performance](https://www.computerenhance.com/p/clean-code-horrible-performance)",
+        "portion": "Full episode, 22:40, duration from the [official TOC](https://www.computerenhance.com/p/table-of-contents)",
+        "purpose": "Motivation for asking how structure and representation affect cost. Its measured multipliers come from one program on one machine; no timing is done this week."
+      },
+      {
+        "resource": "[CE: Generating Haversine Input JSON](https://www.computerenhance.com/p/generating-haversine-input-json) and [Writing a Simple Haversine Distance Processor](https://www.computerenhance.com/p/writing-a-simple-haversine-distance)",
+        "portion": "Full episodes, 15:40 and 12:09; optional [Initial Haversine Processor Code Review](https://www.computerenhance.com/p/initial-haversine-processor-code), 29:22, after E06",
+        "purpose": "The shape of the task: produce a dataset, process it, keep a reference answer. Our format and generator differ; nothing here reproduces theirs."
+      },
+      {
+        "resource": "[HH146: Accumulation vs. Explicit Calculation](https://guide.handmadehero.org/code/day146/)",
+        "portion": "42:07–56:04",
+        "purpose": "Why repeatedly adding a step drifts and computing each value from its index does not. The audio context is incidental."
+      },
+      {
+        "resource": "[C11 draft N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§6.2.5 (unsigned wraparound), 7.20.1.1 and 7.20.2 (exact-width types and limits), 7.21 (`fopen`, `fgetc`, `fputs`, `fclose`, `remove`, `ferror`), 7.22.3 (`malloc`, `realloc`, `free`), 7.4 (`isdigit`), 7.11 (locales), **Annex F.5 “Binary-decimal conversion” ¶2**",
+        "purpose": "Primary authority for language and library claims."
+      },
+      {
+        "resource": "[malloc(3)](https://man7.org/linux/man-pages/man3/malloc.3.html)",
+        "portion": "`realloc` and `free`",
+        "purpose": "The library contract, including what happens to the original block when `realloc` fails."
+      },
+      {
+        "resource": "[Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)",
+        "portion": "Period and low-order bits; treat the parameter table as a survey",
+        "purpose": "Secondary source for the weakness of low bits. The course's constants are fixed by the plan and checked against the Hull–Dobell conditions."
+      },
+      {
+        "resource": "[Goldberg, What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)",
+        "portion": "The “Rounding Error” material and the section “Errors In Summation” (including its Theorem 8 on Kahan's summation formula)",
+        "purpose": "Vocabulary and bounds for summation error, revisited from week 3."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Chapter 9: File Input/Output",
+        "url": "https://beej.us/guide/bgc/html/split/file-inputoutput.html"
+      },
+      {
+        "title": "Chapter 12: Manual Memory Allocation",
+        "url": "https://beej.us/guide/bgc/html/split/manual-memory-allocation.html"
+      },
+      {
+        "title": "Chapter 7: Strings",
+        "url": "https://beej.us/guide/bgc/html/split/strings.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Reproducible pseudorandom data",
+        "why": "A seed is useful only if the generator's update rule and output selection are specified. Otherwise two machines can start alike and produce different files.",
+        "predict": "Use a tiny hypothetical range to predict which residues get an extra occurrence under modulo reduction.",
+        "steps": "Trace the state recurrence and count every draw, including rejected draws. Keep latitude and longitude draws in separate statements.",
+        "hint": "Rejecting a short excess prefix leaves equally sized residue classes.",
+        "evidence": "Deterministic is not cryptographically random, and uniform integer coordinates are not uniform locations on a sphere.",
+        "sources": [
+          "week-04/learner/src/ex01.c"
+        ],
+        "prerequisites": "unsigned wraparound, deterministic state updates, and modulo bias"
+      },
+      "E02": {
+        "title": "Exact text from integers",
+        "why": "Six decimal places can be represented as an integer count of millionths. Formatting that count avoids an unnecessary round trip through binary floating point.",
+        "predict": "Write the exact spelling and buffer length of a negative value whose magnitude is below one degree.",
+        "steps": "Validate the limit, derive a safe magnitude, split whole and fractional parts, and reserve space for the terminator.",
+        "hint": "The sign belongs to the original value, not only to the truncated whole-degree part.",
+        "evidence": "An exact file spelling does not make its later double representation exact.",
+        "sources": [
+          "week-04/learner/src/ex02.c"
+        ],
+        "prerequisites": "integer quotient and remainder, signs, and string capacity"
+      },
+      "E03": {
+        "title": "A file as an observable result",
+        "why": "A reproducible generator must specify not only numbers but their order and exact bytes. It must also handle writes that fail late.",
+        "predict": "Bound the size of the 1,000-row file from its possible line lengths before generating it.",
+        "steps": "Compose the generator and formatter, check every write, then flush and close. Trace cleanup separately after an open failure and after a later failure.",
+        "hint": "Removing a partial output is appropriate only after this call actually opened the destination under the stated contract.",
+        "evidence": "A matching hash shows byte identity for that input. The argument about arithmetic and formatting explains why repeatability is intended.",
+        "sources": [
+          "week-04/learner/src/ex03.c"
+        ],
+        "prerequisites": "the generator and formatter from E01–E02, file ownership, and sequencing"
+      },
+      "E04": {
+        "title": "Grammar before conversion",
+        "why": "The parser must recognize the agreed data format, not every string a general numeric converter understands. Error order is also part of its public behavior.",
+        "predict": "Choose five lines with different faults and write the first expected status for each.",
+        "steps": "Check field count, then each field's grammar and range in the specified order. Accumulate with a pre-operation overflow guard and publish only the finished record.",
+        "hint": "A malformed latitude and an out-of-range latitude are different error classes.",
+        "evidence": "A parser's acceptance is a claim about this grammar. It is not a claim that the original observation or identifier is trustworthy.",
+        "sources": [
+          "week-04/learner/src/ex04.c"
+        ],
+        "prerequisites": "bounded byte input, a grammar, numeric ranges, and validate-then-commit"
+      },
+      "E05": {
+        "title": "Loading with bounded resources",
+        "why": "A file can end halfway through a record or contain a line longer than expected. A loader turns those stream events into a complete owned array or an explicit failure.",
+        "predict": "Draw the ownership of the file and array before and after a realloc that fails.",
+        "steps": "Track line number, current line extent, capacity, count, and ownership separately. Parse a row before deciding whether an otherwise-valid extra row exceeds the cap.",
+        "hint": "Assign realloc's result to a temporary so failure does not lose the original allocation.",
+        "evidence": "A partially accumulated array is not a successful whole-file result. Check close errors as well as read errors.",
+        "sources": [
+          "week-04/learner/src/ex05.c"
+        ],
+        "prerequisites": "the row parser, allocation growth, stream errors, and cleanup ownership"
+      },
+      "E06": {
+        "title": "The reference processor",
+        "why": "A simple implementation becomes a reference through an explicit contract and independent checks, not by being the first code written.",
+        "predict": "For a tiny dataset, predict which points are selected and the order of accumulation.",
+        "steps": "Validate inputs, preserve the required traversal order, and compare with the supplied different distance formulation. Justify the allowed discrepancy.",
+        "hint": "Two implementations sharing the same defect can agree. Analytic cases provide another kind of evidence.",
+        "evidence": "Agreement within tolerance supports the checked cases; it does not establish that either formula is uniformly accurate everywhere.",
+        "sources": [
+          "week-04/learner/src/ex06.c"
+        ],
+        "prerequisites": "the loaded point representation and Week 3 distance contracts"
+      },
+      "E07": {
+        "title": "Adding many small contributions",
+        "why": "Rounding happens at each operation, so the route through a sum matters. A million individually reasonable contributions can accumulate differently.",
+        "predict": "Predict which test inputs make naive summation lose small contributions and why changing order might matter.",
+        "steps": "Trace a short example by hand, then compare the prescribed naive, pairwise, and compensated methods under the fixed compiler flags.",
+        "hint": "Compensation records information lost by an earlier addition so later work can account for it.",
+        "evidence": "A worst-case bound is a limit, not a prediction that every dataset reaches it. No speed claim belongs to this week.",
+        "sources": [
+          "week-04/learner/src/ex07.c"
+        ],
+        "prerequisites": "rounding of additions, cancellation, and reference-based error measures"
+      }
+    },
+    "guidance": {
+      "P01": "Label the source of each claim. A repeated seed, unsigned arithmetic, locale, and character classification belong to different contracts and fail for different reasons.",
+      "P02": "Divide the number of possible raw values by the bound and account for the remainder. That counting argument explains the bias before any statistical experiment.",
+      "P03": "Count visible characters and the terminator separately. For negative fractions, retain the sign even when the whole-degree part is zero.",
+      "P04": "Apply the error order as a decision procedure. A line can have several faults, but the contract selects one first diagnosis.",
+      "P05": "Draw old and new allocations during a moving realloc. Peak storage can exceed the final array size, and losing the old pointer on failure loses ownership.",
+      "P06": "A worst-case error bound controls risk over a class of inputs. Compare it with the measured corpus without treating a smaller observation as a refutation.",
+      "S01": "Stretch: preserve operation order while changing layout. Storage accounting is permitted evidence here; cache or speed conclusions need the later measurement experiment.",
+      "S02": "Stretch: label the flag-changing experiment separately from the accepted build. Preserve both commands and outcomes, including an honest absence of observed differences.",
+      "R01": "The generator and oracle use different tools, so record both toolchains. Preserve exact flags for any reproducibility comparison.",
+      "R02": "Your file-size and parser-status predictions exercise different models. Keep their derivations alongside the outputs, not only a pass mark.",
+      "R03": "Distinguish a format promise from a libm observation. An oracle result is evidence produced by software, not an extra language standard.",
+      "R04": "Name the reference used for each error calculation. Exact arithmetic and a second numerical formula provide different kinds of comparison.",
+      "R05": "Prepare a handoff that lets the next week time a correct processor. The unresolved question should concern a concrete experimental control."
+    }
+  },
+  {
+    "n": 5,
+    "title": "A validated scalar geolab baseline",
+    "slug": "week-05",
+    "promptFiles": [
+      "week-05/learner/exercises.md",
+      "week-05/learner/practice.md",
+      "week-05/learner/report.md"
+    ],
+    "answerFiles": [
+      "week-05/instructor/answers.md",
+      "week-05/instructor/report.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Single Instruction, Multiple Data](https://www.computerenhance.com/p/single-instruction-multiple-data)",
+        "portion": "Full episode, 35:31, duration from the [official TOC](https://www.computerenhance.com/p/table-of-contents)",
+        "purpose": "How much work one instruction can do; why a scalar baseline is recorded now. No SIMD this week."
+      },
+      {
+        "resource": "[CE: Caching](https://www.computerenhance.com/p/caching)",
+        "portion": "Full episode, 22:55",
+        "purpose": "Why the same arithmetic can cost different amounts depending on where data lives. A question to ask; week 22 measures it."
+      },
+      {
+        "resource": "[CE: Python Revisited](https://www.computerenhance.com/p/python-revisited)",
+        "portion": "Full episode, 36:22",
+        "purpose": "The cost of layers between source and machine. The course authors no Python comparison code."
+      },
+      {
+        "resource": "[HH010: QueryPerformanceCounter and RDTSC](https://guide.handmadehero.org/code/day010/)",
+        "portion": "3:49–15:30; optional 21:48–38:10",
+        "purpose": "Cycle counts versus wall-clock time. This course uses POSIX `clock_gettime`."
+      },
+      {
+        "resource": "[HH112: A Mental Model of CPU Performance](https://guide.handmadehero.org/code/day112/)",
+        "portion": "17:54–31:38 and 39:41–48:33; optional 48:33–51:01",
+        "purpose": "A budget in cycles; latency versus throughput."
+      },
+      {
+        "resource": "[HH113: Simple Performance Counters](https://guide.handmadehero.org/code/day113/)",
+        "portion": "48:58–1:00:48; optional 2:04–8:45",
+        "purpose": "A ballpark estimate before measuring."
+      },
+      {
+        "resource": "[clock_gettime(2)](https://man7.org/linux/man-pages/man2/clock_gettime.2.html)",
+        "portion": "`CLOCK_MONOTONIC`, `CLOCK_PROCESS_CPUTIME_ID`, `CLOCK_REALTIME`, `clock_getres`",
+        "purpose": "The clock contract: POSIX/Linux, not ISO C."
+      },
+      {
+        "resource": "[C11 draft N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§7.22.5 and 7.22.5.2 (`qsort`), §7.11.1.1 ¶4 (the `\"C\"` locale at startup), §7.21.6.1 (`fprintf`), §7.27.2.1 (`clock`), Annex F.5 ¶2",
+        "purpose": "Primary authority for ordering, formatting and time."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Chapter 17: Multifile Projects",
+        "url": "https://beej.us/guide/bgc/html/split/multifile-projects.html"
+      },
+      {
+        "title": "Chapter 18: The Outside Environment",
+        "url": "https://beej.us/guide/bgc/html/split/the-outside-environment.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "One executable with clear boundaries",
+        "why": "Integration exposes differences between an experiment and a reusable interface. The command line has its own grammar and error contract.",
+        "predict": "Predict which symbols each object should export and how CLI negative zero is normalized.",
+        "steps": "Reuse the earlier mechanisms behind the supplied headers, keep helpers static, then implement checked CLI parsing and generation. Read the changed file-cleanup rule carefully.",
+        "hint": "A command-line convenience does not silently change CSV v1's canonical grammar.",
+        "evidence": "Cross-build byte agreement is evidence about these builds; interface preservation is what lets later weeks replace implementations safely.",
+        "sources": [
+          "week-05/learner/geolab/include/geolab.h",
+          "week-05/learner/geolab/include/cli.h",
+          "week-05/learner/geolab/src/main.c",
+          "week-05/learner/geolab/src/csv.c",
+          "week-05/learner/geolab/src/geo.c",
+          "week-05/learner/geolab/src/cli.c"
+        ],
+        "prerequisites": "Week 3 geometry, Week 4 CSV contracts, and Week 1 linkage"
+      },
+      "E02": {
+        "title": "Selecting and ordering results",
+        "why": "A human-readable distance loses precision when printed. Selection and ordering must use the unrounded value if the API is to mean what it says.",
+        "predict": "Predict the printed-tie fixture's order before reading the output.",
+        "steps": "Validate the full input, compute each distance once, select inclusively, and sort by distance then identifier. Handle empty success separately from allocation failure.",
+        "hint": "Subtracting distances and converting the difference to int is not a valid comparator.",
+        "evidence": "Two identical printed distances need not be an exact tie. Explain the internal ordering and the displayed evidence separately.",
+        "sources": [
+          "week-05/learner/geolab/src/query.c"
+        ],
+        "prerequisites": "unrounded distances, total ordering, validation, and exact versus displayed ties"
+      },
+      "E03": {
+        "title": "Fixtures that ask a question",
+        "why": "A good fixture isolates a possible defect. A large random dataset rarely makes the reason for a failure as clear.",
+        "predict": "Write the expected rows of each tiny fixture before asking the supplied oracle to generate output.",
+        "steps": "Choose the six required purposes, document each command and defect, then compare expectations, oracle, and program as three distinct artifacts.",
+        "hint": "Do not create the expected file by capturing the program under test.",
+        "evidence": "An independent oracle reduces shared implementation mistakes, but still shares the specification and may share assumptions or mathematical limitations.",
+        "sources": [
+          "week-05/learner/fixtures/README.md"
+        ],
+        "prerequisites": "the checkpoint CLI contract and fixtures that isolate individual validity and ordering rules"
+      },
+      "E04": {
+        "title": "Defining the timed region",
+        "why": "A duration is meaningful only when you know exactly which work lies between the clock readings. The three variants answer different questions.",
+        "predict": "Mark parsing, allocation, arithmetic, hashing, and printing as inside or outside each region.",
+        "steps": "Implement checked order statistics first. Then bracket the prescribed work, compute checksums after timing, and reject any repetition that changes the result.",
+        "hint": "Use a difference-based midpoint for an even median; the direct sum may overflow.",
+        "evidence": "A checksum is evidence of result consistency, not proof that every source-level operation executed.",
+        "sources": [
+          "week-05/learner/geolab/include/bench.h",
+          "week-05/learner/geolab/src/bench.c"
+        ],
+        "prerequisites": "monotonic elapsed time, explicit timed boundaries, and repetition checks"
+      },
+      "E05": {
+        "title": "Choosing the experiment in advance",
+        "why": "It is easy to keep measuring until the result looks pleasing. A written protocol makes the stopping decision independent of the outcome.",
+        "predict": "Write the number and order of process runs and your stopping rule before collecting data.",
+        "steps": "Complete PROTOCOL.md, then record dataset identities, builds, repetitions, and environment. Preserve raw outputs instead of retaining only a favored summary.",
+        "hint": "Interleaving builds helps expose changes over time that would otherwise align with one build.",
+        "evidence": "Warm caches or scheduling effects are hypotheses here. The protocol does not identify their cause merely by naming them.",
+        "sources": [
+          "week-05/learner/PROTOCOL.md"
+        ],
+        "prerequisites": "the validated benchmark, warm-up, fixed experimental conditions, and a stopping rule"
+      },
+      "E06": {
+        "title": "Prediction meets measurement",
+        "why": "A prediction exposes your current model of the work. A mismatch is useful when you can locate the assumption that failed.",
+        "predict": "Count the math calls and give a cost range before any report timing run.",
+        "steps": "Preserve the prediction, collect all required medians and spreads, then compare ranges without converting separation into a significance claim.",
+        "hint": "Read compiler diagnostics before attributing a timing difference to vectorization.",
+        "evidence": "Different machines can produce different valid rankings. The report must say what these runs establish and what experiment would distinguish explanations.",
+        "sources": [
+          "week-05/learner/report.md"
+        ],
+        "prerequisites": "operation counts, units, medians, spread, and the frozen measurement protocol"
+      },
+      "E07": {
+        "title": "A checkpoint others can reproduce",
+        "why": "The baseline is valuable because later changes have something stable to compare against. Packaging the evidence is part of the implementation.",
+        "predict": "List what a fresh reviewer needs to rebuild, test, and understand the result.",
+        "steps": "Run the checkpoint, examine its manifest, and complete the report. Resolve failures rather than selecting a passing compiler configuration.",
+        "hint": "Correctness and explanation are the acceptance criteria; speed is an observation.",
+        "evidence": "The checkpoint promises this interface and validation evidence. It does not promise identical timings or universal floating-point identity on other platforms.",
+        "sources": [],
+        "prerequisites": "all checkpoint evidence and the distinction between observation and causal explanation"
+      }
+    },
+    "guidance": {
+      "P01": "Ask what each clock measures and which document promises it. A faster build is an observation; vectorization is a proposed mechanism requiring different evidence.",
+      "P02": "Sort a copy of the samples and keep the original order. Compare center and spread with and without the outlier without silently discarding it from the real report.",
+      "P03": "Carry the units through every division. The nominal-frequency conversion is an estimate, and the two byte counts describe different accounting conventions.",
+      "P04": "Sort the internal values before formatting them. Distinguish an exact tie from two different values that collapse to the same displayed decimal text.",
+      "P05": "Follow the CLI stages in order: option syntax, semantic support, file loading, computation, output. Different stages deliberately have different exit codes.",
+      "S01": "Stretch: derive file bytes from the distribution rather than guessing an average row size. A byte-rate estimate is not proof that memory bandwidth limits the computation.",
+      "S02": "Stretch: use the compiler report as evidence about a particular build. Keep vectorizer availability, attempted transformation, and measured speed separate.",
+      "R01": "Copy the environment block from the actual timed build. A machine name alone does not identify compiler flags or clock resolution.",
+      "R02": "Complete this section before discussing performance. Explain the input and failure domains covered by each kind of check.",
+      "R03": "Freeze the prediction before the data run. Its usefulness comes from exposing a cost model that the measurements can challenge.",
+      "R04": "Distinguish variation within one process from variation across processes. Report ambiguous comparisons honestly rather than manufacturing a winner.",
+      "R05": "The handoff is the baseline for future changes. Name the exact dataset, build, command, and evidence that make that baseline reproducible."
+    }
+  },
+  {
+    "n": 6,
+    "title": "Bytes to instructions",
+    "slug": "week-06",
+    "promptFiles": [
+      "week-06/learner/exercises.md",
+      "week-06/learner/practice.md",
+      "week-06/learner/observations.md"
+    ],
+    "answerFiles": [
+      "week-06/instructor/answers.md",
+      "week-06/instructor/observations.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Instruction Decoding on the 8086](https://www.computerenhance.com/p/instruction-decoding-on-the-8086)",
+        "portion": "Full episode, 28:28, duration from the [official TOC](https://www.computerenhance.com/p/table-of-contents)",
+        "purpose": "Registers, the register-to-register `mov` encoding, and the `d` and `w` bits."
+      },
+      {
+        "resource": "[CE: Decoding Multiple Instructions and Suffixes](https://www.computerenhance.com/p/decoding-multiple-instructions-and)",
+        "portion": "Full episode, 43:51",
+        "purpose": "Variable-length instructions, immediates and the `mod` field. Memory modes are watched now and implemented in week 7."
+      },
+      {
+        "resource": "[CE: Opcode Patterns in 8086 Arithmetic](https://www.computerenhance.com/p/opcode-patterns-in-8086-arithmetic)",
+        "portion": "Full episode, 20:01",
+        "purpose": "The shared encoding patterns of `add`, `sub` and `cmp`. Its conditional jumps are the optional stretch S01."
+      },
+      {
+        "resource": "[Intel, The 8086 Family User's Manual (October 1979)](http://www.bitsavers.org/components/intel/8086/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)",
+        "portion": "Table 4-7 (single-bit fields, p. 4-19); Tables 4-8 to 4-10 (MOD, REG and R/M fields, p. 4-20); Table 4-12 (instruction encoding: MOV p. 4-22, ADD p. 4-23, SUB and CMP p. 4-24); Table 4-13 (machine instruction decoding guide, pp. 4-27 to 4-33)",
+        "purpose": "The primary reference for every encoding in the subset."
+      },
+      {
+        "resource": "[C11 draft N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§6.2.6.1 (object representations), §6.3.1.1 (integer promotions), §6.3.1.3 (conversions to signed types), §6.5.7 (shifts), §7.20.1.1 (exact-width types), §7.21.7.1 and 7.21.10 (`fgetc`, `feof`, `ferror`)",
+        "purpose": "The C side of decoding."
+      },
+      {
+        "resource": "[GNU binutils: objdump](https://sourceware.org/binutils/docs/binutils/objdump.html)",
+        "portion": "`-D`, `-b binary`, `-m i8086`, `-M intel`",
+        "purpose": "The toolchain cross-check."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Chapter 24: Bitwise Operations",
+        "url": "https://beej.us/guide/bgc/html/split/bitwise-operations.html"
+      },
+      {
+        "title": "Chapter 11: Pointers II: Arithmetic",
+        "url": "https://beej.us/guide/bgc/html/split/pointers2.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Fields inside one byte",
+        "why": "A byte can contain several small numbers. Extracting each field makes the manual's compact encoding table executable.",
+        "predict": "Split the four driver bytes on paper and predict which mask removes unrelated high bits.",
+        "steps": "Draw the field boundaries, shift to position zero, mask, then reassemble the fields to check the decomposition.",
+        "hint": "Shifting right by three alone leaves the original top two bits in the result.",
+        "evidence": "The full 256-byte check covers this finite field split, not all later decoder behavior.",
+        "sources": [
+          "week-06/learner/src/ex01.c"
+        ],
+        "prerequisites": "unsigned byte values, masks, shifts, and available input length"
+      },
+      "E02": {
+        "title": "Register names depend on context",
+        "why": "Field value four does not name one universal register. Width selects the table that gives the field meaning.",
+        "predict": "Predict both names for register code four and sketch the halves of ax.",
+        "steps": "Validate width and index before looking up a name. Keep the 8086 tables separate from the modern x86-64 comparison.",
+        "hint": "ah belongs to ax; it is not an 8-bit version of sp.",
+        "evidence": "A shared opcode ancestry does not make an 8086 decoder suitable for modern compiler output.",
+        "sources": [
+          "week-06/learner/src/ex02.c"
+        ],
+        "prerequisites": "width-dependent register tables and the meaning of each three-bit code"
+      },
+      "E03": {
+        "title": "Bytes into immediate values",
+        "why": "The input encoding determines byte order. Your host's representation should not be asked to guess it.",
+        "predict": "Read 34 12 by hand and predict the signed interpretation of the FE pattern at both widths.",
+        "steps": "Validate the remaining byte count with subtraction, assemble the unsigned magnitude, then interpret the sign using wider arithmetic.",
+        "hint": "Prove the read fits before indexing; avoid computing an overflowing offset plus size.",
+        "evidence": "Host-independent arithmetic decoding and host byte inspection solve different problems, even though both involve bytes.",
+        "sources": [
+          "week-06/learner/src/ex03.c"
+        ],
+        "prerequisites": "little-endian arithmetic, field width, and explicit signed interpretation"
+      },
+      "E04": {
+        "title": "One instruction, one transaction",
+        "why": "A decoder must decide what it knows before touching the next byte. An ordered status policy makes partial and unsupported inputs predictable.",
+        "predict": "Trace a valid instruction and each truncation of it through the status order.",
+        "steps": "Recognize the form, check required fields, validate mode and operation, then read immediates. Build a temporary instruction and commit only on success.",
+        "hint": "A recognized memory mode is outside this week's subset; rejecting it is more accurate than guessing a length.",
+        "evidence": "Exhaustive prefixes strongly test status order, but longer immediates still require their own coverage.",
+        "sources": [
+          "week-06/learner/src/ex04.c"
+        ],
+        "prerequisites": "opcode fields, ModR/M, instruction lengths, and transactional failure"
+      },
+      "E05": {
+        "title": "Text is a chosen representation",
+        "why": "Several byte sequences can mean the same instruction. Printing a canonical form makes comparisons useful without promising recovery of the original encoding.",
+        "predict": "Derive the longest possible printed instruction before running the formatter.",
+        "steps": "Validate the instruction object, format into a local bounded buffer, check the reported length, then copy the complete result.",
+        "hint": "snprintf's return value describes the required length, not only the characters that fit.",
+        "evidence": "Text equality is semantic agreement under the course convention, not byte identity after reassembly.",
+        "sources": [
+          "week-06/learner/src/ex05.c"
+        ],
+        "prerequisites": "decoded instruction fields, canonical syntax, and text-buffer capacity"
+      },
+      "E06": {
+        "title": "A whole stream or an error",
+        "why": "A late bad instruction must not leave a plausible partial output that looks successful. Stream decoding therefore needs a commit boundary.",
+        "predict": "Draw both parses of B8 89 D9, starting at offsets zero and one.",
+        "steps": "First validate and count the complete stream; only then write text. Keep byte offsets distinct from text lengths and distinguish read, decode, and write errors.",
+        "hint": "The error offset names the beginning of the failing instruction, not necessarily the byte where validation stopped.",
+        "evidence": "Successful disassembly depends on the chosen start and architecture. A valid-looking decode does not prove the bytes were intended as code.",
+        "sources": [
+          "week-06/learner/src/decode.h",
+          "week-06/learner/src/decode.c",
+          "week-06/learner/src/decode8086.c"
+        ],
+        "prerequisites": "single-instruction decoding, stream offsets, and validating before output"
+      },
+      "E07": {
+        "title": "Cases with independent reasons",
+        "why": "Writing expected instructions by hand tests whether your mental model agrees with the encoding specification. Purposeful cases also probe gaps in broad generated tests.",
+        "predict": "Complete the five prescribed hand decodings before running any tool.",
+        "steps": "For each added case, identify the field rule or error boundary it targets. Compare your derivation with the encoding oracle and then with your decoder.",
+        "hint": "If the oracle rejects your expectation, investigate the derivation before changing the implementation.",
+        "evidence": "The manual, encoder-style oracle, and objdump have different roles and conventions. Agreement is evidence with stated limits, not a universal proof.",
+        "sources": [
+          "week-06/learner/cases.txt"
+        ],
+        "prerequisites": "hand decoding, independent encodings, and text equivalence versus byte identity"
+      }
+    },
+    "guidance": {
+      "P01": "Separate the C operations used to decode a pattern from the ISA rule describing that pattern. The host language and the guest architecture are different authorities.",
+      "P02": "Partition bytes into named fields before looking up mnemonics. Keep an offset and consumed-length column so a correct name cannot hide an incorrect boundary.",
+      "P03": "Work in the encoding direction and search every permitted form. Several forms can produce the same text, so finding one encoding does not prove uniqueness.",
+      "P04": "Read only what the available fields establish. Identify the missing addressing rules instead of borrowing a register-mode length for a memory operand.",
+      "P05": "Draw two separate byte partitions. A valid opcode found inside an immediate illustrates why starting position is part of a decoder request.",
+      "P06": "Keep the original object-file observation distinct from the supplied fallback fixture. The REX prefix changes interpretation and is not an 8086 feature.",
+      "S01": "Stretch: draw the current-instruction and next-instruction addresses before adding the displacement. Alias spellings may differ while the target is the same.",
+      "S02": "Stretch: enumerate which bytes each comparison actually covers. A test of two-byte prefixes leaves later immediate-byte behavior to additional tests or a proof.",
+      "R01": "Record whether the comparison tool supports the guest architecture. A missing tool is a validation limitation, not evidence that the decoder is wrong.",
+      "R02": "Keep the hand-decoded fields and longest-text derivation. A correct final mnemonic alone can conceal a mistaken field interpretation.",
+      "R03": "Name the ISA and manual table for an encoding claim. A modern x86-64 rule must not silently enter an 8086 explanation.",
+      "R04": "Choose at least one convention difference deliberately. Explain semantic agreement without requiring the tools to print identical text.",
+      "R05": "Connect one C operation to the exact bits it extracts. End with the addressing information that the next week must add."
+    }
+  }
+]

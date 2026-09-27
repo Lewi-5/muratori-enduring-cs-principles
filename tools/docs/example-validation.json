@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-09-27T21:50:20.455600+00:00",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "environment": {
+    "gcc": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "clang": "Ubuntu clang version 14.0.0-1ubuntu1.1",
+    "make": "GNU Make 4.3",
+    "python": "Python 3.10.12",
+    "binutils": "GNU objdump (GNU Binutils for Ubuntu) 2.38"
+  },
+  "results": [
+    {
+      "week": 2,
+      "exercise": 3,
+      "compiler": "gcc",
+      "output": "offsets=0,8,16 size=24 alignment=8\n"
+    },
+    {
+      "week": 2,
+      "exercise": 3,
+      "compiler": "clang",
+      "output": "offsets=0,8,16 size=24 alignment=8\n"
+    },
+    {
+      "week": 2,
+      "exercise": 4,
+      "compiler": "gcc",
+      "output": "A.......BBBBBBBBCCCC....\n"
+    },
+    {
+      "week": 2,
+      "exercise": 4,
+      "compiler": "clang",
+      "output": "A.......BBBBBBBBCCCC....\n"
+    },
+    {
+      "week": 3,
+      "exercise": 1,
+      "compiler": "gcc",
+      "output": "0.75: sign=0 exponent=1022 fraction=0x8000000000000\n"
+    },
+    {
+      "week": 3,
+      "exercise": 1,
+      "compiler": "clang",
+      "output": "0.75: sign=0 exponent=1022 fraction=0x8000000000000\n"
+    },
+    {
+      "week": 4,
+      "exercise": 2,
+      "compiler": "gcc",
+      "output": "record=20 visible characters + LF; capacity=22 including NUL\n"
+    },
+    {
+      "week": 4,
+      "exercise": 2,
+      "compiler": "clang",
+      "output": "record=20 visible characters + LF; capacity=22 including NUL\n"
+    }
+  ]
+}

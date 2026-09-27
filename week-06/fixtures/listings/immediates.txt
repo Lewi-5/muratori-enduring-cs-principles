@@ -1,0 +1,24 @@
+bits 16
+mov al, 0
+mov al, 127
+mov al, -128
+mov al, -1
+mov cl, 12
+mov ah, 12
+mov ax, 0
+mov ax, 32767
+mov ax, -32768
+mov ax, -1
+mov cx, -12
+mov sp, 4660
+add al, 127
+add al, -128
+add ax, 127
+add ax, -128
+add ax, -32768
+add ax, 32767
+add si, -2
+add si, -2
+add cl, -2
+cmp bx, 1
+sub bx, 256

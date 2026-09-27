@@ -1,0 +1,12 @@
+bits 16
+mov cx, 10
+mov ax, 0
+mov bx, 3
+add ax, bx
+add ax, bx
+sub cx, 1
+cmp ax, cx
+mov dx, ax
+sub dx, cx
+add ah, 3
+cmp ax, 9

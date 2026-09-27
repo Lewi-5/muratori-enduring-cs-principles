@@ -1,0 +1,13 @@
+# E07.C exemplar cases: HEX BYTES | EXPECTED | REASON
+83 c3 f6 | add bx, -10 | s = 1, w = 1: the 8-bit 0xF6 must be sign-extended to 0xFFF6, not zero-extended to 246
+80 c3 f6 | add bl, -10 | w = 0: the same byte is an 8-bit value; no extension applies
+81 c3 f6 00 | add bx, 246 | s = 0, w = 1: a 16-bit immediate whose high byte is zero stays positive
+89 c3 | mov bx, ax | d = 0: the reg field (ax) is the source and r/m (bx) the destination
+8b c3 | mov ax, bx | d = 1 with the same ModR/M byte: the operands swap
+b4 81 | mov ah, -127 | register 4 with w = 0 is ah, not sp; 0x81 is negative as an 8-bit value
+bc 81 00 | mov sp, 129 | register 4 with w = 1 is sp; a 16-bit 0x0081 is positive
+80 cb 01 | DEC_UNSUPPORTED_OPERATION@0 | reg field 001 in 0x80 is or, outside the subset, and must not print as add
+3c | DEC_TRUNCATED@0 | cmp al needs an immediate byte; the decoder must check before reading it
+b8 00 | DEC_TRUNCATED@0 | a 16-bit immediate with only one byte present
+89 d9 88 07 | DEC_UNSUPPORTED_MODE@2 | the error offset is the start of the failing instruction, not 0 and not 3
+28 e0 3d 00 80 | sub al, ah; cmp ax, -32768 | two instructions: lengths chain, and 0x8000 is the most negative 16-bit value

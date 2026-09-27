@@ -1,0 +1,1 @@
+error DEC_UNSUPPORTED_OPCODE at offset 2
