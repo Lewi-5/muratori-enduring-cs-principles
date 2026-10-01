@@ -1,0 +1,26 @@
+
+week-11/build/instructor/clang/optimized/inspection/calls.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <keep_across_call>:
+   0:	41 56                	push   r14
+   2:	53                   	push   rbx
+   3:	50                   	push   rax
+   4:	31 c0                	xor    eax,eax
+   6:	48 85 f6             	test   rsi,rsi
+   9:	74 1c                	je     27 <keep_across_call+0x27>
+   b:	48 89 d3             	mov    rbx,rdx
+   e:	48 85 d2             	test   rdx,rdx
+  11:	74 14                	je     27 <keep_across_call+0x27>
+  13:	49 89 fe             	mov    r14,rdi
+  16:	48 83 c7 01          	add    rdi,0x1
+  1a:	ff d6                	call   rsi
+  1c:	4c 01 f0             	add    rax,r14
+  1f:	48 89 03             	mov    QWORD PTR [rbx],rax
+  22:	b8 01 00 00 00       	mov    eax,0x1
+  27:	48 83 c4 08          	add    rsp,0x8
+  2b:	5b                   	pop    rbx
+  2c:	41 5e                	pop    r14
+  2e:	c3                   	ret    

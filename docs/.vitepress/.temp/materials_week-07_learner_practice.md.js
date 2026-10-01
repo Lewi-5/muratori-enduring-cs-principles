@@ -1,0 +1,19 @@
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.1tPrXgE0.js";
+const __pageData = JSON.parse('{"title":"Practice and stretch","description":"","frontmatter":{"search":false,"prev":false,"next":false},"headers":[],"relativePath":"materials/week-07/learner/practice.md","filePath":"materials/week-07/learner/practice.md"}');
+const _sfc_main = { name: "materials/week-07/learner/practice.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="practice-and-stretch" tabindex="-1">Practice and stretch <a class="header-anchor" href="#practice-and-stretch" aria-label="Permalink to &quot;Practice and stretch&quot;">​</a></h1><h3 id="p01" tabindex="-1">P01 <a class="header-anchor" href="#p01" aria-label="Permalink to &quot;P01 {#p01}&quot;">​</a></h3><p>Fill the complete eight-entry r/m table for modes 00, 01 and 10. Mark the direct exception. Explain why <code>[bp]</code> needs a displacement encoding.</p><h3 id="p02" tabindex="-1">P02 <a class="header-anchor" href="#p02" aria-label="Permalink to &quot;P02 {#p02}&quot;">​</a></h3><p>Hand-decode 8A 00, 89 5E 00, C6 06 00 80 FF and A3 FF FF. Give length and operands for each.</p><h3 id="p03" tabindex="-1">P03 <a class="header-anchor" href="#p03" aria-label="Permalink to &quot;P03 {#p03}&quot;">​</a></h3><p>Classify 8B, 8B 06, C7 0E, C7 06 34 12 00 and 26 8B 07 under the public error order. Explain the first insufficient field or scope rejection.</p><h3 id="p04" tabindex="-1">P04 <a class="header-anchor" href="#p04" aria-label="Permalink to &quot;P04 {#p04}&quot;">​</a></h3><p>Which default segment accompanies <code>[bx + si]</code>, <code>[bp + si]</code> and <code>[65534]</code> on the 8086? Does the decoder know their physical addresses?</p><h3 id="p05" tabindex="-1">P05 <a class="header-anchor" href="#p05" aria-label="Permalink to &quot;P05 {#p05}&quot;">​</a></h3><p>A caller overlaps text with its input bytes and invokes decode_stream. Explain the problem and repair. A second caller shares one output buffer between threads. Is a stateless library enough?</p><h3 id="p06" tabindex="-1">P06 <a class="header-anchor" href="#p06" aria-label="Permalink to &quot;P06 {#p06}&quot;">​</a></h3><p>Describe what nm -D, readelf -d and an actual client execution each establish. What happens when a new header adds a field to Operand without rebuilding the library?</p><h3 id="s01" tabindex="-1">S01 <a class="header-anchor" href="#s01" aria-label="Permalink to &quot;S01 {#s01}&quot;">​</a></h3><p>Round-trip semantic forms: compile and run instructor/extras/roundtrip.c after attempting your own version. Compare 8B 40 00 with 8B 80 00 00, then decode the shortest supplied canonical encoding. State whether text, meaning and original bytes are preserved. Optionally assemble the text with NASM if installed; report an unavailable assembler honestly.</p><h3 id="s02" tabindex="-1">S02 <a class="header-anchor" href="#s02" aria-label="Permalink to &quot;S02 {#s02}&quot;">​</a></h3><p>Load the library explicitly with dlopen and resolve decoder_api_version. Attempt this in C, then compare with instructor/extras/load.c. Compile with -ldl; run with an explicit path to your libdecode.so and with a nonexistent library. Explain symbol errors, function pointer lifetime and the C/POSIX boundary.</p></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("materials/week-07/learner/practice.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const practice = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  practice as default
+};

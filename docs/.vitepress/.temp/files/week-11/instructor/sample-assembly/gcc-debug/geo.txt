@@ -1,0 +1,216 @@
+
+week-11/build/instructor/gcc/debug/inspection/geo.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <deg_to_rad>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   rbp
+   5:	48 89 e5             	mov    rbp,rsp
+   8:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+   d:	f2 0f 10 4d f8       	movsd  xmm1,QWORD PTR [rbp-0x8]
+  12:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 1a <deg_to_rad+0x1a>
+  19:	00 
+			16: R_X86_64_PC32	.rodata-0x4
+  1a:	f2 0f 59 c1          	mulsd  xmm0,xmm1
+  1e:	66 48 0f 7e c0       	movq   rax,xmm0
+  23:	66 48 0f 6e c0       	movq   xmm0,rax
+  28:	5d                   	pop    rbp
+  29:	c3                   	ret    
+
+000000000000002a <clamp>:
+  2a:	f3 0f 1e fa          	endbr64 
+  2e:	55                   	push   rbp
+  2f:	48 89 e5             	mov    rbp,rsp
+  32:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+  37:	f2 0f 11 4d f0       	movsd  QWORD PTR [rbp-0x10],xmm1
+  3c:	f2 0f 11 55 e8       	movsd  QWORD PTR [rbp-0x18],xmm2
+  41:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+  46:	66 0f 2f 45 f8       	comisd xmm0,QWORD PTR [rbp-0x8]
+  4b:	76 07                	jbe    54 <clamp+0x2a>
+  4d:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+  52:	eb 18                	jmp    6c <clamp+0x42>
+  54:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+  59:	66 0f 2f 45 e8       	comisd xmm0,QWORD PTR [rbp-0x18]
+  5e:	76 07                	jbe    67 <clamp+0x3d>
+  60:	f2 0f 10 45 e8       	movsd  xmm0,QWORD PTR [rbp-0x18]
+  65:	eb 05                	jmp    6c <clamp+0x42>
+  67:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+  6c:	66 48 0f 7e c0       	movq   rax,xmm0
+  71:	66 48 0f 6e c0       	movq   xmm0,rax
+  76:	5d                   	pop    rbp
+  77:	c3                   	ret    
+
+0000000000000078 <geo_valid_position>:
+  78:	f3 0f 1e fa          	endbr64 
+  7c:	55                   	push   rbp
+  7d:	48 89 e5             	mov    rbp,rsp
+  80:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+  85:	f2 0f 11 4d f0       	movsd  QWORD PTR [rbp-0x10],xmm1
+  8a:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+  8f:	f3 0f 7e 0d 00 00 00 	movq   xmm1,QWORD PTR [rip+0x0]        # 97 <geo_valid_position+0x1f>
+  96:	00 
+			93: R_X86_64_PC32	.rodata+0xc
+  97:	66 0f 54 c8          	andpd  xmm1,xmm0
+  9b:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # a3 <geo_valid_position+0x2b>
+  a2:	00 
+			9f: R_X86_64_PC32	.rodata+0x1c
+  a3:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  a7:	0f 92 c0             	setb   al
+  aa:	83 f0 01             	xor    eax,0x1
+  ad:	84 c0                	test   al,al
+  af:	74 6a                	je     11b <geo_valid_position+0xa3>
+  b1:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+  b6:	f3 0f 7e 0d 00 00 00 	movq   xmm1,QWORD PTR [rip+0x0]        # be <geo_valid_position+0x46>
+  bd:	00 
+			ba: R_X86_64_PC32	.rodata+0xc
+  be:	66 0f 54 c8          	andpd  xmm1,xmm0
+  c2:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # ca <geo_valid_position+0x52>
+  c9:	00 
+			c6: R_X86_64_PC32	.rodata+0x1c
+  ca:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  ce:	0f 92 c0             	setb   al
+  d1:	83 f0 01             	xor    eax,0x1
+  d4:	84 c0                	test   al,al
+  d6:	74 43                	je     11b <geo_valid_position+0xa3>
+  d8:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+  dd:	66 0f 2f 05 00 00 00 	comisd xmm0,QWORD PTR [rip+0x0]        # e5 <geo_valid_position+0x6d>
+  e4:	00 
+			e1: R_X86_64_PC32	.rodata+0x24
+  e5:	72 34                	jb     11b <geo_valid_position+0xa3>
+  e7:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # ef <geo_valid_position+0x77>
+  ee:	00 
+			eb: R_X86_64_PC32	.rodata+0x2c
+  ef:	66 0f 2f 45 f8       	comisd xmm0,QWORD PTR [rbp-0x8]
+  f4:	72 25                	jb     11b <geo_valid_position+0xa3>
+  f6:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+  fb:	66 0f 2f 05 00 00 00 	comisd xmm0,QWORD PTR [rip+0x0]        # 103 <geo_valid_position+0x8b>
+ 102:	00 
+			ff: R_X86_64_PC32	.rodata+0x34
+ 103:	72 16                	jb     11b <geo_valid_position+0xa3>
+ 105:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 10d <geo_valid_position+0x95>
+ 10c:	00 
+			109: R_X86_64_PC32	.rodata+0x3c
+ 10d:	66 0f 2f 45 f0       	comisd xmm0,QWORD PTR [rbp-0x10]
+ 112:	72 07                	jb     11b <geo_valid_position+0xa3>
+ 114:	b8 01 00 00 00       	mov    eax,0x1
+ 119:	eb 05                	jmp    120 <geo_valid_position+0xa8>
+ 11b:	b8 00 00 00 00       	mov    eax,0x0
+ 120:	5d                   	pop    rbp
+ 121:	c3                   	ret    
+
+0000000000000122 <geo_distance_km>:
+ 122:	f3 0f 1e fa          	endbr64 
+ 126:	55                   	push   rbp
+ 127:	48 89 e5             	mov    rbp,rsp
+ 12a:	48 83 ec 60          	sub    rsp,0x60
+ 12e:	f2 0f 11 45 d8       	movsd  QWORD PTR [rbp-0x28],xmm0
+ 133:	f2 0f 11 4d d0       	movsd  QWORD PTR [rbp-0x30],xmm1
+ 138:	f2 0f 11 55 c8       	movsd  QWORD PTR [rbp-0x38],xmm2
+ 13d:	f2 0f 11 5d c0       	movsd  QWORD PTR [rbp-0x40],xmm3
+ 142:	48 89 7d b8          	mov    QWORD PTR [rbp-0x48],rdi
+ 146:	48 83 7d b8 00       	cmp    QWORD PTR [rbp-0x48],0x0
+ 14b:	74 36                	je     183 <geo_distance_km+0x61>
+ 14d:	f2 0f 10 45 d0       	movsd  xmm0,QWORD PTR [rbp-0x30]
+ 152:	48 8b 45 d8          	mov    rax,QWORD PTR [rbp-0x28]
+ 156:	66 0f 28 c8          	movapd xmm1,xmm0
+ 15a:	66 48 0f 6e c0       	movq   xmm0,rax
+ 15f:	e8 00 00 00 00       	call   164 <geo_distance_km+0x42>
+			160: R_X86_64_PLT32	geo_valid_position-0x4
+ 164:	85 c0                	test   eax,eax
+ 166:	74 1b                	je     183 <geo_distance_km+0x61>
+ 168:	f2 0f 10 45 c0       	movsd  xmm0,QWORD PTR [rbp-0x40]
+ 16d:	48 8b 45 c8          	mov    rax,QWORD PTR [rbp-0x38]
+ 171:	66 0f 28 c8          	movapd xmm1,xmm0
+ 175:	66 48 0f 6e c0       	movq   xmm0,rax
+ 17a:	e8 00 00 00 00       	call   17f <geo_distance_km+0x5d>
+			17b: R_X86_64_PLT32	geo_valid_position-0x4
+ 17f:	85 c0                	test   eax,eax
+ 181:	75 0a                	jne    18d <geo_distance_km+0x6b>
+ 183:	b8 00 00 00 00       	mov    eax,0x0
+ 188:	e9 51 01 00 00       	jmp    2de <geo_distance_km+0x1bc>
+ 18d:	f2 0f 10 45 c8       	movsd  xmm0,QWORD PTR [rbp-0x38]
+ 192:	f2 0f 5c 45 d8       	subsd  xmm0,QWORD PTR [rbp-0x28]
+ 197:	66 48 0f 7e c0       	movq   rax,xmm0
+ 19c:	66 48 0f 6e c0       	movq   xmm0,rax
+ 1a1:	e8 5a fe ff ff       	call   0 <deg_to_rad>
+ 1a6:	66 48 0f 7e c0       	movq   rax,xmm0
+ 1ab:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 1b3 <geo_distance_km+0x91>
+ 1b2:	00 
+			1af: R_X86_64_PC32	.rodata+0x44
+ 1b3:	66 48 0f 6e e0       	movq   xmm4,rax
+ 1b8:	f2 0f 5e e0          	divsd  xmm4,xmm0
+ 1bc:	66 48 0f 7e e0       	movq   rax,xmm4
+ 1c1:	66 48 0f 6e c0       	movq   xmm0,rax
+ 1c6:	e8 00 00 00 00       	call   1cb <geo_distance_km+0xa9>
+			1c7: R_X86_64_PLT32	sin-0x4
+ 1cb:	66 48 0f 7e c0       	movq   rax,xmm0
+ 1d0:	48 89 45 e8          	mov    QWORD PTR [rbp-0x18],rax
+ 1d4:	f2 0f 10 45 c0       	movsd  xmm0,QWORD PTR [rbp-0x40]
+ 1d9:	f2 0f 5c 45 d0       	subsd  xmm0,QWORD PTR [rbp-0x30]
+ 1de:	66 48 0f 7e c0       	movq   rax,xmm0
+ 1e3:	66 48 0f 6e c0       	movq   xmm0,rax
+ 1e8:	e8 13 fe ff ff       	call   0 <deg_to_rad>
+ 1ed:	66 48 0f 7e c0       	movq   rax,xmm0
+ 1f2:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 1fa <geo_distance_km+0xd8>
+ 1f9:	00 
+			1f6: R_X86_64_PC32	.rodata+0x44
+ 1fa:	66 48 0f 6e e8       	movq   xmm5,rax
+ 1ff:	f2 0f 5e e8          	divsd  xmm5,xmm0
+ 203:	66 48 0f 7e e8       	movq   rax,xmm5
+ 208:	66 48 0f 6e c0       	movq   xmm0,rax
+ 20d:	e8 00 00 00 00       	call   212 <geo_distance_km+0xf0>
+			20e: R_X86_64_PLT32	sin-0x4
+ 212:	66 48 0f 7e c0       	movq   rax,xmm0
+ 217:	48 89 45 f0          	mov    QWORD PTR [rbp-0x10],rax
+ 21b:	f2 0f 10 45 e8       	movsd  xmm0,QWORD PTR [rbp-0x18]
+ 220:	f2 0f 59 c0          	mulsd  xmm0,xmm0
+ 224:	f2 0f 11 45 b0       	movsd  QWORD PTR [rbp-0x50],xmm0
+ 229:	48 8b 45 d8          	mov    rax,QWORD PTR [rbp-0x28]
+ 22d:	66 48 0f 6e c0       	movq   xmm0,rax
+ 232:	e8 c9 fd ff ff       	call   0 <deg_to_rad>
+ 237:	66 48 0f 7e c0       	movq   rax,xmm0
+ 23c:	66 48 0f 6e c0       	movq   xmm0,rax
+ 241:	e8 00 00 00 00       	call   246 <geo_distance_km+0x124>
+			242: R_X86_64_PLT32	cos-0x4
+ 246:	f2 0f 11 45 a8       	movsd  QWORD PTR [rbp-0x58],xmm0
+ 24b:	48 8b 45 c8          	mov    rax,QWORD PTR [rbp-0x38]
+ 24f:	66 48 0f 6e c0       	movq   xmm0,rax
+ 254:	e8 a7 fd ff ff       	call   0 <deg_to_rad>
+ 259:	66 48 0f 7e c0       	movq   rax,xmm0
+ 25e:	66 48 0f 6e c0       	movq   xmm0,rax
+ 263:	e8 00 00 00 00       	call   268 <geo_distance_km+0x146>
+			264: R_X86_64_PLT32	cos-0x4
+ 268:	f2 0f 59 45 a8       	mulsd  xmm0,QWORD PTR [rbp-0x58]
+ 26d:	f2 0f 59 45 f0       	mulsd  xmm0,QWORD PTR [rbp-0x10]
+ 272:	f2 0f 59 45 f0       	mulsd  xmm0,QWORD PTR [rbp-0x10]
+ 277:	f2 0f 58 45 b0       	addsd  xmm0,QWORD PTR [rbp-0x50]
+ 27c:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+ 281:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 289 <geo_distance_km+0x167>
+ 288:	00 
+			285: R_X86_64_PC32	.rodata+0x4c
+ 289:	48 8b 45 f8          	mov    rax,QWORD PTR [rbp-0x8]
+ 28d:	66 0f 28 d0          	movapd xmm2,xmm0
+ 291:	66 0f ef c9          	pxor   xmm1,xmm1
+ 295:	66 48 0f 6e c0       	movq   xmm0,rax
+ 29a:	e8 8b fd ff ff       	call   2a <clamp>
+ 29f:	66 48 0f 7e c0       	movq   rax,xmm0
+ 2a4:	66 48 0f 6e c0       	movq   xmm0,rax
+ 2a9:	e8 00 00 00 00       	call   2ae <geo_distance_km+0x18c>
+			2aa: R_X86_64_PLT32	sqrt-0x4
+ 2ae:	66 48 0f 7e c0       	movq   rax,xmm0
+ 2b3:	66 48 0f 6e c0       	movq   xmm0,rax
+ 2b8:	e8 00 00 00 00       	call   2bd <geo_distance_km+0x19b>
+			2b9: R_X86_64_PLT32	asin-0x4
+ 2bd:	66 0f 28 c8          	movapd xmm1,xmm0
+ 2c1:	f2 0f 58 c8          	addsd  xmm1,xmm0
+ 2c5:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 2cd <geo_distance_km+0x1ab>
+ 2cc:	00 
+			2c9: R_X86_64_PC32	.rodata+0x54
+ 2cd:	f2 0f 59 c1          	mulsd  xmm0,xmm1
+ 2d1:	48 8b 45 b8          	mov    rax,QWORD PTR [rbp-0x48]
+ 2d5:	f2 0f 11 00          	movsd  QWORD PTR [rax],xmm0
+ 2d9:	b8 01 00 00 00       	mov    eax,0x1
+ 2de:	c9                   	leave  
+ 2df:	c3                   	ret    

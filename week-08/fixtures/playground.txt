@@ -1,0 +1,4 @@
+mov al, 127: ax 0000 -> 007f flags=0000 ip=2
+add al, 1: ax 007f -> 0080 flags=0890 ip=4
+cmp al, -128: ax 0080 -> 0080 flags=0044 ip=6
+mov ah, 18: ax 0080 -> 1280 flags=0044 ip=8

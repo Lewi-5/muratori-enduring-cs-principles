@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-01",
+  "kernel": "6.18.40.1-microsoft-standard-WSL2",
+  "flags": "-std=c11 -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion -ffp-contract=off -fno-lto -O2 -g",
+  "timer": "CLOCK_MONOTONIC",
+  "sizes": [
+    16,
+    64,
+    256,
+    1024
+  ],
+  "repeats": 9,
+  "warmups": 1,
+  "records": [
+    {
+      "compiler": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+      "target": "x86_64-linux-gnu",
+      "csv": "gcc.csv"
+    },
+    {
+      "compiler": "Ubuntu clang version 14.0.0-1ubuntu1.1",
+      "target": "x86_64-pc-linux-gnu",
+      "csv": "clang.csv"
+    }
+  ],
+  "hashes": {
+    "support/bench.c": "28c9815f6af11109a616b88c836587453cb4117a56935ac4137a396cf09b6956",
+    "instructor/src/insertion.c": "ff1cf549422e441118272b592bdb503aa70cd005fe5de1d0d66ee1ecf39b4b29",
+    "instructor/src/merge.c": "7a376e986bad16fd0e9fbb421734b7fdccc7c3972679f719ac117ce3ba1122f2",
+    "instructor/src/radix.c": "0b7ceb65a8dbd649142a833e5c657a8140e5595e6060b3b35010ab23d63d7526",
+    "instructor/src/summary.c": "251212ec2b10cc97c6d214c0075dcc681ed19dd2b70b7e5f533d450ec7107de4"
+  },
+  "policy": "Reset outside timing; instrumented sort inside; validation/checksum outside. Fixed algorithm order. Warm-cache favorable trials; no universal crossover or speed claim."
+}

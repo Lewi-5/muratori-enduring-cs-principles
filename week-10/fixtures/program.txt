@@ -1,0 +1,11 @@
+0000 -> 0003 ax=1234 bx=0000 sp=0100 flags=0000
+0003 -> 0008 ax=1234 bx=0000 sp=00fe flags=0000
+0008 -> 0009 ax=1234 bx=0000 sp=00fc flags=0000
+0009 -> 000c ax=5678 bx=0000 sp=00fc flags=0000
+000c -> 0012 ax=5678 bx=0000 sp=00fa flags=0000
+0012 -> 0013 ax=5679 bx=0000 sp=00fa flags=0000
+0013 -> 000f ax=5679 bx=0000 sp=00fc flags=0000
+000f -> 0010 ax=5679 bx=1234 sp=00fe flags=0000
+0010 -> 0006 ax=5679 bx=1234 sp=0100 flags=0000
+0006 -> 0014 ax=5679 bx=1234 sp=0100 flags=0000
+final ip=0014 ax=5679 bx=1234 sp=0100 steps=10

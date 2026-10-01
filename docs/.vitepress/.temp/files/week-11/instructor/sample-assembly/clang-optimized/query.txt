@@ -1,0 +1,192 @@
+
+week-11/build/instructor/clang/optimized/inspection/query.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <query_hit_compare>:
+   0:	f2 0f 10 47 08       	movsd  xmm0,QWORD PTR [rdi+0x8]
+   5:	f2 0f 10 4e 08       	movsd  xmm1,QWORD PTR [rsi+0x8]
+   a:	b8 ff ff ff ff       	mov    eax,0xffffffff
+   f:	66 0f 2e c8          	ucomisd xmm1,xmm0
+  13:	77 1e                	ja     33 <query_hit_compare+0x33>
+  15:	b8 01 00 00 00       	mov    eax,0x1
+  1a:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  1e:	77 13                	ja     33 <query_hit_compare+0x33>
+  20:	48 8b 0e             	mov    rcx,QWORD PTR [rsi]
+  23:	b8 ff ff ff ff       	mov    eax,0xffffffff
+  28:	48 39 0f             	cmp    QWORD PTR [rdi],rcx
+  2b:	72 06                	jb     33 <query_hit_compare+0x33>
+  2d:	0f 97 c0             	seta   al
+  30:	0f b6 c0             	movzx  eax,al
+  33:	c3                   	ret    
+  34:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+  3b:	00 00 00 
+  3e:	66 90                	xchg   ax,ax
+
+0000000000000040 <query_points>:
+  40:	55                   	push   rbp
+  41:	41 57                	push   r15
+  43:	41 56                	push   r14
+  45:	41 55                	push   r13
+  47:	41 54                	push   r12
+  49:	53                   	push   rbx
+  4a:	48 83 ec 48          	sub    rsp,0x48
+  4e:	45 31 ed             	xor    r13d,r13d
+  51:	48 85 d2             	test   rdx,rdx
+  54:	0f 84 b2 01 00 00    	je     20c <query_points+0x1cc>
+  5a:	48 89 cb             	mov    rbx,rcx
+  5d:	48 85 c9             	test   rcx,rcx
+  60:	0f 84 a6 01 00 00    	je     20c <query_points+0x1cc>
+  66:	49 89 d4             	mov    r12,rdx
+  69:	49 89 f6             	mov    r14,rsi
+  6c:	49 89 ff             	mov    r15,rdi
+  6f:	48 85 ff             	test   rdi,rdi
+  72:	75 09                	jne    7d <query_points+0x3d>
+  74:	4d 85 f6             	test   r14,r14
+  77:	0f 85 8f 01 00 00    	jne    20c <query_points+0x1cc>
+  7d:	0f 29 54 24 10       	movaps XMMWORD PTR [rsp+0x10],xmm2
+  82:	f2 0f 11 44 24 38    	movsd  QWORD PTR [rsp+0x38],xmm0
+  88:	f2 0f 11 4c 24 40    	movsd  QWORD PTR [rsp+0x40],xmm1
+  8e:	e8 00 00 00 00       	call   93 <query_points+0x53>
+			8f: R_X86_64_PLT32	geo_valid_position-0x4
+  93:	85 c0                	test   eax,eax
+  95:	0f 84 71 01 00 00    	je     20c <query_points+0x1cc>
+  9b:	66 0f 28 4c 24 10    	movapd xmm1,XMMWORD PTR [rsp+0x10]
+  a1:	66 0f 2e 0d 00 00 00 	ucomisd xmm1,QWORD PTR [rip+0x0]        # a9 <query_points+0x69>
+  a8:	00 
+			a5: R_X86_64_PC32	.LCPI1_1-0x4
+  a9:	0f 87 5d 01 00 00    	ja     20c <query_points+0x1cc>
+  af:	66 0f 57 c0          	xorpd  xmm0,xmm0
+  b3:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  b7:	0f 87 4f 01 00 00    	ja     20c <query_points+0x1cc>
+  bd:	66 0f 28 05 00 00 00 	movapd xmm0,XMMWORD PTR [rip+0x0]        # c5 <query_points+0x85>
+  c4:	00 
+			c1: R_X86_64_PC32	.LCPI1_0-0x4
+  c5:	66 0f 54 c1          	andpd  xmm0,xmm1
+  c9:	66 0f 2e 05 00 00 00 	ucomisd xmm0,QWORD PTR [rip+0x0]        # d1 <query_points+0x91>
+  d0:	00 
+			cd: R_X86_64_PC32	.LCPI1_2-0x4
+  d1:	0f 84 35 01 00 00    	je     20c <query_points+0x1cc>
+  d7:	4d 85 f6             	test   r14,r14
+  da:	0f 84 17 01 00 00    	je     1f7 <query_points+0x1b7>
+  e0:	48 89 5c 24 28       	mov    QWORD PTR [rsp+0x28],rbx
+  e5:	49 8d 5f 10          	lea    rbx,[r15+0x10]
+  e9:	4c 89 f5             	mov    rbp,r14
+  ec:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+  f0:	f2 0f 10 43 f8       	movsd  xmm0,QWORD PTR [rbx-0x8]
+  f5:	f2 0f 10 0b          	movsd  xmm1,QWORD PTR [rbx]
+  f9:	e8 00 00 00 00       	call   fe <query_points+0xbe>
+			fa: R_X86_64_PLT32	geo_valid_position-0x4
+  fe:	85 c0                	test   eax,eax
+ 100:	0f 84 06 01 00 00    	je     20c <query_points+0x1cc>
+ 106:	48 83 c3 18          	add    rbx,0x18
+ 10a:	48 83 c5 ff          	add    rbp,0xffffffffffffffff
+ 10e:	75 e0                	jne    f0 <query_points+0xb0>
+ 110:	4d 85 f6             	test   r14,r14
+ 113:	48 8b 5c 24 28       	mov    rbx,QWORD PTR [rsp+0x28]
+ 118:	0f 84 d9 00 00 00    	je     1f7 <query_points+0x1b7>
+ 11e:	4c 89 f0             	mov    rax,r14
+ 121:	48 c1 e8 3d          	shr    rax,0x3d
+ 125:	0f 85 e1 00 00 00    	jne    20c <query_points+0x1cc>
+ 12b:	4a 8d 3c f5 00 00 00 	lea    rdi,[r14*8+0x0]
+ 132:	00 
+ 133:	e8 00 00 00 00       	call   138 <query_points+0xf8>
+			134: R_X86_64_PLT32	malloc-0x4
+ 138:	48 89 04 24          	mov    QWORD PTR [rsp],rax
+ 13c:	48 85 c0             	test   rax,rax
+ 13f:	0f 84 c7 00 00 00    	je     20c <query_points+0x1cc>
+ 145:	4d 8d 6f 10          	lea    r13,[r15+0x10]
+ 149:	31 ed                	xor    ebp,ebp
+ 14b:	31 ff                	xor    edi,edi
+ 14d:	48 89 7c 24 30       	mov    QWORD PTR [rsp+0x30],rdi
+ 152:	48 c7 44 24 08 00 00 	mov    QWORD PTR [rsp+0x8],0x0
+ 159:	00 00 
+ 15b:	f2 41 0f 10 55 f8    	movsd  xmm2,QWORD PTR [r13-0x8]
+ 161:	f2 41 0f 10 5d 00    	movsd  xmm3,QWORD PTR [r13+0x0]
+ 167:	f2 0f 10 44 24 38    	movsd  xmm0,QWORD PTR [rsp+0x38]
+ 16d:	f2 0f 10 4c 24 40    	movsd  xmm1,QWORD PTR [rsp+0x40]
+ 173:	48 8d 7c 24 08       	lea    rdi,[rsp+0x8]
+ 178:	e8 00 00 00 00       	call   17d <query_points+0x13d>
+			179: R_X86_64_PLT32	geo_distance_km-0x4
+ 17d:	85 c0                	test   eax,eax
+ 17f:	0f 84 d0 00 00 00    	je     255 <query_points+0x215>
+ 185:	f2 0f 10 44 24 08    	movsd  xmm0,QWORD PTR [rsp+0x8]
+ 18b:	66 0f 28 4c 24 10    	movapd xmm1,XMMWORD PTR [rsp+0x10]
+ 191:	66 0f 2e c8          	ucomisd xmm1,xmm0
+ 195:	48 8b 7c 24 30       	mov    rdi,QWORD PTR [rsp+0x30]
+ 19a:	48 83 df ff          	sbb    rdi,0xffffffffffffffff
+ 19e:	48 8b 04 24          	mov    rax,QWORD PTR [rsp]
+ 1a2:	f2 0f 11 04 e8       	movsd  QWORD PTR [rax+rbp*8],xmm0
+ 1a7:	48 83 c5 01          	add    rbp,0x1
+ 1ab:	49 83 c5 18          	add    r13,0x18
+ 1af:	49 39 ee             	cmp    r14,rbp
+ 1b2:	75 99                	jne    14d <query_points+0x10d>
+ 1b4:	48 85 ff             	test   rdi,rdi
+ 1b7:	0f 84 a6 00 00 00    	je     263 <query_points+0x223>
+ 1bd:	48 89 f8             	mov    rax,rdi
+ 1c0:	48 c1 e8 3c          	shr    rax,0x3c
+ 1c4:	0f 85 8b 00 00 00    	jne    255 <query_points+0x215>
+ 1ca:	49 89 fd             	mov    r13,rdi
+ 1cd:	48 c1 e7 04          	shl    rdi,0x4
+ 1d1:	e8 00 00 00 00       	call   1d6 <query_points+0x196>
+			1d2: R_X86_64_PLT32	malloc-0x4
+ 1d6:	48 85 c0             	test   rax,rax
+ 1d9:	74 7a                	je     255 <query_points+0x215>
+ 1db:	48 89 c5             	mov    rbp,rax
+ 1de:	49 83 fe 02          	cmp    r14,0x2
+ 1e2:	b8 01 00 00 00       	mov    eax,0x1
+ 1e7:	49 0f 43 c6          	cmovae rax,r14
+ 1eb:	31 c9                	xor    ecx,ecx
+ 1ed:	31 d2                	xor    edx,edx
+ 1ef:	66 0f 28 4c 24 10    	movapd xmm1,XMMWORD PTR [rsp+0x10]
+ 1f5:	eb 34                	jmp    22b <query_points+0x1eb>
+ 1f7:	49 c7 04 24 00 00 00 	mov    QWORD PTR [r12],0x0
+ 1fe:	00 
+ 1ff:	48 c7 03 00 00 00 00 	mov    QWORD PTR [rbx],0x0
+ 206:	41 bd 01 00 00 00    	mov    r13d,0x1
+ 20c:	44 89 e8             	mov    eax,r13d
+ 20f:	48 83 c4 48          	add    rsp,0x48
+ 213:	5b                   	pop    rbx
+ 214:	41 5c                	pop    r12
+ 216:	41 5d                	pop    r13
+ 218:	41 5e                	pop    r14
+ 21a:	41 5f                	pop    r15
+ 21c:	5d                   	pop    rbp
+ 21d:	c3                   	ret    
+ 21e:	48 83 c1 01          	add    rcx,0x1
+ 222:	49 83 c7 18          	add    r15,0x18
+ 226:	48 39 c8             	cmp    rax,rcx
+ 229:	74 3f                	je     26a <query_points+0x22a>
+ 22b:	48 8b 34 24          	mov    rsi,QWORD PTR [rsp]
+ 22f:	f2 0f 10 04 ce       	movsd  xmm0,QWORD PTR [rsi+rcx*8]
+ 234:	66 0f 2e c8          	ucomisd xmm1,xmm0
+ 238:	72 e4                	jb     21e <query_points+0x1de>
+ 23a:	49 8b 37             	mov    rsi,QWORD PTR [r15]
+ 23d:	48 89 d7             	mov    rdi,rdx
+ 240:	48 c1 e7 04          	shl    rdi,0x4
+ 244:	48 89 74 3d 00       	mov    QWORD PTR [rbp+rdi*1+0x0],rsi
+ 249:	f2 0f 11 44 3d 08    	movsd  QWORD PTR [rbp+rdi*1+0x8],xmm0
+ 24f:	48 83 c2 01          	add    rdx,0x1
+ 253:	eb c9                	jmp    21e <query_points+0x1de>
+ 255:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+ 259:	e8 00 00 00 00       	call   25e <query_points+0x21e>
+			25a: R_X86_64_PLT32	free-0x4
+ 25e:	45 31 ed             	xor    r13d,r13d
+ 261:	eb a9                	jmp    20c <query_points+0x1cc>
+ 263:	49 89 fd             	mov    r13,rdi
+ 266:	31 ed                	xor    ebp,ebp
+ 268:	eb 17                	jmp    281 <query_points+0x241>
+ 26a:	48 8d 0d 00 00 00 00 	lea    rcx,[rip+0x0]        # 271 <query_points+0x231>
+			26d: R_X86_64_PC32	query_hit_compare-0x4
+ 271:	ba 10 00 00 00       	mov    edx,0x10
+ 276:	48 89 ef             	mov    rdi,rbp
+ 279:	4c 89 ee             	mov    rsi,r13
+ 27c:	e8 00 00 00 00       	call   281 <query_points+0x241>
+			27d: R_X86_64_PLT32	qsort-0x4
+ 281:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+ 285:	e8 00 00 00 00       	call   28a <query_points+0x24a>
+			286: R_X86_64_PLT32	free-0x4
+ 28a:	49 89 2c 24          	mov    QWORD PTR [r12],rbp
+ 28e:	4c 89 2b             	mov    QWORD PTR [rbx],r13
+ 291:	e9 70 ff ff ff       	jmp    206 <query_points+0x1c6>

@@ -20,19 +20,25 @@ endif
 SRC = $(PACKAGE)/src
 BUILD = build/$(PACKAGE)/$(notdir $(CC))/$(MODE)
 EXERCISES = 01 02 03 04 05 06 07 08 09 10 11 12 13 15
-PROGRAMS = $(addprefix $(BUILD)/ex,$(EXERCISES)) $(BUILD)/ex14
+WARMUPS = $(addprefix $(BUILD)/w,01 02 03 04)
+PROGRAMS = $(addprefix $(BUILD)/ex,$(EXERCISES)) $(BUILD)/ex14 $(WARMUPS)
 
-.PHONY: all test inventory verify starters bench symbols assembly clean
+.PHONY: all test warmups inventory verify starters bench symbols assembly clean
 all: $(PROGRAMS)
 $(BUILD):
 	mkdir -p "$@"
 $(BUILD)/ex%: $(SRC)/ex%.c support/decimal.h | $(BUILD)
 	$(CC) $(FLAGS) $(LINK_FLAGS) -Isupport $< -o $@
+$(BUILD)/w%: $(SRC)/w%.c | $(BUILD)
+	$(CC) $(FLAGS) $(LINK_FLAGS) -Isupport $< -o $@
 $(BUILD)/ex14_%.o: $(SRC)/ex14_%.c $(SRC)/ex14_count.h | $(BUILD)
 	$(CC) $(FLAGS) -c $< -o $@
 $(BUILD)/ex14: $(BUILD)/ex14_main.o $(BUILD)/ex14_count.o
 	$(CC) $(FLAGS) $(LINK_FLAGS) $^ -o $@
-test: all inventory
+# Warm-ups are ungraded; `make warmups` checks only them, and `make test` checks them first.
+warmups: $(WARMUPS)
+	$(PYTHON) tests/warmups.py --build $(BUILD) --source $(SRC) --cc $(CC) --flags '$(FLAGS) $(LINK_FLAGS)'
+test: all inventory warmups
 	$(PYTHON) tests/check.py --build $(BUILD) --source $(SRC) --cc $(CC) --flags '$(FLAGS) $(LINK_FLAGS)'
 inventory:
 	$(PYTHON) tests/inventory.py

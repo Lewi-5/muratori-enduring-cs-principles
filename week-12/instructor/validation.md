@@ -1,0 +1,21 @@
+# Week 12 validation evidence
+
+Checked on 2026-10-01 in x86-64 Linux 6.18.40.1-microsoft-standard-WSL2, GCC 11.4.0, Clang 14.0.0 and Python 3.10.12. Compiler targets were x86_64-linux-gnu and x86_64-pc-linux-gnu. Workload estimates remain unpiloted.
+
+`make verify` completed with exit status zero. All six GCC/Clang reference configurations passed: debug (-O0), optimized (-O2) and address/undefined sanitizer (-O1). Builds use C11, -Wall, -Wextra, -Wpedantic, -Werror, -Wconversion and -Wsign-conversion. Sanitizer executables use -no-pie in this Linux environment. The complete ignored log is build/verify.log.
+
+Each configuration passed 196608 independent byte ADD/SUB/CMP cases, 512 actual conditional-step outcomes, all effective-address expressions across displacement modes/data widths/directions, wrapping words, source/address aliasing, stack semantics and failures, exact-budget halt, empty code, bad initial/return targets, capacity/error precedence, initialized trace deltas, same-value stores and maximum-length code/target wrap. Prepared-image failure checks preserved the original image. Complete Machine and trace/count sentinels detected partial output leaks.
+
+Three original hand-derived golden streams passed: call/loop/data integration, word wrap and original PUSH SP. The separate Python mathematical/state oracle checked every CPU and memory-delta field for 128 combined programs per configuration. A nested-call result and deterministic pinned-predecessor comparisons also passed. The predecessor shares helpers, so it supplies regression evidence rather than an independent physical-CPU oracle. Arithmetic, hand goldens and Python calculations supply separately derived expectations. These finite domains are not every possible program or word pair.
+
+All three warm-ups passed exhaustive byte-pair, boundary-position and word-pattern tests. All 29 prompt IDs matched separate complete answers. GCC and Clang compiled untouched learner scaffolds without warnings; contracts, warm-ups and playground failed their meaningful correctness gates as expected. Only contract harnesses link the pinned predecessor execution/runner; production and learner drivers do not.
+
+Four actual GCC/Clang debug/optimized inspection sets were generated, each containing compiler assembly, relocated objects and manifests with exact flags, targets and source hashes. instructor/report.md's GCC excerpts were read from those artifacts; optimized GCC used arithmetic LEA and a geolab tail transfer, while different valid Clang instructions were observed. No new handwritten assembly or timing measurements were introduced.
+
+The initial recursion assertion used a budget of 100, which reached M_LIMIT before exhausting the 64-word stack window. Correcting the independently calculated test budget to 300 produced M_STACK after 129 successful tentative steps. This corrected a test expectation; the executor's stack semantics were unchanged. The reference matrix was run after that correction and the nested-call check.
+
+Per-week and course-wide checks matched the exact beginner source/output under GCC and Clang at -O0/-O2. The citation checker passed 323 sections (211 checked against local PDFs), 173 Muratori entries and 220 cross-reference rows across 52 weeks, including both complete Week 12 mappings. CE direct page/duration and HH markers were checked against the official indexes.
+
+`npm run docs:check` passed 12 integrated lessons, 377 prompt/answer pairs and 1125 generated Markdown pages. `npm run docs:build` completed successfully in 93.69 seconds, checking 1126 rendered pages and 83103 internal links, fragments and assets; solution routes were absent from the search index. The existing bundle-size notice was nonfatal. All 68 authored package files plus the standalone beginner snippet are registered, and temporary authoring scripts were removed.
+
+No Week 12 interactive browser review or learner pilot was performed. The model omits segmentation, devices/interrupts, self-modification and modern prediction/cache/pipeline/timing behavior. Prepared maps, bounded stack, checked boundaries, halt-at-length and transactions are deliberate teaching restrictions. Validation supports the specified subset on these toolchains; it does not establish full historical emulation, universal compiler listings or performance.

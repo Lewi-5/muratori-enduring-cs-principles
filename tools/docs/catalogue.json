@@ -6,11 +6,15 @@
     "promptFiles": [
       "week-01/learner/exercises.md",
       "week-01/learner/practice.md",
-      "week-01/learner/observations.md"
+      "week-01/learner/observations.md",
+      "week-01/learner/warmups.md",
+      "week-01/learner/reading-questions.md"
     ],
     "answerFiles": [
       "week-01/instructor/answers.md",
-      "week-01/instructor/observations.md"
+      "week-01/instructor/observations.md",
+      "week-01/instructor/warmups.md",
+      "week-01/instructor/reading-answers.md"
     ],
     "readings": [
       {
@@ -468,11 +472,15 @@
     "promptFiles": [
       "week-03/learner/exercises.md",
       "week-03/learner/practice.md",
-      "week-03/learner/observations.md"
+      "week-03/learner/observations.md",
+      "week-03/learner/warmups.md",
+      "week-03/learner/reading-questions.md"
     ],
     "answerFiles": [
       "week-03/instructor/answers.md",
-      "week-03/instructor/observations.md"
+      "week-03/instructor/observations.md",
+      "week-03/instructor/warmups.md",
+      "week-03/instructor/reading-answers.md"
     ],
     "readings": [
       {
@@ -1119,6 +1127,1372 @@
       "R03": "Name the ISA and manual table for an encoding claim. A modern x86-64 rule must not silently enter an 8086 explanation.",
       "R04": "Choose at least one convention difference deliberately. Explain semantic agreement without requiring the tools to print identical text.",
       "R05": "Connect one C operation to the exact bits it extracts. End with the addressing information that the next week must add."
+    }
+  },
+  {
+    "n": 7,
+    "title": "Memory operands and a decoder API",
+    "slug": "week-07",
+    "promptFiles": [
+      "week-07/learner/exercises.md",
+      "week-07/learner/practice.md",
+      "week-07/learner/observations.md",
+      "week-07/learner/warmups.md",
+      "week-07/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-07/instructor/answers.md",
+      "week-07/instructor/observations.md",
+      "week-07/instructor/warmups.md",
+      "week-07/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: 8086 Decoder Code Review](https://www.computerenhance.com/p/8086-decoder-code-review)",
+        "portion": "Full, 1:17:49",
+        "purpose": "Review field-driven decoding and the separation of instruction description from presentation."
+      },
+      {
+        "resource": "[CE: Using the Reference Decoder as a Shared Library](https://www.computerenhance.com/p/using-the-reference-decoder-as-a)",
+        "portion": "Full, 8:48",
+        "purpose": "Watch for the C boundary and client/library responsibilities; build our original library."
+      },
+      {
+        "resource": "[HH Chat 013: Translation Units, Function Pointers, Compilation, Linking, and Execution](https://guide.handmadehero.org/chat/chat013/)",
+        "portion": "15:39–32:42 (compilation and translation units); 38:58–45:33 (linking). Optional: 1:39:15–1:49:32 (function pointers)",
+        "purpose": "Adapt Windows/C++ examples to C11 and Linux. C11 requires a function declaration before a call; the discussion at 32:42 includes older C behavior."
+      },
+      {
+        "resource": "[Intel 8086 Family User’s Manual, October 1979](http://www.bitsavers.org/components/intel/8086/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)",
+        "portion": "Tables 4-8 to 4-10 (MOD, REG and R/M, p. 4-20); Table 4-12 (MOV, ADD, SUB, CMP, pp. 4-22 to 4-24)",
+        "purpose": "Authority for address forms, direct-address exception, byte order and displacement widths."
+      },
+      {
+        "resource": "[C11 draft N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§§6.2.2, 6.3.1.3, 6.5.7, 6.9 and 7.21.6.5",
+        "purpose": "Linkage, safe conversions, shifts, external definitions and snprintf."
+      },
+      {
+        "resource": "[GCC code generation options](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)",
+        "portion": "-fPIC; consult [GNU ld options](https://sourceware.org/binutils/docs/ld/Options.html) for -shared, -rpath and --version-script",
+        "purpose": "Build mechanics are Linux/toolchain contracts, not ISO C promises."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Chapter 17: Multifile Projects",
+        "url": "https://beej.us/guide/bgc/html/split/multifile-projects.html"
+      },
+      {
+        "title": "Dive Into Systems §7.1: Assembly Basics",
+        "url": "https://diveintosystems.org/book/C7-x86_64/basics.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "An address tail",
+        "why": "The same three-bit field can name a formula or a direct address. Mode supplies the missing context.",
+        "prerequisites": "mode and r/m fields; little-endian and signed interpretation",
+        "predict": "Derive 8B 46 FE and 8B 06 FE FF. Explain why the former uses signed -2 and the latter unsigned 65534. Explain why byte data still uses word address registers.",
+        "steps": "Implement `decode_address` in `address.c` using the supplied internal declaration. Input begins immediately after ModR/M. Validate NULL and mode/index arguments before byte availability. Modes 0–2 only. Return used=0, 1 or 2 and an Address; preserve both outputs on any failure. Direct addresses set direct=1, rm=0, displacement=0; formula addresses set direct=0, address=0. Decode all address-table entries, signed boundaries and the direct exception.",
+        "hint": "Inspect mode before treating rm six as bp.",
+        "evidence": "A decoded recipe is not an evaluated effective address.",
+        "sources": [
+          "week-07/learner/src/address.c"
+        ]
+      },
+      "E02": {
+        "title": "One complete memory instruction",
+        "why": "An address tail changes both operands and instruction boundaries. Integrate it at one explicit point.",
+        "prerequisites": "address tails, opcode forms and transactional instruction construction",
+        "predict": "Hand-decode 83 80 00 80 FE, giving mode, group operation, address formula, displacement, immediate width, value and total length. Explain the status of 81 0E with no further bytes and why it is decided before address truncation.",
+        "steps": "Extend the supplied register decoder in `decode.c` to the exact subset in README, using E01 for every memory ModR/M operand. Add C6/C7 /0 and A0–A3. Preserve unchanged-output behavior and error order. Instruction length includes address and immediate tails and is 2–6. Decode only the first instruction even when later bytes exist. Never evaluate a memory operand or access guest state.",
+        "hint": "Immediate begins after the address helper’s used byte count.",
+        "evidence": "A correct mnemonic is insufficient if its consumed length is wrong.",
+        "sources": [
+          "week-07/learner/src/decode.c"
+        ]
+      },
+      "E03": {
+        "title": "Canonical memory text",
+        "why": "A printed address should preserve its meaning even when equivalent encodings use different lengths.",
+        "prerequisites": "operand width, normalized descriptions and text capacity",
+        "predict": "Explain when byte/word is necessary. Give two accepted encodings with the same printed address expression but different lengths. Explain why format does not recover encoded displacement width.",
+        "steps": "Implement `format_instruction` in `format.c` under the public header and README conventions. Validate operands, operation and matching widths before formatting. Immediate may only be a source; memory-memory is invalid. Validate normalized memory fields. Output buffer is unchanged on failure, including one-byte-short capacity. A 64-byte buffer is sufficient; demonstrate a conservative length bound. Zero displacements are omitted.",
+        "hint": "Infer width from a register; qualify memory when the other operand is immediate.",
+        "evidence": "Equal text does not imply original-byte identity.",
+        "sources": [
+          "week-07/learner/src/format.c"
+        ]
+      },
+      "E04": {
+        "title": "A separately compiled caller",
+        "why": "A public declaration gives another source file something the compiler can check; a shared definition supplies the code.",
+        "prerequisites": "translation units, declarations, definitions and matching ABI",
+        "predict": "Explain declaration, definition, relocation, link and load for this call. Identify the four exported names, the private address helper and the API versus ABI promise. Explain what happens if the library is missing when the client starts.",
+        "steps": "Complete `client.c` using only include/decode.h. Check decoder_api_version against DEC_API_VERSION, decode 8B 46 FE, format and print `api=7 mov ax, [bp - 2]` plus newline. Fail nonzero on any rejected step. Build the shared library from your four modules using the supplied Makefile. Record nm dynamic exports and readelf dependency/search path. Run client from a different working directory by absolute executable path.",
+        "hint": "A header does not contain the compiled function definition.",
+        "evidence": "Successful linking does not establish every runtime ABI assumption.",
+        "sources": [
+          "week-07/learner/src/client.c"
+        ]
+      },
+      "E05": {
+        "title": "Stream integration and evidence",
+        "why": "A late decode failure must not leave a plausible partial stream. Purposeful cases expose that boundary.",
+        "prerequisites": "instruction lengths, immutable input and whole-stream validation",
+        "predict": "Explain why 89 D9 8B 06 34 fails at byte offset 2 with no stdout. Give the caller outputs changed by each failure class, and state the immutability/aliasing assumptions that make the two-pass stream contract valid.",
+        "steps": "Use the supplied stream and CLI with your modules. Run the four-case playground, golden fixtures and all tests. Add five entries to learner/cases.txt with hex bytes, expected canonical text or status and failure offset, and the defect each targets. Include a direct address, a signed displacement boundary, displacement followed by immediate, late truncation and an unsupported group operation. Derive expectations before running. Complete R01–R05.",
+        "hint": "Keep input byte offsets separate from visible text lengths.",
+        "evidence": "The independent oracle checks chosen fields and values, not all possible programs.",
+        "sources": [
+          "week-07/learner/src/stream.c"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Keep the exceptional direct case visible in your table.",
+      "P02": "Partition address bytes before reading any immediate.",
+      "P03": "Apply the documented error order before interpreting missing tails.",
+      "P04": "Name the guest segment separately from the offset and host address.",
+      "P05": "A stateless library still requires valid caller storage.",
+      "P06": "Inspecting metadata and executing a call establish different facts.",
+      "S01": "Preserve semantics while tracking each original encoded length.",
+      "S02": "Keep the library loaded while its function pointer is used.",
+      "R01": "Copy evidence from the actual build.",
+      "R02": "Write the partition before running the playground.",
+      "R03": "Initialize snapshots before comparing failure outputs.",
+      "R04": "Compare instruction meaning before printed spelling.",
+      "R05": "Connect a source operation to a field, then to an observation."
+    }
+  },
+  {
+    "n": 8,
+    "title": "Register state and arithmetic flags",
+    "slug": "week-08",
+    "promptFiles": [
+      "week-08/learner/exercises.md",
+      "week-08/learner/practice.md",
+      "week-08/learner/observations.md",
+      "week-08/learner/warmups.md",
+      "week-08/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-08/instructor/answers.md",
+      "week-08/instructor/observations.md",
+      "week-08/instructor/warmups.md",
+      "week-08/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Simulating Non-memory MOVs](https://www.computerenhance.com/p/simulating-non-memory-movs)",
+        "portion": "Full, 18:00",
+        "purpose": "Connect a decoded operand to guest register storage, including the byte aliases."
+      },
+      {
+        "resource": "[CE: Simulating ADD, SUB, and CMP](https://www.computerenhance.com/p/simulating-add-jmp-and-cmp)",
+        "portion": "Full, 25:56",
+        "purpose": "Arithmetic changes flags as well as a destination. The official page URL contains add-jmp despite the ADD/SUB/CMP title."
+      },
+      {
+        "resource": "[Intel 8086 Family User’s Manual, October 1979](http://www.bitsavers.org/components/intel/8086/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)",
+        "portion": "Chapter 2, General Registers and Flags; Chapter 3, data transfer and ADD/SUB/CMP descriptions; Table 4-12 for the encoded inputs",
+        "purpose": "ISA authority: register aliases, MOV flag preservation and the six arithmetic flags. Consult exact headings rather than reading the whole manual."
+      },
+      {
+        "resource": "[Intel software developer manuals](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)",
+        "portion": "Volume 2, ADD, SUB, CMP and MOV: operation and flags-affected sections",
+        "purpose": "Accessible primary cross-reference for these flag semantics; modern prefixes/addressing are outside this historical subset."
+      },
+      {
+        "resource": "[C11 draft N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§§6.2.5, 6.3.1.1, 6.3.1.3, 6.5.7, 7.20.1.1",
+        "purpose": "Unsigned arithmetic, promotions, narrowing conversions, shifts and exact-width types."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Beej §14.1: Signed and Unsigned Integers",
+        "url": "https://beej.us/guide/bgc/html/split/types-ii-way-more-types.html#signed-and-unsigned-integers"
+      },
+      {
+        "title": "Dive Into Systems §7.3: Arithmetic",
+        "url": "https://diveintosystems.org/book/C7-x86_64/arithmetic.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "One bank, several register views",
+        "why": "A byte view and word view must stay consistent because they name shared guest bits.",
+        "prerequisites": "word and byte register tables; numeric masks and shifts",
+        "predict": "Starting with AX=1234 hex, write AH=FF, then AL=80. Derive the word and both byte values after each step. Explain why byte code four is AH rather than an eight-bit SP.",
+        "steps": "Implement sim_read_register and sim_write_register in registers.c. Use the exact public contract: word and byte code tables, NULL/width/index checks, byte-value range, unchanged outputs on failure, and preservation of the other half on success. Use masks and shifts rather than host-memory byte casts.",
+        "hint": "Byte code & 3 selects its containing word; code<4 selects the low half.",
+        "evidence": "Guest register views are independent of host byte order.",
+        "sources": [
+          "week-08/learner/src/registers.c"
+        ]
+      },
+      "E02": {
+        "title": "Guest arithmetic and flags",
+        "why": "One result supports several independent arithmetic questions. Each flag preserves one kind of evidence.",
+        "prerequisites": "signed/unsigned ranges, wider arithmetic, bit masks and low-byte parity",
+        "predict": "Give result, CF/PF/AF/ZF/SF/OF for byte 127+1, 255+1, 0-1, and word 32767+1. Explain why C signed overflow is unnecessary and why PF ignores the high result byte.",
+        "steps": "Implement sim_alu in alu.c for ADD, SUB and CMP. Validate operation, width, operands and out first. Return the masked result and exactly six flags with no other bits. Include subtraction borrow, low-byte parity, nibble carry/borrow and signed overflow at both widths. Preserve the result object on rejection.",
+        "hint": "Subtraction CF means borrow; PF examines eight bits even for a word operation.",
+        "evidence": "Exhaustive byte cases do not enumerate every word calculation.",
+        "sources": [
+          "week-08/learner/src/alu.c"
+        ]
+      },
+      "E03": {
+        "title": "A state transition",
+        "why": "The same decoded description can have different effects from different starting states.",
+        "prerequisites": "validated operands, register access, arithmetic results and flag masks",
+        "predict": "For AX=1234 hex and all six arithmetic flags initially set, execute mov al,ah, cmp al,18 and mov ah,0. Derive AX and modeled flags after each. Explain read-before-write, MOV flag preservation, CMP non-write and the distinction between decoder support and executor support.",
+        "steps": "Implement sim_step in execute.c. Validate the whole instruction before executing; valid memory operands are unsupported. Read operands from pre-state, convert signed immediate patterns to guest bits, build a temporary state, apply MOV or arithmetic/CMP, preserve opaque flag bits and advance IP. Commit only on success.",
+        "hint": "Read both operands from pre-state and skip the CMP destination write.",
+        "evidence": "MOV and CMP have different write sets even when the result values look similar.",
+        "sources": [
+          "week-08/learner/src/execute.c"
+        ]
+      },
+      "E04": {
+        "title": "A program as one transaction",
+        "why": "A late rejection must have a specified caller-state effect. The file cursor and guest IP have different bounds.",
+        "prerequisites": "bounded decoding, step status, immutable input and transaction boundaries",
+        "predict": "Derive the result of B8 34 12 8B 07 and B8 34 12 B9 56: status, decode status, offset, tentative steps and caller-state effect. Explain why guest IP wrap cannot be used to decide which input byte comes next.",
+        "steps": "Implement sim_run in run.c under the public contract. Decode at a size_t file cursor, execute a local state, report the failing first-byte offset and tentative step count, and commit only on total success. Keep guest IP separate, accept an empty input unchanged, enforce the input cap before reading, and preserve caller state on every failure.",
+        "hint": "Count tentative steps locally; return before committing on any failure.",
+        "evidence": "A reported tentative step is not a committed caller-state change.",
+        "sources": [
+          "week-08/learner/src/run.c"
+        ]
+      },
+      "E05": {
+        "title": "Trace, test and explain",
+        "why": "A trace is useful when each line can be connected to a prediction and instruction rule.",
+        "prerequisites": "whole-program validation, deterministic display and independent expectations",
+        "predict": "Explain why the CLI validates before tracing, what a late failure changes, and why a passing arithmetic oracle or disassembler alone cannot prove a whole simulated program correct. State the extra mechanism Week 9 must introduce.",
+        "steps": "Use the supplied CLI and playground with your modules. Predict each state in fixtures/program.hex before running, compare all trace fields with the golden fixture, and record the six reference/learner checks appropriate to your submission. Complete R01–R05. Your single graded submission is the simulator, trace evidence and notebook, with the five E reasoning answers.",
+        "hint": "A decoder comparison checks description, not arithmetic flags.",
+        "evidence": "A correct ISA trace does not establish CPU timing.",
+        "sources": [
+          "week-08/learner/src/sim8086.c"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "P02": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "P03": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "P04": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "P05": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "P06": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "S01": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "S02": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "R01": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "R02": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "R03": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "R04": "Name the instruction rule, predict its effect, then compare the evidence and state its limits.",
+      "R05": "Name the instruction rule, predict its effect, then compare the evidence and state its limits."
+    }
+  },
+  {
+    "n": 9,
+    "title": "Branches and bounded guest memory",
+    "slug": "week-09",
+    "promptFiles": [
+      "week-09/learner/exercises.md",
+      "week-09/learner/practice.md",
+      "week-09/learner/observations.md",
+      "week-09/learner/warmups.md",
+      "week-09/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-09/instructor/answers.md",
+      "week-09/instructor/observations.md",
+      "week-09/instructor/warmups.md",
+      "week-09/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Simulating Conditional Jumps](https://www.computerenhance.com/p/simulating-conditional-jumps)",
+        "portion": "Full, 19:41",
+        "purpose": "Choose a next-fetch IP using flags and signed relative displacement."
+      },
+      {
+        "resource": "[CE: Simulating Memory](https://www.computerenhance.com/p/simulating-memory)",
+        "portion": "Full, 26:32",
+        "purpose": "Evaluate effective addresses and access guest byte/word data."
+      },
+      {
+        "resource": "[Intel manuals](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)",
+        "portion": "Volume 2 Jcc/JMP/MOV/ADD/SUB/CMP; Volume 1 addressing",
+        "purpose": "Shared instruction and predicate semantics; consult machine.h for the narrower teaching model."
+      },
+      {
+        "resource": "[C11 N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§§6.3.1.3, 6.5.2.1, 6.5.7",
+        "purpose": "Defined conversions, bounded array indexing and shift operations."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Beej §6.4: Out of Bounds!",
+        "url": "https://beej.us/guide/bgc/html/split/arrays.html#out-of-bounds"
+      },
+      {
+        "title": "Dive Into Systems §7.4.3: Loops",
+        "url": "https://diveintosystems.org/book/C7-x86_64/loops.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Numeric effective addresses",
+        "why": "Numeric offsets keep guest address arithmetic independent of host pointers.",
+        "prerequisites": "Week 7 decoding, Week 8 registers/flags and C arrays",
+        "predict": "Calculate BX=FFF0 plus SI=0030 minus7.",
+        "steps": "Implement machine_address, covering all expressions and unchanged failure output.",
+        "hint": "Data width is distinct from address width.",
+        "evidence": "Compare explicit independent values, complete state and unchanged failure outputs.",
+        "sources": [
+          "week-09/learner/src/address.c"
+        ]
+      },
+      "E02": {
+        "title": "Decode and test conditional transfers",
+        "why": "Different comparison interpretations need different flag predicates.",
+        "prerequisites": "Week 7 decoding, Week 8 registers/flags and C arrays",
+        "predict": "Calculate EB F8 at IP000F and signed/unsigned CMP80,01.",
+        "steps": "Implement machine_decode and all sixteen machine_condition predicates.",
+        "hint": "Start from the position following the complete jump.",
+        "evidence": "Compare explicit independent values, complete state and unchanged failure outputs.",
+        "sources": [
+          "week-09/learner/src/decode.c"
+        ]
+      },
+      "E03": {
+        "title": "Atomic memory and branch execution",
+        "why": "Pre-state reads and explicit bytes preserve aliasing and endian rules.",
+        "prerequisites": "Week 7 decoding, Week 8 registers/flags and C arrays",
+        "predict": "Draw MOV BX,[BX] and a word atFFFF.",
+        "steps": "Implement machine_step with pre-state reads, boundary checks and atomic commit.",
+        "hint": "Read both operands before changing destination storage.",
+        "evidence": "Compare explicit independent values, complete state and unchanged failure outputs.",
+        "sources": [
+          "week-09/learner/src/execute.c"
+        ]
+      },
+      "E04": {
+        "title": "A bounded program transaction",
+        "why": "A failed attempt must not leak earlier stores.",
+        "prerequisites": "Week 7 decoding, Week 8 registers/flags and C arrays",
+        "predict": "Predict EB FE at budget3 and unreachable malformed suffix.",
+        "steps": "Implement machine_run with full predecode, positive budget and whole-state rollback.",
+        "hint": "Check halt before rejecting a budget used exactly.",
+        "evidence": "Compare explicit independent values, complete state and unchanged failure outputs.",
+        "sources": [
+          "week-09/learner/src/run.c"
+        ]
+      },
+      "E05": {
+        "title": "Trace a memory loop",
+        "why": "Predicted and independent traces connect mechanisms to evidence.",
+        "prerequisites": "Week 7 decoding, Week 8 registers/flags and C arrays",
+        "predict": "Predict all thirteen fixture transitions before running.",
+        "steps": "Use supplied trace/playground and add independent memory, predicate and rollback checks.",
+        "hint": "A returned step count can describe uncommitted work.",
+        "evidence": "Compare explicit independent values, complete state and unchanged failure outputs.",
+        "sources": [
+          "week-09/support/driver.c",
+          "week-09/support/playground.c"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "P02": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "P03": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "P04": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "P05": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "P06": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "S01": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "S02": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "R01": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "R02": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "R03": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "R04": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output.",
+      "R05": "Preserve your prediction; identify guest arithmetic, host bounds and the model limit before comparing actual output."
+    }
+  },
+  {
+    "n": 10,
+    "title": "Stack discipline, calls and lifetimes",
+    "slug": "week-10",
+    "promptFiles": [
+      "week-10/learner/exercises.md",
+      "week-10/learner/practice.md",
+      "week-10/learner/observations.md",
+      "week-10/learner/warmups.md",
+      "week-10/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-10/instructor/answers.md",
+      "week-10/instructor/observations.md",
+      "week-10/instructor/warmups.md",
+      "week-10/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Simulating Real Programs](https://www.computerenhance.com/p/simulating-real-programs)",
+        "portion": "Full, 16:02",
+        "purpose": "Trace a program assembled from separate state transitions."
+      },
+      {
+        "resource": "[CE: Other Common Instructions](https://www.computerenhance.com/p/other-common-instructions)",
+        "portion": "Full, 19:43",
+        "purpose": "Read instruction-specific write/flag rules; implement only the listed subset."
+      },
+      {
+        "resource": "[CE: The Stack](https://www.computerenhance.com/p/the-stack)",
+        "portion": "Full, 26:58",
+        "purpose": "Track SP, saved data and near continuations."
+      },
+      {
+        "resource": "[Handmade Chat 013](https://guide.handmadehero.org/chat/chat013/)",
+        "portion": "3:50:01–3:55:37",
+        "purpose": "Compare indexed RIP/RSP observations; Windows/x64 is not 8086 or System V authority."
+      },
+      {
+        "resource": "[Intel manuals](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)",
+        "portion": "Volume 2 PUSH/POP/CALL/RET and INC/DEC operations and flags",
+        "purpose": "Primary instruction semantics, including original 8086 PUSH SP."
+      },
+      {
+        "resource": "[C11 N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§§6.2.1, 6.2.4, 6.5.2.2",
+        "purpose": "Separate scope, object lifetime/storage duration and C function calls from stack placement."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Beej §13: Scope",
+        "url": "https://beej.us/guide/bgc/html/split/scope.html#scope"
+      },
+      {
+        "title": "Dive Into Systems §7.5: Functions in Assembly",
+        "url": "https://diveintosystems.org/book/C7-x86_64/functions.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Checked stack words",
+        "why": "Explicit guest bytes keep stack order independent of host endian and alignment rules.",
+        "prerequisites": "guest memory, unsigned byte operations and checked outputs",
+        "predict": "Draw SP and low/high bytes after pushing 1234 and ABCD, then popping both.",
+        "steps": "Implement machine_push and machine_pop in stack.c with window checks before writes and unchanged outputs on failure.",
+        "hint": "The empty SP equals high; PUSH writes at SP minus two, never at high.",
+        "evidence": "All word patterns check encoding, while bound tests check legal storage access.",
+        "sources": [
+          "week-10/learner/src/stack.c"
+        ]
+      },
+      "E02": {
+        "title": "Extend the instruction description",
+        "why": "Lengths and signed patterns determine both the saved continuation and the destination.",
+        "prerequisites": "opcode fields, signed patterns and bounded byte reads",
+        "predict": "Calculate the return and target of E8 02 00 at IP 0003 and E8 03 00 at IP 000C.",
+        "steps": "Implement machine_decode in decode.c, reusing the pinned base decoder and accepting only the header-defined extensions.",
+        "hint": "A high-bit pattern becomes its unsigned value minus the width modulus.",
+        "evidence": "Correct displacement arithmetic does not prove a target is an instruction boundary.",
+        "sources": [
+          "week-10/learner/src/decode.c"
+        ]
+      },
+      "E03": {
+        "title": "Atomic near control transfer",
+        "why": "An invalid return must not leak a tentative POP or memory mutation.",
+        "prerequisites": "register aliases, arithmetic flags, effective addresses and stack helpers",
+        "predict": "Draw the deepest three words of the nested fixture and predict an omitted restore.",
+        "steps": "Implement machine_step in execute.c with immutable-code boundary checks, local Machine state, explicit stack/transfer ordering and instruction-specific flag effects.",
+        "hint": "Build the next state locally; validate the popped return before assignment.",
+        "evidence": "Balanced SP does not establish restored register ownership.",
+        "sources": [
+          "week-10/learner/src/execute.c"
+        ]
+      },
+      "E04": {
+        "title": "A complete program transaction",
+        "why": "The runner must preserve the entire caller state when later execution fails.",
+        "prerequisites": "instruction boundaries, immutable input and atomic transitions",
+        "predict": "Predict EB FE with budget three and a malformed unreachable suffix.",
+        "steps": "Implement machine_run in run.c with full predecode, positive step budget, end-boundary halt and whole-state commit.",
+        "hint": "Check for halt before rejecting a budget that has just been used exactly.",
+        "evidence": "Tentative successful steps are reported without becoming committed changes.",
+        "sources": [
+          "week-10/learner/src/run.c"
+        ]
+      },
+      "E05": {
+        "title": "Trace and lifetime evidence",
+        "why": "A predicted trace connects instruction rules to observation; C lifetime remains a separate contract.",
+        "prerequisites": "hand traces, independent tests, C scope and lifetime",
+        "predict": "Predict the fixture before replaying it; explain the invalid automatic-local return.",
+        "steps": "Use the supplied driver/playground, compare all golden fields, add backward-CALL and bad-return cases, and complete R01–R05.",
+        "hint": "A stale byte is stored data, not proof of a live C object.",
+        "evidence": "A correct guest trace establishes state for this subset, not modern CPU timing.",
+        "sources": [
+          "week-10/support/driver.c",
+          "week-10/support/playground.c"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Count bytes before words, then predict error and preserved state.",
+      "P02": "Calculate result and each flag independently, keeping CF distinct from OF.",
+      "P03": "Calculate the following IP first, then test membership in the actual boundary map.",
+      "P04": "Draw the last saved word at the current SP before choosing the destination register.",
+      "P05": "Name the language rule and distinguish it from observed contents.",
+      "P06": "Track which array the operation reads and writes; equal numbers need not imply aliasing.",
+      "S01": "Write the recurrence before running; compare stack exhaustion with budget precedence.",
+      "S02": "Specify cache ownership and invalidation before claiming any saved work.",
+      "R01": "Preserve predictions, record actual evidence, and distinguish observation, inference and model limits.",
+      "R02": "Preserve predictions, record actual evidence, and distinguish observation, inference and model limits.",
+      "R03": "Preserve predictions, record actual evidence, and distinguish observation, inference and model limits.",
+      "R04": "Preserve predictions, record actual evidence, and distinguish observation, inference and model limits.",
+      "R05": "Preserve predictions, record actual evidence, and distinguish observation, inference and model limits."
+    }
+  },
+  {
+    "n": 11,
+    "title": "From C to x64: calls and the ABI",
+    "slug": "week-11",
+    "promptFiles": [
+      "week-11/learner/exercises.md",
+      "week-11/learner/practice.md",
+      "week-11/learner/observations.md",
+      "week-11/learner/warmups.md",
+      "week-11/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-11/instructor/answers.md",
+      "week-11/instructor/observations.md",
+      "week-11/instructor/warmups.md",
+      "week-11/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Estimating Cycles](https://www.computerenhance.com/p/estimating-cycles)",
+        "portion": "Full, 23:56",
+        "purpose": "Separate a historical timing model from measured modern performance."
+      },
+      {
+        "resource": "[CE: From 8086 to x64](https://www.computerenhance.com/p/from-8086-to-x64)",
+        "portion": "Full, 26:21",
+        "purpose": "Carry architectural reasoning into actual x64 C output."
+      },
+      {
+        "resource": "[Handmade Chat 020](https://guide.handmadehero.org/chat/chat020/)",
+        "portion": "27:24–39:14 and 58:29–1:08:27",
+        "purpose": "Follow compiler inspection and instruction questions; its examples do not define System V."
+      },
+      {
+        "resource": "[AMD64 System V ABI draft 0.21](https://refspecs.linuxbase.org/elf/x86_64-SysV-psABI.pdf)",
+        "portion": "§§3.2.1–3.2.3, stable scalar LP64 subset; historical draft",
+        "purpose": "Specify GP/XMM locations, preservation and ordinary stack alignment."
+      },
+      {
+        "resource": "[Intel Optimization Reference Manual](https://cdrdv2-public.intel.com/821612/248966-Optimization-Reference-Manual-V1-050.pdf)",
+        "portion": "§3.4.1, branch prediction and return-address stack",
+        "purpose": "Distinguish architectural return behavior from processor prediction."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Dive Into Systems §7.5: Functions in Assembly",
+        "url": "https://diveintosystems.org/book/C7-x86_64/functions.html"
+      },
+      {
+        "title": "Beej §23.7: Pointers to Functions",
+        "url": "https://beej.us/guide/bgc/html/split/pointers-iii-pointers-to-pointers-and-more.html#pointers-to-functions"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Map scalar arguments",
+        "why": "An ABI is an agreement at a binary boundary, with separate argument classes.",
+        "prerequisites": "Week 10 calls, C pointers, completed scalar geolab and separate compilation",
+        "predict": "Map seven integers, nine doubles and the real geolab signatures.",
+        "steps": "Implement abi_plan with independent GP/XMM pools, source-order spills, rounded reservation and atomic output.",
+        "hint": "Advance each pool independently; padding belongs above the spilled arguments.",
+        "evidence": "Record compiler, target, flags and source hashes; distinguish a stable ABI rule from this compiler observation.",
+        "sources": [
+          "week-11/learner/src/abi.c"
+        ]
+      },
+      "E02": {
+        "title": "Inspect real geolab calls",
+        "why": "Real compiled C connects the agreement to observable machine instructions.",
+        "prerequisites": "Week 10 calls, C pointers, completed scalar geolab and separate compilation",
+        "predict": "Predict the wrapper argument shuffle and how a relocation names the eventual call.",
+        "steps": "Implement wrappers through completed geolab functions; inspect the actual functions as well as wrappers.",
+        "hint": "Distinguish compiler text, relocated objects and linked addresses.",
+        "evidence": "Record compiler, target, flags and source hashes; distinguish a stable ABI rule from this compiler observation.",
+        "sources": [
+          "week-11/learner/src/wrappers.c"
+        ]
+      },
+      "E03": {
+        "title": "Follow a loop and an optimized local",
+        "why": "C objects need not retain distinct physical storage after optimization.",
+        "prerequisites": "Week 10 calls, C pointers, completed scalar geolab and separate compilation",
+        "predict": "Predict doubled and its result before looking for a physical stack slot.",
+        "steps": "Implement fold_ids with defined unsigned wrap, then compare it with the supplied local_example at O0/O2.",
+        "hint": "Read LEA as arithmetic when no memory operand is dereferenced.",
+        "evidence": "Record compiler, target, flags and source hashes; distinguish a stable ABI rule from this compiler observation.",
+        "sources": [
+          "week-11/learner/src/fold.c"
+        ]
+      },
+      "E04": {
+        "title": "Keep values across a callback",
+        "why": "Calling another function requires preserving values still needed afterwards.",
+        "prerequisites": "Week 10 calls, C pointers, completed scalar geolab and separate compilation",
+        "predict": "Predict which values must survive the indirect call.",
+        "steps": "Implement keep_across_call with one validated callback invocation and values live across that call.",
+        "hint": "Follow the saved seed and output pointer across the call.",
+        "evidence": "Record compiler, target, flags and source hashes; distinguish a stable ABI rule from this compiler observation.",
+        "sources": [
+          "week-11/learner/src/calls.c"
+        ]
+      },
+      "E05": {
+        "title": "Build an evidence-backed comparison",
+        "why": "Actual artifacts with recorded toolchains support narrower, reproducible claims.",
+        "prerequisites": "Week 10 calls, C pointers, completed scalar geolab and separate compilation",
+        "predict": "Predict the difference between 8086 and x64 returns, then delimit any timing claim.",
+        "steps": "Run all checks; preserve four actual compiler manifests and annotate geo_distance_km and query_hit_compare. Complete R01–R05.",
+        "hint": "An instruction listing is not a processor timing measurement.",
+        "evidence": "Record compiler, target, flags and source hashes; distinguish a stable ABI rule from this compiler observation.",
+        "sources": [
+          "week-11/support/playground.c"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Track GP and XMM arguments independently.",
+      "P02": "Draw caller reservation and callee entry before adjusting RSP.",
+      "P03": "Use the relocation record to identify a not-yet-linked destination.",
+      "P04": "Track the red zone through the nested CALL.",
+      "P05": "Separate C lifetime from physical location.",
+      "P06": "Name the processor and measurement needed before claiming speed.",
+      "S01": "Change one inlining condition and preserve correctness inputs, toolchain and actual artifacts.",
+      "S02": "Apply aggregate eightbyte classification; do not feed a struct into the scalar planner.",
+      "R01": "Preserve predictions and actual evidence; separate ABI requirements, compiler choices and timing limits.",
+      "R02": "Preserve predictions and actual evidence; separate ABI requirements, compiler choices and timing limits.",
+      "R03": "Preserve predictions and actual evidence; separate ABI requirements, compiler choices and timing limits.",
+      "R04": "Preserve predictions and actual evidence; separate ABI requirements, compiler choices and timing limits.",
+      "R05": "Preserve predictions and actual evidence; separate ABI requirements, compiler choices and timing limits."
+    }
+  },
+  {
+    "n": 12,
+    "title": "Project 2: a specified simulator",
+    "slug": "week-12",
+    "promptFiles": [
+      "week-12/learner/exercises.md",
+      "week-12/learner/practice.md",
+      "week-12/learner/observations.md",
+      "week-12/learner/warmups.md",
+      "week-12/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-12/instructor/answers.md",
+      "week-12/instructor/observations.md",
+      "week-12/instructor/warmups.md",
+      "week-12/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: 8086 Simulation Code Review](https://www.computerenhance.com/p/8086-simulation-code-review)",
+        "portion": "Full, 33:05",
+        "purpose": "Review composition and design choices without importing an unspecified larger ISA."
+      },
+      {
+        "resource": "[HH Chat 011](https://guide.handmadehero.org/chat/chat011/)",
+        "portion": "4:18–15:54 and 34:42–45:00",
+        "purpose": "Revisit C validity, conversions and responsible model specifications."
+      },
+      {
+        "resource": "[C11 N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§§6.2.4, 6.3.1.3, 6.5, 6.5.7",
+        "purpose": "Object lifetime, defined unsigned conversions, access and shifts."
+      },
+      {
+        "resource": "[Intel manuals](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)",
+        "portion": "Volume 2 instruction operation/flags and original PUSH SP distinction",
+        "purpose": "Instruction semantics; local headers define the course restrictions."
+      },
+      {
+        "resource": "[System V AMD64 ABI draft 0.21](https://refspecs.linuxbase.org/elf/x86_64-SysV-psABI.pdf)",
+        "portion": "§§3.2.1–3.2.3, identified historical scalar comparison",
+        "purpose": "Explain actual x64 boundary locations and preservation, not timing."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Beej §14.1: Signed and Unsigned Integers",
+        "url": "https://beej.us/guide/bgc/html/split/types-ii-way-more-types.html#signed-and-unsigned-integers"
+      },
+      {
+        "title": "Dive Into Systems §5.9: Looking Ahead: CPUs Today",
+        "url": "https://diveintosystems.org/book/C5-Arch/modern.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Prepare immutable code",
+        "why": "Stable instruction boundaries require a lifetime and immutability contract.",
+        "prerequisites": "Weeks 7–11 and C arrays, lifetime and error contracts",
+        "predict": "List boundaries for B8 34 12 EB FC and predict preparation versus execution.",
+        "steps": "Implement project_prepare, preserving image on failure and documenting borrowed code.",
+        "hint": "A pointer staying numerically unchanged does not validate changed or dead storage.",
+        "evidence": "Compare explicit expected values, complete state, untouched outputs and actual compiler artifacts.",
+        "sources": [
+          "week-12/learner/src/prepare.c"
+        ]
+      },
+      "E02": {
+        "title": "Audit the complete subset",
+        "why": "The whole subset must preserve pre-state reads, historical quirks and error atomicity.",
+        "prerequisites": "Weeks 7–11 and C arrays, lifetime and error contracts",
+        "predict": "Draw CALL/PUSH/POP/RET byte positions and SP in the main fixture.",
+        "steps": "Implement project_step using the prepared map and exact prior subset.",
+        "hint": "Calculate all source values and destination addresses before writes.",
+        "evidence": "Compare explicit expected values, complete state, untouched outputs and actual compiler artifacts.",
+        "sources": [
+          "week-12/learner/src/execute.c"
+        ]
+      },
+      "E03": {
+        "title": "Commit a bounded run",
+        "why": "A late failure must not leak an earlier memory store.",
+        "prerequisites": "Weeks 7–11 and C arrays, lifetime and error contracts",
+        "predict": "Predict a self-loop, a late target failure and an empty run.",
+        "steps": "Implement project_run with a positive budget and complete-state transaction.",
+        "hint": "Check halt before rejecting a budget used exactly.",
+        "evidence": "Compare explicit expected values, complete state, untouched outputs and actual compiler artifacts.",
+        "sources": [
+          "week-12/learner/src/run.c"
+        ]
+      },
+      "E04": {
+        "title": "Publish a complete state trace",
+        "why": "Trace records and guest state need one coherent output boundary.",
+        "prerequisites": "Weeks 7–11 and C arrays, lifetime and error contracts",
+        "predict": "Predict two identical stores at FFFF and insufficient record capacity.",
+        "steps": "Implement project_trace with prevalidated execution/capacity and initialized deltas.",
+        "hint": "Changed bytes differ from requested writes; ordering differs from endian.",
+        "evidence": "Compare explicit expected values, complete state, untouched outputs and actual compiler artifacts.",
+        "sources": [
+          "week-12/learner/src/trace.c"
+        ]
+      },
+      "E05": {
+        "title": "Defend Project 2",
+        "why": "Evidence should connect the model, actual compiler code and qualified claims.",
+        "prerequisites": "Weeks 7–11 and C arrays, lifetime and error contracts",
+        "predict": "Predict the 25-step fixture and both defined-C comparison subjects.",
+        "steps": "Deliver the checkpoint manifest, original goldens, actual x64 listings and notebook.",
+        "hint": "Guest steps, compiler instructions and measured cycles are distinct quantities.",
+        "evidence": "Compare explicit expected values, complete state, untouched outputs and actual compiler artifacts.",
+        "sources": [
+          "week-12/support/driver.c",
+          "week-12/support/playground.c",
+          "week-12/support/compare.c"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "P02": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "P03": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "P04": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "P05": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "P06": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "S01": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "S02": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "R01": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "R02": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "R03": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "R04": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions.",
+      "R05": "Preserve a concrete prediction, explain the mechanism and distinguish observed evidence from model/host assumptions."
+    }
+  },
+  {
+    "n": 13,
+    "title": "Clocks and repeatable timing",
+    "slug": "week-13",
+    "promptFiles": [
+      "week-13/learner/exercises.md",
+      "week-13/learner/practice.md",
+      "week-13/learner/observations.md",
+      "week-13/learner/warmups.md",
+      "week-13/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-13/instructor/answers.md",
+      "week-13/instructor/observations.md",
+      "week-13/instructor/warmups.md",
+      "week-13/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Introduction to RDTSC](https://www.computerenhance.com/p/introduction-to-rdtsc)",
+        "portion": "Full, 48:05",
+        "purpose": "Distinguish timestamp-counter ticks, counter history and empirical calibration from core execution cycles."
+      },
+      {
+        "resource": "[CE: How does QueryPerformanceCounter measure time?](https://www.computerenhance.com/p/how-does-queryperformancecounter)",
+        "portion": "Full, 31:43",
+        "purpose": "Compare an OS timing interface with its observed underlying source; do not transfer Windows QPC implementation details to Linux."
+      },
+      {
+        "resource": "[HH010: QueryPerformanceCounter and RDTSC](https://guide.handmadehero.org/code/day010/)",
+        "portion": "3:49–7:40 and 26:32–31:13 (8:32)",
+        "purpose": "Use seconds/milliseconds dimensional analysis and compare RDTSC with an OS elapsed timer."
+      },
+      {
+        "resource": "[HH113: Simple Performance Counters](https://guide.handmadehero.org/code/day113/)",
+        "portion": "8:45–13:52 (5:07)",
+        "purpose": "Place debug counters around work and retain capability, platform and endpoint assumptions."
+      },
+      {
+        "resource": "[Linux clock_gettime manual](https://man7.org/linux/man-pages/man3/clock_gettime.3.html)",
+        "portion": "Clock IDs, return values and notes; reference during E01/E05",
+        "purpose": "Define the required Linux elapsed clock; resolution is not overhead."
+      },
+      {
+        "resource": "[Intel architecture manuals](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)",
+        "portion": "RDTSCP, LFENCE and CPUID instruction entries; reference",
+        "purpose": "Qualify optional counter support and ordering assumptions."
+      }
+    ],
+    "companion": [
+      {
+        "title": "More Resolution with timespec_get()",
+        "url": "https://beej.us/guide/bgc/html/split/date-and-time-functionality.html#more-resolution-with-timespec_get"
+      },
+      {
+        "title": "Pointers to Functions",
+        "url": "https://beej.us/guide/bgc/html/split/pointers-iii-pointers-to-pointers-and-more.html#pointers-to-functions"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Normalize a clock reading",
+        "why": "Why can consecutive monotonic readings be equal? Distinguish clock resolution, accuracy and read overhead. Does clock_getres establish all three?",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 12 evidence",
+        "predict": "Why can consecutive monotonic readings be equal? Distinguish clock resolution, accuracy and read overhead. Does clock_getres establish all three?",
+        "steps": "Implement timing_ns, timing_elapsed and timing_monotonic. Follow the complete range, ownership and preservation rules in include/timing.h. Check malformed timespec fields, exactly UINT64_MAX nanoseconds, one more nanosecond, reversed endpoints and equal endpoints. CLOCK_MONOTONIC failure becomes T_CLOCK.",
+        "hint": "Validate fields first; check seconds <= (UINT64_MAX-nanos)/1000000000 before multiplying.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-13/learner/src/clock.c"
+        ]
+      },
+      "E02": {
+        "title": "Measure one checked unit of work",
+        "why": "A late end-reader error occurs after work mutates its context. Which effects survive? Explain why preserving TimeSample does not undo work.",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 12 evidence",
+        "predict": "A late end-reader error occurs after work mutates its context. Which effects survive? Explain why preserving TimeSample does not undo work.",
+        "steps": "Implement timing_measure with an injected ClockSource and Work. Validate all function/output pointers before invoking callbacks. Record start, call work exactly once, record end and publish checksum/delta/AUX. Test failure at each stage and preserved sample output.",
+        "hint": "Use local stamps, checksum and sample.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-13/learner/src/sample.c"
+        ]
+      },
+      "E03": {
+        "title": "Keep and summarize raw samples",
+        "why": "For raw durations [UINT64_MAX,0,9,2], predict minimum, lower median and maximum. Why keep zero values and long samples?",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 12 evidence",
+        "predict": "For raw durations [UINT64_MAX,0,9,2], predict minimum, lower median and maximum. Why keep zero values and long samples?",
+        "steps": "Implement timing_collect and timing_summary for 1..64 samples. Collection publishes the whole array after success. Summaries preserve input, use a lower median, count zero durations and AUX changes, and never narrow a uint64 difference into a comparator result.",
+        "hint": "Collect into a bounded local array; copy only after all measurements succeed.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-13/learner/src/summary.c"
+        ]
+      },
+      "E04": {
+        "title": "Compare units without inventing cycles",
+        "why": "What do the invariant capability bit and equal AUX values establish? What remains unproven by the calibration?",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 12 evidence",
+        "predict": "What do the invariant capability bit and equal AUX values establish? What remains unproven by the calibration?",
+        "steps": "Implement timing_rate with positive tick and nanosecond intervals. Inspect the supplied CPUID-guarded counter reader. Calculate an empirical ticks/second ratio with floating conversion before multiplication. Run the forced no-counter target.",
+        "hint": "Convert to double before the multiplication by 1e9.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-13/learner/src/rate.c"
+        ]
+      },
+      "E05": {
+        "title": "Deliver a repeatable measurement",
+        "why": "Why warm up, batch 32 folds, print after timing and inspect the optimized kernel? Name two remaining sources of variation.",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 12 evidence",
+        "predict": "Why warm up, batch 32 folds, print after timing and inspect the optimized kernel? Name two remaining sources of variation.",
+        "steps": "Run playground and bench after completing E01–E04. Capture debug and optimized GCC/Clang builds with tools/measure.py; preserve raw CSV, manifest, checksum, workload size and clock units. Inspect actual objects using make inspect. Write a qualified comparison.",
+        "hint": "Use the deterministic golden for correctness, then separate real measurement captures.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-13/support/bench.c",
+          "week-13/tools/measure.py"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P02": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P03": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P04": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P05": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P06": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "S01": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "S02": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R01": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R02": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R03": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R04": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R05": "Preserve your prediction, record actual evidence and state the clock/accounting limits."
+    }
+  },
+  {
+    "n": 14,
+    "title": "Nested and recursive profiling",
+    "slug": "week-14",
+    "promptFiles": [
+      "week-14/learner/exercises.md",
+      "week-14/learner/practice.md",
+      "week-14/learner/observations.md",
+      "week-14/learner/warmups.md",
+      "week-14/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-14/instructor/answers.md",
+      "week-14/instructor/observations.md",
+      "week-14/instructor/warmups.md",
+      "week-14/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: Instrumentation-Based Profiling](https://www.computerenhance.com/p/instrumentation-based-profiling)",
+        "portion": "Full, 18:01",
+        "purpose": "Place explicit begin/end events to attribute time to recorded regions."
+      },
+      {
+        "resource": "[CE: Profiling Nested Blocks](https://www.computerenhance.com/p/profiling-nested-blocks)",
+        "portion": "Full, 26:12",
+        "purpose": "Derive parent inclusive time and self time by removing direct-child inclusive durations."
+      },
+      {
+        "resource": "[CE: Profiling Recursive Blocks](https://www.computerenhance.com/p/profiling-recursive-blocks)",
+        "portion": "Full, 30:44",
+        "purpose": "Keep a separate start for every recursive invocation before grouping by ID."
+      },
+      {
+        "resource": "[CE: A First Look at Profiling Overhead](https://www.computerenhance.com/p/a-first-look-at-profiling-overhead)",
+        "portion": "Full, 18:37",
+        "purpose": "Measure the extra work introduced by hooks on an unchanged checksummed workload."
+      },
+      {
+        "resource": "[CE: Comparing the Overhead of RDTSC and QueryPerformanceCounter](https://www.computerenhance.com/p/comparing-the-overhead-of-rdtsc-and)",
+        "portion": "Full, 13:00",
+        "purpose": "Compare timer read costs with stated units and platform assumptions; empty intervals are diagnostic estimates."
+      },
+      {
+        "resource": "[HH177: Automatic Performance Counters](https://guide.handmadehero.org/code/day177/)",
+        "portion": "19:14–23:46 (4:32)",
+        "purpose": "Connect deferred debug bookkeeping and write bandwidth with where measurement work is charged."
+      },
+      {
+        "resource": "[HH178: Thread-safe Performance Counters](https://guide.handmadehero.org/code/day178/)",
+        "portion": "31:59–35:00 (3:01)",
+        "purpose": "Identify enclosing-region accounting and thread ownership issues in profiler reports."
+      },
+      {
+        "resource": "[Linux clock_gettime manual](https://man7.org/linux/man-pages/man3/clock_gettime.3.html)",
+        "portion": "Clock IDs, return values and notes; reference during E01/E05",
+        "purpose": "Define the required Linux elapsed clock; resolution is not overhead."
+      },
+      {
+        "resource": "[Intel architecture manuals](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)",
+        "portion": "RDTSCP, LFENCE and CPUID instruction entries; reference",
+        "purpose": "Qualify optional counter support and ordering assumptions."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Scope",
+        "url": "https://beej.us/guide/bgc/html/split/scope.html#scope"
+      },
+      {
+        "title": "Out of Bounds!",
+        "url": "https://beej.us/guide/bgc/html/split/arrays.html#out-of-bounds"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Track balanced nested events",
+        "why": "A mismatched end has a later timestamp. May it update last? What happens when a subsequent correct end uses an earlier time than the rejected one?",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 13 clocks",
+        "predict": "A mismatched end has a later timestamp. May it update last? What happens when a subsequent correct end uses an earlier time than the rejected one?",
+        "steps": "Implement profile_begin and profile_end. Zero-initialize each Profile; enforce IDs0..15, depth<=32, matching top ID and ordered timestamps across all successful events. End charges its inclusive duration to its immediate parent. Preserve the complete state on every failure.",
+        "hint": "Begin checks arguments, capacity and chronology before pushing.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-14/learner/src/events.c"
+        ]
+      },
+      "E02": {
+        "title": "Accumulate without partial totals",
+        "why": "Why must all three checks happen before publishing any field? Can a zero-duration invocation increment hits?",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 13 clocks",
+        "predict": "Why must all three checks happen before publishing any field? Can a zero-duration invocation increment hits?",
+        "steps": "Implement profile_accumulate. Enforce exclusive<=inclusive and checked additions for both totals and hit count. Use synthetic Bucket boundaries to test overflow without corrupting active Profile invariants.",
+        "hint": "Preflight inclusive+duration, exclusive+self and hits+1 using max-minus-current checks.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-14/learner/src/totals.c"
+        ]
+      },
+      "E03": {
+        "title": "Report recursion honestly",
+        "why": "Derive the playground’s root and recursive totals. Why does inclusive_sum=140 coexist with covered=100?",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 13 clocks",
+        "predict": "Derive the playground’s root and recursive totals. Why does inclusive_sum=140 coexist with covered=100?",
+        "steps": "Implement profile_report only when depth=0. Include all16 buckets in ID order; sum exclusive as covered, inclusive separately, hits and used IDs with overflow checks. Same-ID recursion counts every invocation.",
+        "hint": "Root0 spans0.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-14/learner/src/report.c"
+        ]
+      },
+      "E04": {
+        "title": "Quantify perturbation",
+        "why": "What does a negative difference mean? Why is empty-hook cost not an exact subtraction from every nested interval?",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 13 clocks",
+        "predict": "What does a negative difference mean? Why is empty-hook cost not an exact subtraction from every nested interval?",
+        "steps": "Implement profile_difference with baseline>0 using floating conversion before subtraction. Run paired baseline/instrumented batches and retain negative observations. Compare granularity: one outer scope versus32 inner scopes.",
+        "hint": "Return (double(instrumented)-double(baseline))/double(baseline).",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-14/learner/src/overhead.c"
+        ]
+      },
+      "E05": {
+        "title": "Deliver a bounded profiler and report",
+        "why": "Why is the supplied profiler single-threaded per instance? What must a C caller do before an early return?",
+        "prerequisites": "C checked arithmetic, arrays and status handling; Week 13 clocks",
+        "predict": "Why is the supplied profiler single-threaded per instance? What must a C caller do before an early return?",
+        "steps": "Run all contract, golden and warm-up gates; capture four debug/optimized builds and actual object listings. Submit event protocol, recursion accounting and raw paired measurement manifests. Explain scope cleanup and thread ownership.",
+        "hint": "Each instance owns mutable stack and totals without locks.",
+        "evidence": "Compare deterministic expected outputs, failure preservation, actual compiler artifacts and qualified raw timing observations.",
+        "sources": [
+          "week-14/support/bench.c",
+          "week-14/tools/measure.py"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P02": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P03": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P04": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P05": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "P06": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "S01": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "S02": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R01": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R02": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R03": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R04": "Preserve your prediction, record actual evidence and state the clock/accounting limits.",
+      "R05": "Preserve your prediction, record actual evidence and state the clock/accounting limits."
+    }
+  },
+  {
+    "n": 15,
+    "title": "Sorting: complexity and measured cost",
+    "slug": "week-15",
+    "promptFiles": [
+      "week-15/learner/exercises.md",
+      "week-15/learner/practice.md",
+      "week-15/learner/observations.md",
+      "week-15/learner/warmups.md",
+      "week-15/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-15/instructor/answers.md",
+      "week-15/instructor/observations.md",
+      "week-15/instructor/warmups.md",
+      "week-15/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[HH231: Order Notation](https://guide.handmadehero.org/code/day231/)",
+        "portion": "2:57–23:37",
+        "purpose": "Scale and asymptotic reasoning"
+      },
+      {
+        "resource": "[HH232: Examples of Sorting Algorithms](https://guide.handmadehero.org/code/day232/)",
+        "portion": "24:17–39:53",
+        "purpose": "Algorithm choice and actual input scale"
+      },
+      {
+        "resource": "[HH233: Can We Merge Sort In Place?](https://guide.handmadehero.org/code/day233/)",
+        "portion": "3:57–16:18",
+        "purpose": "Merge storage and validation"
+      },
+      {
+        "resource": "[HH234: Implementing Radix Sort](https://guide.handmadehero.org/code/day234/)",
+        "portion": "3:55–27:34",
+        "purpose": "Stable digit passes"
+      },
+      {
+        "resource": "[CE: Repetition Testing](https://www.computerenhance.com/p/repetition-testing)",
+        "portion": "Full, 27:57",
+        "purpose": "Favorable repeated observations and hidden state"
+      },
+      {
+        "resource": "[C11 N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§§6.2.4, 6.5.7, 7.22.3, 7.22.5.2",
+        "purpose": "Object lifetime, defined shifts, allocation and sorting contracts."
+      },
+      {
+        "resource": "[clock_gettime](https://man7.org/linux/man-pages/man3/clock_gettime.3.html)",
+        "portion": "CLOCK_MONOTONIC and return/error contract",
+        "purpose": "Primary Linux timer boundary, not an algorithm complexity rule."
+      }
+    ],
+    "companion": [
+      {
+        "title": "qsort()",
+        "url": "https://beej.us/guide/bgclr/html/split/stdlib.html#man-qsort"
+      },
+      {
+        "title": "Locality",
+        "url": "https://diveintosystems.org/book/C11-MemHierarchy/locality.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Stable insertion",
+        "why": "A growing input exposes algorithmic work; a timer observes a particular implementation and environment. Stable digit passes allow radix sorting without key comparisons.",
+        "prerequisites": "Week 5 correctness and measurement discipline, Week 4 deterministic unsigned data, and Week 11 compiler choices. Weeks 13 and 14 provide timing context when available; this package supplies its own checked monotonic harness.",
+        "predict": "Predict the sorted four-element example versus reversed input: count three versus six comparisons. Explain best-case linear and worst-case quadratic work, and why Big O is an asymptotic upper bound rather than a measured time or a synonym for worst-case input.",
+        "steps": "Implement insertion_sort with checked arguments and exact comparison/write counts. Preserve ties by moving only strictly larger keys. Test empty, singleton, already sorted and reversed input.",
+        "hint": "Use one swap only when a.key>b.key; equality makes no swap, preserving tag order. Reject NULL before touching either item. Aliased a==b is harmless, but caller objects must be accessible. Tags do not participate in the key comparison.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-15/learner/src/insertion.c"
+        ]
+      },
+      "E02": {
+        "title": "Stable merging",
+        "why": "A growing input exposes algorithmic work; a timer observes a particular implementation and environment. Stable digit passes allow radix sorting without key comparisons.",
+        "prerequisites": "Week 5 correctness and measurement discipline, Week 4 deterministic unsigned data, and Week 11 compiler choices. Weeks 13 and 14 provide timing context when available; this package supplies its own checked monotonic harness.",
+        "predict": "Draw two adjacent sorted runs with equal keys. Explain the invariant, ceil(log2(n)) passes, odd tail handling, O(n log n) work and O(n) extra record storage. Explain why an in-place merge is a separate algorithm.",
+        "steps": "Implement iterative merge_sort using caller scratch, merging equal keys from the left first. Copy back after every width pass; count every data/scratch write. Check the full argument contract before touching memory.",
+        "hint": "Check pass<4 before shifting by pass*8. Mask the unsigned shifted value with 255. Numeric digits are independent of object endian order. Invalid pass or NULL fails without writing; a shift by 32 would be undefined for this 32-bit value.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-15/learner/src/merge.c"
+        ]
+      },
+      "E03": {
+        "title": "Stable digit passes",
+        "why": "A growing input exposes algorithmic work; a timer observes a particular implementation and environment. Stable digit passes allow radix sorting without key comparisons.",
+        "prerequisites": "Week 5 correctness and measurement discipline, Week 4 deterministic unsigned data, and Week 11 compiler choices. Weeks 13 and 14 provide timing context when available; this package supplies its own checked monotonic harness.",
+        "predict": "Trace keys 256,1,0,257 after the first byte and after the next. Explain why stability is required, why four passes leave the result in data, and why comparison-sort lower bounds do not apply to fixed-width radix sorting.",
+        "steps": "Implement radix_sort as four stable least-significant-byte passes for uint32_t keys. Use numeric shifts, 256 counters and exclusive offsets. Scatter forward, swapping source/destination after each pass.",
+        "hint": "Check out and count<=SIZE_MAX/sizeof(Item) before multiplying. Zero is a valid zero-byte count. Preserve the old output on failure. A successful arithmetic check only establishes representable bytes; it does not establish allocation success or available physical memory.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-15/learner/src/radix.c"
+        ]
+      },
+      "E04": {
+        "title": "Repeated sample summaries",
+        "why": "A growing input exposes algorithmic work; a timer observes a particular implementation and environment. Stable digit passes allow radix sorting without key comparisons.",
+        "prerequisites": "Week 5 correctness and measurement discipline, Week 4 deterministic unsigned data, and Week 11 compiler choices. Weeks 13 and 14 provide timing context when available; this package supplies its own checked monotonic harness.",
+        "predict": "For samples 9,1,5,3 calculate min=1, median=4, mean=4.5 and max=9. Explain what a minimum suggests about favorable state and why it does not describe a typical application invocation.",
+        "steps": "Implement summarize over a local copy of 1–64 uint64_t nanosecond samples. Compute min/max, arithmetic mean and the even/odd median without integer-sum overflow. Leave input and output unchanged on error as specified.",
+        "hint": "Use one swap only when a.key>b.key; equality makes no swap, preserving tag order. Reject NULL before touching either item. Aliased a==b is harmless, but caller objects must be accessible. Tags do not participate in the key comparison.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-15/learner/src/summary.c"
+        ]
+      },
+      "E05": {
+        "title": "Measured comparison",
+        "why": "A growing input exposes algorithmic work; a timer observes a particular implementation and environment. Stable digit passes allow radix sorting without key comparisons.",
+        "prerequisites": "Week 5 correctness and measurement discipline, Week 4 deterministic unsigned data, and Week 11 compiler choices. Weeks 13 and 14 provide timing context when available; this package supplies its own checked monotonic harness.",
+        "predict": "Explain why resetting input, consuming output and labeling timed boundaries matter. Distinguish algorithmic counts, instrumented timings, allocation cost, scratch capacity and unmeasured cache behavior. State how a different valid crossover is interpreted.",
+        "steps": "Run the supplied benchmark for at least four sizes and all four input shapes. Predict crossover before running, validate results, preserve raw rows and environment/flags, and complete R01–R05.",
+        "hint": "Check pass<4 before shifting by pass*8. Mask the unsigned shifted value with 255. Numeric digits are independent of object endian order. Invalid pass or NULL fails without writing; a shift by 32 would be undefined for this 32-bit value.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-15/support/playground.c"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Write a prediction and its assumptions before gathering evidence.",
+      "P02": "Write a prediction and its assumptions before gathering evidence.",
+      "P03": "Write a prediction and its assumptions before gathering evidence.",
+      "P04": "Write a prediction and its assumptions before gathering evidence.",
+      "P05": "Write a prediction and its assumptions before gathering evidence.",
+      "P06": "Write a prediction and its assumptions before gathering evidence.",
+      "S01": "Write a prediction and its assumptions before gathering evidence.",
+      "S02": "Write a prediction and its assumptions before gathering evidence.",
+      "R01": "Write a prediction and its assumptions before gathering evidence.",
+      "R02": "Write a prediction and its assumptions before gathering evidence.",
+      "R03": "Write a prediction and its assumptions before gathering evidence.",
+      "R04": "Write a prediction and its assumptions before gathering evidence.",
+      "R05": "Write a prediction and its assumptions before gathering evidence."
+    }
+  },
+  {
+    "n": 16,
+    "title": "Object lifetimes and allocation ownership",
+    "slug": "week-16",
+    "promptFiles": [
+      "week-16/learner/exercises.md",
+      "week-16/learner/practice.md",
+      "week-16/learner/observations.md",
+      "week-16/learner/warmups.md",
+      "week-16/learner/reading-questions.md"
+    ],
+    "answerFiles": [
+      "week-16/instructor/answers.md",
+      "week-16/instructor/observations.md",
+      "week-16/instructor/warmups.md",
+      "week-16/instructor/reading-answers.md"
+    ],
+    "readings": [
+      {
+        "resource": "[CE: The Stack](https://www.computerenhance.com/p/the-stack)",
+        "portion": "Full, 26:58",
+        "purpose": "Saved machine continuations versus object lifetime"
+      },
+      {
+        "resource": "[HH014: Platform-independent Game Memory](https://guide.handmadehero.org/code/day014/)",
+        "portion": "7:35–28:40",
+        "purpose": "Ownership policy at a platform boundary"
+      },
+      {
+        "resource": "[HH157: Introduction to General Purpose Allocation](https://guide.handmadehero.org/code/day157/)",
+        "portion": "2:36–34:18",
+        "purpose": "Variable allocation and fragmentation"
+      },
+      {
+        "resource": "[C11 N1570](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)",
+        "portion": "§§6.2.4, 6.5.7, 7.22.3, 7.22.5.2",
+        "purpose": "Object lifetime, defined shifts, allocation and sorting contracts."
+      },
+      {
+        "resource": "[malloc/free](https://man7.org/linux/man-pages/man3/malloc.3.html)",
+        "portion": "Allocation/free/reallocation contracts; zero size excluded here",
+        "purpose": "Platform contract and limitations distinguished from C11."
+      }
+    ],
+    "companion": [
+      {
+        "title": "Manual Memory Allocation",
+        "url": "https://beej.us/guide/bgc/html/split/manual-memory-allocation.html#manual-memory-allocation"
+      },
+      {
+        "title": "Parts of Program Memory and Scope",
+        "url": "https://diveintosystems.org/book/C2-C_depth/scope_memory.html"
+      }
+    ],
+    "exercises": {
+      "E01": {
+        "title": "Caller-owned result",
+        "why": "A pointer value does not extend an object’s lifetime. Explicit ownership and commit-after-success rules make allocation, resizing and release obligations observable.",
+        "prerequisites": "Week 2 objects/storage, Week 10 lifetime versus architectural stack, and Week 11 compiler/frame observations. Week 15’s sort scratch is an optional ownership example; no unfinished package is linked.",
+        "predict": "Draw lifetimes of the helper’s local and the caller’s result. Explain why unchanged bytes cannot make a returned-local pointer valid, and why a C local need not occupy a stack slot.",
+        "steps": "Repair a helper that would return its automatic local by implementing local_value into caller-provided storage. Reject INT_MAX and NULL without modifying output.",
+        "hint": "Creation marks every modeled kind live. Block exit ends the modeled automatic object while static/allocated remain. Explicit release ends the modeled allocated object; the static object remains. Real scopes, multiple blocks and process termination require more context, and this function never inspects a pointer. Reject unsupported kinds/events without committing output.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-16/learner/src/local.c"
+        ]
+      },
+      "E02": {
+        "title": "Static duration",
+        "why": "A pointer value does not extend an object’s lifetime. Explicit ownership and commit-after-success rules make allocation, resizing and release obligations observable.",
+        "prerequisites": "Week 2 objects/storage, Week 10 lifetime versus architectural stack, and Week 11 compiler/frame observations. Week 15’s sort scratch is an optional ownership example; no unfinished package is linked.",
+        "predict": "Explain storage duration versus scope. Predict first two calls and process restart; describe reentrancy/thread limitations and why static storage is a poor replacement for every returned object.",
+        "steps": "Implement static_next with a process-static uint64_t counter. A valid call increments then stores; NULL must not advance the counter.",
+        "hint": "Guard n>SIZE_MAX/sizeof(int) before multiplying; zero succeeds. Arithmetic representability is different from available memory, successful malloc or a live owner. Preserve the old output on failure, including NULL-output rejection before writing.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-16/learner/src/static.c"
+        ]
+      },
+      "E03": {
+        "title": "Deep allocated copy",
+        "why": "A pointer value does not extend an object’s lifetime. Explicit ownership and commit-after-success rules make allocation, resizing and release obligations observable.",
+        "prerequisites": "Week 2 objects/storage, Week 10 lifetime versus architectural stack, and Week 11 compiler/frame observations. Week 15’s sort scratch is an optional ownership example; no unfinished package is linked.",
+        "predict": "Diagram caller source, owner metadata and separately allocated ints. State who releases, what can be borrowed, and why copying owner metadata does not clone ownership.",
+        "steps": "Implement owned_copy using the supplied allocator interface. Require an empty destination, check byte-product overflow, deep-copy ints and commit only after allocation succeeds.",
+        "hint": "Check out and seed!=INT_MAX before signed addition. An automatic value can be copied into the caller’s live object before the helper ends; no pointer to the helper’s local escapes. INT_MIN+1 is representable. Returning by value would also repair the lifetime issue under another API.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-16/learner/src/owner.c"
+        ]
+      },
+      "E04": {
+        "title": "Resize and release ownership",
+        "why": "A pointer value does not extend an object’s lifetime. Explicit ownership and commit-after-success rules make allocation, resizing and release obligations observable.",
+        "prerequisites": "Week 2 objects/storage, Week 10 lifetime versus architectural stack, and Week 11 compiler/frame observations. Week 15’s sort scratch is an optional ownership example; no unfinished package is linked.",
+        "predict": "Trace a failed grow, successful grow and release. Identify when old borrows become invalid and explain why allocator provenance cannot be inferred from a pointer’s numeric address.",
+        "steps": "Implement owned_resize and owned_release. Resize by allocate/copy/zero-tail/free/commit; equal count does nothing, zero explicitly frees. Preserve the original allocation/data on failure.",
+        "hint": "Creation marks every modeled kind live. Block exit ends the modeled automatic object while static/allocated remain. Explicit release ends the modeled allocated object; the static object remains. Real scopes, multiple blocks and process termination require more context, and this function never inspects a pointer. Reject unsupported kinds/events without committing output.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-16/learner/src/owner.c"
+        ]
+      },
+      "E05": {
+        "title": "Diagnose and repair",
+        "why": "A pointer value does not extend an object’s lifetime. Explicit ownership and commit-after-success rules make allocation, resizing and release obligations observable.",
+        "prerequisites": "Week 2 objects/storage, Week 10 lifetime versus architectural stack, and Week 11 compiler/frame observations. Week 15’s sort scratch is an optional ownership example; no unfinished package is linked.",
+        "predict": "Distinguish compiler warnings, expected sanitizer failures and the clean repaired program. Explain diagnostic limits, ownership leaks, pointer indeterminacy after lifetime end and why testing cannot prove every possible lifetime use safe.",
+        "steps": "Run make diagnose for the isolated returned-local, use-after-free and double-free fixtures. Preserve actual diagnostics, map each bug to its reference repair, run correctness checks and complete R01–R05.",
+        "hint": "Guard n>SIZE_MAX/sizeof(int) before multiplying; zero succeeds. Arithmetic representability is different from available memory, successful malloc or a live owner. Preserve the old output on failure, including NULL-output rejection before writing.",
+        "evidence": "Use independent correctness evidence and label actual observations separately from model assumptions.",
+        "sources": [
+          "week-16/support/playground.c"
+        ]
+      }
+    },
+    "guidance": {
+      "P01": "Write a prediction and its assumptions before gathering evidence.",
+      "P02": "Write a prediction and its assumptions before gathering evidence.",
+      "P03": "Write a prediction and its assumptions before gathering evidence.",
+      "P04": "Write a prediction and its assumptions before gathering evidence.",
+      "P05": "Write a prediction and its assumptions before gathering evidence.",
+      "P06": "Write a prediction and its assumptions before gathering evidence.",
+      "S01": "Write a prediction and its assumptions before gathering evidence.",
+      "S02": "Write a prediction and its assumptions before gathering evidence.",
+      "R01": "Write a prediction and its assumptions before gathering evidence.",
+      "R02": "Write a prediction and its assumptions before gathering evidence.",
+      "R03": "Write a prediction and its assumptions before gathering evidence.",
+      "R04": "Write a prediction and its assumptions before gathering evidence.",
+      "R05": "Write a prediction and its assumptions before gathering evidence."
     }
   }
 ]

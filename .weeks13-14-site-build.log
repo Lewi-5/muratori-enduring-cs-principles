@@ -1,0 +1,18 @@
+
+> docs:build
+> npm run docs:check && vitepress build docs && node tools/docs/check-built.mjs
+
+
+> docs:check
+> node tools/docs/check.mjs
+
+PASS: 16 lessons, 493 prompt/answer pairs, 1411 pages; sources and internal targets resolve.
+
+  vitepress v1.6.4
+
+- building client + server bundles...
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

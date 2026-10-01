@@ -9,6 +9,10 @@ next:
 
 # Week 1 · C as an inspectable starting point
 
+::: tip Want a slower way in?
+Start with the [Week 1 beginner section](/beginners/week-01): it builds this week's way of looking at C from scratch, with checked examples and four short warm-ups. When you finish the lesson, the [further reading](/further-reading/week-01) introduces the seven companion texts the course uses all year.
+:::
+
 You write two loops that add the same array. They print the same answer. One uses an index; the other advances a pointer. Have you written the same program twice? At the level of the requested result, perhaps. At the level of generated instructions or execution time, you do not yet know.
 
 That gap is the subject of this course. You will learn to connect what source code promises, the mechanism that carries out the work, and evidence from a particular run. C is useful here because a small program can lead you directly to bytes, object files, library calls, and machine instructions. It does not guarantee a one-to-one translation from a line of source to an instruction.
@@ -122,3 +126,7 @@ Keep observation, explanation, and uncertainty in separate sentences. “The two
 Week 2 takes the objects you have used and asks where their members lie, how long they exist, and which kinds of references remain valid when storage moves. Before continuing, you should be able to explain why a byte count, an address, and a value answer different questions.
 
 <!-- report -->
+
+## Going further
+
+The [Week 1 further-reading page](/further-reading/week-01) introduces the course's seven companion texts, from *But How Do It Know?* to Hennessy and Patterson, and cross-references every video in this lesson to the sections that explain the same mechanism.

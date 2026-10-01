@@ -1,0 +1,34 @@
+
+week-11/build/instructor/gcc/optimized/inspection/fold.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fold_ids>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 85 d2             	test   rdx,rdx
+   7:	74 3f                	je     48 <fold_ids+0x48>
+   9:	48 85 ff             	test   rdi,rdi
+   c:	75 12                	jne    20 <fold_ids+0x20>
+   e:	31 c0                	xor    eax,eax
+  10:	48 85 f6             	test   rsi,rsi
+  13:	74 27                	je     3c <fold_ids+0x3c>
+  15:	c3                   	ret    
+  16:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+  1d:	00 00 00 
+  20:	48 85 f6             	test   rsi,rsi
+  23:	74 17                	je     3c <fold_ids+0x3c>
+  25:	48 8d 04 76          	lea    rax,[rsi+rsi*2]
+  29:	31 f6                	xor    esi,esi
+  2b:	48 8d 04 c7          	lea    rax,[rdi+rax*8]
+  2f:	90                   	nop
+  30:	48 03 37             	add    rsi,QWORD PTR [rdi]
+  33:	48 83 c7 18          	add    rdi,0x18
+  37:	48 39 c7             	cmp    rdi,rax
+  3a:	75 f4                	jne    30 <fold_ids+0x30>
+  3c:	48 89 32             	mov    QWORD PTR [rdx],rsi
+  3f:	b8 01 00 00 00       	mov    eax,0x1
+  44:	c3                   	ret    
+  45:	0f 1f 00             	nop    DWORD PTR [rax]
+  48:	31 c0                	xor    eax,eax
+  4a:	c3                   	ret    

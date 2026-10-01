@@ -2,6 +2,16 @@
 
 You open an exercise and recognize enough syntax to start typing. Pause long enough to say what the exercise is investigating. A program that passes tests without a model behind it leaves you poorly prepared when the next input behaves differently.
 
+## Three layers in every week
+
+A week has up to three parts, and you can enter at whichever one fits you:
+
+1. **Beginner section** (where available): a slower way in that builds the week's mechanism from scratch, with checked examples and three to five ungraded warm-ups (`W01…`). Everyone can start and finish it; experienced programmers often skim it and do the warm-ups.
+2. **Lesson and assignment:** the week's core, described on this page.
+3. **Further reading:** a guided introduction to seven companion texts, from J. Clark Scott's *But How Do It Know?* to Hennessy and Patterson, cross-referenced to every video in the week, with reading questions (`F01…`). The [reading map](/reference/reading-map) shows all 52 weeks.
+
+The beginner section and further reading add time beyond the lesson's budget. That is deliberate: a full week may run past ten hours, but the beginner section is a part of each week that anyone can complete.
+
 ## Read, predict, implement, inspect, explain
 
 First read the chapter's opening situation and conceptual sections. Use the readings to answer the questions stated beside them. You do not need to memorize the standard or watch every minute of an unrelated long episode.
@@ -21,6 +31,8 @@ Finally, connect source to mechanism and observation. “It works” omits the m
 | `P01` and other P entries | Ungraded practice that prepares that reasoning |
 | `S01` and other S entries | Optional stretch work beyond the core time budget |
 | `R01` and other R entries | Required notebook or report sections |
+| `W01` and other W entries | Ungraded warm-ups in the beginner section, each leading into one exercise |
+| `F01` and other F entries | Ungraded reading questions on the further-reading page |
 
 Retain these IDs in your work. The site imports their contracts from the original package, and every one links to its corresponding answer. An exercise can require a protocol or a prediction rather than a new C function; read the `.C` label as the concrete task, not permission to skip written artifacts.
 

@@ -19,9 +19,23 @@ for (const w of weeks) {
     if (authored.split(`<!-- exercise:${id} -->`).length !== 2) throw new Error(`Exercise must appear once: ${w.slug} ${id}`)
     for (const field of ['why', 'prerequisites', 'predict', 'steps', 'hint', 'evidence']) if (!w.exercises[id][field]?.trim()) throw new Error(`Missing ${field}: ${id}`)
   }
+  const beginner = pages.get(`/beginners/${w.slug}`)
+  const further = pages.get(`/further-reading/${w.slug}`)
+  if (beginner) {
+    // The beginner section's fixed shape (see the authoring guide and WRITINGFORBEGINNERS.md).
+    for (const h of ['Purpose and prerequisites', 'Vocabulary', 'Concepts', 'Walk-through', 'Warm-ups', 'Check yourself', 'Ready for the lesson', 'Read alongside']) {
+      if (!new RegExp(`^## ${h}\\b`, 'm').test(beginner)) throw new Error(`Beginner page ${w.slug} lacks "## ${h}"`)
+    }
+    if (!chapter.includes(`/beginners/${w.slug}`)) throw new Error(`Lesson ${w.slug} does not link its beginner section`)
+  }
+  if (further) {
+    if (!/^### /m.test(further) || !further.includes('| Rung | Text | Section | Pages |')) throw new Error(`Further reading ${w.slug} has no cross-reference`)
+    if (!chapter.includes(`/further-reading/${w.slug}`)) throw new Error(`Lesson ${w.slug} does not link its further reading`)
+  }
   for (const p of prompts(w)) {
     const anchor = p.id.toLowerCase().replaceAll('.', '')
-    if (!chapter.includes(`{#${anchor}}`) || !answers.includes(`{#${anchor}}`)) throw new Error(`Missing coverage ${w.slug} ${p.id}`)
+    const home = p.id.startsWith('W') ? beginner : p.id.startsWith('F') ? further : chapter
+    if (!home?.includes(`{#${anchor}}`) || !answers.includes(`{#${anchor}}`)) throw new Error(`Missing coverage ${w.slug} ${p.id}`)
     count++
   }
 }
@@ -29,7 +43,8 @@ for (const w of weeks) {
 // checks Markdown destinations during production build. Fragment checks run
 // against the built HTML, where VitePress's actual slug rules are available.
 for (const [origin, text] of pages) {
-  if (/<!-- (?:exercise:|readings|practice|report|contract-intro)/.test(text)) throw new Error(`Unexpanded directive: ${origin}`)
+  // Directives named inside inline code (as in the authoring guide) are documentation, not directives.
+  if (/<!-- (?:exercise:|readings|practice|report|contract-intro|warmup:|crossref|reading-questions)/.test(text.replace(/`[^`\n]*`/g, ''))) throw new Error(`Unexpanded directive: ${origin}`)
   const prose = text.replace(/^(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1\s*$/gm, '')
   for (const m of prose.matchAll(/\]\((\/[^\s)]+)\)/g)) {
     const target = decodeURI(m[1].split('#')[0])

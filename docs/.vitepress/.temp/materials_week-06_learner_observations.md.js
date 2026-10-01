@@ -1,0 +1,19 @@
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.1tPrXgE0.js";
+const __pageData = JSON.parse('{"title":"Notebook — 8086 subset decoder","description":"","frontmatter":{"search":false,"prev":false,"next":false},"headers":[],"relativePath":"materials/week-06/learner/observations.md","filePath":"materials/week-06/learner/observations.md"}');
+const _sfc_main = { name: "materials/week-06/learner/observations.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="notebook-—-8086-subset-decoder" tabindex="-1">Notebook — 8086 subset decoder <a class="header-anchor" href="#notebook-—-8086-subset-decoder" aria-label="Permalink to &quot;Notebook — 8086 subset decoder&quot;">​</a></h1><p>Keep <strong>prediction</strong>, <strong>observation</strong> and <strong>explanation</strong> separate. Record predictions before running anything; do not edit them afterwards.</p><h3 id="r01" tabindex="-1">R01 <a class="header-anchor" href="#r01" aria-label="Permalink to &quot;R01 {#r01}&quot;">​</a></h3><p><strong>Build environment.</strong> Record:</p><ul><li>your compilers and their versions;</li><li>binutils (<code>objdump --version</code>) and Python;</li><li>the flags you used for debug, optimized and sanitizer builds;</li><li>whether <code>objdump</code> supports <code>-m i8086</code> on your machine.</li></ul><h3 id="r02" tabindex="-1">R02 <a class="header-anchor" href="#r02" aria-label="Permalink to &quot;R02 {#r02}&quot;">​</a></h3><p><strong>Prediction, observation, explanation.</strong> Give one row for each of E01–E07. Record <em>before running</em>:</p><ul><li>the E07 hand decodings of the five supplied sequences, showing every field;</li><li>your E05 prediction of the longest canonical text and its length.</li></ul><p>Then record what the tests and drivers showed, and explain every difference between prediction and observation.</p><h3 id="r03" tabindex="-1">R03 <a class="header-anchor" href="#r03" aria-label="Permalink to &quot;R03 {#r03}&quot;">​</a></h3><p><strong>Claim ledger.</strong> At least eight statements, each labelled as one of: C11, implementation-defined, 8086 ISA (manual, with table and page), x86-64 ISA (Intel SDM), toolchain (<code>objdump</code>), oracle, or observed on this machine.</p><h3 id="r04" tabindex="-1">R04 <a class="header-anchor" href="#r04" aria-label="Permalink to &quot;R04 {#r04}&quot;">​</a></h3><p><strong>Three witnesses.</strong> Pick three byte sequences and compare what your decoder, the supplied oracle and <code>objdump</code> say about each. Include at least one where <code>objdump</code>&#39;s text differs from the canonical text, and explain why the difference is a convention rather than an error.</p><h3 id="r05" tabindex="-1">R05 <a class="header-anchor" href="#r05" aria-label="Permalink to &quot;R05 {#r05}&quot;">​</a></h3><p><strong>Defense and handoff.</strong> Give:</p><ul><li>the submission inventory (source files, <code>cases.txt</code>, test output, this notebook);</li><li>one durable source → mechanism → observation defense, from a C expression in your decoder to the bits it reads;</li><li>one open question for week 7 (for example, how the decoder should learn the length of an instruction with a memory operand).</li></ul></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("materials/week-06/learner/observations.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const observations = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  observations as default
+};

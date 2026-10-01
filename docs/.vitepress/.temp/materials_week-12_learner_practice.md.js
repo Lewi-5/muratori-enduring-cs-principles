@@ -1,0 +1,19 @@
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.1tPrXgE0.js";
+const __pageData = JSON.parse('{"title":"Practice and optional stretch","description":"","frontmatter":{"search":false,"prev":false,"next":false},"headers":[],"relativePath":"materials/week-12/learner/practice.md","filePath":"materials/week-12/learner/practice.md"}');
+const _sfc_main = { name: "materials/week-12/learner/practice.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="practice-and-optional-stretch" tabindex="-1">Practice and optional stretch <a class="header-anchor" href="#practice-and-optional-stretch" aria-label="Permalink to &quot;Practice and optional stretch&quot;">​</a></h1><h3 id="p01" tabindex="-1">P01 <a class="header-anchor" href="#p01" aria-label="Permalink to &quot;P01 {#p01}&quot;">​</a></h3><p>A CodeImage borrows a local byte array that goes out of scope before project_run. Explain why a still-correct boundary map cannot make the run valid; repair ownership without inventing a universal heap requirement.</p><h3 id="p02" tabindex="-1">P02 <a class="header-anchor" href="#p02" aria-label="Permalink to &quot;P02 {#p02}&quot;">​</a></h3><p>CMP byte 80 against 01 yields 7F. Derive signed/unsigned branch results, then explain why the C implementation cannot use overflowing signed host arithmetic as its guest model.</p><h3 id="p03" tabindex="-1">P03 <a class="header-anchor" href="#p03" aria-label="Permalink to &quot;P03 {#p03}&quot;">​</a></h3><p>Draw main-fixture SP and data bytes after CALL then PUSH AX. Predict return behavior if the saved AX is not popped before RET.</p><h3 id="p04" tabindex="-1">P04 <a class="header-anchor" href="#p04" aria-label="Permalink to &quot;P04 {#p04}&quot;">​</a></h3><p>A trace needs two records but has capacity one. Then the same code encounters a bad taken target. Predict status, count, state and output array for each case and explain precedence.</p><h3 id="p05" tabindex="-1">P05 <a class="header-anchor" href="#p05" aria-label="Permalink to &quot;P05 {#p05}&quot;">​</a></h3><p>Two stores write the same word at FFFF. Predict the numerically ordered first delta and empty second delta. Explain why a trace cannot prove the absence of a store instruction.</p><h3 id="p06" tabindex="-1">P06 <a class="header-anchor" href="#p06" aria-label="Permalink to &quot;P06 {#p06}&quot;">​</a></h3><p>A debug x64 wrapper uses CALL and an optimized wrapper uses an external JMP relocation. Explain the continuation and ABI obligations without claiming the compiler broke the source call.</p><h3 id="s01" tabindex="-1">S01 <a class="header-anchor" href="#s01" aria-label="Permalink to &quot;S01 {#s01}&quot;">​</a></h3><p>Specify a write-event trace that records same-value stores and byte order. Provide a complete written design for instrumentation, capacities, transactions and equivalence with architectural delta traces; no C implementation is required.</p><h3 id="s02" tabindex="-1">S02 <a class="header-anchor" href="#s02" aria-label="Permalink to &quot;S02 {#s02}&quot;">​</a></h3><p>Design a legal experiment comparing prepared versus repeated boundary validation. State correctness gates, timed regions, repeated runs, compiler/CPU metadata, variation and possible conclusions. Do not impose a speedup threshold or estimate x64 cycles from guest instruction count.</p></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("materials/week-12/learner/practice.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const practice = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  practice as default
+};

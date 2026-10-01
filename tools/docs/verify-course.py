@@ -15,10 +15,11 @@ def run(cwd,args,expected=0):
 for f in ['PLAN.md','README.md','solPlan.md','analysis.md','WRITINGFORBEGINNERS.md','computerEnhanceTOC.txt','rawTranscript.txt','handmadeHeroLessonList.txt','relevantHHLessons.txt']:
     shutil.copy2(root/f,workspace/f)
 shutil.copytree(root/'docs/content',workspace/'docs/content')
-for n in range(1,7):
+week_numbers=[w['n'] for w in json.loads((root/'tools/docs/catalogue.json').read_text(encoding='utf-8'))]
+for n in week_numbers:
     week=f'week-{n:02}'
     shutil.copytree(root/week,workspace/week,ignore=shutil.ignore_patterns('build','__pycache__','results','build-docs-check.log'))
-for n in range(1,7):
+for n in week_numbers:
     cwd=workspace/f'week-{n:02}'
     if n==5: run(cwd,['make','PACKAGE=instructor','expected'])
     run(cwd,['make','PACKAGE=instructor','CC=gcc','MODE=debug','test'])

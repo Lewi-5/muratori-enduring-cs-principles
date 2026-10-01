@@ -22,13 +22,16 @@ endif
 SRC = $(PACKAGE)/src
 BUILD = build/$(PACKAGE)/$(notdir $(CC))/$(MODE)
 EXERCISES = 01 02 03 04 05 06
-PROGRAMS = $(addprefix $(BUILD)/ex,$(EXERCISES)) $(BUILD)/geomath_demo
+WARMUPS = $(addprefix $(BUILD)/w,01 02 03 04)
+PROGRAMS = $(addprefix $(BUILD)/ex,$(EXERCISES)) $(BUILD)/geomath_demo $(WARMUPS)
 
-.PHONY: all test inventory verify starters symbols extras clean
+.PHONY: all test warmups inventory verify starters symbols extras clean
 all: $(PROGRAMS)
 $(BUILD):
 	mkdir -p "$@"
 $(BUILD)/ex%: $(SRC)/ex%.c support/platform.h support/geo_consts.h | $(BUILD)
+	$(CC) $(FLAGS) $(LINK_FLAGS) -Isupport $< -o $@ -lm
+$(BUILD)/w%: $(SRC)/w%.c support/platform.h | $(BUILD)
 	$(CC) $(FLAGS) $(LINK_FLAGS) -Isupport $< -o $@ -lm
 $(BUILD)/geomath.o: $(SRC)/geomath.c $(SRC)/geomath.h support/geo_consts.h | $(BUILD)
 	$(CC) $(FLAGS) -Isupport -I$(SRC) -c $< -o $@
@@ -36,7 +39,10 @@ $(BUILD)/geomath_demo.o: $(SRC)/geomath_demo.c $(SRC)/geomath.h support/geo_cons
 	$(CC) $(FLAGS) -Isupport -I$(SRC) -c $< -o $@
 $(BUILD)/geomath_demo: $(BUILD)/geomath_demo.o $(BUILD)/geomath.o
 	$(CC) $(FLAGS) $(LINK_FLAGS) $^ -o $@ -lm
-test: all inventory
+# Warm-ups are ungraded; `make warmups` checks only them, and `make test` checks them first.
+warmups: $(WARMUPS)
+	$(PYTHON) tests/warmups.py --build $(BUILD) --source $(SRC) --cc $(CC) --flags '$(FLAGS) $(LINK_FLAGS)'
+test: all inventory warmups
 	$(PYTHON) tests/check.py --build $(BUILD) --source $(SRC) --cc $(CC) --flags '$(FLAGS) $(LINK_FLAGS)'
 inventory:
 	$(PYTHON) tests/inventory.py

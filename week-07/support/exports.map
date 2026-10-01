@@ -1,0 +1,4 @@
+{
+  global: decoder_api_version; decode_one; format_instruction; decode_stream;
+  local: *;
+};

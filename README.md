@@ -1,60 +1,41 @@
-# Enduring CS Principles
-
-A C-based course about the mechanisms beneath everyday programming: object representation, numerical limits, compilation, data movement, and machine instructions. Based on standup pod #71 and Muratori's “extend downward” argument, with the qualifications preserved in the source analysis.
+# muratori-enduring-cs-principles
+based on standup pod #71
 
 See [analysis.md](analysis.md) for the extracted thesis (Muratori's "extend downward" argument) and a seed outline for a C-based course teaching enduring CS principles.
 
-The [52-week syllabus](PLAN.md) is the course specification; [solPlan.md](solPlan.md) supplies the qualified teaching rationale. **Weeks 1–6 are implemented. Weeks 7–52 remain planned.**
+The [52-week syllabus](PLAN.md) is the course specification; [solPlan.md](solPlan.md) supplies the qualified teaching rationale. The implemented packages below contain learner exercises, separate instructor solutions, and Linux/WSL build and test instructions:
 
-## Read the course companion
+- [Week 01: C as an inspectable starting point](week-01/README.md)
+- [Week 02: Objects, bytes, and storage](week-02/README.md)
+- [Week 03: Numbers in a box](week-03/README.md)
+- [Week 04: Deterministic data and a reference processor](week-04/README.md)
+- [Week 05: A validated scalar geolab baseline](week-05/README.md) (Checkpoint 1)
+- [Week 06: Bytes to instructions](week-06/README.md)
+- [Week 07: Memory operands and a decoder API](week-07/README.md)
+- [Week 08: Register state and arithmetic flags](week-08/README.md)
+- [Week 09: Branches and bounded guest memory](week-09/README.md)
+- [Week 10: Stack discipline, calls and lifetimes](week-10/README.md)
+- [Week 11: From C to x64: calls and the ABI](week-11/README.md)
+- [Week 12: Project 2: a specified simulator](week-12/README.md) (Checkpoint 2)
+- [Week 13: Clocks and repeatable timing](week-13/README.md)
+- [Week 14: Nested and recursive profiling](week-14/README.md)
+- [Week 15: Sorting: complexity and measured cost](week-15/README.md)
+- [Week 16: Object lifetimes and allocation ownership](week-16/README.md)
 
-The VitePress companion explains why each lesson matters, develops the concepts from first principles, and guides every existing exercise, practice problem, stretch task, and report requirement. It is written for programmers who are new to systems concepts. The assignments retain their existing C requirements; the original 8–10-hour estimates assume experienced C programmers, and background preparation may take longer.
+Weeks 17–52 remain planned. Weeks 15 and 16 are independently buildable with supplied timing and allocation support.
 
-With Node.js 20 or later, run from this repository root:
+## Beginner sections and further reading
+
+Every week is getting a **beginner section**, a slower way into the lesson with checked examples and ungraded warm-ups, written to [WRITINGFORBEGINNERS.md](WRITINGFORBEGINNERS.md), and a **further-reading** page that guides learners into seven companion texts and cross-references them with the week's Computer, Enhance! and Handmade Hero material. Week 3 is the first week with both. [tools/docs/readings.json](tools/docs/readings.json) holds the verified citations and a first-pass reading map for all 52 weeks.
+
+## Reading the course as a site
+
+The course is also a local VitePress site that reads the week packages directly:
 
 ```sh
 npm ci
-npm run docs:dev
+npm run docs:dev      # http://localhost:5176/
+npm run docs:build    # checks, builds, and verifies rendered links
 ```
 
-Open the local address printed in the terminal. On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`. For a production check and preview:
-
-```sh
-npm run docs:build
-npm run docs:preview
-```
-
-The site runs locally; C exercises run in your Linux/WSL terminal. It does not execute code in the browser. Start with [course orientation](docs/content/guide/start.md), [setup](docs/content/guide/setup.md), and [how to complete a week](docs/content/guide/how-to-study.md).
-
-## The completed sequence
-
-| Week | What you investigate | Companion | Local package |
-| --- | --- | --- | --- |
-| 1 | Source semantics, values, arrays, resources, linking, and evidence | [C as an inspectable starting point](docs/content/weeks/week-01.md) | [Week 01](week-01/README.md) |
-| 2 | Object layout, alignment, lifetime, and references | [Objects, bytes, and storage](docs/content/weeks/week-02.md) | [Week 02](week-02/README.md) |
-| 3 | Floating-point representation, error, and geometry | [Numbers in a box](docs/content/weeks/week-03.md) | [Week 03](week-03/README.md) |
-| 4 | Reproducible generation, parsing, loading, and accumulation | [Deterministic data](docs/content/weeks/week-04.md) | [Week 04](week-04/README.md) |
-| 5 | Correctness, timing protocols, and uncertainty | [Scalar geolab baseline](docs/content/weeks/week-05.md) | [Week 05](week-05/README.md) |
-| 6 | Instruction fields, bounded decoding, and independent checks | [Bytes to instructions](docs/content/weeks/week-06.md) | [Week 06](week-06/README.md) |
-
-Each week includes learner work, separate full instructor solutions, public tests, a rubric, and a notebook or report. Predict before running. Explain the mechanism behind the output and what the evidence cannot establish. Correctness and explanation take precedence over speed.
-
-## Work on the exercises
-
-Use x86-64 Linux or Ubuntu under WSL, with GCC, Clang, make, Python 3, and binutils. From the repository root:
-
-```sh
-cd week-01
-make
-make test
-```
-
-The supplied learner scaffolds compile but intentionally fail behavioral tests until implemented. Follow the named functions and contracts in the package. Run the other compiler and required modes as each week directs. Python handles test orchestration; the learner programs are C.
-
-Readings and videos appear beside the questions they help answer, with a consolidated site index. Computer, Enhance! is a required subscription resource; this repository contains original exercises rather than copies of its paid assignments. Handmade Hero segments and primary technical references retain their assigned portions. Beej's Guide to C provides a gentler companion for unfamiliar language details.
-
-## Maintain and verify the site
-
-Authored chapters live in `docs/content`; the build imports contracts and source from the week packages. `tools/docs/catalogue.json` holds shared readings and exercise guidance. `tools/docs/files.json` explicitly lists the course files exposed in the site. Generated pages are not committed or edited by hand.
-
-`npm run docs:check` verifies all 183 prompt/answer pairs, imported sources, and internal targets. `npm run docs:build` also checks rendered links and search exclusions. See [authoring guidance](docs/content/guide/authoring.md), [writing principles](WRITINGFORBEGINNERS.md), and [validation results](docs/VALIDATION.md).
+See the site's authoring guide (`docs/content/guide/authoring.md`) for how the pages, checks and reading data fit together.

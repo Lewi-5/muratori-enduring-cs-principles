@@ -1,0 +1,8 @@
+offset=0 mov ax, 4660 | ax=1234 cx=0000 dx=0000 bx=0000 sp=0000 bp=0000 si=0000 di=0000 ip=0003 flags=0000
+offset=3 mov ah, -1 | ax=ff34 cx=0000 dx=0000 bx=0000 sp=0000 bp=0000 si=0000 di=0000 ip=0005 flags=0000
+offset=5 mov al, 127 | ax=ff7f cx=0000 dx=0000 bx=0000 sp=0000 bp=0000 si=0000 di=0000 ip=0007 flags=0000
+offset=7 add al, 1 | ax=ff80 cx=0000 dx=0000 bx=0000 sp=0000 bp=0000 si=0000 di=0000 ip=0009 flags=0890
+offset=9 cmp al, -128 | ax=ff80 cx=0000 dx=0000 bx=0000 sp=0000 bp=0000 si=0000 di=0000 ip=000b flags=0044
+offset=11 mov bx, 1 | ax=ff80 cx=0000 dx=0000 bx=0001 sp=0000 bp=0000 si=0000 di=0000 ip=000e flags=0044
+offset=14 sub ax, bx | ax=ff7f cx=0000 dx=0000 bx=0001 sp=0000 bp=0000 si=0000 di=0000 ip=0010 flags=0090
+final steps=7 | ax=ff7f cx=0000 dx=0000 bx=0001 sp=0000 bp=0000 si=0000 di=0000 ip=0010 flags=0090

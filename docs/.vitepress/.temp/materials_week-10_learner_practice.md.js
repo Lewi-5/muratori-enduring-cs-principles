@@ -1,0 +1,19 @@
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.1tPrXgE0.js";
+const __pageData = JSON.parse('{"title":"Practice and stretch","description":"","frontmatter":{"search":false,"prev":false,"next":false},"headers":[],"relativePath":"materials/week-10/learner/practice.md","filePath":"materials/week-10/learner/practice.md"}');
+const _sfc_main = { name: "materials/week-10/learner/practice.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="practice-and-stretch" tabindex="-1">Practice and stretch <a class="header-anchor" href="#practice-and-stretch" aria-label="Permalink to &quot;Practice and stretch&quot;">​</a></h1><h3 id="p01" tabindex="-1">P01 <a class="header-anchor" href="#p01" aria-label="Permalink to &quot;P01 {#p01}&quot;">​</a></h3><p>A window [0080,0100) starts empty. How many word PUSHes fit? What happens on the next PUSH and on the next POP after complete draining? Give statuses and unchanged-state expectations.</p><h3 id="p02" tabindex="-1">P02 <a class="header-anchor" href="#p02" aria-label="Permalink to &quot;P02 {#p02}&quot;">​</a></h3><p>AX=7FFF and CF=1. Compare INC AX with ADD AX,1: result, CF, OF, and all other arithmetic flags. Explain a valid reason software may depend on the difference.</p><h3 id="p03" tabindex="-1">P03 <a class="header-anchor" href="#p03" aria-label="Permalink to &quot;P03 {#p03}&quot;">​</a></h3><p>A three-byte CALL starts at 0010 and uses rel16 pattern FFF0. Calculate next IP and target. Explain whether the numbers alone prove the target is accepted.</p><h3 id="p04" tabindex="-1">P04 <a class="header-anchor" href="#p04" aria-label="Permalink to &quot;P04 {#p04}&quot;">​</a></h3><p>PUSH AX then PUSH BX. Which POP order restores both? Explain what POP AX then POP BX actually does when AX=1234 and BX=ABCD.</p><h3 id="p05" tabindex="-1">P05 <a class="header-anchor" href="#p05" aria-label="Permalink to &quot;P05 {#p05}&quot;">​</a></h3><p>Does reading the same old guest bytes after POP prove a returned pointer to a C automatic local is safe? Explain using object lifetime, identifier scope, and architectural stack contents as three distinct concepts.</p><h3 id="p06" tabindex="-1">P06 <a class="header-anchor" href="#p06" aria-label="Permalink to &quot;P06 {#p06}&quot;">​</a></h3><p>The CLI uses separate code and data arrays. Can MOV to the numeric data address of a CALL change that CALL? State the model&#39;s behavior and the corresponding limitation compared with real 8086 memory.</p><h3 id="s01" tabindex="-1">S01 <a class="header-anchor" href="#s01" aria-label="Permalink to &quot;S01 {#s01}&quot;">​</a></h3><p>Construct a recursive near-CALL fixture that reaches M_STACK before its instruction budget expires. Supply bytes, a recurrence for SP, the failing IP, successful step count, and a rollback check. Explain why the simulator need not recurse in host C.</p><h3 id="s02" tabindex="-1">S02 <a class="header-anchor" href="#s02" aria-label="Permalink to &quot;S02 {#s02}&quot;">​</a></h3><p>Design a boundary-map cache to avoid rescanning all code on each step. Give a C API and a working reference prototype or pseudocode sufficient to implement it; explain ownership, immutable code, cache invalidation and how you would verify it against the original runner. No speedup is required.</p></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("materials/week-10/learner/practice.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const practice = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  practice as default
+};

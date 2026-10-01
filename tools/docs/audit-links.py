@@ -9,7 +9,10 @@ from html import unescape
 import json, re
 root=Path(__file__).resolve().parents[2]
 catalogue=json.loads((root/'tools/docs/catalogue.json').read_text(encoding='utf-8'))
-urls=sorted(set(re.findall(r'https?://[^\s)"<>]+',json.dumps(catalogue,ensure_ascii=False))))
+readings=json.loads((root/'tools/docs/readings.json').read_text(encoding='utf-8'))
+# Companion-text sections (Beej, Dive Into Systems) and every Muratori item with a known URL, including draft weeks.
+reading_urls={s['url'] for s in readings['sections'].values() if s.get('url')} | {m['url'] for m in readings['muratori'].values() if m.get('url')}
+urls=sorted(set(re.findall(r'https?://[^\s)"<>]+',json.dumps(catalogue,ensure_ascii=False))) | reading_urls)
 def check(url):
     try:
         with urlopen(Request(urldefrag(url)[0],headers={'User-Agent':'Mozilla/5.0 (course reference verification)'}),timeout=35) as r:

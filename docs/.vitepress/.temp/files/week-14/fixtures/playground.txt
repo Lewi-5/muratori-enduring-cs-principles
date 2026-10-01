@@ -1,0 +1,3 @@
+id=0 inclusive=100 exclusive=70 hits=1
+id=1 inclusive=40 exclusive=30 hits=2
+covered=100 inclusive_sum=140 hits=3 used=2

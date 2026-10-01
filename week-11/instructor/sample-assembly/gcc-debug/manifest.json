@@ -1,0 +1,59 @@
+{
+  "compiler": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "target": "x86_64-linux-gnu",
+  "mode": "debug",
+  "package": "instructor",
+  "flags": [
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Werror",
+    "-ffp-contract=off",
+    "-fno-lto",
+    "-O0",
+    "-g",
+    "-gdwarf-4",
+    "-Iinclude",
+    "-Isupport/geolab"
+  ],
+  "sources": [
+    {
+      "source": "instructor/src/wrappers.c",
+      "sha256": "f430e713e58fbb0c436fa5fdab7ce63d615bd312c8235ebfe2b923563c878b41",
+      "assembly": "wrappers.s",
+      "disassembly": "wrappers.txt"
+    },
+    {
+      "source": "instructor/src/fold.c",
+      "sha256": "ed0fc93bbd6a3a7d75d84fd4d1faeae153dc262d90d28f696a515740fa7dce7f",
+      "assembly": "fold.s",
+      "disassembly": "fold.txt"
+    },
+    {
+      "source": "instructor/src/calls.c",
+      "sha256": "fde76bbe9dc620c803dcdecdfd6db8bcb902c957e8e53991baba1f771ec07d96",
+      "assembly": "calls.s",
+      "disassembly": "calls.txt"
+    },
+    {
+      "source": "support/local.c",
+      "sha256": "0073bf51da19501622a4c34892f3550c840d3a699ca0b27b14a30bfdc6aabbd6",
+      "assembly": "local.s",
+      "disassembly": "local.txt"
+    },
+    {
+      "source": "support/geolab/geo.c",
+      "sha256": "e219ba7dacd078431bdddf008f0e5c19fd90ae4520d1abd44c7077fd7841582c",
+      "assembly": "geo.s",
+      "disassembly": "geo.txt"
+    },
+    {
+      "source": "support/geolab/query.c",
+      "sha256": "26257f14a9add2375687b3fae40aae5e156eb8f0ebdc613dfdc41f2e87e1d140",
+      "assembly": "query.s",
+      "disassembly": "query.txt"
+    }
+  ],
+  "caveat": "Disassembly and assembly are observations; neither is a cycle measurement or universal C translation."
+}

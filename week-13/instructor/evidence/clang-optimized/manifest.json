@@ -1,0 +1,43 @@
+{
+  "compiler": "Ubuntu clang version 14.0.0-1ubuntu1.1",
+  "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "machine": "x86_64",
+  "cpu": "model name\t: 12th Gen Intel(R) Core(TM) i7-12650H",
+  "package": "instructor",
+  "mode": "optimized",
+  "command": [
+    "/mnt/c/Users/Lewis/OneDrive - LATYS/Documents/Github/muratori-enduring-cs-principles/week-13/build/instructor/clang/optimized/bench"
+  ],
+  "samples": 9,
+  "points": 512,
+  "folds_per_batch": 32,
+  "checksum": 4202496,
+  "flags": "C11 strict warnings; POSIX 200809; fno-lto; ffp-contract=off; -O2 -g",
+  "sha256": {
+    "include/timing.h": "6a443fbfef26e6f4ec6960218a979f3cb98144ec1f466b491ed11bbce5b50962",
+    "instructor/src/clock.c": "adea1df70fa90b910de4c3e179950d346c862b82e67a78c03900b3a379171e68",
+    "instructor/src/rate.c": "e263ddee55ea5abf2485e054ee966f9412186c9f6677b09423e1159ecc4ef28a",
+    "instructor/src/sample.c": "a9a2dc0446f833407ca0b0ac16685c509b182693fbe276e24fb88c37d97f769b",
+    "instructor/src/summary.c": "c4c6df110f30b563cde4cd84431c3be23d9686ce9e184ecb66a5d97427571468",
+    "instructor/src/w01.c": "465c1b7aedf1b9533bb5f4399dd0a9a29feacaf790ac1cddd1ff008973a5d8e3",
+    "instructor/src/w02.c": "6b7600e9cea2ac98c0532ca33383018818f13de9141432b3bc152871cd53b897",
+    "instructor/src/w03.c": "194d4f3e084ca6e094dec8f49830970ebd16df2daf9646de3da91e6374b7829d",
+    "learner/src/clock.c": "e448bebcb2afe6af9ed6001f4b9109bea79bc87e87516da7ad658e06939a401f",
+    "learner/src/rate.c": "629c881e8be2c6a7505e9c13769798d3d964cc87bba40630f3802da2ebbe61f8",
+    "learner/src/sample.c": "5ab70d9570a0e5da62ff71ca1b196a2cedd33fca0b3d3c9414b208cec61e4365",
+    "learner/src/summary.c": "e5d273bd914e2c04a7b7e45b56da50010f388376748c333f9d6e5c6d0ffb53e4",
+    "learner/src/w01.c": "b048a947783d981c83444d29601638cba854606d08333934e3e6e29eee04ac2f",
+    "learner/src/w02.c": "4ab404adc245bb42d865a1fb4752e8ff294040c282b2d27a24bc9c41f2ce259c",
+    "learner/src/w03.c": "59bfe7019525d5874c38a2f9a488136f4644813137576b25375290db4106e657",
+    "support/bench.c": "bdd2ee675667eac0c57ddf60496c26d2aa01b3470aefb2164cbe16d16a366cd9",
+    "support/counter.c": "68fc7a05da4ea76be7d783ac7bb5e127d12281e2543399251298e96a83c606b7",
+    "support/geolab_types.h": "6553e94939ad0ec98ede7410ad95da0a31a0867851e341ebb0aed95d1097cf1a",
+    "support/kernel.c": "8614c78ffa01dd80ac23654730f05b26b0cb125e822fadef13750a17d7092f42",
+    "support/kernel.h": "09751289f2c1e27ea06d6be7d021e1c687a80142e914f14969c77d6428f69d8e",
+    "support/playground.c": "81d1f3942a4bad719a189195266ea2d5d63fedfdd29c06811159389b588e4046",
+    "tests/contracts.c": "b9d2fcfd068e7b6a104263258ea4e5805d1824e5469011dd9418b581934310f7",
+    "tests/warmups.c": "15df6d961ac719bd78755fd851e959566b321131098455a25bf484917233e92d"
+  },
+  "binary_sha256": "30a51a0918e8668102de0147225b3fdba4f6c04b6afd23002ee7214383f1fd1c",
+  "raw_sha256": "79e0bf998bb468fdb363d418a431a5d03cf2d54654bc9c91b146967cd7f1f2b4"
+}

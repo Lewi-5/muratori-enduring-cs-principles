@@ -9,6 +9,10 @@ next:
 
 # Week 3 · Numbers in a box
 
+::: tip New to what a double is made of?
+Start with the [Week 3 beginner section](/beginners/week-03): it builds this week's ideas from scratch with checked examples and four short warm-ups. When you finish the lesson, the [further reading](/further-reading/week-03) guides you into seven companion texts.
+:::
+
 You calculate the distance between two nearby points using two formulas learned in mathematics. They are algebraically equivalent, yet the final digits disagree. On a very short distance, one may lose much more information than the other.
 
 The computer has not abandoned mathematics. It is performing a sequence of operations on a finite set of representable numbers. Each operation can round, and different formulas take different routes through that set. This week makes that route visible, then turns the understanding into a geospatial math library.
@@ -118,3 +122,7 @@ A useful error table names the input, reference, observed value, error measure, 
 Week 4 adds text input and many-term accumulation. You should leave this week able to ask how rounding coordinates to six decimal places differs from rounding a floating-point operation, and why summing many distances introduces another error path.
 
 <!-- report -->
+
+## Going further
+
+The [Week 3 further-reading page](/further-reading/week-03) introduces seven companion texts, from *But How Do It Know?* to Hennessy and Patterson, and cross-references every video in this lesson to the sections that explain the same mechanism.

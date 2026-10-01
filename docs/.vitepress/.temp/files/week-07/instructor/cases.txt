@@ -1,0 +1,6 @@
+# hex | expected | purpose
+8b 06 ff ff | mov ax, [65535] | direct address stays unsigned
+8b 80 00 80 | mov ax, [bx + si - 32768] | signed 16-bit lower boundary
+83 46 80 7f | add word [bp - 128], 127 | address byte precedes immediate
+89 d9 8b 06 34 | DEC_TRUNCATED at offset 2 | missing high direct-address byte; no partial output
+81 0e | DEC_UNSUPPORTED_OPERATION at offset 0 | group /1 rejected before address read

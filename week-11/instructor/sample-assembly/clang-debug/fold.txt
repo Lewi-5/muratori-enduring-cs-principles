@@ -1,0 +1,44 @@
+
+week-11/build/instructor/clang/debug/inspection/fold.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fold_ids>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	48 89 7d f0          	mov    QWORD PTR [rbp-0x10],rdi
+   8:	48 89 75 e8          	mov    QWORD PTR [rbp-0x18],rsi
+   c:	48 89 55 e0          	mov    QWORD PTR [rbp-0x20],rdx
+  10:	48 83 7d e0 00       	cmp    QWORD PTR [rbp-0x20],0x0
+  15:	0f 84 16 00 00 00    	je     31 <fold_ids+0x31>
+  1b:	48 83 7d f0 00       	cmp    QWORD PTR [rbp-0x10],0x0
+  20:	0f 85 17 00 00 00    	jne    3d <fold_ids+0x3d>
+  26:	48 83 7d e8 00       	cmp    QWORD PTR [rbp-0x18],0x0
+  2b:	0f 84 0c 00 00 00    	je     3d <fold_ids+0x3d>
+  31:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+  38:	e9 58 00 00 00       	jmp    95 <fold_ids+0x95>
+  3d:	48 c7 45 d8 00 00 00 	mov    QWORD PTR [rbp-0x28],0x0
+  44:	00 
+  45:	48 c7 45 d0 00 00 00 	mov    QWORD PTR [rbp-0x30],0x0
+  4c:	00 
+  4d:	48 8b 45 d0          	mov    rax,QWORD PTR [rbp-0x30]
+  51:	48 3b 45 e8          	cmp    rax,QWORD PTR [rbp-0x18]
+  55:	0f 83 28 00 00 00    	jae    83 <fold_ids+0x83>
+  5b:	48 8b 45 f0          	mov    rax,QWORD PTR [rbp-0x10]
+  5f:	48 6b 4d d0 18       	imul   rcx,QWORD PTR [rbp-0x30],0x18
+  64:	48 01 c8             	add    rax,rcx
+  67:	48 8b 00             	mov    rax,QWORD PTR [rax]
+  6a:	48 03 45 d8          	add    rax,QWORD PTR [rbp-0x28]
+  6e:	48 89 45 d8          	mov    QWORD PTR [rbp-0x28],rax
+  72:	48 8b 45 d0          	mov    rax,QWORD PTR [rbp-0x30]
+  76:	48 83 c0 01          	add    rax,0x1
+  7a:	48 89 45 d0          	mov    QWORD PTR [rbp-0x30],rax
+  7e:	e9 ca ff ff ff       	jmp    4d <fold_ids+0x4d>
+  83:	48 8b 4d d8          	mov    rcx,QWORD PTR [rbp-0x28]
+  87:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20]
+  8b:	48 89 08             	mov    QWORD PTR [rax],rcx
+  8e:	c7 45 fc 01 00 00 00 	mov    DWORD PTR [rbp-0x4],0x1
+  95:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  98:	5d                   	pop    rbp
+  99:	c3                   	ret    

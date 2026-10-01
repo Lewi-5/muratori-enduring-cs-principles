@@ -17,7 +17,7 @@ You can already follow variables, loops, and functions, but systems concepts may
 
 The original syllabus assumes experienced C programmers working roughly 8–10 hours per week. These expanded explanations make the entry path gentler, but do not establish a new completion-time guarantee. Take extra preparation time when needed; keep a record of where it was useful.
 
-## The six completed weeks
+## The completed weeks
 
 | Week | Question | What you build |
 | --- | --- | --- |
@@ -27,8 +27,18 @@ The original syllabus assumes experienced C programmers working roughly 8–10 h
 | [4](/weeks/week-04) | How do bytes and results become reproducible? | A generator, parser, loader, and reference processor |
 | [5](/weeks/week-05) | What makes a timing comparison credible? | The first validated scalar `geolab` checkpoint |
 | [6](/weeks/week-06) | How do bytes describe instructions? | An 8086 subset decoder |
+| [7](/weeks/week-07) | How do instructions describe memory, and how can another program decode them? | Memory operands and a shared decoder library |
+| [8](/weeks/week-08) | How do instructions change registers and arithmetic flags? | A checked register simulator and state traces |
+| [9](/weeks/week-09) | How does a program repeat instructions and access addressed data? | Conditional branches and bounded guest memory |
+| [10](/weeks/week-10) | How does a routine save its continuation and return? | A checked stack, nested calls and lifetime explanations |
+| [11](/weeks/week-11) | How do compiled C functions agree on arguments and saved values? | A scalar ABI planner and actual x64 compiler comparisons |
+| [12](/weeks/week-12) | What does a complete simulator and its evidence establish? | Project 2: specified state simulation, golden traces and an x64 comparison |
+| [13](/weeks/week-13) | Which clock and units make a timing comparison meaningful? | A checked timing harness, raw samples and an optional counter experiment |
+| [14](/weeks/week-14) | How do nested scopes share time, and how does observing change execution? | A bounded recursive profiler and paired overhead measurements |
+| [15](/weeks/week-15) | How does algorithmic work relate to realized time? | Three stable integer-key sorts and a repeated comparison |
+| [16](/weeks/week-16) | Who owns an object and when is access valid? | Lifetime repairs, checked allocation ownership and diagnostics |
 
-`geolab` is a command-line geospatial engine that develops across the larger course. The [52-week syllabus](/materials/PLAN) describes the later allocators, memory experiments, SIMD, concurrency, indexes, and capstone. Weeks 7–52 are planned; this companion does not imply that their exercise packages exist.
+`geolab` is a command-line geospatial engine that develops across the larger course. The [52-week syllabus](/materials/PLAN) describes the later allocators, memory experiments, SIMD, concurrency, indexes, and capstone. Weeks 17–52 are planned; this companion does not imply that their exercise packages exist. Weeks 15 and 16 supply the support needed to work independently.
 
 ## What counts as understanding
 

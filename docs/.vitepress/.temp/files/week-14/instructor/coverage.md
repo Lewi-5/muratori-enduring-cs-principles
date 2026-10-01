@@ -1,0 +1,3 @@
+# Week 14 coverage
+
+All 29 learner IDs have separate answers:10 E contract/reasoning entries, 6 P,2 optional S, 5 R, 3 W and 3 F. E01–E04 have complete typed C references; E05 includes a runnable bench/capture tool and report. Warm-ups have independent bounded exhaustive/boundary tests. tests/inventory.py checks ID equality, tests/contracts.c covers deterministic state/error cases, fixtures/playground.txt checks exact output, tests/check.py checks real output structure and checksums without time thresholds. Six compiler/mode gates and forced unsupported-counter gates where relevant distinguish correctness from performance. See validation.md for executed evidence and limits.

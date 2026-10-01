@@ -3,7 +3,7 @@ layout: home
 hero:
   name: Enduring CS Principles
   text: From C source to evidence.
-  tagline: Six guided weeks connecting programs, representations, numerical reasoning, and machine instructions.
+  tagline: Guided weeks connecting programs, representations, numerical reasoning, machine instructions, and stack discipline.
   actions:
     - theme: brand
       text: Start the course

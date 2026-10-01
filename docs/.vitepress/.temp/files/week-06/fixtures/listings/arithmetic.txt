@@ -1,0 +1,22 @@
+bits 16
+add cx, bx
+add cx, bx
+sub cx, bx
+sub cx, bx
+cmp cx, bx
+cmp cx, bx
+add al, ah
+sub al, ah
+cmp al, ah
+add al, 5
+add ax, -4096
+sub al, -1
+sub ax, 1
+cmp al, -128
+cmp ax, -2
+add dl, 5
+sub dl, 5
+cmp dl, 5
+add dx, 256
+sub dx, 256
+cmp dx, 256

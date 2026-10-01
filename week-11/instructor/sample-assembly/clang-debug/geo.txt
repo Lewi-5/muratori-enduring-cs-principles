@@ -1,0 +1,201 @@
+
+week-11/build/instructor/clang/debug/inspection/geo.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <geo_valid_position>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+   9:	f2 0f 11 4d f0       	movsd  QWORD PTR [rbp-0x10],xmm1
+   e:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+  13:	0f 28 0d 00 00 00 00 	movaps xmm1,XMMWORD PTR [rip+0x0]        # 1a <geo_valid_position+0x1a>
+			16: R_X86_64_PC32	.LCPI0_1-0x4
+  1a:	66 0f db c1          	pand   xmm0,xmm1
+  1e:	31 c0                	xor    eax,eax
+  20:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # 28 <geo_valid_position+0x28>
+  27:	00 
+			24: R_X86_64_PC32	.LCPI0_0-0x4
+  28:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  2c:	88 45 ef             	mov    BYTE PTR [rbp-0x11],al
+  2f:	0f 84 8a 00 00 00    	je     bf <geo_valid_position+0xbf>
+  35:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+  3a:	0f 28 0d 00 00 00 00 	movaps xmm1,XMMWORD PTR [rip+0x0]        # 41 <geo_valid_position+0x41>
+			3d: R_X86_64_PC32	.LCPI0_1-0x4
+  41:	66 0f db c1          	pand   xmm0,xmm1
+  45:	31 c0                	xor    eax,eax
+  47:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # 4f <geo_valid_position+0x4f>
+  4e:	00 
+			4b: R_X86_64_PC32	.LCPI0_0-0x4
+  4f:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  53:	88 45 ef             	mov    BYTE PTR [rbp-0x11],al
+  56:	0f 84 63 00 00 00    	je     bf <geo_valid_position+0xbf>
+  5c:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+  61:	31 c0                	xor    eax,eax
+  63:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # 6b <geo_valid_position+0x6b>
+  6a:	00 
+			67: R_X86_64_PC32	.LCPI0_2-0x4
+  6b:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  6f:	88 45 ef             	mov    BYTE PTR [rbp-0x11],al
+  72:	0f 82 47 00 00 00    	jb     bf <geo_valid_position+0xbf>
+  78:	31 c0                	xor    eax,eax
+  7a:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 82 <geo_valid_position+0x82>
+  81:	00 
+			7e: R_X86_64_PC32	.LCPI0_3-0x4
+  82:	66 0f 2e 45 f8       	ucomisd xmm0,QWORD PTR [rbp-0x8]
+  87:	88 45 ef             	mov    BYTE PTR [rbp-0x11],al
+  8a:	0f 82 2f 00 00 00    	jb     bf <geo_valid_position+0xbf>
+  90:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+  95:	31 c0                	xor    eax,eax
+  97:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # 9f <geo_valid_position+0x9f>
+  9e:	00 
+			9b: R_X86_64_PC32	.LCPI0_4-0x4
+  9f:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  a3:	88 45 ef             	mov    BYTE PTR [rbp-0x11],al
+  a6:	0f 82 13 00 00 00    	jb     bf <geo_valid_position+0xbf>
+  ac:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # b4 <geo_valid_position+0xb4>
+  b3:	00 
+			b0: R_X86_64_PC32	.LCPI0_5-0x4
+  b4:	66 0f 2e 45 f0       	ucomisd xmm0,QWORD PTR [rbp-0x10]
+  b9:	0f 93 c0             	setae  al
+  bc:	88 45 ef             	mov    BYTE PTR [rbp-0x11],al
+  bf:	8a 45 ef             	mov    al,BYTE PTR [rbp-0x11]
+  c2:	24 01                	and    al,0x1
+  c4:	0f b6 c0             	movzx  eax,al
+  c7:	5d                   	pop    rbp
+  c8:	c3                   	ret    
+  c9:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+00000000000000d0 <geo_distance_km>:
+  d0:	55                   	push   rbp
+  d1:	48 89 e5             	mov    rbp,rsp
+  d4:	48 83 ec 60          	sub    rsp,0x60
+  d8:	f2 0f 11 45 f0       	movsd  QWORD PTR [rbp-0x10],xmm0
+  dd:	f2 0f 11 4d e8       	movsd  QWORD PTR [rbp-0x18],xmm1
+  e2:	f2 0f 11 55 e0       	movsd  QWORD PTR [rbp-0x20],xmm2
+  e7:	f2 0f 11 5d d8       	movsd  QWORD PTR [rbp-0x28],xmm3
+  ec:	48 89 7d d0          	mov    QWORD PTR [rbp-0x30],rdi
+  f0:	48 83 7d d0 00       	cmp    QWORD PTR [rbp-0x30],0x0
+  f5:	0f 84 30 00 00 00    	je     12b <geo_distance_km+0x5b>
+  fb:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+ 100:	f2 0f 10 4d e8       	movsd  xmm1,QWORD PTR [rbp-0x18]
+ 105:	e8 00 00 00 00       	call   10a <geo_distance_km+0x3a>
+			106: R_X86_64_PLT32	geo_valid_position-0x4
+ 10a:	83 f8 00             	cmp    eax,0x0
+ 10d:	0f 84 18 00 00 00    	je     12b <geo_distance_km+0x5b>
+ 113:	f2 0f 10 45 e0       	movsd  xmm0,QWORD PTR [rbp-0x20]
+ 118:	f2 0f 10 4d d8       	movsd  xmm1,QWORD PTR [rbp-0x28]
+ 11d:	e8 00 00 00 00       	call   122 <geo_distance_km+0x52>
+			11e: R_X86_64_PLT32	geo_valid_position-0x4
+ 122:	83 f8 00             	cmp    eax,0x0
+ 125:	0f 85 0c 00 00 00    	jne    137 <geo_distance_km+0x67>
+ 12b:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+ 132:	e9 e9 00 00 00       	jmp    220 <geo_distance_km+0x150>
+ 137:	f2 0f 10 45 e0       	movsd  xmm0,QWORD PTR [rbp-0x20]
+ 13c:	f2 0f 5c 45 f0       	subsd  xmm0,QWORD PTR [rbp-0x10]
+ 141:	e8 ea 00 00 00       	call   230 <deg_to_rad>
+ 146:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # 14e <geo_distance_km+0x7e>
+ 14d:	00 
+			14a: R_X86_64_PC32	.LCPI1_1-0x4
+ 14e:	f2 0f 5e c1          	divsd  xmm0,xmm1
+ 152:	e8 00 00 00 00       	call   157 <geo_distance_km+0x87>
+			153: R_X86_64_PLT32	sin-0x4
+ 157:	f2 0f 11 45 c8       	movsd  QWORD PTR [rbp-0x38],xmm0
+ 15c:	f2 0f 10 45 d8       	movsd  xmm0,QWORD PTR [rbp-0x28]
+ 161:	f2 0f 5c 45 e8       	subsd  xmm0,QWORD PTR [rbp-0x18]
+ 166:	e8 c5 00 00 00       	call   230 <deg_to_rad>
+ 16b:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # 173 <geo_distance_km+0xa3>
+ 172:	00 
+			16f: R_X86_64_PC32	.LCPI1_1-0x4
+ 173:	f2 0f 5e c1          	divsd  xmm0,xmm1
+ 177:	e8 00 00 00 00       	call   17c <geo_distance_km+0xac>
+			178: R_X86_64_PLT32	sin-0x4
+ 17c:	f2 0f 11 45 c0       	movsd  QWORD PTR [rbp-0x40],xmm0
+ 181:	f2 0f 10 45 c8       	movsd  xmm0,QWORD PTR [rbp-0x38]
+ 186:	f2 0f 59 45 c8       	mulsd  xmm0,QWORD PTR [rbp-0x38]
+ 18b:	f2 0f 11 45 b0       	movsd  QWORD PTR [rbp-0x50],xmm0
+ 190:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+ 195:	e8 96 00 00 00       	call   230 <deg_to_rad>
+ 19a:	e8 00 00 00 00       	call   19f <geo_distance_km+0xcf>
+			19b: R_X86_64_PLT32	cos-0x4
+ 19f:	f2 0f 11 45 a8       	movsd  QWORD PTR [rbp-0x58],xmm0
+ 1a4:	f2 0f 10 45 e0       	movsd  xmm0,QWORD PTR [rbp-0x20]
+ 1a9:	e8 82 00 00 00       	call   230 <deg_to_rad>
+ 1ae:	e8 00 00 00 00       	call   1b3 <geo_distance_km+0xe3>
+			1af: R_X86_64_PLT32	cos-0x4
+ 1b3:	f2 0f 10 4d a8       	movsd  xmm1,QWORD PTR [rbp-0x58]
+ 1b8:	0f 28 d0             	movaps xmm2,xmm0
+ 1bb:	f2 0f 10 45 b0       	movsd  xmm0,QWORD PTR [rbp-0x50]
+ 1c0:	f2 0f 59 ca          	mulsd  xmm1,xmm2
+ 1c4:	f2 0f 59 4d c0       	mulsd  xmm1,QWORD PTR [rbp-0x40]
+ 1c9:	f2 0f 59 4d c0       	mulsd  xmm1,QWORD PTR [rbp-0x40]
+ 1ce:	f2 0f 58 c1          	addsd  xmm0,xmm1
+ 1d2:	f2 0f 11 45 b8       	movsd  QWORD PTR [rbp-0x48],xmm0
+ 1d7:	f2 0f 10 45 b8       	movsd  xmm0,QWORD PTR [rbp-0x48]
+ 1dc:	0f 57 c9             	xorps  xmm1,xmm1
+ 1df:	f2 0f 10 15 00 00 00 	movsd  xmm2,QWORD PTR [rip+0x0]        # 1e7 <geo_distance_km+0x117>
+ 1e6:	00 
+			1e3: R_X86_64_PC32	.LCPI1_2-0x4
+ 1e7:	e8 64 00 00 00       	call   250 <clamp>
+ 1ec:	e8 00 00 00 00       	call   1f1 <geo_distance_km+0x121>
+			1ed: R_X86_64_PLT32	sqrt-0x4
+ 1f1:	e8 00 00 00 00       	call   1f6 <geo_distance_km+0x126>
+			1f2: R_X86_64_PLT32	asin-0x4
+ 1f6:	0f 28 c8             	movaps xmm1,xmm0
+ 1f9:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 201 <geo_distance_km+0x131>
+ 200:	00 
+			1fd: R_X86_64_PC32	.LCPI1_1-0x4
+ 201:	f2 0f 59 c1          	mulsd  xmm0,xmm1
+ 205:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # 20d <geo_distance_km+0x13d>
+ 20c:	00 
+			209: R_X86_64_PC32	.LCPI1_0-0x4
+ 20d:	f2 0f 59 c1          	mulsd  xmm0,xmm1
+ 211:	48 8b 45 d0          	mov    rax,QWORD PTR [rbp-0x30]
+ 215:	f2 0f 11 00          	movsd  QWORD PTR [rax],xmm0
+ 219:	c7 45 fc 01 00 00 00 	mov    DWORD PTR [rbp-0x4],0x1
+ 220:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+ 223:	48 83 c4 60          	add    rsp,0x60
+ 227:	5d                   	pop    rbp
+ 228:	c3                   	ret    
+ 229:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+0000000000000230 <deg_to_rad>:
+ 230:	55                   	push   rbp
+ 231:	48 89 e5             	mov    rbp,rsp
+ 234:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+ 239:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 241 <deg_to_rad+0x11>
+ 240:	00 
+			23d: R_X86_64_PC32	.LCPI2_0-0x4
+ 241:	f2 0f 59 45 f8       	mulsd  xmm0,QWORD PTR [rbp-0x8]
+ 246:	5d                   	pop    rbp
+ 247:	c3                   	ret    
+ 248:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+ 24f:	00 
+
+0000000000000250 <clamp>:
+ 250:	55                   	push   rbp
+ 251:	48 89 e5             	mov    rbp,rsp
+ 254:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+ 259:	f2 0f 11 4d f0       	movsd  QWORD PTR [rbp-0x10],xmm1
+ 25e:	f2 0f 11 55 e8       	movsd  QWORD PTR [rbp-0x18],xmm2
+ 263:	f2 0f 10 4d f8       	movsd  xmm1,QWORD PTR [rbp-0x8]
+ 268:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+ 26d:	66 0f 2e c1          	ucomisd xmm0,xmm1
+ 271:	0f 86 0f 00 00 00    	jbe    286 <clamp+0x36>
+ 277:	f2 0f 10 45 f0       	movsd  xmm0,QWORD PTR [rbp-0x10]
+ 27c:	f2 0f 11 45 e0       	movsd  QWORD PTR [rbp-0x20],xmm0
+ 281:	e9 33 00 00 00       	jmp    2b9 <clamp+0x69>
+ 286:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+ 28b:	66 0f 2e 45 e8       	ucomisd xmm0,QWORD PTR [rbp-0x18]
+ 290:	0f 86 0f 00 00 00    	jbe    2a5 <clamp+0x55>
+ 296:	f2 0f 10 45 e8       	movsd  xmm0,QWORD PTR [rbp-0x18]
+ 29b:	f2 0f 11 45 d8       	movsd  QWORD PTR [rbp-0x28],xmm0
+ 2a0:	e9 0a 00 00 00       	jmp    2af <clamp+0x5f>
+ 2a5:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+ 2aa:	f2 0f 11 45 d8       	movsd  QWORD PTR [rbp-0x28],xmm0
+ 2af:	f2 0f 10 45 d8       	movsd  xmm0,QWORD PTR [rbp-0x28]
+ 2b4:	f2 0f 11 45 e0       	movsd  QWORD PTR [rbp-0x20],xmm0
+ 2b9:	f2 0f 10 45 e0       	movsd  xmm0,QWORD PTR [rbp-0x20]
+ 2be:	5d                   	pop    rbp
+ 2bf:	c3                   	ret    

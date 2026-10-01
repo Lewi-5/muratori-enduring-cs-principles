@@ -1,0 +1,100 @@
+
+week-11/build/instructor/gcc/debug/inspection/wrappers.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <distance_to_origin>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   rbp
+   5:	48 89 e5             	mov    rbp,rsp
+   8:	48 83 ec 20          	sub    rsp,0x20
+   c:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+  11:	f2 0f 11 4d f0       	movsd  QWORD PTR [rbp-0x10],xmm1
+  16:	48 89 7d e8          	mov    QWORD PTR [rbp-0x18],rdi
+  1a:	48 8b 45 e8          	mov    rax,QWORD PTR [rbp-0x18]
+  1e:	f2 0f 10 4d f0       	movsd  xmm1,QWORD PTR [rbp-0x10]
+  23:	f2 0f 10 45 f8       	movsd  xmm0,QWORD PTR [rbp-0x8]
+  28:	48 89 c7             	mov    rdi,rax
+  2b:	66 0f 28 d9          	movapd xmm3,xmm1
+  2f:	66 0f 28 d0          	movapd xmm2,xmm0
+  33:	66 0f ef c9          	pxor   xmm1,xmm1
+  37:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 3e <distance_to_origin+0x3e>
+			3a: R_X86_64_PC32	.rodata-0x4
+  3e:	66 48 0f 6e c0       	movq   xmm0,rax
+  43:	e8 00 00 00 00       	call   48 <distance_to_origin+0x48>
+			44: R_X86_64_PLT32	geo_distance_km-0x4
+  48:	c9                   	leave  
+  49:	c3                   	ret    
+
+000000000000004a <compare_hit_values>:
+  4a:	f3 0f 1e fa          	endbr64 
+  4e:	55                   	push   rbp
+  4f:	48 89 e5             	mov    rbp,rsp
+  52:	48 83 ec 70          	sub    rsp,0x70
+  56:	48 89 7d b8          	mov    QWORD PTR [rbp-0x48],rdi
+  5a:	f2 0f 11 45 b0       	movsd  QWORD PTR [rbp-0x50],xmm0
+  5f:	48 89 75 a8          	mov    QWORD PTR [rbp-0x58],rsi
+  63:	f2 0f 11 4d a0       	movsd  QWORD PTR [rbp-0x60],xmm1
+  68:	48 89 55 98          	mov    QWORD PTR [rbp-0x68],rdx
+  6c:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+  73:	00 00 
+  75:	48 89 45 f8          	mov    QWORD PTR [rbp-0x8],rax
+  79:	31 c0                	xor    eax,eax
+  7b:	48 83 7d 98 00       	cmp    QWORD PTR [rbp-0x68],0x0
+  80:	74 54                	je     d6 <compare_hit_values+0x8c>
+  82:	f2 0f 10 45 b0       	movsd  xmm0,QWORD PTR [rbp-0x50]
+  87:	f3 0f 7e 0d 00 00 00 	movq   xmm1,QWORD PTR [rip+0x0]        # 8f <compare_hit_values+0x45>
+  8e:	00 
+			8b: R_X86_64_PC32	.rodata+0xc
+  8f:	66 0f 54 c8          	andpd  xmm1,xmm0
+  93:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # 9b <compare_hit_values+0x51>
+  9a:	00 
+			97: R_X86_64_PC32	.rodata+0x1c
+  9b:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  9f:	72 35                	jb     d6 <compare_hit_values+0x8c>
+  a1:	f2 0f 10 45 a0       	movsd  xmm0,QWORD PTR [rbp-0x60]
+  a6:	f3 0f 7e 0d 00 00 00 	movq   xmm1,QWORD PTR [rip+0x0]        # ae <compare_hit_values+0x64>
+  ad:	00 
+			aa: R_X86_64_PC32	.rodata+0xc
+  ae:	66 0f 54 c8          	andpd  xmm1,xmm0
+  b2:	f2 0f 10 05 00 00 00 	movsd  xmm0,QWORD PTR [rip+0x0]        # ba <compare_hit_values+0x70>
+  b9:	00 
+			b6: R_X86_64_PC32	.rodata+0x1c
+  ba:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  be:	72 16                	jb     d6 <compare_hit_values+0x8c>
+  c0:	66 0f ef c0          	pxor   xmm0,xmm0
+  c4:	66 0f 2f 45 b0       	comisd xmm0,QWORD PTR [rbp-0x50]
+  c9:	77 0b                	ja     d6 <compare_hit_values+0x8c>
+  cb:	66 0f ef c0          	pxor   xmm0,xmm0
+  cf:	66 0f 2f 45 a0       	comisd xmm0,QWORD PTR [rbp-0x60]
+  d4:	76 07                	jbe    dd <compare_hit_values+0x93>
+  d6:	b8 00 00 00 00       	mov    eax,0x0
+  db:	eb 48                	jmp    125 <compare_hit_values+0xdb>
+  dd:	48 8b 45 b8          	mov    rax,QWORD PTR [rbp-0x48]
+  e1:	48 89 45 d0          	mov    QWORD PTR [rbp-0x30],rax
+  e5:	f2 0f 10 45 b0       	movsd  xmm0,QWORD PTR [rbp-0x50]
+  ea:	f2 0f 11 45 d8       	movsd  QWORD PTR [rbp-0x28],xmm0
+  ef:	48 8b 45 a8          	mov    rax,QWORD PTR [rbp-0x58]
+  f3:	48 89 45 e0          	mov    QWORD PTR [rbp-0x20],rax
+  f7:	f2 0f 10 45 a0       	movsd  xmm0,QWORD PTR [rbp-0x60]
+  fc:	f2 0f 11 45 e8       	movsd  QWORD PTR [rbp-0x18],xmm0
+ 101:	48 8d 55 e0          	lea    rdx,[rbp-0x20]
+ 105:	48 8d 45 d0          	lea    rax,[rbp-0x30]
+ 109:	48 89 d6             	mov    rsi,rdx
+ 10c:	48 89 c7             	mov    rdi,rax
+ 10f:	e8 00 00 00 00       	call   114 <compare_hit_values+0xca>
+			110: R_X86_64_PLT32	query_hit_compare-0x4
+ 114:	89 45 cc             	mov    DWORD PTR [rbp-0x34],eax
+ 117:	48 8b 45 98          	mov    rax,QWORD PTR [rbp-0x68]
+ 11b:	8b 55 cc             	mov    edx,DWORD PTR [rbp-0x34]
+ 11e:	89 10                	mov    DWORD PTR [rax],edx
+ 120:	b8 01 00 00 00       	mov    eax,0x1
+ 125:	48 8b 55 f8          	mov    rdx,QWORD PTR [rbp-0x8]
+ 129:	64 48 2b 14 25 28 00 	sub    rdx,QWORD PTR fs:0x28
+ 130:	00 00 
+ 132:	74 05                	je     139 <compare_hit_values+0xef>
+ 134:	e8 00 00 00 00       	call   139 <compare_hit_values+0xef>
+			135: R_X86_64_PLT32	__stack_chk_fail-0x4
+ 139:	c9                   	leave  
+ 13a:	c3                   	ret    

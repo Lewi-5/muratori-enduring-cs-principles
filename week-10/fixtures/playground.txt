@@ -1,0 +1,2 @@
+ax=5679 bx=1234 sp=0100 ip=0014 steps=10
+stale return bytes=06 00 saved ax bytes=34 12

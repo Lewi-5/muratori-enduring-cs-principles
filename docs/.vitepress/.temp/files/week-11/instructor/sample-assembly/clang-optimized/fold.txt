@@ -1,0 +1,57 @@
+
+week-11/build/instructor/clang/optimized/inspection/fold.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fold_ids>:
+   0:	31 c0                	xor    eax,eax
+   2:	48 85 d2             	test   rdx,rdx
+   5:	74 0a                	je     11 <fold_ids+0x11>
+   7:	48 85 ff             	test   rdi,rdi
+   a:	75 06                	jne    12 <fold_ids+0x12>
+   c:	48 85 f6             	test   rsi,rsi
+   f:	74 01                	je     12 <fold_ids+0x12>
+  11:	c3                   	ret    
+  12:	48 85 f6             	test   rsi,rsi
+  15:	74 18                	je     2f <fold_ids+0x2f>
+  17:	48 8d 46 ff          	lea    rax,[rsi-0x1]
+  1b:	41 89 f0             	mov    r8d,esi
+  1e:	41 83 e0 03          	and    r8d,0x3
+  22:	48 83 f8 03          	cmp    rax,0x3
+  26:	73 0b                	jae    33 <fold_ids+0x33>
+  28:	45 31 c9             	xor    r9d,r9d
+  2b:	31 c0                	xor    eax,eax
+  2d:	eb 2d                	jmp    5c <fold_ids+0x5c>
+  2f:	31 c0                	xor    eax,eax
+  31:	eb 5a                	jmp    8d <fold_ids+0x8d>
+  33:	48 83 e6 fc          	and    rsi,0xfffffffffffffffc
+  37:	45 31 c9             	xor    r9d,r9d
+  3a:	48 89 f9             	mov    rcx,rdi
+  3d:	31 c0                	xor    eax,eax
+  3f:	90                   	nop
+  40:	48 03 01             	add    rax,QWORD PTR [rcx]
+  43:	48 03 41 18          	add    rax,QWORD PTR [rcx+0x18]
+  47:	48 03 41 30          	add    rax,QWORD PTR [rcx+0x30]
+  4b:	48 03 41 48          	add    rax,QWORD PTR [rcx+0x48]
+  4f:	49 83 c1 04          	add    r9,0x4
+  53:	48 83 c1 60          	add    rcx,0x60
+  57:	4c 39 ce             	cmp    rsi,r9
+  5a:	75 e4                	jne    40 <fold_ids+0x40>
+  5c:	4d 85 c0             	test   r8,r8
+  5f:	74 2c                	je     8d <fold_ids+0x8d>
+  61:	4b 8d 0c 49          	lea    rcx,[r9+r9*2]
+  65:	48 8d 0c cf          	lea    rcx,[rdi+rcx*8]
+  69:	49 c1 e0 03          	shl    r8,0x3
+  6d:	4b 8d 34 40          	lea    rsi,[r8+r8*2]
+  71:	31 ff                	xor    edi,edi
+  73:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+  7a:	00 00 00 
+  7d:	0f 1f 00             	nop    DWORD PTR [rax]
+  80:	48 03 04 39          	add    rax,QWORD PTR [rcx+rdi*1]
+  84:	48 83 c7 18          	add    rdi,0x18
+  88:	48 39 fe             	cmp    rsi,rdi
+  8b:	75 f3                	jne    80 <fold_ids+0x80>
+  8d:	48 89 02             	mov    QWORD PTR [rdx],rax
+  90:	b8 01 00 00 00       	mov    eax,0x1
+  95:	c3                   	ret    

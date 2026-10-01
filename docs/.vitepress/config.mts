@@ -1,11 +1,11 @@
 import { defineConfig } from 'vitepress'
-import { prepare, weeks, files, out, root } from '../../tools/docs/prepare.mjs'
+import { prepare, weeks, files, out, root, beginnerWeeks, readingWeeks } from '../../tools/docs/prepare.mjs'
 import path from 'node:path'
 
 const lessonItems = weeks.map(w => ({ text: `W${w.n} · ${w.title}`, link: `/weeks/${w.slug}` }))
 export default defineConfig({
   title: 'Enduring CS Principles',
-  description: 'From C source to evidence: six guided weeks of systems programming.',
+  description: 'From C source to evidence: guided weeks of systems programming.',
   srcDir: '.generated',
   srcExclude: ['public/**'],
   cleanUrls: false,
@@ -13,6 +13,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Start here', link: '/guide/start' },
+      { text: 'Beginner sections', link: '/beginners/' },
       { text: 'Weeks', link: '/weeks/week-01' },
       { text: 'Readings and videos', link: '/reference/readings' },
       { text: 'Reference', link: '/reference/tools' },
@@ -26,8 +27,11 @@ export default defineConfig({
       ] },
       { text: 'C, representation, and an experiment', items: lessonItems.slice(0, 5) },
       { text: 'From bytes to instructions', items: lessonItems.slice(5) },
+      { text: 'Beginner sections', collapsed: true, items: [{ text: 'How to use them', link: '/beginners/' }, ...beginnerWeeks.map(w => ({ text: `W${w.n} · Ease in`, link: `/beginners/${w.slug}` }))] },
+      { text: 'Further reading', collapsed: true, items: [{ text: 'Reading map (52 weeks)', link: '/reference/reading-map' }, ...readingWeeks.map(w => ({ text: `W${w.n} · Further reading`, link: `/further-reading/${w.slug}` }))] },
       { text: 'Reference', items: [
         { text: 'Readings and videos', link: '/reference/readings' },
+        { text: 'Reading map', link: '/reference/reading-map' },
         { text: 'Tools and commands', link: '/reference/tools' },
         { text: 'Glossary', link: '/reference/glossary' },
         { text: '52-week syllabus', link: '/materials/PLAN' },

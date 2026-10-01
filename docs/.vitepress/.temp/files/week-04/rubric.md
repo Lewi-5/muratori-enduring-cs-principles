@@ -1,0 +1,12 @@
+# Rubric — one notebook, 100 points
+
+| Area | Points | Full-credit evidence |
+| --- | ---: | --- |
+| Functional correctness | 40 | E01 4, E02 5, E03 6, E04 7, E05 8, E06 6, E07 4. Correct normal results, boundary and error handling (rejected calls leave outputs unchanged), defined C operations, no leak on any error path, and strict builds under both compilers at `-O0` and `-O2` with `-ffp-contract=off`. |
+| Data-pipeline reasoning | 25 | Five each: determinism and pseudo-random numbers; text formats, grammars and exact conversion; errors, ownership and cleanup; accumulation and numerical error; reference implementations with two qualified implementation-dependent observations. Worked examples and derivations matter more than terminology alone. |
+| Prediction and measurement method | 20 | Five each: environment and flags (including that no fast-math flag was used); predictions recorded **before** running (the E03 byte-size range and five E04 statuses); error measured against an exact or independent reference with a justified tolerance; correct labelling of each claim as C11, IEC 60559, POSIX/Linux, glibc, oracle or observed. |
+| Clarity | 15 | Five each: readable source and diagnostics; explicit contracts and navigable IDs; a coherent notebook understandable without the videos. |
+
+Award roughly half of an item for mostly correct work with a missing explanation or a recoverable edge error; zero for missing work, for a claim that no derivation or recorded run supports, or for a solution that depends on undefined behavior, on a forbidden compiler flag, or on a leak or an unchecked library result on an error path. Explain deductions concretely. Public tests are evidence, not proof of every precondition: read the code as well as the test result. Alternative correct implementations, designs, tolerances and observations receive credit provided the tolerance is justified. Do not penalize a learner because their machine's `libm` differs from the exemplar in the last digits, or because a gated check is correctly skipped on another platform.
+
+There is no timing and no performance threshold this week. Practice is ungraded and stretch optional; both have complete answers. No points depend on fitting an unvalidated time estimate; learners should record overruns so the workload can be adjusted after a real pilot. Submission includes source, build recipe, test output and notebook.

@@ -1,0 +1,46 @@
+
+week-11/build/instructor/gcc/debug/inspection/fold.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <fold_ids>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   rbp
+   5:	48 89 e5             	mov    rbp,rsp
+   8:	48 89 7d e8          	mov    QWORD PTR [rbp-0x18],rdi
+   c:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi
+  10:	48 89 55 d8          	mov    QWORD PTR [rbp-0x28],rdx
+  14:	48 83 7d d8 00       	cmp    QWORD PTR [rbp-0x28],0x0
+  19:	74 0e                	je     29 <fold_ids+0x29>
+  1b:	48 83 7d e8 00       	cmp    QWORD PTR [rbp-0x18],0x0
+  20:	75 0e                	jne    30 <fold_ids+0x30>
+  22:	48 83 7d e0 00       	cmp    QWORD PTR [rbp-0x20],0x0
+  27:	74 07                	je     30 <fold_ids+0x30>
+  29:	b8 00 00 00 00       	mov    eax,0x0
+  2e:	eb 53                	jmp    83 <fold_ids+0x83>
+  30:	48 c7 45 f0 00 00 00 	mov    QWORD PTR [rbp-0x10],0x0
+  37:	00 
+  38:	48 c7 45 f8 00 00 00 	mov    QWORD PTR [rbp-0x8],0x0
+  3f:	00 
+  40:	eb 27                	jmp    69 <fold_ids+0x69>
+  42:	48 8b 55 f8          	mov    rdx,QWORD PTR [rbp-0x8]
+  46:	48 89 d0             	mov    rax,rdx
+  49:	48 01 c0             	add    rax,rax
+  4c:	48 01 d0             	add    rax,rdx
+  4f:	48 c1 e0 03          	shl    rax,0x3
+  53:	48 89 c2             	mov    rdx,rax
+  56:	48 8b 45 e8          	mov    rax,QWORD PTR [rbp-0x18]
+  5a:	48 01 d0             	add    rax,rdx
+  5d:	48 8b 00             	mov    rax,QWORD PTR [rax]
+  60:	48 01 45 f0          	add    QWORD PTR [rbp-0x10],rax
+  64:	48 83 45 f8 01       	add    QWORD PTR [rbp-0x8],0x1
+  69:	48 8b 45 f8          	mov    rax,QWORD PTR [rbp-0x8]
+  6d:	48 3b 45 e0          	cmp    rax,QWORD PTR [rbp-0x20]
+  71:	72 cf                	jb     42 <fold_ids+0x42>
+  73:	48 8b 45 d8          	mov    rax,QWORD PTR [rbp-0x28]
+  77:	48 8b 55 f0          	mov    rdx,QWORD PTR [rbp-0x10]
+  7b:	48 89 10             	mov    QWORD PTR [rax],rdx
+  7e:	b8 01 00 00 00       	mov    eax,0x1
+  83:	5d                   	pop    rbp
+  84:	c3                   	ret    

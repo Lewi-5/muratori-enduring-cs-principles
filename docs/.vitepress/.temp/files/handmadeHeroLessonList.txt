@@ -1,0 +1,709 @@
+Day 1: Intro to C on Windows - Day 1
+Day 1qa: Intro to C on Windows - Day 1 Q&A
+Day 2: Intro to C on Windows - Day 2
+Day 2qa: Intro to C on Windows - Day 2 Q&A
+Day 3: Intro to C on Windows - Day 3
+Day 3qa: Intro to C on Windows - Day 3 Q&A
+Day 4: Intro to C on Windows - Day 4
+Day 4qa: Intro to C on Windows - Day 4 Q&A
+Day 5: Intro to C on Windows - Day 5
+Day 5qa: Intro to C on Windows - Day 5 Q&A
+Day 001: Setting Up the Windows Build
+Day 001qa: Setting Up the Windows Build - Q&A
+Day 002: Opening a Win32 Window
+Day 002qa: Opening a Win32 Window - Q&A
+Day 003: Allocating a Back Buffer
+Day 004: Animating the Back Buffer
+Day 005: Windows Graphics Review
+Day 006: Gamepad and Keyboard Input
+Day 007: Initializing DirectSound
+Day 008: Writing a Square Wave to DirectSound
+Day 009: Variable-Pitch Sine Wave Output
+Day 010: QueryPerformanceCounter and RDTSC
+Day 011: The Basics of Platform API Design
+Day 012: Platform-independent Sound Output
+Day 013: Platform-independent User Input
+Day 014: Platform-independent Game Memory
+Day 015: Platform-independent Debug File I/O
+Day 016: VisualStudio Compiler Switches
+Day 017: Unified Keyboard and Gamepad Input
+Day 018: Enforcing a Video Frame Rate
+Day 019: Improving Audio Synchronization
+Day 020: Debugging the Audio Sync
+Day 021: Loading Game Code Dynamically
+Day 022: Instantaneous Live Code Editing
+Day 023: Looped Live Code Editing
+Day 024: Win32 Platform Layer Cleanup
+Day 025: Finishing the Win32 Prototyping Layer
+Day 026: Introduction to Game Architecture
+Day 027: Exploration-based Architecture
+Day 028: Drawing a Tile Map
+Day 029: Basic Tile Map Collision Checking
+Day 030: Moving Between Tile Maps
+Day 031: Tilemap Coordinate Systems
+Day 032: Unified Position Representation
+Day 033: Virtualized Tile Maps
+Day 034: Tile Map Memory
+Day 035: Basic Sparse Tilemap Storage
+Day 036: Loading BMPs
+Day 037: Basic Bitmap Rendering
+Day 038: Basic Linear Bitmap Blending
+Day 039: Basic Bitmap Rendering Cleanup
+Day 040: Cursor Hiding and Fullscreen Support
+Day 041: Overview of the Types of Math Used in Games
+Day 042: Basic 2D Vectors
+Day 043: The Equations of Motion
+Day 044: Reflecting Vectors
+Day 045: Geometric vs. Temporal Movement Search
+Day 046: Basic Multiplayer Support
+Day 047: Vector Lengths
+Day 048: Line Segment Intersection Collisions
+Day 049: Debugging Canonical Coordinates
+Day 050: Basic Minkowski-based Collision Detection
+Day 051: Separating Entities By Update Frequency
+Day 052: Entity Movement in Camera Space
+Day 053: Environment Elements as Entities
+Day 054: Removing the Dormant Entity Concept
+Day 055: Hash-based World Storage
+Day 056: Switch from Tiles to Entities
+Day 057: Spatially Partitioning Entities
+Day 058: Using the Spatial Partition
+Day 059: Adding a Basic Familiar Entity
+Day 060: Adding Hitpoints
+Day 061: Adding a Simple Attack
+Day 062: Basic Moving Projectiles
+Day 063: Simulation Regions
+Day 064: Mapping Entity Indexes to Pointers
+Day 065: Finishing the Simulation Region Change
+Day 066: Adding Support for Non-spatial Entities
+Day 067: Making Updates Conditional
+Day 068: Exact Enforcement of Maximum Movement Distances
+Day 069: Pairwise Collision Rules
+Day 070: Exploration To-do List
+Day 071: Converting to Full 3D Positioning
+Day 072: Proper 3D Inclusion Tests
+Day 073: Temporarily Overlapping Entities
+Day 074: Moving Entities Up and Down Stairwells
+Day 075: Conditional Movement Based on Step Heights
+Day 076: Entity Heights and Collision Detection
+Day 077: Entity Ground Points
+Day 078: Multiple Collision Volumes Per Entity
+Day 079: Defining the Ground
+Day 080: Handling Traversables in the Collision Loop
+Day 081: Creating Ground with Overlapping Bitmaps
+Day 082: Caching Composited Bitmaps
+Day 083: Premultiplied Alpha
+Day 084: Scrolling Ground Buffer
+Day 085: Transient Ground Buffers
+Day 086: Aligning Ground Buffers to World Chunks
+Day 087: Seamless Ground Textures
+Day 088: Push Buffer Rendering
+Day 089: Renderer Push Buffer Entry Types
+Day 090: Bases Part I
+Day 091: Bases Part II
+Day 092: Filling Rotated and Scaled Rectangles
+Day 093: Textured Quadrilaterals
+Day 094: Converting sRGB to Light-linear Space
+Day 095: Gamma-correct Premultiplied Alpha
+Day 096: Introduction to Lighting
+Day 097: Adding Normal Maps to the Pipeline
+Day 098: Normal Map Code Cleanup
+Day 099: Test Enviroment Maps
+Day 100: Reflection Vectors
+Day 101: The Inverse and the Transpose
+Day 102: Transforming Normals Properly
+Day 103: Card-like Normal Map Reflections
+Day 104: Switching to Y-is-up Render Targets
+Day 105: Cleaning Up the Renderer API
+Day 106: World Scaling
+Day 107: Fading Z Layers
+Day 108: Perspective Projection
+Day 109: Resolution-Independent Rendering
+Day 110: Unprojecting Screen Boundaries
+Day 111: Resolution-Independent Ground Chunks
+Day 112: A Mental Model of CPU Performance
+Day 113: Simple Performance Counters
+Day 114: Preparing a Function for Optimization
+Day 115: SIMD Basics
+Day 116: Converting Math Operations to SIMD
+Day 117: Packing Pixels for the Framebuffer
+Day 118: Wide Unpacking and Masking
+Day 119: Counting Intrinsics
+Day 120: Measuring Port Usage with IACA
+Day 121: Rendering in Tiles (Marathon)
+Day 122: Introduction to Multithreading
+Day 123: Interlocked Operations
+Day 124: Memory Barriers and Semaphores
+Day 125: Abstracting the Work Queue
+Day 126: Circular FIFO Work Queue
+Day 127: Aligning Rendering Memory
+Day 128: Push-time Transforms
+Day 129: Adding Orthographic Projection
+Day 130: Seamless Bilinear Tiling
+Day 131: Asynchronous Ground Chunk Composition
+Day 132: Asset Streaming
+Day 133: Preliminary Asset Structuring
+Day 134: Mapping Assets to Bitmaps
+Day 135: Typed Asset Arrays
+Day 136: Tag-based Asset Retrieval
+Day 137: Matching Periodic Tags
+Day 138: Loading WAV Files
+Day 139: Introduction to Sound Mixing
+Day 140: Implemented a Sound Mixer
+Day 141: Streaming Large Audio in Chunks
+Day 142: Per-sample Volume Interpolation
+Day 143: Pitch Shifting in the Mixer
+Day 144: SSE Mixer Pre and Post Loops
+Day 145: SSE Mixer Main Loop
+Day 146: Accumulation vs. Explicit Calculation
+Day 147: Defining the Asset File
+Day 148: Writing the Asset File Header
+Day 149: Writing Assets to the Asset File
+Day 150: Loading Assets from the Asset File
+Day 151: New Platform File API
+Day 152: New Win32 File API Implementation
+Day 153: Merging Multiple Asset Files
+Day 154: Finding Assets Files with Win32
+Day 155: Introduction to Particle Systems
+Day 156: Lagrangian vs. Eulerian Simulation
+Day 157: Introduction to General Purpose Allocation
+Day 158: Tracking Asset Usage
+Day 159: Cleaning Up the Loaded Asset Infrastructure
+Day 160: Basic General Purpose Allocation
+Day 161: Finishing the General Purpose Allocator
+Day 162: Introduction to Fonts
+Day 163: Asset Processing with STB TrueType
+Day 164: Asset Processing with Windows Fonts
+Day 165: Fixing an Asset System Thread Bug
+Day 166: Adding Locks to the Asset Operations
+Day 167: Finishing Win32 Font Glyph Extraction
+Day 168: Rendering Lines of Text
+Day 169: Aligning Text to a Baseline
+Day 170: Defining Font Metadata
+Day 171: Adding Font Metadata to the Asset Builder
+Day 172: Extracting Kerning Tables from Windows
+Day 173: Precise Font Alignment
+Day 174: Adding Sparse Unicode Support
+Day 175: Finishing Sparse Unicode Support
+Day 176: Introduction to Debug Infrastructure
+Day 177: Automatic Performance Counters
+Day 178: Thread-safe Performance Counters
+Day 179: Tracking Debug Information Over Time
+Day 180: Adding Debug Graphs
+Day 181: Log-based Performance Counters
+Day 182: Fast Thread ID Retrieval
+Day 183: Platform Layer Debug Events
+Day 184: Collating Debug Events
+Day 185: Finishing Basic Debug Collation
+Day 186: Starting to Debug Event Recording
+Day 187: Fixing an Event Recording Bug
+Day 188: Adding Hover to the Debug Graphs
+Day 189: Incremental Debug Frame Processing
+Day 190: Cleaning Up Debug Globals
+Day 191: Implementing a Radial Menu
+Day 192: Implementing Self-Recompilation
+Day 193: Run-time Setting of Compile-time Variables
+Day 194: Organizing Debug Variables into a Hierarchy
+Day 195: Implementing an Interactive Tree View
+Day 196: Introduction to UI Interactions
+Day 197: Integrating Multiple Debug Views
+Day 198: Run-time Editing of Debug Hierarchies
+Day 199: Reusing Debug Interactions
+Day 200: Debug Element Layout
+Day 201: Isolating the Debug Code
+Day 202: Multiply Appearing Debug Values
+Day 203: Debug UI State Caching
+Day 204: Unprojecting the Mouse Cursor
+Day 205: Picking Entities with the Mouse
+Day 206: Implementing Introspection
+Day 207: Using Introspection Data
+Day 208: Adding Data Blocks to the Debug Log
+Day 209: Displaying Buffered Debug Data
+Day 210: Consolidating Debug Data Storage
+Day 211: Removing Records and Translation Units from the Debug Code
+Day 212: Integrating Debug UI into Game Code
+Day 213: Turning Debug Switches into Events
+Day 214: Collating Permanent Debug Values
+Day 215: Cleaning Up Debug Event Collation
+Day 216: On-demand Deallocation
+Day 217: Per-element Debug Event Storage
+Day 218: Hashing Debug Elements
+Day 219: Automatically Constructed Debug Hierarchies
+Day 220: Displaying Data Blocks in the Hierarchy
+Day 221: Implementing Multi-layer Cutscenes
+Day 222: Laying Out Cutscenes
+Day 223: Playing Multiple Cutscenes
+Day 224: Prefetching Cutscene Layers
+Day 225: Fading In and Out from the Windows Desktop
+Day 226: Handling Multiple Metagame Modes
+Day 227: Switching Between Metagame Modes
+Day 228: Waiting for Dependent Tasks on Metagame Mode Changes
+Day 229: Sorting Render Elements
+Day 230: Refining Renderer Sort Keys
+Day 231: Order Notation
+Day 232: Examples of Sorting Algorithms
+Day 233: Can We Merge Sort In Place?
+Day 234: Implementing Radix Sort
+Day 235: Initializing OpenGL on Windows
+Day 236: GPU Conceptual Overview
+Day 237: Displaying an Image with OpenGL
+Day 238: Making OpenGL Use Our Screen Coordinates
+Day 239: Rendering the Game Through OpenGL
+Day 240: Moving the Renderer into a Third Tier
+Day 241: OpenGL VSync and sRGB Extensions
+Day 242: OpenGL Context Escalation
+Day 243: Asynchronous Texture Downloads
+Day 244: Finishing Asynchronous Texture Downloads
+Day 245: Using wglChoosePixelFormatARB
+Day 246: Moving Worker Context Creation to the Main Thread
+Day 247: Simplifying Debug Values
+Day 248: Cleaning Up Data Block Display
+Day 249: Cleaning Up Debug Macros
+Day 250: Cleaning Up Debug GUIDs
+Day 251: Finishing the Debug Hierarchy
+Day 252: Allowing Debug Value Edits
+Day 253: Reenabling More Debug UI
+Day 254: Reenabling Profiling
+Day 255: Building a Profile Tree
+Day 256: XBox Controller Stalls and Fixing GL Blit Gamma
+Day 257: Cleaning Up Some Win32 Issues
+Day 258: Fixing Profiling Across Code Reloads
+Day 259: OpenGL and Software Renderer Cleanup
+Day 260: Implementing Drill-down in the Profiler
+Day 261: Changing to Static Frame Arrays
+Day 262: Drawing Multi-frame Profile Graphs
+Day 263: Adding a Debug Frame Slider
+Day 264: Adding Buttons to the Profiler
+Day 265: Cleaning Up the UI Layout Code
+Day 266: Adding a Top Clocks Profile View
+Day 267: Adding Per-Element Clipping Rectangles
+Day 268: Consolidating Debug Links and Groups
+Day 269: Cleaning Up Menu Drawing
+Day 270: Making Traversable Points
+Day 271: Hybrid Tile-based Movement
+Day 272: Explicit Movement Transitions
+Day 273: Animation Overview
+Day 274: Dynamic Animation with Springs
+Day 275: Passing Rotation and Shear to the Renderer
+Day 276: Tuning the Body Animation
+Day 277: The Sparse Entity System
+Day 278: Moving Entity Storage into World Chunks
+Day 279: Finishing World Chunk Entity Storage
+Day 280: Cleaned Up Streaming Entity Simulation
+Day 281: Animating the Camera Between Rooms
+Day 282: Z Movement and Camera Motion
+Day 283: Making Standing-on a More Rigorous Concept
+Day 284: Reorganizing the Head and Body Code
+Day 285: Transactional Occupation of Traversables
+Day 286: Starting to Decouple Entity Behavior
+Day 287: Adding Brains
+Day 288: Finishing Brains
+Day 289: Decoupling Visuals from Entity Types
+Day 290: Finishing Separated Rendering
+Day 291: Hopping Monstar and Occupying Trees
+Day 292: Implementing Snakes
+Day 293: Moving Familiars
+Day 294: Adding the Glove
+Day 295: Stacking Rooms for Z Layer Debugging
+Day 296: Fog and Alpha for Layers
+Day 297: Separating Entities into Z Layers
+Day 298: Improving Sort Keys Part 1
+Day 299: Improving Sort Keys Part 2
+Day 300: Changing from Sort Keys to Sort Rules
+Day 301: Sorting with Sprite Bounds
+Day 302: Confirming No Total Ordering
+Day 303: Trying Separate Y and Z Sorts
+Day 304: Building and Traversing Graphs
+Day 305: Using Memory Arenas in the Platform Layer
+Day 306: Debugging Graph-based Sort
+Day 307: Visualizing Sort Groups
+Day 308: Debugging the Cycle Check
+Day 309: Grid Partitioning for Overlap Testing
+Day 310: Finishing Sort Acceleration via Gridding
+Day 311: Allowing Manual Sorting
+Day 312: Cross-entity Manual Sorting
+Day 313: Returning to Work on Z Layers
+Day 314: Breaking Sprites into Layers
+Day 315: Un-reversing Sort Key Order
+Day 316: Multiple Software Render Targets
+Day 317: Alpha Blending Multiple Render Targets
+Day 318: Optimizing Render Target Blends and Clears
+Day 319: Inverse and Transpose Matrices
+Day 320: Inverting a 2x2 Matrix by Hand
+Day 321: Multiple OpenGL Render Targets
+Day 322: Handling Multiple Display Aspect Ratios
+Day 323: Fixing Miscellaneous Bugs
+Day 324: Moving Away from Multiple OpenGL Contexts
+Day 325: Ticket Mutexes
+Day 326: Vararg Functions
+Day 327: Parsing Printf Format Strings
+Day 328: Integer and String Support in Printf
+Day 329: Printing Out Floats Poorly
+Day 330: Fixings Bugs from the Issue List
+Day 331: Activating Entities by Brain
+Day 332: Disabling Sort for Debug Overlays
+Day 333: Floor-relative Perspective Transforms
+Day 334: Adding Boost Pads
+Day 335: Moving Entities on Boost Squares
+Day 336: Adding a Particle System Cache
+Day 337: Convenient SIMD for Particles
+Day 338: Simulation-space Particles
+Day 339: Debugging Particle Camera Offset Motion
+Day 340: Cleaning Up World / Sim-Region Interactions
+Day 341: Dynamically Growing Arenas
+Day 342: Supporting Temporary Memory in Dynamic Arenas
+Day 343: Saving and Restoring Dynamically Allocated Memory Pages
+Day 344: Selective Memory Restoration
+Day 345: Protecting Memory Pages for Underflow Detection
+Day 346: Consolidating Memory Block Headers
+Day 347: Debugging Win32 Memory List Corruption
+Day 348: Debugging Cutscene Z and Traversable Creation
+Day 349: Running Multiple Sim Regions
+Day 350: Multithreaded World Simulation
+Day 351: Optimizing Multithreaded Simulation Regions
+Day 352: Isolating the Camera Update Code
+Day 353: Simple RLE Compression
+Day 354: Simple LZ Compression
+Day 355: Clearing Out Pending GitHub Bugs
+Day 356: Making the Debug System CLANG Compatible
+Day 357: Room-based Camera Zoom
+Day 358: Introduction to Depth Buffers
+Day 359: OpenGL Projection Matrices Revisited
+Day 360: Moving the Perspective Divide to OpenGL
+Day 361: Introduction to 3D Rotation Matrices
+Day 362: Matrix Multiplication and Transform Order
+Day 363: Making an Orbiting Debug Camera
+Day 364: Enabling the OpenGL Depth Buffer
+Day 365: Adjusting Sprite Cards to Counter Projection
+Day 366: Adding Cubes to the Renderer
+Day 367: Enabling OpenGL Multisampling
+Day 368: Compiling and Linking Shaders in OpenGL
+Day 369: Introduction to Vertex and Fragment Shaders
+Day 370: Shader Fallback sRGB
+Day 371: OpenGL Vertex Arrays
+Day 372: Using Strictly OpenGL Core Profile
+Day 373: Inverting the Full 3D Transform
+Day 374: Debugging Z Transform and Bias
+Day 375: Adding Distance-based Fog
+Day 376: Drawing Debug Volumes
+Day 377: Improving Collision Volumes and the Camera
+Day 378: Adding More Camera Behaviors
+Day 379: Debug Overlay Cleanup and Render Group Performance Investigation
+Day 380: Attempting (and Failing) to Fix the Clock
+Day 381: Two-pass Depth Peeling
+Day 382: Depth Peel Compositing
+Day 383: Fixing Depth Peel Artifacts
+Day 384: Dynamically Responding to Render Settings
+Day 385: Trying Multisampled Depth Peels
+Day 386: Implementing a Custom Multisample Resolve
+Day 387: Further Attempts at Multisampled Depth Peeling
+Day 388: Successful Multisampled Depth-Peeling
+Day 389: Adding Simple Lighting
+Day 390: Adding Simple Phong Lighting
+Day 391: Planning Better Lighting
+Day 392: Creating Lighting Textures
+Day 393: Planning Lighting from Depth Peels
+Day 394: Basic Multigrid Lighting Upward Iteration
+Day 395: Basic Multigrid Lighting Down Iteration
+Day 396: Rendering Lighting Information from the Game
+Day 397: Converting Depth Peel Data to Lighting Data
+Day 398: Applying Lighting Back to Depth Peels
+Day 399: Creating a CPU-side Lighting Testbed
+Day 400: Adding an Ambient Occlusion Pass
+Day 401: Debugging Lighting Transfer
+Day 402: Adding Raycasting to the Lighting
+Day 403: Off-line Lighting and Per-vertex Reflectors
+Day 404: Voxel-Indexed Lighting Samples
+Day 405: Crashing the Stream with a Fragment Shader
+Day 406: Getting a Graphics Debugger Working
+Day 407: Starting to Debug Volume Textures
+Day 408: Finishing Debugging Volume Textures
+Day 409: Smoother Blending of Lighting Samples
+Day 410: Tracking Incident Light
+Day 411: Switching to Rectangular Lighting Elements
+Day 412: Debugging Voxel Interpolation
+Day 413: Encoding Light Values
+Day 414: Improving Light Distribution
+Day 415: Per-primitive Lighting Samples
+Day 416: Separating Lighting and Geometry Submission
+Day 417: Adding a Debug View for Lighting Points
+Day 418: Smoothing Light Samples Over Time
+Day 419: Debugging Missing Lighting
+Day 420: Pushing Lighting Information Directly
+Day 421: Passing Lighting as Boxes
+Day 422: Raycasting AABBs Directly
+Day 423: Modifying Lighting to Use a Spatial Hierarchy
+Day 424: Modifying Lighting to Use a Spatial Hierarchy
+Day 425: Entity-based Lighting Storage
+Day 426: Debugging Lighting Persistence
+Day 427: Debugging Lighting Flicker
+Day 428: Tracking Light Proportional to Photons per Second
+Day 429: Multiresolution Light Sampling
+Day 430: Stratifying and Multithreading the Lighting
+Day 431: SIMD Raycasting
+Day 432: Finishing the Main SIMD Raycasting Loop
+Day 433: Optimizing Ray vs. AABB Intersections
+Day 434: Replacing the Pseudo-random Number Generator
+Day 435: Removing the CRT from the Win32 Loader
+Day 436: Spiral and Blue Noise Distributions on the Sphere
+Day 437: Switching to Precomputed Hemisphere Distributions
+Day 438: Switching to Cosine-weighted Poisson Sampling
+Day 439: Testing Better Entropy
+Day 440: Introduction to Function Approximation with Andrew Bromage
+Day 441: Never, Ever Update Your Development Tools. Ever.
+Day 442: Getting NSight Working
+Day 443: Updating the Player Movement Code
+Day 444: Stubbing Out the World Generator
+Day 445: Cleaning Up Entity Creation
+Day 446: Generating Possible Room Volumes
+Day 447: Placing Adjacent Rooms
+Day 448: Explicitly Placed Room Connections
+Day 449: Preventing Overlapping Rooms
+Day 450: Supporting All Room Connection Directions
+Day 451: Updating Unproject
+Day 452: Improving Camera Placement and Room Alignment
+Day 453: Parsing PNG Headers
+Day 454: Parsing ZLIB Headers
+Day 455: Decoding PNG Huffman Tables
+Day 456: Decoding PNG Length and Distance Extra Bits
+Day 457: Implementing PNG Reconstruction Filters
+Day 458: Debugging the PNG Reader
+Day 459: Partitioning the PNG Reader for Integration
+Day 460: Providing Platform File Information to the Game
+Day 461: Checking for File Date Changes
+Day 462: Extracting Asset Tiles from Gridded PNGs
+Day 463: Preparing HHAs for Rewriting
+Day 464: Applying Asset Types and Tags to Imported PNGs
+Day 465: Updating HHAs from V0 to V1
+Day 466: Loading and Displaying HHA Files as Text
+Day 467: Updating the Game to HHA Version 1
+Day 468: Handling Annotation Data During Import
+Day 469: Downsampling Imported Assets
+Day 470: Separating the Renderer Completely (Part 1)
+Day 471: Separating the Renderer Completely (Part 2)
+Day 472: Making a Simple Scene with the Separated Renderer
+Day 473: Removing Screen Coordinates from the Render Group
+Day 474: Removing the Transient State Concept
+Day 475: Abstracting the Renderer Interface
+Day 476: Providing Convenient Camera Controls
+Day 477: Changing to Single Dispatch Per Pass (Part 1)
+Day 478: Changing to Single Dispatch Per Pass (Part 2)
+Day 479: Large Texture Support
+Day 480: Debugging Large Texture Support
+Day 481: Encoding Cube UVs
+Day 482: Associating Tags with PNGs
+Day 483: Debugging Tagged PNG Imports
+Day 484: Debugging Multi-tile Import
+Day 485: Adding Entity Placement to the World Generator
+Day 486: Adding Multiple Alignment Points
+Day 487: Hit-Testing Boxes in 3D
+Day 488: Adding an In-Game Editor
+Day 489: Implementing Undo and Redo
+Day 490: Merging Debug and Developer UI
+Day 491: Debugging the Basic Editor UI
+Day 492: Adding More Editor Interactions
+Day 493: Cleaning Up the Editor UI Layout
+Day 494: Preparing Entity Pieces for Alignment Points
+Day 495: Improving the Alignment Editing UI
+Day 496: Debugging Attachment Point Transforms
+Day 497: Starting on Asset System Cleanup
+Day 498: Finishing Asset System Cleanup
+Day 499: Unifying Debug and Editor Modes
+Day 500: Saving HHAs Modified by the In-Game Editor
+Day 501: Importing Orphans
+Day 502: Adding Stairs to the Generator
+Day 503: Constructing a Camera Easing Function
+Day 504: Exploring Camera Interpolation Alternatives
+Day 505: Placing Multiple Entities at a Time
+Day 506: Improving Camera Motion
+Day 507: LRU Texture Handle Reuse
+Day 508: Fixing the Remaining GitHub Issues
+Day 509: Creating Tags Files
+Day 510: Making a Parser for HHTs
+Day 511: Merging HHT Parsing into the Asset System
+Day 512: Updating Assets via HHT Files
+Day 513: Adding Raw Tokens and Alignment Point Parsing
+Day 514: Separating Image and Metadata Imports
+Day 515: Debugging HHT to HHA Packing
+Day 516: Rewriting HHTs
+Day 517: Inserting and Rewriting HHT Alignment Points
+Day 518: Displaying Import Errors
+Day 519: Brainstorming about Z Bias
+Day 520: Solving for Debug Camera Parameters
+Day 521: Debugging Missing Parent Pointers
+Day 522: Solving for Sorting Displacement
+Day 523: Introduction to Git
+Day 524: Integrating WAV Importing
+Day 525: Cleaning Up Import Tag Grids
+Day 526: Single-Buffer Sound Streaming
+Day 527: Making a Stand-Alone Font Extractor
+Day 528: Writing HHTs from HHFont
+Day 529: Debugging the PNG Writer
+Day 530: Writing Large PNGs and Supersampling Fonts
+Day 531: Parsing and Updating Font Metadata
+Day 532: Finishing HHT-Based Font Importing
+Day 533: Importing Particles, Scenery, and Items
+Day 534: Heuristic Alpha Testing for Multi-Tile Import
+Day 535: Minor Art Update, Reenabling Particles, Glove Fixes
+Day 536: Proper Variant Distributions and Issue Cleanup
+Day 537: Filling Areas Around Rooms
+Day 538: Making a Grid-based Layout Helper
+Day 539: Capturing Source Information for Memory Allocations
+Day 540: Adding Memory Usage Visualization
+Day 541: Adding Call Sites to the Arena Display
+Day 542: Drawing Memory Occupancy Accurately
+Day 543: Moving Unpacked Entities from the Sim Region to World
+Day 544: Caching Unpacked Entities Across Frames
+Day 545: Adding Ground Cover
+Day 546: GPU MIP Mapping
+Day 547: Starting the Move to Light Probes
+Day 548: Voxelizing Light Probes
+Day 549: Removing Old Lighting Lookups
+Day 550: SIMD Raycast Point and Normal Computations
+Day 551: Computing Probe to Probe Transmission
+Day 552: Generating Sampling Spheres into an INL
+Day 553: Improved Sphere Distributions
+Day 554: Reducing GPU Memory Footprint
+Day 555: Looking for GPU Performance Issues
+Day 556: Optimizing Depth Peeling and Multisample Resolves
+Day 557: Basic Dynamic Quad Output Optimizations
+Day 558: Assigning Lighting Probe Slots
+Day 559: Experimenting with Fragment Light Sampling
+Day 560: Querying Irradiance Directly from Voxels
+Day 561: Sampling Light Voxels with a Reflection Vector
+Day 562: Testing Voxel Light Sampling
+Day 563: Using the Light Probe Spatial Index
+Day 564: Improving Trilinear Sampling Results
+Day 565: Reconstructing Multiple Lights
+Day 566: Moving to a Voxels-only Lighting Approach
+Day 567: Large to Small Voxel Transfer
+Day 568: Debugging the Raycaster
+Day 569: Raycasting from Light Probe Locations
+Day 570: Distinguishing Between Lights and Occluders
+Day 571: Adding a Light Hierarchy
+Day 572: Scrolling the Lighting Voxel
+Day 573: Wiring Up Light Transport
+Day 574: Experimenting with Voxel Filters
+Day 575: Generalizing Code Reloading
+Day 576: Octahedral Encoding
+Day 577: Adding Octahedral Light Atlases
+Day 578: Sampling Octahedral Atlases
+Day 579: Debugging Octahedral Shading
+Day 580: Investigating Octahedral Interpolation
+Day 581: Preparing for Octahedral Indirect Lighting
+Day 582: Converting Specular Maps to Diffuse
+Day 583: Streamlining the New Lighting Pipeline
+Day 584: Enabling Infinite-Bounce Lighting
+Day 585: Centralized Light Atlas Handling
+Day 586: Finishing Indirect Diffuse Sampling
+Day 587: Optimizing the Specular to Diffuse Transform
+Day 588: Aligning Light Voxels with the Camera
+Day 589: Aligning Sampling Spheres with the Octahedral Map
+Day 590: Starting Raycast Optimizations
+Day 591: Making a Stand-alone Lighting Performance Test
+Day 592: Capturing the Entire Lighting Data
+Day 593: Debugging Lighting Validation
+Day 594: Switching from Center-Radius to Min-Max
+Day 595: Sketching Out A K-d Tree Loop
+Day 596: Fleshing Out Kd-Tree Traversal
+Day 597: Basic Kd-tree Construction
+Day 598: Exploring Voxel Partitions for Raycasting
+Day 599: Implementing the Grid Raycast Postamble
+Day 600: Better AABB Normal Derivation
+Day 601: Sketching Out the Walk Table Generator
+Day 602: Early Termination for the Grid Raytracer
+Day 603: Grid Raycaster Table Generation
+Day 604: Adding a Voxel Utility Struct
+Day 605: Cleaning Up the Lighting Code
+Day 606: Debugging Grid Raycasting with Visualizations
+Day 607: Finishing Debugging the Grid Raycaster
+Day 608: Visualizing Lighting Values
+Day 609: Reducing Light Contributions from Inaccessible Voxels
+Day 610: Removing Incorrect Voxel-Voxel Reflections
+Day 611: Examining the CPU Voxel Sampling
+Day 612: First Pass Optimization of Voxel Sampling
+Day 613: Merging the Raycaster with the Sampler
+Day 614: Continuing Streamlining the Raycaster
+Day 615: Optimized Grid Step Selection
+Day 616: Tableless Grid Walk
+Day 617: Half-resolution Spatial Grid
+Day 618: Analyzing the Diffuse Blur
+Day 619: Adding Asset Tag Hashes
+Day 620: Asset Tag Usage Code
+Day 621: Asset Tags in the World Generator
+Day 622: Debugging Asset Tag Hashes
+Day 623: Investigating a Lighting Bug
+Day 624: Turns Out It Really WAS a Feature
+Day 625: Fixing the "Lighting" Bug
+Day 626: Cleaning Up Traversables
+Day 627: Opening Doors with Tiles
+Day 628: Brains and Aprons
+Day 629: Removing Entity Generators
+Day 630: Adding Interesting Tile Patterns
+Day 631: Revisiting Collision
+Day 632: Experimenting with Voxelized Collision
+Day 633: Narrowing in on a Collision Scheme
+Day 634: Final Collision Resolution Design
+Day 635: Debugging Voxel Motion Stepping
+Day 636: Unembedding Colliding Objects
+Day 637: Adding Collision Spheres
+Day 638: Recording Diagram Commands
+Day 639: Drawing Debug Diagrams
+Day 640: Investigating Corner Collisions
+Day 641: Voxel Flood Fill for Collision Search
+Day 642: Debugging Voxel Collision Bounds
+Day 643: Hunting for Collision Bugs
+Day 644: Stepping Through Diagrams
+Day 645: Switching to Voxel Centers for Collision
+Day 646: Removing Z from Lighting
+Day 647: Debugging Simplified Lighting
+Day 648: Rebuilding Light Tables
+Day 649: Removing Lighting Walk Tables
+Day 650: Debugging Light Sampling Locations
+Day 651: Fixing Light Feedback
+Day 652: Stochastic Ray Origins
+Day 653: Adding a Filmic Response Curve
+Day 654: Self-illuminating Floor Tiles
+Day 655: Revisiting Entity Movement
+Day 656: Sketching Out Move Queues
+Day 657: Implementing Move Queues
+Day 658: Handling Glove Collisions
+Day 659: Immediate-mode Level Generation
+Day 660: Randomized Overworld Layout
+Day 661: Connecting the Overworld Map
+Day 662: Generating Entities from Layouts
+Day 663: Simplifying Entity Storage, Part I
+Day 664: Simplifying Entity Storage Part II
+Day 665: Changing How Entities are Packed and Unpacked
+Day 666: Entity Packing and Unpacking
+Day 667: Simplified Tile Occupancy Checking
+Chat 001: Health and Emulation
+Chat 002: Asset Files and Installers
+Chat 003: Resources, Files and DRM
+Chat 004: Cross-compiling
+Chat 005: SGX and Unbreakable DRM
+Chat 006: Error-based Drawing Algorithms
+Chat 007: Inverse Kinematics
+Chat 010: Partial Specialization
+Chat 011: Undefined Behavior
+Chat 012: Imposter Syndrome
+Chat 013: Translation Units, Function Pointers, Compilation, Linking, and Execution
+Chat 014: CRTP and Library Design
+Chat 016: Drawing a Circle on a 286
+Chat 017: Modern x64 Architectures and the Cache
+Chat 018: Pixel Art Games and nSight Shader Analysis
+Chat 019: Introduction to Mesh Skinning
+Chat 020: Assembly Analysis and Front-end Register Clears
+Day 1000: Making a Simple Raycaster
+Day 1001: Multithreading
+Day 1002: Replacing rand() and Preparing for SIMD
+Day 1003: Optimizing with SSE2 and AVX2
+Day 1004: Loading sampled BRDF data
+Day 1006: The Thirty-Million Line Problem
+Day 1007: Compression
+Day 1008: Compression Followup
+Day 1009: Asset Systems and Scalability
+Day 1010: Technical Direction at Blizzard
+Day 1011: Large-scale Systems Architecture
+Day 1012: Anatomy and Health for Programmers
+Day 1013: History of Software Texture Mapping in Games

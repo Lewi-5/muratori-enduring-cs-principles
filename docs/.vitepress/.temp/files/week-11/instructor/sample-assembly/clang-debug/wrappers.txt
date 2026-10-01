@@ -1,0 +1,85 @@
+
+week-11/build/instructor/clang/debug/inspection/wrappers.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <distance_to_origin>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	48 83 ec 20          	sub    rsp,0x20
+   8:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+   d:	f2 0f 11 4d f0       	movsd  QWORD PTR [rbp-0x10],xmm1
+  12:	48 89 7d e8          	mov    QWORD PTR [rbp-0x18],rdi
+  16:	f2 0f 10 55 f8       	movsd  xmm2,QWORD PTR [rbp-0x8]
+  1b:	f2 0f 10 5d f0       	movsd  xmm3,QWORD PTR [rbp-0x10]
+  20:	48 8b 7d e8          	mov    rdi,QWORD PTR [rbp-0x18]
+  24:	0f 57 c9             	xorps  xmm1,xmm1
+  27:	0f 28 c1             	movaps xmm0,xmm1
+  2a:	e8 00 00 00 00       	call   2f <distance_to_origin+0x2f>
+			2b: R_X86_64_PLT32	geo_distance_km-0x4
+  2f:	48 83 c4 20          	add    rsp,0x20
+  33:	5d                   	pop    rbp
+  34:	c3                   	ret    
+  35:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+  3c:	00 00 00 
+  3f:	90                   	nop
+
+0000000000000040 <compare_hit_values>:
+  40:	55                   	push   rbp
+  41:	48 89 e5             	mov    rbp,rsp
+  44:	48 83 ec 60          	sub    rsp,0x60
+  48:	48 89 7d f0          	mov    QWORD PTR [rbp-0x10],rdi
+  4c:	f2 0f 11 45 e8       	movsd  QWORD PTR [rbp-0x18],xmm0
+  51:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi
+  55:	f2 0f 11 4d d8       	movsd  QWORD PTR [rbp-0x28],xmm1
+  5a:	48 89 55 d0          	mov    QWORD PTR [rbp-0x30],rdx
+  5e:	48 83 7d d0 00       	cmp    QWORD PTR [rbp-0x30],0x0
+  63:	0f 84 60 00 00 00    	je     c9 <compare_hit_values+0x89>
+  69:	f2 0f 10 45 e8       	movsd  xmm0,QWORD PTR [rbp-0x18]
+  6e:	0f 28 0d 00 00 00 00 	movaps xmm1,XMMWORD PTR [rip+0x0]        # 75 <compare_hit_values+0x35>
+			71: R_X86_64_PC32	.LCPI1_1-0x4
+  75:	66 0f db c1          	pand   xmm0,xmm1
+  79:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # 81 <compare_hit_values+0x41>
+  80:	00 
+			7d: R_X86_64_PC32	.LCPI1_0-0x4
+  81:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  85:	0f 84 3e 00 00 00    	je     c9 <compare_hit_values+0x89>
+  8b:	f2 0f 10 45 d8       	movsd  xmm0,QWORD PTR [rbp-0x28]
+  90:	0f 28 0d 00 00 00 00 	movaps xmm1,XMMWORD PTR [rip+0x0]        # 97 <compare_hit_values+0x57>
+			93: R_X86_64_PC32	.LCPI1_1-0x4
+  97:	66 0f db c1          	pand   xmm0,xmm1
+  9b:	f2 0f 10 0d 00 00 00 	movsd  xmm1,QWORD PTR [rip+0x0]        # a3 <compare_hit_values+0x63>
+  a2:	00 
+			9f: R_X86_64_PC32	.LCPI1_0-0x4
+  a3:	66 0f 2e c1          	ucomisd xmm0,xmm1
+  a7:	0f 84 1c 00 00 00    	je     c9 <compare_hit_values+0x89>
+  ad:	0f 57 c0             	xorps  xmm0,xmm0
+  b0:	66 0f 2e 45 e8       	ucomisd xmm0,QWORD PTR [rbp-0x18]
+  b5:	0f 87 0e 00 00 00    	ja     c9 <compare_hit_values+0x89>
+  bb:	0f 57 c0             	xorps  xmm0,xmm0
+  be:	66 0f 2e 45 d8       	ucomisd xmm0,QWORD PTR [rbp-0x28]
+  c3:	0f 86 0c 00 00 00    	jbe    d5 <compare_hit_values+0x95>
+  c9:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+  d0:	e9 44 00 00 00       	jmp    119 <compare_hit_values+0xd9>
+  d5:	48 8b 45 f0          	mov    rax,QWORD PTR [rbp-0x10]
+  d9:	48 89 45 c0          	mov    QWORD PTR [rbp-0x40],rax
+  dd:	f2 0f 10 45 e8       	movsd  xmm0,QWORD PTR [rbp-0x18]
+  e2:	f2 0f 11 45 c8       	movsd  QWORD PTR [rbp-0x38],xmm0
+  e7:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20]
+  eb:	48 89 45 b0          	mov    QWORD PTR [rbp-0x50],rax
+  ef:	f2 0f 10 45 d8       	movsd  xmm0,QWORD PTR [rbp-0x28]
+  f4:	f2 0f 11 45 b8       	movsd  QWORD PTR [rbp-0x48],xmm0
+  f9:	48 8d 7d c0          	lea    rdi,[rbp-0x40]
+  fd:	48 8d 75 b0          	lea    rsi,[rbp-0x50]
+ 101:	e8 00 00 00 00       	call   106 <compare_hit_values+0xc6>
+			102: R_X86_64_PLT32	query_hit_compare-0x4
+ 106:	89 45 ac             	mov    DWORD PTR [rbp-0x54],eax
+ 109:	8b 4d ac             	mov    ecx,DWORD PTR [rbp-0x54]
+ 10c:	48 8b 45 d0          	mov    rax,QWORD PTR [rbp-0x30]
+ 110:	89 08                	mov    DWORD PTR [rax],ecx
+ 112:	c7 45 fc 01 00 00 00 	mov    DWORD PTR [rbp-0x4],0x1
+ 119:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+ 11c:	48 83 c4 60          	add    rsp,0x60
+ 120:	5d                   	pop    rbp
+ 121:	c3                   	ret    

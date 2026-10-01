@@ -1,0 +1,26 @@
+0000 -> 0003 ax=0000 cx=0000 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+0003 -> 0006 ax=0000 cx=0003 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+0006 -> 0008 ax=0000 cx=0003 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+0008 -> 0010 ax=0000 cx=0003 dx=0000 bx=0100 sp=00fe bp=0000 si=0000 di=0000 flags=0000 mem=00fe:0b
+0010 -> 0011 ax=0000 cx=0003 dx=0000 bx=0100 sp=00fc bp=0000 si=0000 di=0000 flags=0000 mem=-
+0011 -> 0014 ax=0000 cx=0003 dx=0000 bx=0100 sp=00fc bp=0000 si=0000 di=0000 flags=0000 mem=0100:01
+0014 -> 0015 ax=0000 cx=0003 dx=0000 bx=0100 sp=00fe bp=0000 si=0000 di=0000 flags=0000 mem=-
+0015 -> 000b ax=0000 cx=0003 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+000b -> 000c ax=0000 cx=0002 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+000c -> 0008 ax=0000 cx=0002 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+0008 -> 0010 ax=0000 cx=0002 dx=0000 bx=0100 sp=00fe bp=0000 si=0000 di=0000 flags=0000 mem=-
+0010 -> 0011 ax=0000 cx=0002 dx=0000 bx=0100 sp=00fc bp=0000 si=0000 di=0000 flags=0000 mem=-
+0011 -> 0014 ax=0000 cx=0002 dx=0000 bx=0100 sp=00fc bp=0000 si=0000 di=0000 flags=0000 mem=0100:02
+0014 -> 0015 ax=0000 cx=0002 dx=0000 bx=0100 sp=00fe bp=0000 si=0000 di=0000 flags=0000 mem=-
+0015 -> 000b ax=0000 cx=0002 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+000b -> 000c ax=0000 cx=0001 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+000c -> 0008 ax=0000 cx=0001 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+0008 -> 0010 ax=0000 cx=0001 dx=0000 bx=0100 sp=00fe bp=0000 si=0000 di=0000 flags=0000 mem=-
+0010 -> 0011 ax=0000 cx=0001 dx=0000 bx=0100 sp=00fc bp=0000 si=0000 di=0000 flags=0000 mem=-
+0011 -> 0014 ax=0000 cx=0001 dx=0000 bx=0100 sp=00fc bp=0000 si=0000 di=0000 flags=0004 mem=0100:03
+0014 -> 0015 ax=0000 cx=0001 dx=0000 bx=0100 sp=00fe bp=0000 si=0000 di=0000 flags=0004 mem=-
+0015 -> 000b ax=0000 cx=0001 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0004 mem=-
+000b -> 000c ax=0000 cx=0000 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0044 mem=-
+000c -> 000e ax=0000 cx=0000 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0044 mem=-
+000e -> 0016 ax=0000 cx=0000 dx=0000 bx=0100 sp=0100 bp=0000 si=0000 di=0000 flags=0044 mem=-
+final ip=0016 ax=0000 cx=0000 bx=0100 sp=0100 flags=0044 data[0100]=03 steps=25

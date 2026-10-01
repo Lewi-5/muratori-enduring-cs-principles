@@ -1,0 +1,19 @@
+# Week 10 validation evidence
+
+Checked 2026-09-30 in WSL2 Linux 6.18.40.1-microsoft-standard-WSL2, GCC 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3), Clang 14.0.0 (Ubuntu 14.0.0-1ubuntu1.1), Python 3.12.1. Workload estimates remain unpiloted.
+
+`make verify` completed with exit status zero. All six reference combinations passed: GCC and Clang at debug (-O0), optimized (-O2), and address/undefined sanitizer (-O1) modes. Every compilation uses C11, -Wall -Wextra -Wpedantic -Werror -Wconversion -Wsign-conversion. Sanitizer executables use -no-pie for this Linux test environment.
+
+Each reference configuration passed the prompt inventory (29 learner prompts and matching separate answers), C contracts, all three warm-ups, exact CLI/program/playground output and CLI error cases. Contracts cover all 65536 saved word values, all 65536 signed rel16 patterns, stack exhaustion/draining/odd addresses, register stack forms, nested calls, original PUSH SP, POP SP, invalid return rollback, whole-run memory rollback, budgets, malformed suffixes, empty code, invalid arguments, INC/DEC flag boundaries, all Jcc predicates over all combinations of relevant flags, baseline memory wrap and a terminating backward loop.
+
+GCC and Clang compiled untouched learner scaffolds without warnings. Their contracts, warm-ups and playground intentionally failed correctness gates. These failures distinguish a usable scaffold from a completed assignment; the default learner test is expected to fail before implementation.
+
+The hand-derived golden trace is checked byte-for-byte. Exhaustive domains are explicitly sixteen-bit saved words and displacement patterns, not every possible instruction sequence or word arithmetic pair. No timing, full segmentation or complete historical opcode claim is made. External CE direct URLs/durations and HH segment markers were checked against their official indexes; Intel's PUSH documentation establishes the historical SP behavior.
+
+Additional backward-CALL, recursive stack exhaustion, error precedence and all non-SP register save/restore cases passed the six-configuration matrix. CLI output-write failure using /dev/full also passed all six existing reference builds. `tests/snippets.py` verified the exact beginner source and displayed output under GCC and Clang at -O0 and -O2; it is included in `make verify`.
+
+`npm run docs:check` passed the integrated catalogue, prompt pairs and source/internal targets. `npm run docs:build` completed successfully (161.48 seconds), with 843 rendered pages and 52440 internal links/fragments/assets checked; solution routes were absent from search. The standard existing bundle-size warning remains. The sandboxed build initially lacked directory access; the authorized build with required access passed.
+
+The bundled Python runtime ran `tools/docs/check_readings.py`: 323 sections, including 211 checked against local PDFs, 173 Muratori items and 220 cross-reference rows across 52 weeks passed. Week 10's beginner code/output check passed separately. The lesson and beginner page were visually inspected in the in-app browser; the beginner page was also checked at a 390-pixel viewport with no horizontal page overflow. No compiler, PDF library or plugin installation was needed. Registry entries add Week 10 while preserving other weeks; the course validation runner now discovers built weeks from the catalogue.
+
+Final integration on 2026-10-01 added the completed Week 11 handoff and navigation. Documentation checks passed 11 lessons and 348 prompt/answer pairs, and the production build passed 1037 rendered pages and 72497 internal links/fragments/assets with solution-search exclusion. The full reading checker passed again. The earlier Week 10 six-mode implementation and snippet evidence above remains applicable; this integration changes lesson navigation, not simulator behavior.

@@ -1,0 +1,35 @@
+
+week-11/build/instructor/gcc/optimized/inspection/calls.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <keep_across_call>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 85 f6             	test   rsi,rsi
+   7:	74 3f                	je     48 <keep_across_call+0x48>
+   9:	55                   	push   rbp
+   a:	48 89 d5             	mov    rbp,rdx
+   d:	53                   	push   rbx
+   e:	48 83 ec 08          	sub    rsp,0x8
+  12:	48 85 d2             	test   rdx,rdx
+  15:	74 21                	je     38 <keep_across_call+0x38>
+  17:	48 89 fb             	mov    rbx,rdi
+  1a:	48 8d 7f 01          	lea    rdi,[rdi+0x1]
+  1e:	ff d6                	call   rsi
+  20:	48 01 c3             	add    rbx,rax
+  23:	b8 01 00 00 00       	mov    eax,0x1
+  28:	48 89 5d 00          	mov    QWORD PTR [rbp+0x0],rbx
+  2c:	48 83 c4 08          	add    rsp,0x8
+  30:	5b                   	pop    rbx
+  31:	5d                   	pop    rbp
+  32:	c3                   	ret    
+  33:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+  38:	48 83 c4 08          	add    rsp,0x8
+  3c:	31 c0                	xor    eax,eax
+  3e:	5b                   	pop    rbx
+  3f:	5d                   	pop    rbp
+  40:	c3                   	ret    
+  41:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+  48:	31 c0                	xor    eax,eax
+  4a:	c3                   	ret    

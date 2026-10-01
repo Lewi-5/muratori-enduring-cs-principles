@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-27T21:50:20.455600+00:00",
-  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "checkedAt": "2026-10-01T08:38:48.083543+00:00",
+  "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
   "environment": {
     "gcc": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
     "clang": "Ubuntu clang version 14.0.0-1ubuntu1.1",
@@ -56,6 +56,650 @@
       "exercise": 2,
       "compiler": "clang",
       "output": "record=20 visible characters + LF; capacity=22 including NUL\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "wrap",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "UINT_MAX = 4294967295, UINT_MAX + 1u = 0\nINT_MAX  = 2147483647\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "wrap",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "UINT_MAX = 4294967295, UINT_MAX + 1u = 0\nINT_MAX  = 2147483647\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "wrap",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "UINT_MAX = 4294967295, UINT_MAX + 1u = 0\nINT_MAX  = 2147483647\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "wrap",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "UINT_MAX = 4294967295, UINT_MAX + 1u = 0\nINT_MAX  = 2147483647\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "display",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "answer as %d: 42  as %x: 2a  as %o: 52\ndigit as %c: 4  as %d: 52\ndigit - '0' = 4\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "display",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "answer as %d: 42  as %x: 2a  as %o: 52\ndigit as %c: 4  as %d: 52\ndigit - '0' = 4\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "display",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "answer as %d: 42  as %x: 2a  as %o: 52\ndigit as %c: 4  as %d: 52\ndigit - '0' = 4\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "display",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "answer as %d: 42  as %x: 2a  as %o: 52\ndigit as %c: 4  as %d: 52\ndigit - '0' = 4\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "array_size",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "sizeof values in main:     32\nsizeof values[0]:          8\nnumber of elements:        4\nsizeof values in function: 8\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "array_size",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "sizeof values in main:     32\nsizeof values[0]:          8\nnumber of elements:        4\nsizeof values in function: 8\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "array_size",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "sizeof values in main:     32\nsizeof values[0]:          8\nnumber of elements:        4\nsizeof values in function: 8\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "array_size",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "sizeof values in main:     32\nsizeof values[0]:          8\nnumber of elements:        4\nsizeof values in function: 8\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "layout",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "Loose: size=12 first=0 number=4 last=8\nTight: size=8 number=0 first=4 last=5\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "layout",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "Loose: size=12 first=0 number=4 last=8\nTight: size=8 number=0 first=4 last=5\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "layout",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "Loose: size=12 first=0 number=4 last=8\nTight: size=8 number=0 first=4 last=5\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "layout",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "Loose: size=12 first=0 number=4 last=8\nTight: size=8 number=0 first=4 last=5\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "safe_divide",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "7 / 2 -> ok=1 out=3\n-7 / 2 -> ok=1 out=-3\n7 / 0 -> ok=0 out=42\n-2147483648 / -1 -> ok=0 out=42\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "safe_divide",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "7 / 2 -> ok=1 out=3\n-7 / 2 -> ok=1 out=-3\n7 / 0 -> ok=0 out=42\n-2147483648 / -1 -> ok=0 out=42\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "safe_divide",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "7 / 2 -> ok=1 out=3\n-7 / 2 -> ok=1 out=-3\n7 / 0 -> ok=0 out=42\n-2147483648 / -1 -> ok=0 out=42\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "safe_divide",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "7 / 2 -> ok=1 out=3\n-7 / 2 -> ok=1 out=-3\n7 / 0 -> ok=0 out=42\n-2147483648 / -1 -> ok=0 out=42\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "clock_res",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "CLOCK_MONOTONIC resolution: 0 s + 1 ns\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "clock_res",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "CLOCK_MONOTONIC resolution: 0 s + 1 ns\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "clock_res",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "CLOCK_MONOTONIC resolution: 0 s + 1 ns\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "clock_res",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "CLOCK_MONOTONIC resolution: 0 s + 1 ns\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "trace",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "before the loop: sum=0 (the empty prefix)\nafter i=0: sum=3 covers values[0..0]\nafter i=1: sum=8 covers values[0..1]\nafter i=2: sum=7 covers values[0..2]\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "trace",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "before the loop: sum=0 (the empty prefix)\nafter i=0: sum=3 covers values[0..0]\nafter i=1: sum=8 covers values[0..1]\nafter i=2: sum=7 covers values[0..2]\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "trace",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "before the loop: sum=0 (the empty prefix)\nafter i=0: sum=3 covers values[0..0]\nafter i=1: sum=8 covers values[0..1]\nafter i=2: sum=7 covers values[0..2]\n"
+    },
+    {
+      "page": "week-01.md",
+      "snippet": "trace",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "before the loop: sum=0 (the empty prefix)\nafter i=0: sum=3 covers values[0..0]\nafter i=1: sum=8 covers values[0..1]\nafter i=2: sum=7 covers values[0..2]\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "point_three",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "0.1 + 0.2 = 0.30000000000000004\n0.3       = 0.29999999999999999\nequal?      no\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "point_three",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "0.1 + 0.2 = 0.30000000000000004\n0.3       = 0.29999999999999999\nequal?      no\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "point_three",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "0.1 + 0.2 = 0.30000000000000004\n0.3       = 0.29999999999999999\nequal?      no\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "point_three",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "0.1 + 0.2 = 0.30000000000000004\n0.3       = 0.29999999999999999\nequal?      no\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "fields",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "1.0   bits=0x3FF0000000000000 sign=0 exponent=1023 (2^0    ) fraction=0x0000000000000\n0.5   bits=0x3FE0000000000000 sign=0 exponent=1022 (2^-1   ) fraction=0x0000000000000\n-2.0  bits=0xC000000000000000 sign=1 exponent=1024 (2^1    ) fraction=0x0000000000000\n3.0   bits=0x4008000000000000 sign=0 exponent=1024 (2^1    ) fraction=0x8000000000000\n0.1   bits=0x3FB999999999999A sign=0 exponent=1019 (2^-4   ) fraction=0x999999999999A\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "fields",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "1.0   bits=0x3FF0000000000000 sign=0 exponent=1023 (2^0    ) fraction=0x0000000000000\n0.5   bits=0x3FE0000000000000 sign=0 exponent=1022 (2^-1   ) fraction=0x0000000000000\n-2.0  bits=0xC000000000000000 sign=1 exponent=1024 (2^1    ) fraction=0x0000000000000\n3.0   bits=0x4008000000000000 sign=0 exponent=1024 (2^1    ) fraction=0x8000000000000\n0.1   bits=0x3FB999999999999A sign=0 exponent=1019 (2^-4   ) fraction=0x999999999999A\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "fields",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "1.0   bits=0x3FF0000000000000 sign=0 exponent=1023 (2^0    ) fraction=0x0000000000000\n0.5   bits=0x3FE0000000000000 sign=0 exponent=1022 (2^-1   ) fraction=0x0000000000000\n-2.0  bits=0xC000000000000000 sign=1 exponent=1024 (2^1    ) fraction=0x0000000000000\n3.0   bits=0x4008000000000000 sign=0 exponent=1024 (2^1    ) fraction=0x8000000000000\n0.1   bits=0x3FB999999999999A sign=0 exponent=1019 (2^-4   ) fraction=0x999999999999A\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "fields",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "1.0   bits=0x3FF0000000000000 sign=0 exponent=1023 (2^0    ) fraction=0x0000000000000\n0.5   bits=0x3FE0000000000000 sign=0 exponent=1022 (2^-1   ) fraction=0x0000000000000\n-2.0  bits=0xC000000000000000 sign=1 exponent=1024 (2^1    ) fraction=0x0000000000000\n3.0   bits=0x4008000000000000 sign=0 exponent=1024 (2^1    ) fraction=0x8000000000000\n0.1   bits=0x3FB999999999999A sign=0 exponent=1019 (2^-4   ) fraction=0x999999999999A\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "spacing",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "next double after 1      is 2.2204460492503131e-16 larger\nnext double after 2      is 4.4408920985006262e-16 larger\nnext double after 1000   is 1.1368683772161603e-13 larger\nnext double after 1e+16  is 2 larger\n1e16 + 1 == 1e16 ? yes\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "spacing",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "next double after 1      is 2.2204460492503131e-16 larger\nnext double after 2      is 4.4408920985006262e-16 larger\nnext double after 1000   is 1.1368683772161603e-13 larger\nnext double after 1e+16  is 2 larger\n1e16 + 1 == 1e16 ? yes\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "spacing",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "next double after 1      is 2.2204460492503131e-16 larger\nnext double after 2      is 4.4408920985006262e-16 larger\nnext double after 1000   is 1.1368683772161603e-13 larger\nnext double after 1e+16  is 2 larger\n1e16 + 1 == 1e16 ? yes\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "spacing",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "next double after 1      is 2.2204460492503131e-16 larger\nnext double after 2      is 4.4408920985006262e-16 larger\nnext double after 1000   is 1.1368683772161603e-13 larger\nnext double after 1e+16  is 2 larger\n1e16 + 1 == 1e16 ? yes\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "tiny_angle",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "cos(1e-8) == 1.0 ? yes\nlaw of cosines: 0.000 cm\nhaversine:      6.371 cm\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "tiny_angle",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "cos(1e-8) == 1.0 ? yes\nlaw of cosines: 0.000 cm\nhaversine:      6.371 cm\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "tiny_angle",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "cos(1e-8) == 1.0 ? yes\nlaw of cosines: 0.000 cm\nhaversine:      6.371 cm\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "tiny_angle",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "cos(1e-8) == 1.0 ? yes\nlaw of cosines: 0.000 cm\nhaversine:      6.371 cm\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "big_product",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "integer product: 9999999999999999\ndouble product:  10000000000000000\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "big_product",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "integer product: 9999999999999999\ndouble product:  10000000000000000\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "big_product",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "integer product: 9999999999999999\ndouble product:  10000000000000000\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "big_product",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "integer product: 9999999999999999\ndouble product:  10000000000000000\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "exact_tenth",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "%a:    0x1.999999999999ap-4\n%.55f: 0.1000000000000000055511151231257827021181583404541015625\n%.17g: 0.10000000000000001\n%g:    0.1\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "exact_tenth",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "%a:    0x1.999999999999ap-4\n%.55f: 0.1000000000000000055511151231257827021181583404541015625\n%.17g: 0.10000000000000001\n%g:    0.1\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "exact_tenth",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "%a:    0x1.999999999999ap-4\n%.55f: 0.1000000000000000055511151231257827021181583404541015625\n%.17g: 0.10000000000000001\n%g:    0.1\n"
+    },
+    {
+      "page": "week-03.md",
+      "snippet": "exact_tenth",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "%a:    0x1.999999999999ap-4\n%.55f: 0.1000000000000000055511151231257827021181583404541015625\n%.17g: 0.10000000000000001\n%g:    0.1\n"
+    },
+    {
+      "page": "week-07.md",
+      "snippet": "address",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "mod=1 rm=6 displacement=-2\ndirect=65534\n"
+    },
+    {
+      "page": "week-07.md",
+      "snippet": "address",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "mod=1 rm=6 displacement=-2\ndirect=65534\n"
+    },
+    {
+      "page": "week-07.md",
+      "snippet": "address",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "mod=1 rm=6 displacement=-2\ndirect=65534\n"
+    },
+    {
+      "page": "week-07.md",
+      "snippet": "address",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "mod=1 rm=6 displacement=-2\ndirect=65534\n"
+    },
+    {
+      "page": "week-08.md",
+      "snippet": "state",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "ax=ff34 ah=255 al=52\n127+1 result=128 carry=0 overflow=1\n255+1 result=0 carry=1 overflow=0\n"
+    },
+    {
+      "page": "week-08.md",
+      "snippet": "state",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "ax=ff34 ah=255 al=52\n127+1 result=128 carry=0 overflow=1\n255+1 result=0 carry=1 overflow=0\n"
+    },
+    {
+      "page": "week-08.md",
+      "snippet": "state",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "ax=ff34 ah=255 al=52\n127+1 result=128 carry=0 overflow=1\n255+1 result=0 carry=1 overflow=0\n"
+    },
+    {
+      "page": "week-08.md",
+      "snippet": "state",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "ax=ff34 ah=255 al=52\n127+1 result=128 carry=0 overflow=1\n255+1 result=0 carry=1 overflow=0\n"
+    },
+    {
+      "page": "week-09.md",
+      "snippet": "flow",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "following=17 displacement=-8 target=9\ndata[ffff]=34 data[0000]=12 word=1234\nunsigned 128 < 1: 0; signed -128 < 1: 1\n"
+    },
+    {
+      "page": "week-09.md",
+      "snippet": "flow",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "following=17 displacement=-8 target=9\ndata[ffff]=34 data[0000]=12 word=1234\nunsigned 128 < 1: 0; signed -128 < 1: 1\n"
+    },
+    {
+      "page": "week-09.md",
+      "snippet": "flow",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "following=17 displacement=-8 target=9\ndata[ffff]=34 data[0000]=12 word=1234\nunsigned 128 < 1: 0; signed -128 < 1: 1\n"
+    },
+    {
+      "page": "week-09.md",
+      "snippet": "flow",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "following=17 displacement=-8 target=9\ndata[ffff]=34 data[0000]=12 word=1234\nunsigned 128 < 1: 0; signed -128 < 1: 1\n"
+    },
+    {
+      "page": "week-10.md",
+      "snippet": "stack_word",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "push: sp=00fe bytes=34 12\npop: sp=0100 value=1234 stale=34 12\n"
+    },
+    {
+      "page": "week-10.md",
+      "snippet": "stack_word",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "push: sp=00fe bytes=34 12\npop: sp=0100 value=1234 stale=34 12\n"
+    },
+    {
+      "page": "week-10.md",
+      "snippet": "stack_word",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "push: sp=00fe bytes=34 12\npop: sp=0100 value=1234 stale=34 12\n"
+    },
+    {
+      "page": "week-10.md",
+      "snippet": "stack_word",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "push: sp=00fe bytes=34 12\npop: sp=0100 value=1234 stale=34 12\n"
+    },
+    {
+      "page": "week-11.md",
+      "snippet": "local_value",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "value=7 result=15\nvalue=max result=18446744073709551615\n"
+    },
+    {
+      "page": "week-11.md",
+      "snippet": "local_value",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "value=7 result=15\nvalue=max result=18446744073709551615\n"
+    },
+    {
+      "page": "week-11.md",
+      "snippet": "local_value",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "value=7 result=15\nvalue=max result=18446744073709551615\n"
+    },
+    {
+      "page": "week-11.md",
+      "snippet": "local_value",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "value=7 result=15\nvalue=max result=18446744073709551615\n"
+    },
+    {
+      "page": "week-12.md",
+      "snippet": "evidence",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "byte result=0 carry=1\ntarget 1 boundary=0; target 3 boundary=1\nword 1234 bytes=34 12\ndefined unsigned result=18446744073709551615\n"
+    },
+    {
+      "page": "week-12.md",
+      "snippet": "evidence",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "byte result=0 carry=1\ntarget 1 boundary=0; target 3 boundary=1\nword 1234 bytes=34 12\ndefined unsigned result=18446744073709551615\n"
+    },
+    {
+      "page": "week-12.md",
+      "snippet": "evidence",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "byte result=0 carry=1\ntarget 1 boundary=0; target 3 boundary=1\nword 1234 bytes=34 12\ndefined unsigned result=18446744073709551615\n"
+    },
+    {
+      "page": "week-12.md",
+      "snippet": "evidence",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "byte result=0 carry=1\ntarget 1 boundary=0; target 3 boundary=1\nword 1234 bytes=34 12\ndefined unsigned result=18446744073709551615\n"
+    },
+    {
+      "page": "week-13.md",
+      "snippet": "interval",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "end=2000000300 elapsed=200 ns\n"
+    },
+    {
+      "page": "week-13.md",
+      "snippet": "interval",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "end=2000000300 elapsed=200 ns\n"
+    },
+    {
+      "page": "week-13.md",
+      "snippet": "interval",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "end=2000000300 elapsed=200 ns\n"
+    },
+    {
+      "page": "week-13.md",
+      "snippet": "interval",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "end=2000000300 elapsed=200 ns\n"
+    },
+    {
+      "page": "week-14.md",
+      "snippet": "nested",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "root self=70\nrecursive id inclusive=40 self=30\ncovered=100 inclusive sum=140\n"
+    },
+    {
+      "page": "week-14.md",
+      "snippet": "nested",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "root self=70\nrecursive id inclusive=40 self=30\ncovered=100 inclusive sum=140\n"
+    },
+    {
+      "page": "week-14.md",
+      "snippet": "nested",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "root self=70\nrecursive id inclusive=40 self=30\ncovered=100 inclusive sum=140\n"
+    },
+    {
+      "page": "week-14.md",
+      "snippet": "nested",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "root self=70\nrecursive id inclusive=40 self=30\ncovered=100 inclusive sum=140\n"
+    },
+    {
+      "page": "week-15.md",
+      "snippet": "example",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "0:3 1:1 3:0 3:2\n"
+    },
+    {
+      "page": "week-15.md",
+      "snippet": "example",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "0:3 1:1 3:0 3:2\n"
+    },
+    {
+      "page": "week-15.md",
+      "snippet": "example",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "0:3 1:1 3:0 3:2\n"
+    },
+    {
+      "page": "week-15.md",
+      "snippet": "example",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "0:3 1:1 3:0 3:2\n"
+    },
+    {
+      "page": "week-16.md",
+      "snippet": "example",
+      "compiler": "gcc",
+      "level": "-O0",
+      "output": "caller=41 static=1,2 allocated=7\nowner cleared=1\n"
+    },
+    {
+      "page": "week-16.md",
+      "snippet": "example",
+      "compiler": "gcc",
+      "level": "-O2",
+      "output": "caller=41 static=1,2 allocated=7\nowner cleared=1\n"
+    },
+    {
+      "page": "week-16.md",
+      "snippet": "example",
+      "compiler": "clang",
+      "level": "-O0",
+      "output": "caller=41 static=1,2 allocated=7\nowner cleared=1\n"
+    },
+    {
+      "page": "week-16.md",
+      "snippet": "example",
+      "compiler": "clang",
+      "level": "-O2",
+      "output": "caller=41 static=1,2 allocated=7\nowner cleared=1\n"
     }
   ]
 }

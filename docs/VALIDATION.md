@@ -63,3 +63,88 @@ The lesson sequence runs from Week 1 through Week 6, stopping there. Later weeks
 | 15. Honest paraphrase | New explanations use original wording; no paid course transcript or assignment is reproduced. |
 
 This is an editorial and technical review, not a learner pilot. Original workload estimates remain explicitly unpiloted estimates for experienced C programmers. Preparation for readers new to systems may require additional time.
+
+## Beginner section and further-reading pilot — 2026-09-27
+
+Week 3 received the first beginner page (`docs/content/beginners/week-03.md`) and further-reading page (`docs/content/further-reading/week-03.md`), plus the shared infrastructure for later weeks. The Week 3 lesson and its graded exercises are unchanged apart from two links.
+
+- **Reading data.** `tools/docs/readings.json` lists seven companion texts, 314 cited sections, 173 Computer, Enhance! and Handmade Hero items, and cross-reference rows for all 52 weeks (weeks 1–6 complete, week 7 planned, weeks 8–52 a draft map). `python3 tools/docs/check_readings.py` in WSL checked all 207 citations of the four local PDFs (CS:APP 3rd global edition, the CS 341 Coursebook, Hennessy & Patterson 6th edition, *But How Do It Know?*) against each book's own contents and page text. It also confirmed that every CE and HH reading of weeks 1–6 has a cross-reference row. A deliberately wrong PDF page, a wrong printed label and a removed row each made it fail.
+- **Generator.** `prepare.mjs` now recognizes `W` and `F` prompt IDs and expands the `<!-- warmup:Wnn -->`, `<!-- crossref -->` and `<!-- reading-questions -->` directives. It generates `/reference/reading-map` and links the beginner and further-reading pages from each lesson's reading block. `check.mjs` requires the beginner page's eight fixed sections and places W and F anchors on their own pages.
+- **Checks run.** `node tools/docs/check.mjs`: 6 lessons, 193 prompt/answer pairs (183 earlier plus W01–W04 and F01–F06), 609 pages. `npm run docs:build`: 610 rendered pages and 29,558 internal links, fragments and assets resolved; solution routes absent from the search index. `python3 tools/docs/verify-examples.py`: the six beginner snippets match their shown code and printed output under GCC 11.4 and Clang 14 at `-O0` and `-O2`, alongside the earlier chapter examples. `python tools/docs/audit-links.py`: 226 public URLs reachable, and all 61 fragments found.
+- **Package.** Week 3 `make verify` passed in all six reference configurations with the warm-ups included. Details, the learner-negative check and a 16-mutant check of the warm-up tests are in `week-03/instructor/validation.md`.
+
+Browser review (2026-09-27, `npm run docs:dev`): the Week 3 beginner and further-reading pages render with every required section, no directive text leaks into the page, and there is no page-level horizontal scroll at 375 px (the wide tables scroll within themselves). The reading map shows all 52 weeks. Two fixes came out of the review: cross-reference headings no longer contain links, which had given their permalinks a raw-Markdown label, and page numbers no longer break across lines. The added learner time (about 2–4 hours) is unpiloted.
+
+## Week 1 beginner section and further reading — 2026-09-28
+
+Week 1 received a beginner page and a further-reading page built to the Week 3 pattern; the lesson and its 43 graded prompts are unchanged apart from two links. Results:
+
+- `node tools/docs/check.mjs`: 6 lessons, 203 prompt/answer pairs, 633 pages.
+- `npm run docs:build`: 634 rendered pages, with 32,051 internal links, fragments and assets resolved.
+- `python3 tools/docs/verify-examples.py`: the seven Week 1 and six Week 3 beginner snippets match their shown code and output under GCC and Clang at `-O0` and `-O2`.
+- `python3 tools/docs/check_readings.py`: 323 sections, 211 of them checked against the local PDFs.
+- `python tools/docs/audit-links.py`: all 231 public URLs reachable, and all 66 fragments found.
+- Week 1 `make verify` passed with the warm-ups; details are in `week-01/instructor/validation.md`.
+
+The built Week 1 pages were checked for their required sections and W and F anchors. An interactive browser pass was not possible in this session.
+
+## Week 7 package and companion — 2026-09-30
+
+Added the memory-operand decoder lesson, its beginner section, guided further reading and separate solutions. Navigation now covers seven implemented weeks, with Week 6 linking to Week 7. The public API, typed learner scaffolds, independent shared client, warm-ups and complete answer keys are included in the source catalogue.
+
+- Week 7 `make verify` passed all six GCC/Clang reference configurations plus both learner builds and their expected correctness failures. Each reference configuration checked 13,892 independently encoded cases and the library/CLI contracts.
+- The beginner snippet matched checked-in source and real output under both compilers at `-O0` and `-O2` through `tools/docs/verify-examples.py`.
+- The reading checker passed 323 section records (211 checked against local PDFs) and verified Week 7's complete CE/HH cross-reference. Its additional snprintf reference uses the existing citation registry.
+- The documentation check passed seven lessons, 232 prompt/answer pairs and 700 generated Markdown pages. The production build passed rendered link, fragment and asset checks and excluded solution routes from search.
+
+Full execution details and test limits are in `week-07/instructor/validation.md`. This is implementation validation, not a learner pilot or an interactive browser review.
+
+## Week 8 register simulator and companion — 2026-09-30
+
+Added the register-state/flags lesson, beginner on-ramp, guided further reading and separate solutions. The simulator consumes a pinned copy of the completed Week 7 decoder and has independent learner and instructor simulation sources. Navigation now covers eight implemented weeks.
+
+- Week 8 `make verify` passed six GCC/Clang reference configurations, each with 209328 mathematical arithmetic cases, 512 register-combination checks, independent state traces, golden programs and transactional/API failures. Both learner builds compile warning-clean and fail unfinished correctness gates.
+- The standalone beginner snippet matched its shown source and output under both compilers at `-O0` and `-O2`.
+- The reading checker passed the verified registry and both assigned CE cross-reference rows. The ADD/SUB/CMP episode URL was resolved from the official TOC rather than derived from its title.
+- Documentation coverage passed eight lessons, 261 prompt/answer pairs and 771 generated Markdown pages. The production build checks rendered routes, fragments and assets and keeps solution routes out of search.
+
+The optional C predicate example and objdump fixture comparison supplied additional evidence for their respective mechanisms. Full results and limits are in `week-08/instructor/validation.md`; workload estimates remain unpiloted.
+
+## Week 9 branches and bounded guest memory — 2026-09-30
+
+Week 9 follows Week 10's flat data array, separate immutable code, checked targets, finite budget and complete-state rollback. The implementation includes all sixteen short Jcc predicates, short/near JMP and actual memory effects for the revision-7 MOV/ADD/SUB/CMP subset, with separate typed learner sources and complete solutions.
+
+- Six GCC/Clang reference configurations passed, each checking 1048576 predicates, 65536 signed/unsigned byte comparisons, 512 conditional-step outcomes, 524288 address/displacement cases, displacement decoding, wrapping words, aliasing, rollback and 255 independent complete loop traces.
+- Three warm-ups, 29 matched prompt/answer IDs, negative learner gates and the optional signed/unsigned C loop passed. The checked beginner source and output matched both compilers at -O0 and -O2.
+- Citation checks passed the existing 323-section registry and both complete Week 9 CE mappings. Source routes and the production build passed, including rendered links and solution-search exclusion.
+
+See `week-09/instructor/validation.md` for commands, exact build results and limits. No Week 9 browser review or learner pilot is claimed.
+
+## Weeks 10 and 11 integration — 2026-10-01
+
+Week 10's checked stack, near calls/returns and lifetime explanations are complete. Week 11 adds a restricted System V AMD64 scalar ABI planner, checked geolab wrappers, unsigned ID fold and callback-preservation exercise, with actual GCC/Clang O0/O2 assembly and object-relocation samples. Each week has 29 matched learner/answer prompts, beginner preparation and a complete seven-text reading map.
+
+Both packages passed their six GCC/Clang reference modes, warm-ups, deterministic output, meaningful untouched-starter failures and exact beginner snippet checks. Week 11's one optional 16-line assembly probe passed its independent harness; sanitizer instrumentation covers that C harness, not handwritten assembly. Five pinned geolab support files match Week 5 byte-for-byte.
+
+The integrated source check passed 11 lessons and 348 prompt/answer pairs. The production build passed 1037 rendered pages and 72497 internal links/fragments/assets and excluded solution routes from search. Reading checks passed 323 sections (211 local-PDF checks), 173 Muratori items and 220 cross-reference rows. Lesson and beginner layouts were visually inspected, including narrow beginner pages with no horizontal page overflow. Detailed dated evidence and scope limits are in each package's instructor/validation.md. Workload estimates remain unpiloted.
+
+## Week 12 Project 2 checkpoint — 2026-10-01
+
+The checkpoint integrates the specified simulator subset through prepared immutable code, atomic execution/runs and complete CPU/changed-byte traces. It includes three independent golden byte streams, a checkpoint manifest, original beginner/further-reading chapters and a complete report with actual x64 compiler observations.
+
+- Six GCC/Clang reference modes passed, each with 196608 mathematical byte arithmetic cases, 512 conditional transitions, memory/stack/target/rollback/capacity contracts, golden output and 128 independent complete combined-program traces.
+- Three exhaustive warm-ups, all 29 prompt/answer pairs, negative learner gates, four real inspection sets and exact beginner source/output passed.
+- Reading checks passed the verified registry and both complete Week 12 CE/HH mappings. The source check covered 12 lessons, 377 prompt/answer pairs and 1125 generated pages.
+- The production build passed 1126 rendered pages and 83103 links/fragments/assets, excluding solutions from search. All 68 authored package files and the standalone snippet are registered.
+
+Full commands, correction history and limits are in `week-12/instructor/validation.md`. No Week 12 browser review, timing result or learner pilot is claimed.
+
+## Weeks 15 and 16 — 2026-10-01
+
+Week 15 implements stable insertion, buffered merge and four-pass uint32_t radix sorting, explicit operation counts and repeated-sort summaries. Week 16 implements caller/static lifetime subjects, deep-copy ownership, failure-atomic replacement and once-only cleanup, with isolated intentionally invalid fixtures. Each has 29 matched prompts/answers, three typed/tested warm-ups, checked beginner output and a complete seven-text CE/HH reading cross-reference.
+
+Both packages passed GCC/Clang debug, optimized and ASan/UBSan modes, deterministic output, warm-ups, negative starter gates and exact beginner snippets. Each sorting mode checks 4313 independent inputs across all three algorithms, stable record preservation, full-width/boundary cases and benchmark behavior without a speed threshold. Ownership checks include allocation-failure injection, unchanged original storage, deep-copy independence and complete allocation/release balance. Two expected compiler failures and four expected ASan child failures identify the supplied lifetime bugs. Actual optimized timing CSVs and diagnostic excerpts are labeled as observations.
+
+Reading checks passed 323 sections, including 211 local-PDF checks, 173 Muratori entries and 220 cross-reference rows. The final fixed registered-source snapshot passed 16 lessons and 493 pairs, then produced 1374 rendered pages with 123311 internal links/fragments/assets checked and solution routes excluded from search. The snapshot under week-15/build/site-validation prevents concurrent course builds from rewriting its generated pages; unregistered weekly drafts are now omitted until their catalogue entry exists. The existing bundle-size warning remains.
+
+Both lesson pages and beginner layouts were inspected in the in-app browser, with narrow beginner pages showing readable wrapping and no horizontal page overflow. Detailed commands, actual evidence and limits are in each instructor/validation.md. Workload estimates remain unpiloted; only validation-record prose changed after the production snapshot.

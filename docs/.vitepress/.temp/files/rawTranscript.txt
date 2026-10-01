@@ -1,0 +1,296 @@
+starting at 37min:25seconds
+
+Muratori:
+in this discussion that I'm not sure like you could talk about any of them for quite some time. So I think the
+biggest thing I would point out is just that I think that when you're talking about
+what you should learn in a college setting or more specifically what you should learn in any kind of educational
+setting that is supposed to be uh more serious and less immediate. So,
+for example, if I just want to learn Python, I mean, I don't know about you guys, maybe this is atypical, but I
+don't think it is. Like, I'd never programmed Python before and I wanted to do a little bit of that for uh some
+stuff I was doing on the Substack. It it it took like five minutes. Like, it like the amount of time it takes to learn for
+me to learn to program Python was zero time. Right. Right. So the idea that like we need to
+think very hard about what language you're learning uh to me seems just kind of ridiculous because if you're a if
+you're a decent programmer then if someone asks you to program in a new language it's like I have never found
+that to be a relevant question. It it just isn't. And maybe there are certain idiomatic things that I'm going to have
+to like go read about because they wouldn't occur to me because I haven't been programming this language for 30 years or whatever it is. So like maybe I
+will want to go like uh to a good reference of some people who you know that I would respect and say okay so
+what are some idiomatic things that you tend to do in Python? Uh like all right I I see thank you and that's it. So to
+me when we're talking about what is what is supposed to be there for even a
+practical education not even the theoretical part it's what are the things that remain true
+meaning if I learned them 30 years ago I didn't relearn them today. There is a
+very big I think misconception promulgated by this C is not a low-level
+language statement which I think is false and not interesting but that's
+kind of irrelevant to the argument that somehow
+the things that you would learn in a course that was about low-level programming
+do not do not remain true because hardware has changed.
+And that is just completely false. Like it's literally completely false. The exact same things you had to consider in
+1968 and 1972 and 1977 and 1987 and 2012 and
+2026 are exactly the same. The only difference is the diagram you are
+reading about how these things are interconnected on the particular thing you have will be slightly different.
+That's the difference right but name a thing whatever you want sim caches loop
+caching virtual memory whatever it is it was there it was there since like at least 1970 but usually a little earlier
+than that. And so if you went and learned about how computers work,
+meaning you were like, "Here is a survey of how they work, generally speaking, this is what the architectures look
+like. Here's the different kinds of components we have." That literally has changed almost not at all, you know, in
+like 50 or 60 years. The the thing that changed the most is really like that everyone has the best of everything now
+in their desktop chip. like all the things that you would have been like, "Oh, I had to have a CDC 6000 or a system, you know, 36091
+to get those things like a loop cache, and now they're just on my PC by default
+that I have in my home or my smartphone or whatever, right? That's the big difference, but that's really it.
+They're all the same concepts." And so, uh, the reason that I think just
+Extending down
+to tie it back to Lori, uh, Lori Wyard's like original thing she said, the thing
+she said is the important thing. It's that if you teach a course in something like C, I would say Rust is probably
+equivalent here, although I'm not really a Rust programmer, but you know, it's basic, you know, you pick a language
+like one of those languages. The important part is that it's very easy for someone to say, "And here's how we
+would access this part of the CPU. Here's how we would do a thing that was cache aware. Here's how we would
+multi-thread this. Here's how we would do an atomic, right? Because you're not forced to use some highlevel [snorts]
+like co-outine implementation thing. That's the only way you do that in a
+language, right? In some higher level language, that's that's great. in C. Yeah, the vanilla language C doesn't
+have these things in it, but that's not the point. The point is that if you already kind of know roughly how to
+learn something like C or Rust, you can then just right there without teaching the student anything new go now we are
+going to go use this crazy instruction on your CPU by using an intrinsic to go
+do this thing that looks at a SIMD vector and takes the mask register and packs the ones that are zeros into like
+and you can understand it with knowing nothing more than just the C you already learned and the little bit that they're
+trying to teach you now. And so at least what I got out of her statement and I thought she said it pretty clearly, she
+even used the word like extending down to memory management or things like that. The thing about C is it's very
+easy to extend down to whatever I need to teach you. It's not that the language itself has baked in the concept of
+vector processing, but I don't want it to because if it did, I couldn't teach you it as easily, right? because you
+don't have to learn how it actually works if the language is autovectorizing. If I teach you how to
+write shaders, you will never know about how things like vectorzation work
+because it's already baked into the threading model. The we're the like simt uh model of programming, right? So to me
+like I think she was absolutely correct. I think the perspective that she placed it in was absolutely correct. And I
+think that's the critical piece that has to be understood, right? And if you do learn those things, I think they're
+useful for decades. Whereas, if you just learn how to program Python and the libraries that come with Python now, I I
+honestly don't think 30 years from now anyone's going to care what those things were.
+That was one thing I really like. So, I I technically have uh like more of a computer engineer. It's electrical and
+computer engineering degree is like I didn't go I have a CS minor. And it was fun because we just learned a bunch of
+stuff like about computers and like physically how they worked. And it was always very helpful to me because I I
+was like, "Oh, you can look at the code and be like, well, that's going to be slow." Yeah. Cuz there's no way to make the computer
+do that in any way that's not slow. You can just look at it and be like, "That's not going to be good." Which has served
+me well for a long time, which I I like. And it didn't matter what language we
+did it in. Mhm. Honestly, that was a loadbearing description you just gave right there. [laughter]
+Genuinely, that was wellformed. Yeah, it was wellformed. In my honest
+opinion, that was good. Yeah. And and so and it also means that you can do it in other languages, right? It doesn't have to be C. It just has to
+be a language with that easy downward extension, which is it's it's very cumbersome to do that in Python. Even in
+Java, it's cumbersome to do it. It doesn't mean can't, right? It's not trying to, you know, people get hung up
+on can you or can't you do this thing in a language. It's just, it's just how simple is it to just extend downwards
+into something I'm trying to teach you, right? And we could just teach it all in assembly language,
+but I think at this point that just being able to read assembly languages enough. I don't know that we need to spend time to teach people to really
+write significantly sized programs in assembly language. So learning C and how to read the ASOM that comes out of it
+seems like a very or or like I said or Rust or something like that that's has this capability I think is a good idea
+and I think Lori was correct. Well that was my next topic was what
+makes C better and Casey I believe that you absolutely nailed that one. So that one's done. And so the real question is,
+is Python a mistake or should that be is is Python itself the mistake or is it
+the fact that there is not a heavy emphasis on C? And I think you've kind of also answered that which is that it's
+the exact same thing as like a I mean it's kind of like a boot camp in some sense. You go to learn React. It's like
+it's not a very extensible skill unless if you go and you practice it a whole bunch. So you're not learning like how to make a great UI. you're learning how
+to use React to make a UI or cobalt might be a the historical analogy. It's like it's not a bad idea
+to learn it at the time. It's just probably not that relevant 30 years from now, right? But but it
+doesn't mean you shouldn't maybe start like like I think to T's point, start with it because it's like, hey, this is
+what people are using today. You'll see a lot of it. It's easy for you to get
+some stuff up on the screen that you'll be excited about, right? That all makes sense to me. So, I don't think Python is
+Is Python a mistake?
+a mistake. It's the lack of of some other thing that's the mistake if it's happening, which I don't know, by the
+way, because I'm I don't know like like uh like Lori was talking about this move away from it. I don't know anything about that. So, I'm not saying that's
+happening. I'm just saying assuming that is happening. I agree with her that that's a problem. I will say about the Cobalt thing
+though, uh the use of cobalt cripples the mind. It's [laughter] teaching should therefore be uh regarded as a
+criminal offense. Okay. Edgar Dystra, QED. So, just in case you're wondering, you can't do that one.
+I think you could find that from Dystra about just about anything you wanted. [laughter] Everything is just actually crippling
+the mind. Yes. He also said APPL is for people who want to go play play around.
+APL is a mistake carried through to perfection. Yeah. Right. Yeah. I think so. He did like I mean
+like I said the first CS class I took was Python and that's like before I took
+that class I literally thought learning programming languages was like learning
+Spanish or like learning a foreign language like the way everybody talked about it like in my life right because I
+like nobody in my life is technical. My dad's an accountant and I always told him dad I like math but I'm not going to
+do your math when I grow up. That's boring. Um right? And so, like, I
+literally thought programming languages were cool. I have to go memorize like a bunch of random grammar things and like
+there's like a million new vocab words and there's like 35,000 exceptions to everything and you can't do well on the
+test unless you study extensively vocab and I didn't want to do that. I hated that. Um, so when but I had to take a CS
+class as part of my like liberal arts thing because I was doing mechanical engineering. So, one of our like gen ed
+classes we had to take was CS1 and I took Python. I was like, "Holy cow, programming is just like logic and like
+pattern recognition and like trying to communicate with the computer. This is so much fun." And then from that class,
+the next class we took was data structures and it was in C or C++. I think it was in like C++, but we pretty
+much only used C features, you know what I mean? Like that kind of thing. And that was for me, I thought that was a
+really effective way of getting people into a track for CS where you can see things like appear on the screen
+quickly. You can interact with stuff. You can like, you know, draw a turtle that moves around on the screen and like
+connects dots. You're like, I just told it to turn left and turn left. That's so cool. Like I think JavaScript is fine
+for some of this. Whoa, whoa, whoa. Tee, a lot of people are thinking you're talking about an actual turtle now. You're going to have to logo pill them.
+It's the Sorry. It's just literally a dot. It's a turtle's library in Python. So it's it's not as exciting as you
+might think. It's just it's it's it's just dots. Logo pilled. Yeah. Sorry.
+Went over my head. Yeah. Well, trash. That's because you're obviously not a real engineer. You don't know Python turtle library. So
+What about C++ ?
+[laughter] true. So, you know what? I did C++ in college and it almost made me quit coding. I hated it.
+Was it at the very beginning or in the middle? Trash. I think it was like a 300 course. I did
+VB before that. I did VB and then we went to dang C++ and I was like yo what are these
+till days doing here that [laughter] was weird I do think like like the the the part
+where maybe like I I wouldn't like I'm not sure about what the in the original context of the discussion
+this the plus+ part of C++ is a problem and so like you know the the I think if
+you were teaching people C++ the like the actual C++ the way that it is now
+intended to be programmed. I do think that would be a similarly transient thing to teach people much like Python.
+Like not something anyone will care about in 30 years. I know everyone's going to hate me for saying that, but like so you know that I I don't know
+about that part. And maybe maybe Lori Wired was actually implying that teaching C++ the plus+ part was
+important. I don't know. I would part ways there, but you don't that doesn't seem like her her like her
+it wasn't the important part of what she the point she was making though I didn't think anyway. I think too to your point
+Casey like as much as especially like you know let's say before maybe senior
+year like my senior year we did a lot of like very pragmatic stuff where we like built projects together and like had to
+figure out how to collaborate like so we ended up using git and figuring this out and a bunch of other stuff which was very helpful before going into the
+workplace like let's say years one through three or something spending a bunch of time teaching you all about the
+tildies where they go in C++ ++ will make programming not fun. It will not be fun for people and I think it is
+actively like not helpful. You don't get [laughter] a reusable skill on the other side and you hate it. At least if you're
+going to teach them a not reusable skill, make them like excited about something in programming like cool here's how to make a website and it
+wasn't fun but at least you can like submit a form when you're done or something. I don't know.
+Perfect Student
+Um, so I I do have to admit something. Uh, which is that see at MSU, Montana
+State University, not Michigan. Okay. Yeah. Uh, well, I don't like Michigan State either, so that's fine.
+I know. I spit on that. I spitting I spit on that thing. You [laughter] know how many like CEOs of
+HTMX right now are hanging on every word you're about to say? Oh, yes, they will.
+Montana. I have been to his office. I actually know where it's at. I know I know all about the EPS representing the
+engineering physical science building in which also has the computer science
+laboratory in all right anyways I digressed a little bit but uh during my time when I started in 2005 Java was the
+thing they taught and I man I hate to admit this I was a stellar student uh
+the programming language concepts I had such a high grade they had to throw up mine and then curved to the next one I
+got like 170% multiple times on on many tests. Okay. I was very very good at it. Wait, wait, wait, wait. 170%. Oh, after
+the curve after the after being thrown off and the new curve shifting me up so far.
+So, I was I was very very good at these things. Uh computer uh engineering to actually going through and and doing
+like addition from a CPU's perspective [laughter] on integers by hand. I didn't hear what Trash said. Um
+I'm just kidding. I said what happened. Oh, what happened? [laughter] I'm about to tell you that's the that's what this
+is me getting to the shameful part trash. Okay, let me tell the story in a way that is you know because you have to
+tell a story where people like oh he's just humble bragging and then I turn it around back on that. Now here's the thing bragging. [laughter]
+Yes. I only had one class on C and it was kind of like a brief one where it's
+like hey here's how to do a linked list in C. Here's how to do a few things and it wasn't really like that good. It was more like on the language of C. It was a
+100 level class like just like how to dip your toes into C. And the thing is is that after I graduated college,
+I could talk about heap and stack memory and all these things, but it didn't dawn on me until like a couple years after
+college that when I was programming C that I was writing either to the stack or to the heap because I never actually
+learned those things. So even though I aced every single thing, could do addition of a register by hand, I could
+multiplication. I used to know all that stuff, all the barrel fun stuff, I could do all the things, but I actually had no
+tying it together to the point where I just I did not understand it because they never taught
+C. I only knew Java. And I do think that that was a great disservice that I wasn't pushed further into that category
+where you take the theoretics like actually drawing the squares and then doing these squares in language in a
+very practical kind of sense. And like I really do I really do feel like I I greatly missed out on that because all
+practical assignments like doing AVL trees and everything were all done in Java. All my stuff was done in Java
+except for networking which was done in C. But again, you're just playing with like you know net.h H you're not
+actually you're not actually doing anything other than crafting UDP packets. So it's it's not quite the same thing. And so I do feel like I was
+certainly robbed and it it uh I actually still look back at that as like what a waste that was. I was learning so many
+things that I didn't understand how good they were, but I could pass exams. Like I could 100% all of them, but I
+literally learned nothing because I didn't have that like the t the real tie into everything. And so I look back at
+that as like a huge failure. And so I I do actually agree that I wish more things were in a sense reaching down as
+you say like that makes perfect sense replaying it against my past. I could leak code. Yeah. Yeah. I could leak code like a
+boss. Like I was that classic person that could come out and balance a tree but have no idea about anything else.
+Well and I think that gets to like Lor's like extending downward thing which is the crucial part, right? It's like you
+What should you be learning?
+did learn some C but you can't like it they can't just say oh here's the C language. Okay now you know everything.
+Like no, it's like the C language is just what what really we're saying is it's a way it's a framework that makes
+it easier to teach these concepts that you actually need to know. And again, it's not you can't teach
+another languages. Like one of the things I did on my Substack, right, is I'm like, hey, here's this Python program. It's extremely slow to add the
+add numbers together and we can show why. Well, okay, we could we could use S Python to compile that Python into C.
+You could go reach for Pi Pi or something, but you like those are all these steps that now you have to do
+instead of just no, we can literally just write in this language without changing anything we're doing. We can
+just show exactly how to do the thing from here. It's a very short step, right? And so it's really just about
+it's a very it's just very convenient. It happens to hit a nice sweet spot. It's why it's been such an enduring language. there's so many things written
+in it. So it's easy to go look at the examples of people doing things like operating systems in it because that's what they write operating systems in
+blah blah blah blah right and so you know those languages and the C lineage languages like now successor
+languages like Rust that are trying to be you know C and then some new things without breaking the cess of them right
+um those are they're just easier to do this education I think I think that's
+just the bottom line and when you if you made me teach the same thing in Java it's just going to be
+harder for me to do that, right? Uh it's not that I couldn't, it's that it becomes just a lot harder to to uh
+uh to do it because it's the wrong base. It's the wrong base layer. And you know, that's I don't know how to how else to
+underscore that point. And I think that's what it might be really hard to do it at all. Like I'm not I you know, at least when I was in my 1.6 days, I don't know if you
+can really disamiguate the stack in the heap. Yeah. Like in you knew up an object. I'm not sure if you really understand what's going on
+there. Yeah. in like Java, I don't know how hard it would be to try to teach someone about like let's let's change the memory
+layout of these things, right? Uh you know, and you know, can I disable the garbage collector in some Javas, you
+know, can I go in there and and monkey with that stuff? I don't know. Uh but, you know, that would be the kinds of
+things that I start to have to think about if I'm going to go, you know, use something like Python or Java, like how am I going to teach those things?
+whereas in C it's just like it it's just made um you know the people say like it doesn't matter anymore because we're not
+programming a PDP11 you know a obviously don't know anything about a PDP11 like they've probably never even read the
+manual um it it had virtual memory so I don't know what they're say they like a
+linear address space like no it wasn't right like it has a it has an address it it has a a t page table uh a address
+translation table anyway so like there's weird weird stuff like that that people think But it's like, no, it really is.
+And even if I want to teach you down to the micro op level, it's very easy to do that in C. And and it's not that easy to
+do it another language for a variety of reasons. Uh and so languages like C um
+help. It also just kind of seems like what you know, if our goal, even if the
+goal isn't to get people a job from college or whatever, right? It's just like we want to teach them. Why would we make it harder than it needs to be? Like
+if it's like cool our goal at the end of this semester is that you understand the
+difference between stack and the heap and how it is managed in real programs like how it gets used. Cool. That's one
+of our syllabus goals. Then why are we picking a way that makes that harder to show than it has? Like it just seems
+that doesn't even make sense. You should just pick the one that's the best and like with the least number of hops and
+the least extra things that you need to do so you can focus on them actually learning like the primary task, right?
+Like if we're like, "Cool, this this semester is about memory management." Then let's like teach them that. Let's
+not spend a bunch of time showing them like here's sealed classes in Java and why your homework didn't compile because
+we put this extra keyword here to make sure you couldn't do this and cheat and get the wrong, you know, like awesome.
+We didn't have to do we didn't have to do that, right? That's just like wasted time and effort. Well, and I I I guess I
+Heap or Stack
+mean just to uh to try to address people's concerns who complain about this. I I mean like one of the things
+that I saw mentioned while people were complaining about the Lori Wired uh uh
+inter interview I don't know what that thing was the pres presentation um was
+like oh but there's no difference between the stack and the heap right which is which is true in the sense of
+like they are stored in RAM right and so so I I agree with the statement that if
+you're if you're asking me about like does some is something taking up more
+space on the heap or the stack or something like that? Like I mean, you know, it there there's there's ways in
+which that makes sense to say and I might say it sometimes if someone asked me a question about like that where that
+was the correct answer. But it to say that there's no difference between the
+stack and the heap in terms of educating you about what's going on is ridiculous because literally there are a number of
+things in hardware that are about the stack. And it's not that they're storing
+it in some magic thing that's not RAM, right? Or something like this. Uh it's
+not that we're saying that. it's that there really are a bunch of things that are processor specific that have to do
+with dealing with the stack. And so you do need to understand that difference. So you need to be able to understand
+like what a push and a pop are like that's a thing that is specific to like what what is the stack pointer? That's a
+thing that's like in hardware. What is the return address stack that's in hardware not stored in RAM by the way?
+It's in a special thing inside the core, right? And so there's a number of things like that. And if you just fundamentally
+have no way of understanding what those two things are, that would be really bad. And furthermore, it would be really
+nice if when you write something in your language, whatever the teaching language is, that it's very direct. So if I have
+int x and I know that the int is four bytes, and that's going to translate into a push for or something like this,
+right? That's helpful, right? these these are help these are helpful things because there's a very short uh uh path
+to me showing you what happens versus a very complicated like very high level language where the it's like I got to
+trace you through 30 steps to show you how it got to the thing right and so again I just I think people are using
+they're using irrelevant differences to argue that there's no value but there
+but there is value like the fact that it's stored in RAM it's Uh,
+it's not easy. Uh, by the way, the stack is stored in the balls. Okay. It's not stored in RAM. That's ridiculous. Yeah. Yeah. It's in the It's a secundi
+stack. [clears throat] Classic stack. Yeah. TJ's not happy.
+I was really trying to find a way to make a joke about how nobody goes to Stack Overflow anymore. And I was more
+disappointed in myself in the inability to connect those two things together. Like, what? We don't need this stack
+anymore. We have chat GPT. but it just didn't connect. So, I was more
+disappointed with myself than than you two. Yeah. [laughter] Okay.
+Yeah. Well, I feel like we've kind of touched all things, but Trash, I I kind of want to get your last last thoughts here as
+Outro
+we close this bad boy down. Can you uh give us your last thoughts, and I want you to close down the episode? [clears throat] My last thoughts is,
+[sighs] how should I say this? I think these arguments are very tiring
+and meaningless in most cases. Um I very much don't enjoy reading them at all. Uh
+I do think it's helpful that we are bringing it to light. I do think there is some importance of you know telling
+people what they what they should and shouldn't learn. I think ultimately it's going to depend on the person. So even
+if you were to teach someone C, it's going to be up to them if they want to take it even deeper. I don't think it's going to be up to the school to kind of
+push them to want to learn these things. Um, but in my humble opinion, I think if you
+want to make it in this day and age of AI, you should really try a lot harder than you're trying now because it's
+going to be even harder to uh stand out amongst the rest. Um, so for those that
+are unemployed watching this, I think uh yeah, keep up the good fight and try
+super duper hard because I I can't imagine what it's like to be in your
+shoes right now. And with the age of AI, I know it's pretty terrifying. And I know myself what I'm doing is I'm making
+sure that I'm still studying because, you know, one day I won't have the job I have now. And Lord knows what I need to
+know when I have to go back in interviewing pool. I think it's going to be a completely different ballgame. So, I'm actually going down the hole of just
+like understanding everything at a low level because I think that's the only way I'm going to stand out to be honest. Um, if you want me to code something, I
+mean, I just literally type into a text box and it will pop out. So, yeah, those
+are my those are my thoughts. Kind of depressing, but that's kind of just how I've been feeling lately. Um, I think AI
+is honestly kind of depressing me if I'm being quite honest. And I think the only way I can uh take those emotions back is
+to actually challenge myself outside of like the workspace and using AI and just
+trying to build things for me. Um so
+that was kind of sad, huh? Yeah. No, dude. That was good. [laughter] This was an emotional ending. That was an emotional ending to the the thing.
+Trash, I think we should unpack this a little bit more later, too, cuz I'm interested to hear more of what you're thinking.
+Yeah. Yeah. Yeah, for sure. Mhm. We can. We can. I know many other people feel the same
+way. So Mhm. Yep. Well, let's [laughter] Would you like to
+also close it out though? Trash. Thank you for watching the standup with the prime gym. I am Trash featuring
+legendary programmer case and Tee. Right back [applause] at you, baby.
+Thanks. Hey, well, I put Doom inside of a Neoim guy today. Okay, trash. [laughter] I saw
+Can we stop? Can we Can we get the G out of Neo Vim Gooey? It just looks like text still. It just looks like
+Casey, did you see? I don't think I don't think you realize. Did you see me put a circle? I put a
+circle in, but it's just like you're just putting some a somebody else drawing graphics on
+top of your text. It's just wait,
+man. delusions of grandeur with the Neoim people. What can I do to convince you it's a
+real GU? I don't know. Have like a lot of images in the the graphs happening like next to
+the code or something like give me something I can sink my teeth into. T TJ the thing that I told you to put into
+Neo. Yeah, that's what he wants to see. Yeah. The thing that you told me to put in Neoim. I wasn't listening probably. What
+did you tell me to put? Yes, you were. We laughed about it this morning. I'm very offended that you've already forgot. If you're not spending a
+million dollars in tokens, I don't think you're get Well, to impress me, Casey, I will. We're going to spend a million dollars in tokens and
+get me a Neovim guy that actually looks G instead of T in the front of UI. Got it.
+That's my That's my assignment. This I'll come back with something next week and I'll present it. All right.
+Thank you everybody. Bye. Bye. Bye. Boot [singing] up today.
+Five [music] errors [singing] on my screen. Terminal coffee
+and living the dream.

@@ -1,0 +1,2 @@
+# E05: write five hand-derived cases before running.
+# hex | expected text or status/offset | purpose and field derivation

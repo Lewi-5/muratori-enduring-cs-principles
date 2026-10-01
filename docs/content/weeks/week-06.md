@@ -2,7 +2,9 @@
 prev:
   text: Week 5 · A validated scalar baseline
   link: /weeks/week-05
-next: false
+next:
+  text: Week 7 · Memory operands and a decoder API
+  link: /weeks/week-07
 ---
 
 # Week 6 · Bytes to instructions
@@ -129,6 +131,6 @@ The [supplied types](/source/week-06/support/decode_types.h) and [decoder header
 
 Keep three witnesses separate: your decoder's result, the encoding oracle's expectation, and `objdump`'s interpretation. When they differ, ask whether the issue is bytes, fields, architecture, supported scope, or presentation convention.
 
-Week 7 is planned in the syllabus and adds memory modes and displacements. You have reached the end of the currently implemented companion. A useful handoff question is: what extra information must the decoder inspect before it can determine an instruction's length when a memory operand is present?
+[Week 7](/weeks/week-07) adds memory modes, displacements and a public decoder API. A useful handoff question is: what extra information must the decoder inspect before it can determine an instruction's length when a memory operand is present?
 
 <!-- report -->

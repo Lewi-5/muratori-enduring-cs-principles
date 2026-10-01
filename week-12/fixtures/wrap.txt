@@ -1,0 +1,4 @@
+0000 -> 0003 ax=1234 cx=0000 dx=0000 bx=0000 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+0003 -> 0006 ax=1234 cx=0000 dx=0000 bx=0000 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=0000:12,ffff:34
+0006 -> 0009 ax=1234 cx=0000 dx=0000 bx=0000 sp=0100 bp=0000 si=0000 di=0000 flags=0000 mem=-
+final ip=0009 ax=1234 cx=0000 bx=0000 sp=0100 flags=0000 data[0100]=00 steps=3

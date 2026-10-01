@@ -37,6 +37,32 @@ with tempfile.TemporaryDirectory(prefix='enduring-doc-examples-') as directory:
             result=subprocess.run([str(exe)],check=True,text=True,capture_output=True)
             records.append(dict(week=week,exercise=exercise,compiler=cc,output=result.stdout))
             print(cc,result.stdout.strip())
+# Beginner pages: every `<!-- snippet:NAME -->` code block must equal docs/examples/week-NN/NAME.c, and every
+# `<!-- output:NAME -->` block must equal what that file prints under GCC and Clang at -O0 and -O2 with the
+# course flags. A mismatch fails the run, so a page cannot show output that the code does not produce.
+import re
+fence=r'\n```[a-z]*\n(.*?)\n```'
+snippet_pages=sorted((root/'docs/content/beginners').glob('week-*.md'))
+with tempfile.TemporaryDirectory(prefix='enduring-beginner-snippets-') as directory:
+    work=Path(directory)
+    for page in snippet_pages:
+        text=page.read_text(encoding='utf-8')
+        examples=root/'docs/examples'/page.stem
+        codes=dict(re.findall(r'<!-- snippet:(\w+) -->'+fence, text, re.S))
+        outputs=dict(re.findall(r'<!-- output:(\w+) -->'+fence, text, re.S))
+        assert set(outputs) <= set(codes), f'{page.name}: output without a shown snippet: {set(outputs)-set(codes)}'
+        for name, code in codes.items():
+            source=examples/f'{name}.c'
+            assert source.read_text(encoding='utf-8').rstrip('\n')==code, f'{page.name}: snippet {name} differs from {source}'
+            for cc in ['gcc','clang']:
+                for level in ['-O0','-O2']:
+                    exe=work/f'{page.stem}-{name}-{cc}{level}'
+                    subprocess.run([cc,'-std=c11','-Wall','-Wextra','-Wpedantic','-Werror','-ffp-contract=off',level,str(source),'-lm','-o',str(exe)],check=True)
+                    result=subprocess.run([str(exe)],check=True,text=True,capture_output=True).stdout
+                    if name in outputs:
+                        assert result.rstrip('\n')==outputs[name], f'{page.name}: output of {name} ({cc} {level}) differs:\n{result}'
+                    records.append(dict(page=page.name,snippet=name,compiler=cc,level=level,output=result))
+            print('beginner', page.stem, name, 'matches' if name in outputs else 'compiles')
 environment={name:subprocess.check_output(args,text=True).splitlines()[0] for name,args in {'gcc':['gcc','--version'],'clang':['clang','--version'],'make':['make','--version'],'python':['python3','--version'],'binutils':['objdump','--version']}.items()}
 report=dict(checkedAt=datetime.now(timezone.utc).isoformat(),platform=platform.platform(),environment=environment,results=records)
 (root/'tools/docs/example-validation.json').write_text(json.dumps(report,indent=2)+'\n')

@@ -1,0 +1,6 @@
+# E07.C: add at least eight purposeful cases below, one per line:
+#     HEX BYTES | EXPECTED | REASON
+# EXPECTED is the canonical text of every instruction ("; " between them) or STATUS@OFFSET for a failing stream.
+# Derive EXPECTED by hand BEFORE running make test. The runner checks each case against the supplied oracle (your
+# derivation) and against your decoder. Example of the format (not counted, because it is a comment):
+# 89 d9 | mov cx, bx | d = 0, so the reg field is the source

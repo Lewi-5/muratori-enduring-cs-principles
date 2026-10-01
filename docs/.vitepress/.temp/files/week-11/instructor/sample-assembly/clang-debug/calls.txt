@@ -1,0 +1,33 @@
+
+week-11/build/instructor/clang/debug/inspection/calls.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <keep_across_call>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	48 83 ec 30          	sub    rsp,0x30
+   8:	48 89 7d f0          	mov    QWORD PTR [rbp-0x10],rdi
+   c:	48 89 75 e8          	mov    QWORD PTR [rbp-0x18],rsi
+  10:	48 89 55 e0          	mov    QWORD PTR [rbp-0x20],rdx
+  14:	48 83 7d e8 00       	cmp    QWORD PTR [rbp-0x18],0x0
+  19:	0f 84 0b 00 00 00    	je     2a <keep_across_call+0x2a>
+  1f:	48 83 7d e0 00       	cmp    QWORD PTR [rbp-0x20],0x0
+  24:	0f 85 0c 00 00 00    	jne    36 <keep_across_call+0x36>
+  2a:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
+  31:	e9 28 00 00 00       	jmp    5e <keep_across_call+0x5e>
+  36:	48 8b 45 e8          	mov    rax,QWORD PTR [rbp-0x18]
+  3a:	48 8b 7d f0          	mov    rdi,QWORD PTR [rbp-0x10]
+  3e:	48 83 c7 01          	add    rdi,0x1
+  42:	ff d0                	call   rax
+  44:	48 89 45 d8          	mov    QWORD PTR [rbp-0x28],rax
+  48:	48 8b 4d f0          	mov    rcx,QWORD PTR [rbp-0x10]
+  4c:	48 03 4d d8          	add    rcx,QWORD PTR [rbp-0x28]
+  50:	48 8b 45 e0          	mov    rax,QWORD PTR [rbp-0x20]
+  54:	48 89 08             	mov    QWORD PTR [rax],rcx
+  57:	c7 45 fc 01 00 00 00 	mov    DWORD PTR [rbp-0x4],0x1
+  5e:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
+  61:	48 83 c4 30          	add    rsp,0x30
+  65:	5d                   	pop    rbp
+  66:	c3                   	ret    

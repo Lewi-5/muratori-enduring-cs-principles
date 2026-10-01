@@ -1,0 +1,2 @@
+samples=4 min=10 median=20 max=40 zeros=0
+calls=4 checksum=42

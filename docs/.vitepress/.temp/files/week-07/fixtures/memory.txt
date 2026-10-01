@@ -1,0 +1,5 @@
+bits 16
+mov ax, [bp - 2]
+mov ax, [65534]
+add word [bx + si - 32768], -2
+mov word [bp - 32768], -32768
